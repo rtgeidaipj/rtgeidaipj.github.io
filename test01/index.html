@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
+        /* --- 基本設定 (Base Styles) --- */
         :root {
             --bg-color: #f8f8f8;
             --text-color: #2b2b2b;
@@ -29,9 +30,17 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        a { color: var(--text-color); text-decoration: none; transition: opacity 0.3s; }
-        a:hover { opacity: 0.6; }
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
 
+        a:hover {
+            opacity: 0.6;
+        }
+
+        /* --- レイアウト (Layout) --- */
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -45,8 +54,12 @@
             transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        section.visible { opacity: 1; transform: translateY(0); }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
+        /* --- Header / Hero --- */
         header {
             height: 100vh;
             display: flex;
@@ -54,29 +67,50 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            position: relative;
+        }
+
+        .title-area {
+            margin-bottom: 50px;
+            z-index: 2;
         }
 
         .project-label {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: bold;
+            display: inline-block;
             margin-bottom: 15px;
             border-bottom: 1px solid #ddd;
             padding-bottom: 5px;
         }
 
-        h1 { font-size: clamp(28px, 6vw, 48px); font-weight: 500; margin: 0 0 15px 0; }
-        .subtitle { font-family: var(--font-eng); font-size: 13px; color: var(--accent-color); letter-spacing: 0.2em; }
+        h1 {
+            font-size: clamp(28px, 6vw, 48px);
+            font-weight: 500;
+            margin: 0 0 15px 0;
+            line-height: 1.4;
+        }
 
+        .subtitle {
+            font-family: var(--font-eng);
+            font-size: 13px;
+            color: var(--accent-color);
+            letter-spacing: 0.2em;
+        }
+
+        /* メイン画像エリア */
         .hero-image {
             width: 100%;
             max-width: 600px;
             height: 400px;
             background-color: #e0e0e0;
-            margin: 60px auto 0;
+            margin: 0 auto;
+            overflow: hidden;
             position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
+        /* --- Statement --- */
         .statement-text {
             text-align: justify;
             max-width: 700px;
@@ -84,9 +118,12 @@
             font-size: 15px;
         }
 
-        .statement-text p { margin-bottom: 40px; }
+        .statement-text p {
+            margin-bottom: 40px;
+        }
 
-        .maki-message {
+        /* 橋本真希さんメッセージセクション */
+        .personal-message {
             margin-top: 100px;
             padding: 80px 40px;
             border-top: 1px solid #ddd;
@@ -94,58 +131,138 @@
             background-color: #fff;
         }
 
-        .author-name { font-size: 18px; font-weight: bold; margin-bottom: 40px; display: block; text-align: center; }
+        .author-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            display: block;
+            text-align: center;
+        }
 
-        .section-title { font-family: var(--font-eng); font-size: 14px; text-align: center; margin-bottom: 60px; color: var(--accent-color); letter-spacing: 0.2em; }
+        /* --- Artists --- */
+        .section-title {
+            font-family: var(--font-eng);
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--accent-color);
+            letter-spacing: 0.2em;
+        }
 
-        .artist-group { text-align: center; margin-bottom: 60px; }
-        .group-name { font-size: 13px; color: var(--accent-color); margin-bottom: 25px; display: block; }
-        .artist-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 40px; }
-        .artist-list li { font-size: 18px; display: flex; align-items: center; }
+        .artist-group {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
+        .group-name {
+            font-size: 14px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .artist-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px 40px;
+        }
+
+        .artist-list li {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* --- Social Link Button --- */
         .social-link {
             display: inline-block;
-            font-size: 10px;
+            font-size: 11px;
             color: #888;
             margin-left: 10px;
-            padding: 2px 12px;
+            padding: 2px 10px;
             border: 1px solid #ccc;
             border-radius: 20px;
             font-family: var(--font-eng);
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
         }
 
+        .social-link:hover {
+            color: #fff;
+            background-color: #333;
+            border-color: #333;
+        }
+
+        /* --- Information (レイアウト崩れ修正) --- */
         .info-grid {
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 20px;
-            border-top: 1px solid #ddd;
-            padding-top: 30px;
             max-width: 700px;
             margin: 0 auto;
+            border-top: 1px solid #ddd;
+            padding-top: 30px;
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 25px;
             font-size: 15px;
         }
 
-        .info-label { font-weight: bold; color: #555; }
+        .info-label {
+            width: 120px;
+            flex-shrink: 0; /* ラベルの幅を固定 */
+            font-weight: bold;
+            color: #555;
+        }
 
-        .info-map-container {
-            width: 100%;
-            margin-top: 50px;
+        .info-content {
+            flex-grow: 1;
         }
 
         .info-map {
+            margin-top: 40px;
             width: 100%;
             height: 450px;
             background-color: #eee;
+            position: relative;
         }
         
-        iframe { width: 100%; height: 100%; border: 0; filter: grayscale(100%) contrast(1.1); }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: grayscale(100%) contrast(1.2);
+        }
 
-        footer { text-align: center; padding: 80px 0; font-size: 11px; color: #aaa; font-family: var(--font-eng); letter-spacing: 0.2em; }
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 80px 0;
+            font-size: 12px;
+            color: #aaa;
+            font-family: var(--font-eng);
+        }
 
+        /* --- Responsive --- */
         @media (max-width: 768px) {
-            .container { padding: 0 25px; }
-            .info-grid { grid-template-columns: 1fr; gap: 5px; }
-            .info-map { height: 300px; }
+            .container {
+                padding: 0 20px;
+            }
+            
+            .info-row {
+                flex-direction: column; /* スマホでは縦並びに */
+                margin-bottom: 20px;
+            }
+
+            .info-label {
+                width: 100%;
+                margin-bottom: 5px;
+                color: var(--accent-color);
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -157,14 +274,16 @@
             <h1>『雨の日の星空』</h1>
             <p class="subtitle">Rain Tree × GEIDAI Students 2026</p>
         </section>
-        <div class="hero-image">
-            <div style="position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:#999; font-size:12px;">
+        
+        <section class="hero-image">
+            <div style="position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:#999; font-size:12px; width:100%; text-align:center;">
                 Main Visual Art by Ame
             </div>
-        </div>
+        </section>
     </header>
 
     <div class="container">
+        
         <section id="statement">
             <div class="statement-text">
                 <p>
@@ -182,33 +301,51 @@
                     「アーティスト」と「アイドル」は、表現の形式も置かれている場所も違います。しかしその根にある構造は、驚くほど似ており、“ファンを獲得し、その支持の上に存在が成り立つ”という仕組みなのです。私たちは常に、「名前を売ること」「誰に、どのように届くのか」「求められるとは何か」という問いの中で表現を続けています。そこには、ひとつの正解があるわけではありません。
                 </p>
                 <p>
-                    ある人は、世界中に名前を広く知らしめ、“その人の作品”としての価値を確立することで求められる存在を目指します。ある人は、名前よりも作品そのものに対する自分の思いを軸に、一人ひとりに向けて静かに届けたいと考えます。また、生活は別の場所で支え、「表現」は「売る」ことから少し距離を取ろうとする人もいます。自分自身を作品とし、キャラクターや物語ごと愛されることで関係性を築く人もいます。
+                    ある人は、世界中に名前を広く知らしめ、“その人の作品”としての価値を確立することで求められる存在を目指します。ある人は、名前よりも作品そのものに対する自分の思いを軸に、一人ひとりに向けて静かに届けたいと考えます。また、生活は別の場所で支え、「表現」は「売る」ことから少し距離を取ろうとする人もいます。
+                    自分自身を作品とし、キャラクターや物語ごと愛されることで関係性を築く人もいます。
                 </p>
                 <p>
                     立場も戦略も異なる。けれど、そのどれもが“誰かに見つけられ、支えられる”というファンダムの上に成り立っていると考察できることから、この展示はアイドルと藝大生という異なる領域に立つ表現者がそれぞれのスタンスを持ち寄り、「表現とファンの関係」を可視化する意図を含んでいます。
                     本展は表現者のまなざしとファンダムへの関わり。この二つの軸により構成されています。藝大生とアイドルという異色の組み合わせによって見えてくる新たなアートシーンをお届けします。
                 </p>
 
-                <div class="maki-message">
+                <div class="personal-message">
                     <span class="author-name">橋本真希</span>
-                    <p>「アイドル」と「アーティスト」<br>違う場所に立っているようでいて、その根はどこかで静かにつながっていると感じています。</p>
-                    <p>アイドルとして活動する中で、私はいつも「誰かに届くこと」を考えてきました。<br>それは作品をつくることとは異なるようでいて、実はとてもよく似た祈りのような行為だと思っています。</p>
-                    <p>絵画というかたちで表現に向き合いながら、自分のまなざしはどこへ向いているのか、誰に手を伸ばしているのかを、あらためて問い直しました。</p>
-                    <p>「アーティスト」と「アイドル」は違う立場に見えても、どちらも“誰かに見つけてもらうことで存在が輪郭を持つ”存在です。<br>その事実を抱えたまま、今回はひとりの作家として制作に向き合いました。</p>
-                    <p>『雨の日の星空』のように、厚い雲の向こうを信じる気持ちが、この展示を通してそっと誰かの心に届いたら嬉しいです。</p>
-                    <p>これまでの人生や、アイドルとしての経験の中で感じてきた感情や景色を、絵という表現を通して静かに対話できたらと思います。</p>
+                    <p>
+                        「アイドル」と「アーティスト」<br>
+                        違う場所に立っているようでいて、その根はどこかで静かにつながっていると感じています。
+                    </p>
+                    <p>
+                        アイドルとして活動する中で、私はいつも「誰かに届くこと」を考えてきました。<br>
+                        それは作品をつくることとは異なるようでいて、実はとてもよく似た祈りのような行為だと思っています。
+                    </p>
+                    <p>
+                        絵画というかたちで表現に向き合いながら、自分のまなざしはどこへ向いているのか、誰に手を伸ばしているのかを、あらためて問い直しました。
+                    </p>
+                    <p>
+                        「アーティスト」と「アイドル」は違う立場に見えても、どちらも“誰かに見つけてもらうことで存在が輪郭を持つ”存在です。<br>
+                        その事実を抱えたまま、今回はひとりの作家として制作に向き合いました。
+                    </p>
+                    <p>
+                        『雨の日の星空』のように、厚い雲の向こうを信じる気持ちが、この展示を通してそっと誰かの心に届いたら嬉しいです。
+                    </p>
+                    <p>
+                        これまでの人生や、アイドルとしての経験の中で感じてきた感情や景色を、絵という表現を通して静かに対話できたらと思います。
+                    </p>
                 </div>
             </div>
         </section>
 
         <section id="artists">
             <h2 class="section-title">ARTISTS</h2>
+
             <div class="artist-group">
                 <span class="group-name">Rain Tree</span>
                 <ul class="artist-list">
                     <li>橋本真希 <a href="https://www.instagram.com/hashimoto_maki_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link">Instagram</a></li>
                 </ul>
             </div>
+
             <div class="artist-group">
                 <span class="group-name">Tokyo University of the Arts Students</span>
                 <ul class="artist-list">
@@ -227,36 +364,71 @@
 
         <section id="information">
             <h2 class="section-title">INFORMATION</h2>
+            
             <div class="info-grid">
-                <div class="info-label">会期</div>
-                [cite_start]<div>2026.8.18 (Tue) – 8.28 (Fri) [cite: 5]</div>
-                <div class="info-label">時間</div>
-                [cite_start]<div>12:00 – 19:00（最終日は18:00閉場） [cite: 9]</div>
-                <div class="info-label">会場</div>
-                [cite_start]<div>Gallery Blue 3143 [cite: 4]<br>〒107-0062 東京都港区南青山3-14-3-1F, 2F</div>
-                <div class="info-label">アクセス</div>
-                <div>表参道駅 A4出口より 徒歩5分 / 外苑前駅より 徒歩9分</div>
-                <div class="info-label">協賛</div>
-                <div>株式会社ウェルネス</div>
-            </div>
-            <div class="info-map-container">
-                <div class="info-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.34442111818!2d139.71190287635398!3d35.66854613100412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b603952f533%3A0xc665191b980e608!2sGallery%20Blue%203143!5e0!3m2!1sja!2sjp!4v1710000000000!5m2!1sja!2sjp" allowfullscreen="" loading="lazy"></iframe>
+                <div class="info-row">
+                    <div class="info-label">会期</div>
+                    <div class="info-content">2026.8.18 (Tue) – 8.28 (Fri) [cite: 5, 47]</div>
                 </div>
+
+                <div class="info-row">
+                    <div class="info-label">時間</div>
+                    <div class="info-content">
+                        12:00 – 19:00 [cite: 9, 51]<br>
+                        <span style="font-size: 13px; color: #888;">※最終日（8.28）のみ18:00閉場 [cite: 9, 52]</span>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-label">会場</div>
+                    <div class="info-content">
+                        Gallery Blue 3143 [cite: 4, 45]<br>
+                        <span style="font-size: 14px; margin-top:5px; display:block;">
+                            〒107-0062 東京都港区南青山3-14-3 1F, 2F
+                        </span>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-label">アクセス</div>
+                    <div class="info-content">
+                        表参道駅 A4出口より 徒歩5分 / 外苑前駅より 徒歩9分
+                    </div>
+                </div>
+                
+                <div class="info-row">
+                    <div class="info-label">協賛</div>
+                    <div class="info-content">株式会社ウェルネス</div>
+                </div>
+            </div>
+
+            <div class="info-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.442964951433!2d139.7121334764032!3d35.66611397259163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b6378e85c15%3A0x6b6e068f635c05c6!2zR2FsbGVyeSBCbHVlIDMxNDM!5e0!3m2!1sja!2sjp!4v1711234567890!5m2!1sja!2sjp" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>RAIN TREE × GEIDAI STUDENTS 2026</p>
+        <p>© 2026 Rain Tree x Geidai Project. All Rights Reserved.</p>
     </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-            }, { threshold: 0.1 });
-            document.querySelectorAll("section").forEach(s => observer.observe(s));
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
         });
     </script>
 </body>
