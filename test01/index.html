@@ -112,17 +112,6 @@
         .artist-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 40px; }
         .artist-list li { font-size: 18px; display: flex; align-items: center; }
 
-        .social-link {
-            display: inline-block;
-            font-size: 10px;
-            color: #888;
-            margin-left: 10px;
-            padding: 2px 12px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            font-family: var(--font-eng);
-        }
-
         .info-grid {
             max-width: 700px;
             margin: 0 auto;
@@ -153,13 +142,13 @@
             margin-top: 50px;
         }
 
-        .info-map {
+        .info-map-img {
             width: 100%;
-            height: 450px;
-            background-color: #eee;
+            height: auto;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            filter: grayscale(100%) contrast(1.1);
         }
-        
-        iframe { width: 100%; height: 100%; border: 0; filter: grayscale(100%) contrast(1.1); }
 
         footer { text-align: center; padding: 80px 0; font-size: 11px; color: #aaa; font-family: var(--font-eng); letter-spacing: 0.2em; }
 
@@ -167,7 +156,6 @@
             .container { padding: 0 25px; }
             .info-row { flex-direction: column; margin-bottom: 20px; }
             .info-label { width: 100%; margin-bottom: 5px; font-size: 13px; color: var(--accent-color); }
-            .info-map { height: 300px; }
         }
     </style>
 </head>
@@ -216,8 +204,8 @@
                     <p>「アイドル」と「アーティスト」<br>違う場所に立っているようでいて、その根はどこかで静かにつながっていると感じています。</p>
                     <p>アイドルとして活動する中で、私はいつも「誰かに届くこと」を考えてきました。<br>それは作品をつくることとは異なるようでいて、実はとてもよく似た祈りのような行為だと思っています。</p>
                     <p>絵画というかたちで表現に向き合いながら、自分のまなざしはどこへ向いているのか、誰に手を伸ばしているのかを、あらためて問い直しました。</p>
-                    <p>「アーティスト」と「アイドル」は違う立場に見えても、どちらも“誰かのまなざしに触れて、はじめて輪郭を持つ”ものです。<br>
-                    その事実を抱えたまま、今回はひとりの作家として制作に向き合いました。</p>
+                    <p>「アーティスト」と「アイドル」は違う立場に見えても、どちらも“誰かのまなざしに触れて、はじめて輪郭を持つ”ものです。</p>
+                    <p>その事実を抱えたまま、今回はひとりの作家として制作に向き合いました。</p>
                     <p>『雨の日の星空』のように、厚い雲の向こうを信じる気持ちが、この展示を通してそっと誰かの心に届いたら嬉しいです。</p>
                     <p>これまでの人生や、アイドルとしての経験の中で感じてきた感情や景色を、絵という表現を通して静かに対話できたらと思います。</p>
                     <span class="signature">橋本真希</span>
@@ -230,21 +218,21 @@
             <div class="artist-group">
                 <span class="group-name">Rain Tree</span>
                 <ul class="artist-list">
-                    <li>橋本真希 <a href="https://www.instagram.com/hashimoto_maki_/" target="_blank" class="social-link">Instagram</a></li>
+                    <li>橋本真希</li>
                 </ul>
             </div>
             <div class="artist-group">
                 <span class="group-name">Tokyo University of the Arts Students</span>
                 <ul class="artist-list">
-                    <li>あめ <a href="https://instagram.com/ame_prism" target="_blank" class="social-link">Instagram</a></li>
-                    <li>加藤彩 <a href="https://instagram.com/utoka_47_" target="_blank" class="social-link">Instagram</a></li>
-                    <li>小橋柚奈 <a href="https://instagram.com/tti_1102" target="_blank" class="social-link">Instagram</a></li>
-                    <li>こばら <a href="https://instagram.com/g_o_e_k_a_k_i" target="_blank" class="social-link">Instagram</a></li>
-                    <li>小柴海亜 <a href="https://instagram.com/noahoimo" target="_blank" class="social-link">Instagram</a></li>
-                    <li>襲惠雅 <a href="https://instagram.com/admt_q" target="_blank" class="social-link">Instagram</a></li>
-                    <li>田辺朔葉 <a href="https://instagram.com/tanabe.motoha" target="_blank" class="social-link">Instagram</a></li>
-                    <li>春井美矢 <a href="https://instagram.com/harui._.miya" target="_blank" class="social-link">Instagram</a></li>
-                    <li>びゅん <a href="https://instagram.com/byun_tears" target="_blank" class="social-link">Instagram</a></li>
+                    <li>あめ</li>
+                    <li>加藤彩</li>
+                    <li>小橋柚奈</li>
+                    <li>こばら</li>
+                    <li>小柴海亜</li>
+                    <li>襲惠雅</li>
+                    <li>田辺朔葉</li>
+                    <li>春井美矢</li>
+                    <li>びゅん</li>
                 </ul>
             </div>
         </section>
@@ -262,7 +250,10 @@
                 </div>
                 <div class="info-row">
                     <div class="info-label">会場</div>
-                    <div class="info-content">Gallery Blue 3143<br>〒107-0062 東京都港区南青山3-14-3 1F, 2F</div>
+                    <div class="info-content">
+                        Gallery Blue 3143<br>
+                        〒107-0062 東京都港区南青山3-14-3 1F, 2F
+                    </div>
                 </div>
                 <div class="info-row">
                     <div class="info-label">アクセス</div>
@@ -275,9 +266,7 @@
             </div>
             
             <div class="info-map-container">
-                <div class="info-map">
-                    <iframe src="https://maps.google.com/maps?q=東京都港区南青山3-14-3&output=embed&z=17" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+                <img src="map.png" alt="Gallery Blue 3143 Map" class="info-map-img">
             </div>
         </section>
     </div>
