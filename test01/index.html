@@ -96,10 +96,24 @@
             background-color: #fff;
         }
 
-        .signature {
+        /* 署名と画像をまとめるコンテナ */
+        .signature-container {
+            display: flex;
+            justify-content: flex-end; /* 右寄せ */
+            align-items: center; /* 垂直方向の中央揃え */
             margin-top: 40px;
-            display: block;
-            text-align: right;
+        }
+
+        /* 署名の画像 */
+        .signature-image {
+            width: 60px; /* 適正なサイズに調整 */
+            height: auto;
+            margin-right: 15px; /* 名前との間隔 */
+            border-radius: 5px; /* 少し角を丸くする（任意） */
+        }
+
+        .signature {
+            display: inline-block; /* Flexbox内で並べるためinline-blockに */
             font-size: 18px;
             font-weight: bold;
             padding-right: 10px;
@@ -226,7 +240,11 @@
                     <p>その事実を抱えたまま、今回はひとりの作家として制作に向き合いました。</p>
                     <p>『雨の日の星空』のように、厚い雲の向こうを信じる気持ちが、この展示を通してそっと誰かの心に届いたら嬉しいです。</p>
                     <p>これまでの人生や、アイドルとしての経験の中で感じてきた感情や景色を、絵という表現を通して静かに対話できたらと思います。</p>
-                    <span class="signature">橋本真希</span>
+                    
+                    <div class="signature-container">
+                        <img src="maki.png" alt="橋本真希" class="signature-image">
+                        <span class="signature">橋本真希</span>
+                    </div>
                 </div>
             </div>
         </section>
