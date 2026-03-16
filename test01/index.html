@@ -49,6 +49,7 @@
 
         section.visible { opacity: 1; transform: translateY(0); }
 
+        /* --- Header / 仮公開用 Hero --- */
         header {
             height: 100vh;
             display: flex;
@@ -69,16 +70,34 @@
         h1 { font-size: clamp(28px, 6vw, 48px); font-weight: 500; margin: 0 0 15px 0; }
         .subtitle { font-family: var(--font-eng); font-size: 13px; color: var(--accent-color); letter-spacing: 0.2em; }
 
-        .hero-image {
+        /* グレーの仮ボックス */
+        .hero-placeholder {
             width: 100%;
             max-width: 600px;
             height: 400px;
             background-color: #e0e0e0;
             margin: 60px auto 0;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            color: #999;
+            border-radius: 4px;
         }
 
+        .placeholder-text {
+            font-size: 14px;
+            letter-spacing: 0.2em;
+            margin-bottom: 10px;
+        }
+
+        .placeholder-subtext {
+            font-size: 11px;
+            letter-spacing: 0.1em;
+        }
+
+        /* --- Statement --- */
         .statement-text {
             text-align: justify;
             max-width: 700px;
@@ -119,9 +138,10 @@
             letter-spacing: 0.15em;
         }
 
+        /* --- Artists --- */
         .section-title { font-family: var(--font-eng); font-size: 14px; text-align: center; margin-bottom: 60px; color: var(--accent-color); letter-spacing: 0.2em; }
 
-        .artist-group { text-align: center; margin-bottom: 80px; }
+        .artist-group { text-align: center; margin-bottom: 60px; }
         .group-name { font-size: 13px; color: var(--accent-color); margin-bottom: 25px; display: block; }
         .artist-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 40px; }
         .artist-list li { font-size: 18px; display: flex; align-items: center; }
@@ -135,11 +155,11 @@
             border: 1px solid #ccc;
             border-radius: 20px;
             font-family: var(--font-eng);
-            letter-spacing: 0.05em;
         }
 
         .social-link:hover { color: #fff; background-color: #333; border-color: #333; }
 
+        /* --- Info --- */
         .info-grid {
             max-width: 700px;
             margin: 0 auto;
@@ -179,10 +199,10 @@
             <h1>『雨の日の星空』</h1>
             <p class="subtitle">Rain Tree × GEIDAI Students 2026</p>
         </section>
-        <div class="hero-image">
-            <div style="position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:#999; font-size:12px;">
-                Main Visual Art by Ame
-            </div>
+        
+        <div class="hero-placeholder">
+            <div class="placeholder-text">Main Visual: Coming Soon</div>
+            <div class="placeholder-subtext">メインビジュアル：近日公開</div>
         </div>
     </header>
 
@@ -192,7 +212,7 @@
                 <p>本展は雨の日に輝く星空を信じるように、藝大生とRain Treeという見えない未来に希望のまなざしを持ち、厚い雲の先にある星空に手を伸ばし続けてきた過去を持つ10名の作家による舞台です。また、アーティストとアイドルという異なるベクトルで常に、鑑賞者や観客の視点を意識してきた両者のまなざしから、表現者としての境界を越えて、鑑賞者やファンとの新たな関係の構築を目指す、学生による実験的な企画でもあります。</p>
                 <p>まなざしによって私たちは境界を越えられるのか。今回、橋本真希さんは培ってきたアイドルとしてのアイデンティティを絵画という異なる形態に昇華し、藝大生と共に1人の作家として共に制作に向き合います。また藝大生にとっては、アイドルプロデュースに代表されるファンダムという要素を意識し、SNSやマスメディアを活用したプロモーションやファン獲得の方法を、アイドルとは異なる立場から考え、向き合う機会にもなります。</p>
                 <p>この展覧会までの半年間をかけたアートプロジェクトとして、両者が問題意識を持って発見していく過程を提示します。また会場ではまなざしを題材にしたテキストからそれぞれの背負ってきた背景を明らかにすることで、物語性をメディウムとして、作家と鑑賞者の境界を横断して対話を試みます。</p>
-                <p>「アーティスト」と「アイドル」は、表現の形式も置かれている場所も違います。しかしその根にある構造は、驚くほど似ており、“ファンを獲得し、その支持の上に存在が成り立つ”という仕組みなのです。私たちは常に、「名前を売ること」「誰に、どのように届くのか」「求められるとは何か」という問いの中で表現を続けています。そこには、ひとつの正解があるわけではありません。</p>
+                <p>「アーティスト」と「アイドル」は、表現の形式も置かれている場所も違います。しかしその根にある構造は、驚くほど似ており、“ファンを獲得し、その支持の上に存在が成り立つ”という仕組みなのです。私たちは常に、「名前を売ること」「誰に、どのように届くのか」「求められるとは何か」という問いの中で表現を続けています。そこには、ひとつの正解があるわけではありません。凡庸な日々の中に、輝く瞬間を見つけ出すための、学生によるささやかな試みです。</p>
                 <p>ある人は、世界中に名前を広く知らしめ、“その人の作品”としての価値を確立することで求められる存在を目指します。ある人は、名前よりも作品そのものに対する自分の思いを軸に、一人ひとりに向けて静かに届けたいと考えます。また、生活は別の場所で支え、「表現」は「売る」ことから少し距離を取ろうとする人もいます。自分自身を作品とし、キャラクターや物語ごと愛されることで関係性を築く人もいます。</p>
                 <p>立場も戦略も異なる。けれど、そのどれもが“誰かに見つけられ、支えられる”というファンダムの上に成り立っていると考察できることから、この展示はアイドルと藝大生という異なる領域に立つ表現者がそれぞれのスタンスを持ち寄り、「表現とファンの関係」を可視化する意図を含んでいます。本展は表現者のまなざしとファンダムへの関わり。この二つの軸により構成されています。藝大生とアイドルという異色の組み合わせによって見えてくる新たなアートシーンをお届けします。</p>
 
@@ -263,7 +283,7 @@
             </div>
             
             <div class="info-map-container">
-                <img src="map.png" alt="Gallery Blue 3143 Map" class="info-map-img">
+                <img src="map.png" alt="Map" class="info-map-img">
             </div>
         </section>
     </div>
