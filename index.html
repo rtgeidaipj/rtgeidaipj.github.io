@@ -12,7 +12,7 @@
     <meta property="og:title" content="『雨の日の星空』 | 橋本真希 × 藝大生プロジェクト">
     <meta property="og:description" content="アイドルと表現者の「まなざし」が交差する。2026年8月開催の展覧会公式サイト。">
     <meta property="og:url" content="https://rtgeidaipj.github.io/">
-    <meta property="og:image" content="https://rtgeidaipj.github.io/S__25993285-1.png">
+    <meta property="og:image" content="https://rtgeidaipj.github.io/og-main.jpg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -116,16 +116,17 @@
             background-color: #fff;
         }
 
-        .signature-container {
-            display: flex;
-            justify-content: flex-end; 
-            align-items: center;
-            margin-top: 50px;
-            padding-right: 60px;
+        /* 透過PNG用レイアウト */
+        .handwritten-area {
+            text-align: right;
+            margin-top: 40px;
         }
-
-        .signature-image { width: 120px; height: auto; margin-right: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
-        .signature { font-size: 20px; font-weight: bold; letter-spacing: 0.15em; }
+        .handwritten-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            vertical-align: middle;
+        }
 
         .artist-group { text-align: center; margin-bottom: 80px; }
         .group-name { font-size: 13px; color: var(--accent-color); margin-bottom: 25px; display: block; }
@@ -150,8 +151,7 @@
         @media (max-width: 768px) {
             .container { padding: 0 25px; }
             .info-row { flex-direction: column; }
-            .signature-container { padding-right: 0; flex-direction: column; }
-            .signature-image { margin-right: 0; margin-bottom: 15px; }
+            .personal-message { padding: 60px 20px; }
         }
     </style>
 </head>
@@ -209,11 +209,9 @@
                     <p>「アーティスト」と「アイドル」は違う立場に見えても、どちらも“誰かのまなざしに触れて、はじめて輪郭を持つ”ものです。</p>
                     <p>その事実を抱えたまま、今回、私はひとりの作家として制作に向き合いました。</p>
                     <p>『雨の日の星空』のように、厚い雲の向こうを信じる気持ちが、この展示を通してそっと誰かの心に届いたら嬉しいです。</p>
-                    <p>これまでの人生や、アイドルとしての経験の中で感じてきた感情や景色を、絵という表現を通して静かに対話できたらと思います。</p>
                     
-                    <div class="signature-container">
-                        <img src="maki.png" alt="橋本真希" class="signature-image">
-                        <span class="signature">橋本真希</span>
+                    <div class="handwritten-area">
+                        <img src="handwritten.png" alt="橋本真希 手書きメッセージ" class="handwritten-image">
                     </div>
                 </div>
             </div>
