@@ -116,16 +116,23 @@
             background-color: #fff;
         }
 
-        /* 透過PNG用レイアウト */
-        .handwritten-area {
-            text-align: right;
-            margin-top: 40px;
+        /* ★センタリング用レイアウト修正 */
+        .handwritten-container {
+            text-align: center; /* コンテナ内をセンタリング */
+            margin-top: 60px;
         }
         .handwritten-image {
             width: 100%;
             max-width: 500px;
             height: auto;
             vertical-align: middle;
+        }
+        .maki-portrait {
+            width: 120px; /* 適切なサイズに調整 */
+            height: auto;
+            margin-top: 30px; /* サインからの距離 */
+            border-radius: 50%; /* アイドルポートレートのアイコン化（任意） */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
         .artist-group { text-align: center; margin-bottom: 80px; }
@@ -210,8 +217,10 @@
                     <p>その事実を抱えたまま、今回、私はひとりの作家として制作に向き合いました。</p>
                     <p>『雨の日の星空』のように、厚い雲の向こうを信じる気持ちが、この展示を通してそっと誰かの心に届いたら嬉しいです。</p>
                     
-                    <div class="handwritten-area">
+                    <div class="handwritten-container">
                         <img src="handwritten.png" alt="橋本真希 手書きメッセージ" class="handwritten-image">
+                        <br>
+                        <img src="maki.png" alt="橋本真希" class="maki-portrait">
                     </div>
                 </div>
             </div>
