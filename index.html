@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>『雨の日の星空』 | Rain Tree 橋本真希 × 藝大生9人プロジェクト</title>
+    <title>『雨の日の星空』 | 橋本真希 × 藝大生プロジェクト</title>
     
     <meta name="robots" content="index, follow">
-    <meta name="description" content="アイドルとアーティストの境界、ファンダムとの関係性の可視化。Rain Tree 橋本真希と東京藝術大学の学生9名による没入型展示。2026年8月、南青山Gallery Blue 3143にて開催。">
+    <meta name="description" content="アイドルとアーティストの境界、ファンダムとの関係性の可視化。橋本真希と東京藝術大学の学生9名による没入型展示。2026年8月、南青山Gallery Blue 3143にて開催。">
     <link rel="canonical" href="https://rtgeidaipj.github.io/">
 
-    <meta property="og:title" content="『雨の日の星空』 | Rain Tree 橋本真希 × 藝大生9人プロジェクト">
+    <meta property="og:title" content="『雨の日の星空』 | 橋本真希 × 藝大生プロジェクト">
     <meta property="og:description" content="アイドルと表現者の「まなざし」が交差する。2026年8月開催の展覧会公式サイト。">
     <meta property="og:url" content="https://rtgeidaipj.github.io/">
     <meta property="og:image" content="https://rtgeidaipj.github.io/S__25993285-1.png">
@@ -90,39 +90,25 @@
             justify-content: center;
             align-items: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            color: #999;
             border-radius: 4px;
         }
 
         .section-title { font-family: var(--font-eng); font-size: 14px; text-align: center; margin-bottom: 60px; color: var(--accent-color); letter-spacing: 0.2em; }
 
-        /* News Section Styles */
-        .news-item {
-            border-bottom: 1px solid #ddd;
-            padding: 30px 0;
-            margin-bottom: 20px;
-        }
+        /* News Section */
+        .news-item { border-bottom: 1px solid #ddd; padding: 30px 0; }
         .news-date { font-family: var(--font-eng); font-size: 13px; color: var(--accent-color); display: block; margin-bottom: 10px; }
         .news-tag { font-size: 11px; border: 1px solid #ddd; padding: 2px 8px; margin-left: 10px; border-radius: 2px; }
         .news-headline { font-size: 18px; font-weight: 500; margin-bottom: 15px; display: block; }
         .news-content { font-size: 14px; line-height: 2; color: #555; display: none; margin-top: 20px; }
         .news-content.open { display: block; }
         .news-toggle { font-size: 12px; color: var(--accent-color); cursor: pointer; text-decoration: underline; margin-top: 10px; display: inline-block; }
-        
-        .pdf-link {
-            display: inline-block;
-            margin-top: 15px;
-            font-size: 13px;
-            color: #555;
-            border: 1px solid #555;
-            padding: 5px 15px;
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-        .pdf-link:hover { background-color: #555; color: #fff; }
+        .pdf-link { display: inline-block; margin-top: 15px; font-size: 13px; border: 1px solid #555; padding: 5px 15px; border-radius: 2px; }
 
+        /* Statement */
         .statement-text { text-align: justify; max-width: 700px; margin: 0 auto; font-size: 15px; }
         .statement-text p { margin-bottom: 40px; }
+        .statement-sub { font-size: 13px; color: var(--accent-color); margin-bottom: 10px; display: block; }
 
         .personal-message {
             margin-top: 100px;
@@ -140,51 +126,20 @@
             padding-right: 60px;
         }
 
-        .signature-image {
-            width: 120px; 
-            height: auto;
-            margin-right: 25px; 
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
+        .signature-image { width: 120px; height: auto; margin-right: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .signature { font-size: 20px; font-weight: bold; letter-spacing: 0.15em; }
 
-        .signature {
-            display: inline-block;
-            font-size: 20px;
-            font-weight: bold;
-            letter-spacing: 0.15em;
-        }
-
+        /* Artist List */
         .artist-group { text-align: center; margin-bottom: 80px; }
         .group-name { font-size: 13px; color: var(--accent-color); margin-bottom: 25px; display: block; }
         .artist-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 40px; }
-        .artist-list li { font-size: 18px; display: flex; align-items: center; }
-
-        .social-link {
-            display: inline-block;
-            font-size: 10px;
-            color: #888;
-            margin-left: 10px;
-            padding: 2px 12px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            font-family: var(--font-eng);
-        }
-
-        .info-grid {
-            max-width: 700px;
-            margin: 0 auto;
-            border-top: 1px solid #ddd;
-            padding-top: 30px;
-        }
-        .info-row { display: flex; margin-bottom: 25px; font-size: 15px; line-height: 1.8; }
-        .info-label { width: 100px; flex-shrink: 0; font-weight: bold; color: #555; }
+        .artist-list li { font-size: 18px; }
+        .social-link { font-size: 10px; color: #888; margin-left: 10px; padding: 2px 12px; border: 1px solid #ccc; border-radius: 20px; font-family: var(--font-eng); }
 
         footer { text-align: center; padding: 80px 0; font-size: 11px; color: #aaa; font-family: var(--font-eng); letter-spacing: 0.2em; }
 
         @media (max-width: 768px) {
             .container { padding: 0 25px; }
-            .info-row { flex-direction: column; }
             .signature-container { padding-right: 0; flex-direction: column; }
             .signature-image { margin-right: 0; margin-bottom: 15px; }
         }
@@ -208,30 +163,37 @@
         
         <section id="news">
             <h2 class="section-title">NEWS</h2>
-            
             <article class="news-item">
                 <span class="news-date">2026.03.31<span class="news-tag">NOTICE</span></span>
                 <span class="news-headline">公式サイト公開と展覧会開催のお知らせ</span>
                 <div class="news-content" id="news-content-1">
                     <p>本日、橋本真希・藝大生プロジェクトによる展覧会『雨の日の星空』公式サイトを公開いたしました。</p>
-                    <p>本展は、東京藝術大学の学生9名とガールズグループ「Rain Tree」の橋本真希によるアートプロジェクトです。2026年8月18日(火)より南青山Gallery Blue 3143にて、10名の作家それぞれの視点を投影した絵画作品を一堂に展示いたします。</p>
-                    <p>会場内では、橋本真希による朗読解説の導入も予定しております。視覚表現と「声」が共鳴する没入型の空間をぜひご体験ください。</p>
-                    
-                    <a href="橋本真希×藝大生プロジェクト_news20260331_サイトオープン.pdf" target="_blank" class="pdf-link">
-                        PDF版リリースをダウンロード
-                    </a>
+                    <p>東京藝術大学の学生9名とガールズグループ「Rain Tree」の橋本真希によるアートプロジェクト。2026年8月18日より南青山Gallery Blue 3143にて、10名の作家それぞれの視点を投影した絵画作品を展示いたします。</p>
+                    <a href="rtgeidaipr_news20260331.pdf" target="_blank" class="pdf-link">PDF版リリースをダウンロード</a>
                 </div>
                 <div class="news-toggle" onclick="toggleNews(1)">Read More / Close</div>
             </article>
         </section>
 
         <section id="statement">
+            <h2 class="section-title">STATEMENT</h2>
             <div class="statement-text">
+                <span class="statement-sub">Project Statement</span>
                 <p>本展は雨の日に輝く星空を信じるように、藝大生とRain Treeという見えない未来に希望のまなざしを持ち、厚い雲の先にある星空に手を伸ばし続けてきた過去を持つ10名の作家による舞台です。また、アーティストとアイドルという異なるベクトルで常に、鑑賞者や観客の視点を意識してきた両者のまなざしから、表現者としての境界を越えて、鑑賞者やファンとの新たな関係の構築を目指す、学生による実験的な企画でもあります。</p>
+
+                <p>まなざしによって私たちは境界を越えられるのか。今回、橋本真希さんは培ってきたアイドルとしてのアイデンティティを絵画という異なる形態に昇華し、藝大生と共に1人の作家として共に制作に向き合います。また藝大生にとっては、アイドルプロデュースに代表されるファンダムという要素を意識し、SNSやマスメディアを活用したプロモーションやファン獲得の方法を、アイドルとは異なる立場から考え、向き合う機会にもなります。</p>
+
+                <p>この展覧会までの半年間をかけたアートプロジェクトとして、両者が問題意識を持って発見していく過程を提示します。また会場ではまなざしを題材にしたテキストからそれぞれの背負ってきた背景を明らかにすることで、物語性をメディウムとして、作家と鑑賞者の境界を横断して対話を試みます。</p>
+
+                <p>「アーティスト」と「アイドル」は、表現の形式も置かれている場所も違います。しかしその根にある構造は、驚くほど似ており、“ファンを獲得し、その支持の上に存在が成り立つ”という仕組みなのです。私たちは常に、「名前を売ること」「誰に、どのように届くのか」「求められるとは何か」という問いの中で表現を続けています。そこには、ひとつの正解があるわけではありません。</p>
+
+                <p>立場も戦略も異なる。けれど、そのどれもが“誰かに見つけられ、支えられる”というファンダムの上に成り立っていると考察できることから、この展示はアイドルと藝大生という異なる領域に立つ表現者がそれぞれのスタンスを持ち寄り、「表現とファンの関係」を可視化する意図を含んでいます。本展は表現者のまなざしとファンダムへの関わり。この二つの軸により構成されています。藝大生とアイドルという異色の組み合わせによって見えてくる新たなアートシーンをお届けします。</p>
                 
                 <div class="personal-message">
+                    <span class="statement-sub">Personal Message</span>
                     <p>「アイドルとして活動する中で、私はいつも『誰かに届くこと』を考えてきました。それは作品をつくることとは異なるようでいて、実はとてもよく似た祈りのような行為だと思っています。」</p>
                     <p>「アーティスト」と「アイドル」は違う立場に見えても、どちらも“誰かのまなざしに触れて、はじめて輪郭を持つ”ものです。その事実を抱えたまま、今回、私はひとりの作家として制作に向き合いました。</p>
+                    <p>『雨の日の星空』のように、厚い雲の向こうを信じる気持ちが、この展示を通してそっと誰かの心に届いたら嬉しいです。</p>
                     <div class="signature-container">
                         <img src="maki.png" alt="橋本真希" class="signature-image">
                         <span class="signature">橋本真希</span>
