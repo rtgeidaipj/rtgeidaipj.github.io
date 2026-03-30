@@ -3,81 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>『雨の日の星空』公式サイト｜橋本真希 × 藝大生 アートプロジェクト</title>
-    <meta name="description" content="アイドル 橋本真希 (Rain Tree) と東京藝術大学の学生9名によるプロジェクト『雨の日の星空』。2026年8月、南青山にて開催される展覧会に向けて、10人の表現者が紡ぐ半年間の軌跡。">
-    <meta name="keywords" content="橋本真希, Rain Tree, 東京藝術大学, 藝大, 雨の日の星空, アートプロジェクト, 南青山, Gallery Blue 3143">
-    <link rel="canonical" href="https://rtgeidaipj.github.io/">
-
-    <meta property="og:title" content="『雨の日の星空』公式サイト｜橋本真希 × 藝大生 アートプロジェクト">
-    <meta property="og:description" content="境界を溶かして、まなざしは交差する。2026.08.18 - 08.28 南青山にて開催。">
-    <meta property="og:url" content="https://rtgeidaipj.github.io/">
-    <meta property="og:image" content="https://rtgeidaipj.github.io/images/og-image.jpg"> <meta property="og:type" content="website">
-    <meta property="og:site_name" content="雨の日の星空">
     
+    <meta name="description" content="アイドル 橋本真希 (Rain Tree) と東京藝術大学の学生9名によるプロジェクト『雨の日の星空』。">
+    <meta property="og:title" content="『雨の日の星空』公式サイト">
+    <meta property="og:image" content="images/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@rtgeidaipj2026">
-    <meta name="twitter:title" content="『雨の日の星空』公式サイト始動">
-    <meta name="twitter:description" content="橋本真希 (Rain Tree) × 藝大生9名によるアートプロジェクト、本日公開。">
 
     <style>
-        /* デザインの基調：静謐・空白・モノクロ */
+        /* 基本設定 */
+        * { box-sizing: border-box; }
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             background-color: #ffffff;
             color: #333333;
-            line-height: 1.8;
+            line-height: 2.0;
             margin: 0;
             padding: 0;
+            text-align: center; /* 全体を中央寄せに */
         }
-        header {
-            padding: 100px 20px;
-            text-align: center;
-        }
-        h1 {
-            font-weight: 300;
-            letter-spacing: 0.2em;
-            font-size: 1.5rem;
-        }
+
+        /* ヘッダー画像エリア */
         .hero-image {
             width: 100%;
-            height: 400px;
-            background-image: url('images/header.jpg'); /* 例の歪みのないヘッダー画像 */
+            height: 60vh; /* 画面の高さの60%を確保 */
+            background-color: #f0f0f0; /* 画像がない時の予備色 */
+            background-image: url('images/header.jpg');
             background-size: cover;
             background-position: center;
             filter: grayscale(100%);
         }
-        main {
-            max-width: 800px;
+
+        /* コンテンツ幅の制限 */
+        .container {
+            max-width: 700px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 80px 25px;
         }
+
+        /* タイトルエリア */
+        header {
+            margin-bottom: 100px;
+        }
+        h1 {
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .sub-title {
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            color: #666;
+        }
+
+        /* ステートメント */
+        .statement {
+            margin-bottom: 120px;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* 各セクション（News / Exhibition） */
         section {
+            text-align: left; /* 中身は左寄せ */
             margin-bottom: 80px;
         }
-        .statement {
-            text-align: center;
-            font-style: italic;
+        h2 {
+            font-weight: 400;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #333;
+            display: inline-block;
+            margin-bottom: 30px;
+            padding-bottom: 5px;
         }
         .news-item {
-            border-bottom: 1px solid #eee;
-            padding: 15px 0;
+            font-size: 0.9rem;
         }
+        .date { color: #888; display: block; margin-bottom: 5px; }
+
+        /* リンクボタン */
         .links {
-            text-align: center;
-            padding-top: 40px;
+            margin: 60px 0;
         }
         .links a {
+            display: inline-block;
             color: #333;
-            margin: 0 15px;
+            margin: 10px 20px;
             text-decoration: none;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #ccc;
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
+        .links a:hover { border-bottom: 1px solid #333; }
+
         footer {
-            text-align: center;
-            padding: 40px 0;
-            font-size: 0.8rem;
-            color: #999;
+            padding: 50px 0;
+            font-size: 0.75rem;
+            color: #aaa;
+            letter-spacing: 0.1em;
+        }
+
+        /* スマホ対応 */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.2rem; }
+            .hero-image { height: 40vh; }
         }
     </style>
 </head>
@@ -85,23 +115,23 @@
 
 <div class="hero-image"></div>
 
-<header>
-    <h1>雨の日の星空</h1>
-    <p>HASHIMOTO Maki × 9 GEIDAI Students</p>
-</header>
+<div class="container">
+    <header>
+        <h1>雨の日の星空</h1>
+        <div class="sub-title">HASHIMOTO Maki × 9 GEIDAI Students</div>
+    </header>
 
-<main>
-    <section class="statement">
+    <div class="statement">
         <p>厚い雲の向こうにある星空を信じて。</p>
         <p>境界を溶かして、まなざしは交差する。</p>
-    </section>
+    </div>
 
     <section id="news">
         <h2>News</h2>
         <div class="news-item">
-            <span>2026.03.31</span>
+            <span class="date">2026.03.31</span>
             <p>公式サイトを公開しました。<br>
-            <a href="pdf/press_release_0331.pdf" target="_blank">▶︎ プレスリリースを表示（PDF）</a></p>
+            <a href="pdf/press_release_0331.pdf" target="_blank" style="color:#0000ee;">▶︎ プレスリリースを表示（PDF）</a></p>
         </div>
     </section>
 
@@ -112,15 +142,15 @@
         <p><strong>出演：</strong>橋本真希 (Rain Tree) / 東京藝術大学油画専攻 有志9名</p>
     </section>
 
-    <div class="links">
+    <nav class="links">
         <a href="https://x.com/rtgeidaipj2026" target="_blank">X (Twitter)</a>
         <a href="https://www.instagram.com/rtgeidaipj2026/" target="_blank">Instagram</a>
-    </div>
-</main>
+    </nav>
 
-<footer>
-    &copy; 2026 『雨の日の星空』 Project All Rights Reserved.
-</footer>
+    <footer>
+        &copy; 2026 『雨の日の星空』 Project All Rights Reserved.
+    </footer>
+</div>
 
 </body>
 </html>
