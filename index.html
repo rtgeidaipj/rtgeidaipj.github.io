@@ -3,154 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>『雨の日の星空』公式サイト｜橋本真希 × 藝大生 アートプロジェクト</title>
+    <title>『雨の日の星空』 | 橋本真希 × 藝大生プロジェクト</title>
     
-    <meta name="description" content="アイドル 橋本真希 (Rain Tree) と東京藝術大学の学生9名によるプロジェクト『雨の日の星空』。">
-    <meta property="og:title" content="『雨の日の星空』公式サイト">
-    <meta property="og:image" content="images/og-image.jpg">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="アイドルとアーティストの境界、ファンダムとの関係性の可視化。橋本真希と東京藝術大学の学生9名による没入型展示。2026年8月、南青山Gallery Blue 3143にて開催。">
+    <link rel="canonical" href="https://rtgeidaipj.github.io/">
+
+    <meta property="og:title" content="『雨の日の星空』 | 橋本真希 × 藝大生プロジェクト">
+    <meta property="og:description" content="アイドルと表現者の「まなざし」が交差する。2026年8月開催の展覧会公式サイト。">
+    <meta property="og:url" content="https://rtgeidaipj.github.io/">
+    <meta property="og:image" content="https://rtgeidaipj.github.io/og-main.jpg">
+    <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
-        /* 基本設定 */
-        * { box-sizing: border-box; }
+        :root {
+            --bg-color: #f8f8f8;
+            --text-color: #2b2b2b;
+            --accent-color: #888;
+            --font-main: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
+            --font-eng: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
         body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            background-color: #ffffff;
-            color: #333333;
-            line-height: 2.0;
             margin: 0;
             padding: 0;
-            text-align: center; /* 全体を中央寄せに */
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 2.2;
+            letter-spacing: 0.12em;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* ヘッダー画像エリア */
-        .hero-image {
-            width: 100%;
-            height: 60vh; /* 画面の高さの60%を確保 */
-            background-color: #f0f0f0; /* 画像がない時の予備色 */
-            background-image: url('images/header.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: grayscale(100%);
-        }
+        a { color: var(--text-color); text-decoration: none; transition: opacity 0.3s; }
+        a:hover { opacity: 0.6; }
 
-        /* コンテンツ幅の制限 */
         .container {
-            max-width: 700px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 80px 25px;
+            padding: 0 40px;
         }
 
-        /* タイトルエリア */
-        header {
-            margin-bottom: 100px;
-        }
-        h1 {
-            font-weight: 300;
-            letter-spacing: 0.3em;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-        .sub-title {
-            font-size: 0.9rem;
-            letter-spacing: 0.1em;
-            color: #666;
-        }
-
-        /* ステートメント */
-        .statement {
-            margin-bottom: 120px;
-            font-size: 0.95rem;
-            letter-spacing: 0.05em;
-        }
-
-        /* 各セクション（News / Exhibition） */
         section {
-            text-align: left; /* 中身は左寄せ */
-            margin-bottom: 80px;
+            margin-bottom: 120px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        h2 {
-            font-weight: 400;
-            font-size: 1.1rem;
-            border-bottom: 1px solid #333;
-            display: inline-block;
-            margin-bottom: 30px;
+
+        section.visible { opacity: 1; transform: translateY(0); }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .project-label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
             padding-bottom: 5px;
         }
-        .news-item {
-            font-size: 0.9rem;
-        }
-        .date { color: #888; display: block; margin-bottom: 5px; }
 
-        /* リンクボタン */
-        .links {
-            margin: 60px 0;
-        }
-        .links a {
-            display: inline-block;
-            color: #333;
-            margin: 10px 20px;
-            text-decoration: none;
-            border-bottom: 1px solid #ccc;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-        .links a:hover { border-bottom: 1px solid #333; }
+        h1 { font-size: clamp(28px, 6vw, 48px); font-weight: 500; margin: 0 0 15px 0; }
+        .subtitle { font-family: var(--font-eng); font-size: 13px; color: var(--accent-color); letter-spacing: 0.2em; }
 
-        footer {
-            padding: 50px 0;
-            font-size: 0.75rem;
-            color: #aaa;
-            letter-spacing: 0.1em;
+        .hero-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            background-color: #e0e0e0;
+            margin: 60px auto 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 4px;
         }
 
-        /* スマホ対応 */
-        @media (max-width: 600px) {
-            h1 { font-size: 1.2rem; }
-            .hero-image { height: 40vh; }
+        .section-title { font-family: var(--font-eng); font-size: 14px; text-align: center; margin-bottom: 60px; color: var(--accent-color); letter-spacing: 0.2em; }
+
+        .news-item { border-bottom: 1px solid #ddd; padding: 30px 0; }
+        .news-date { font-family: var(--font-eng); font-size: 13px; color: var(--accent-color); display: block; margin-bottom: 10px; }
+        .news-tag { font-size: 11px; border: 1px solid #ddd; padding: 2px 8px; margin-left: 10px; border-radius: 2px; }
+        .news-headline { font-size: 18px; font-weight: 500; margin-bottom: 15px; display: block; }
+        .news-content { font-size: 14px; line-height: 2; color: #555; display: none; margin-top: 20px; }
+        .news-content.open { display: block; }
+        .news-toggle { font-size: 12px; color: var(--accent-color); cursor: pointer; text-decoration: underline; margin-top: 10px; display: inline-block; }
+        .pdf-link { display: inline-block; margin-top: 15px; font-size: 13px; border: 1px solid #555; padding: 5px 15px; border-radius: 2px; }
+
+        .statement-text { text-align: justify; max-width: 700px; margin: 0 auto; font-size: 15px; }
+        .statement-text p { margin-bottom: 40px; }
+        .statement-sub { font-size: 13px; color: var(--accent-color); margin-bottom: 10px; display: block; }
+
+        .personal-message {
+            margin-top: 100px;
+            padding: 80px 40px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+        }
+
+        .handwritten-container {
+            text-align: center;
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .handwritten-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            vertical-align: middle;
+            background-color: #fff;
+            border: 1px solid #eee;
+            padding: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 2px;
+        }
+        
+        .maki-portrait {
+            width: auto;
+            max-width: 200px;
+            height: auto;
+            margin-top: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .artist-group { text-align: center; margin-bottom: 80px; }
+        .group-name { font-size: 13px; color: var(--accent-color); margin-bottom: 25px; display: block; }
+        .artist-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 40px; }
+        .artist-list li { font-size: 18px; }
+        .social-link { font-size: 10px; color: #888; margin-left: 10px; padding: 2px 12px; border: 1px solid #ccc; border-radius: 20px; font-family: var(--font-eng); }
+
+        .info-grid {
+            max-width: 700px;
+            margin: 0 auto;
+            border-top: 1px solid #ddd;
+            padding-top: 30px;
+        }
+        .info-row { display: flex; margin-bottom: 25px; font-size: 15px; line-height: 1.8; }
+        .info-label { width: 100px; flex-shrink: 0; font-weight: bold; color: #555; }
+        .info-note { font-size: 14px; color: #555; text-align: center; margin: 30px 0 50px; }
+        .info-map-container { width: 100%; }
+        .info-map-img { width: 100%; height: auto; display: block; box-shadow: 0 5px 15px rgba(0,0,0,0.05); filter: grayscale(100%) contrast(1.1); }
+
+        footer { text-align: center; padding: 80px 0; font-size: 11px; color: #aaa; font-family: var(--font-eng); letter-spacing: 0.2em; }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 25px; }
+            .info-row { flex-direction: column; }
+            .personal-message { padding: 60px 20px; }
+            .maki-portrait { max-width: 150px; }
         }
     </style>
 </head>
 <body>
 
-<div class="hero-image"></div>
-
-<div class="container">
-    <header>
-        <h1>雨の日の星空</h1>
-        <div class="sub-title">HASHIMOTO Maki × 9 GEIDAI Students</div>
+    <header class="container">
+        <section class="title-area">
+            <div class="project-label">橋本真希 × 藝大生プロジェクト</div>
+            <h1>『雨の日の星空』</h1>
+            <p class="subtitle">HASHIMOTO Maki × 9 GEIDAI Students 2026</p>
+        </section>
+        
+        <div class="hero-placeholder">
+            <div style="color: #999; font-size: 14px; letter-spacing: 0.2em;">Main Visual: Coming Soon</div>
+        </div>
     </header>
 
-    <div class="statement">
-        <p>厚い雲の向こうにある星空を信じて。</p>
-        <p>境界を溶かして、まなざしは交差する。</p>
+    <div class="container">
+        
+        <section id="news">
+            <h2 class="section-title">NEWS</h2>
+            <article class="news-item">
+                <span class="news-date">2026.03.31<span class="news-tag">NOTICE</span></span>
+                <span class="news-headline">公式サイト公開と展覧会開催のお知らせ</span>
+                <div class="news-content" id="news-content-1">
+                    <p>本日、橋本真希・藝大生プロジェクトによる展覧会『雨の日の星空』公式サイトを公開いたしました。</p>
+                    <p>東京藝術大学の学生9名とガールズグループ「Rain Tree」の橋本真希によるアートプロジェクト。2026年8月18日より南青山Gallery Blue 3143にて、10名の作家それぞれの視点を投影した絵画作品を展示いたします。</p>
+                    <p>展覧会名： 『雨の日の星空』 (HASHIMOTO Maki × 9 GEIDAI Students 2026)</p>
+                    <p>会場内では、各作家が執筆したテキストを橋本真希が朗読する朗読解説の導入を予定しております。視覚表現と「声」が共鳴する没入型の空間をぜひご体験ください。</p>
+                    <a href="rtgeidaipr_news20260331.pdf" target="_blank" class="pdf-link">PDF版リリースをダウンロード</a>
+                </div>
+                <div class="news-toggle" onclick="toggleNews(1)">Read More / Close</div>
+            </article>
+        </section>
+
+        <section id="statement">
+            <h2 class="section-title">STATEMENT</h2>
+            <div class="statement-text">
+                <span class="statement-sub">Project Statement</span>
+                <p>本展は雨の日に輝く星空を信じるように、藝大生とRain Tree橋本真希という見えない未来に希望のまなざしを持ち、厚い雲の先にある星空に手を伸ばし続けてきた10名の表現者による舞台です。また、アーティストとアイドルという異なるベクトルで常に、鑑賞者や観客の視点を意識してきた両者のまなざしから、表現者としての境界を越えて、鑑賞者やファンとの新たな関係の構築を目指す、学生による実験的な企画でもあります。</p>
+
+                <p>まなざしによって私たちは境界を越えられるのか。今回、橋本真希さんは培ってきたアイドルとしてのアイデンティティを絵画という異なる形態に昇華し、藝大生と共に1人の作家として共に制作に向き合います。また藝大生にとっては、アイドルプロデュースに代表されるファンダムという要素を意識し、SNSやマスメディアを活用したプロモーションやファン獲得の方法を、アイドルとは異なる立場から考え、向き合う機会にもなります。</p>
+
+                <p>この展覧会までの半年間をかけたアートプロジェクトとして、両者が問題意識を持って発見していく過程を提示します。また会場ではまなざしを題材にしたテキストからそれぞれの背負ってきた背景を明らかにすることで、物語性をメディウムとして、作家と鑑賞者の境界を横断して対話を試みます。</p>
+
+                <p>「アーティスト」と「アイドル」は、表現の形式も置かれている場所も違います。しかしその根にある構造は、驚くほど似ており、“ファンを獲得し、その支持の上に存在が成り立つ”という仕組みなのです。私たちは常に、「名前を売ること」「誰に、どのように届くのか」「求められるとは何か」という問いの中で表現を続けています。そこには、ひとつの正解があるわけではありません。</p>
+
+                <p>立場も戦略も異なる。けれど、そのどれもが“誰かに見つけられ、支えられる”というファンダムの上に成り立っていると考察できることから、この展示はアイドルと藝大生という異なる領域に立つ表現者がそれぞれのスタンスを持ち寄り、「表現とファンの関係」を可視化する意図を含んでいます。本展は表現者のまなざしとファンダムへの関わり。この二つの軸により構成されています。藝大生とアイドルという異色の組み合わせによって見えてくる新たなアートシーンをお届けします。</p>
+                
+                <div class="personal-message">
+                    <span class="statement-sub">Personal Message</span>
+                    <p>「アイドル」と「アーティスト」<br>違う場所に立っているようでいて、その根はどこかで静かにつながっていると感じています。</p>
+                    <p>アイドルとして活動する中で、私はいつも「誰かに届くこと」を考えてきました。<br>それは作品をつくることとは異なるようでいて、実はとてもよく似た祈りのような行為だと思っています。</p>
+                    <p>絵画というかたちで表現に向き合いながら、自分のまなざしはどこへ向いているのか、誰に手を伸ばしているのかを、あらためて問い直しました。</p>
+                    <p>「アーティスト」と「アイドル」は違う立場に見えても、どちらも“誰かのまなざしに触れて、はじめて輪郭を持つ”ものです。</p>
+                    <p>その事実を抱えたまま、今回、私はひとりの作家として制作に向き合いました。</p>
+                    <p>『雨の日の星空』のように、厚い雲の向こうを信じる気持ちが、この展示を通してそっと誰かの心に届いたら嬉しいです。</p>
+                    
+                    <div class="handwritten-container">
+                        <img src="handwritten.png" alt="橋本真希 手書きメッセージ" class="handwritten-image">
+                        <br>
+                        <img src="maki.png" alt="橋本真希" class="maki-portrait">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="artists">
+            <h2 class="section-title">ARTISTS</h2>
+            <div class="artist-group">
+                <span class="group-name">Rain Tree</span>
+                <ul class="artist-list">
+                    <li>橋本真希 <a href="https://www.instagram.com/hashimoto_maki" target="_blank" class="social-link">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="artist-group">
+                <span class="group-name">Tokyo University of the Arts Students</span>
+                <ul class="artist-list">
+                    <li>あめ <a href="https://www.instagram.com/prism_tensichan" target="_blank" class="social-link">Instagram</a></li>
+                    <li>加藤彩 <a href="https://instagram.com/utoka_47_" target="_blank" class="social-link">Instagram</a></li>
+                    <li>小橋柚奈 <a href="https://instagram.com/tti_1102" target="_blank" class="social-link">Instagram</a></li>
+                    <li>こばら <a href="https://instagram.com/g_o_ekaki" target="_blank" class="social-link">Instagram</a></li>
+                    <li>小柴海亜 <a href="https://instagram.com/noahoimo" target="_blank" class="social-link">Instagram</a></li>
+                    <li>襲惠雅 <a href="https://instagram.com/admt_q" target="_blank" class="social-link">Instagram</a></li>
+                    <li>田辺朔葉 <a href="https://instagram.com/tanabe.motoha" target="_blank" class="social-link">Instagram</a></li>
+                    <li>みーや <a href="https://instagram.com/harui._.miya" target="_blank" class="social-link">Instagram</a></li>
+                    <li>びゅん <a href="https://instagram.com/byun_tears" target="_blank" class="social-link">Instagram</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="information">
+            <h2 class="section-title">INFORMATION</h2>
+            <div class="info-grid">
+                <div class="info-row"><div class="info-label">会期</div><div class="info-content">2026.8.18 (Tue) – 8.28 (Fri)</div></div>
+                <div class="info-row"><div class="info-label">時間</div><div class="info-content">12:00 – 19:00（最終日は18:00閉場）</div></div>
+                <div class="info-row"><div class="info-label">会場</div><div class="info-content">Gallery Blue 3143<br>〒107-0062 東京都港区南青山3-14-3 1F, 2F</div></div>
+                <div class="info-row"><div class="info-label">協賛</div><div class="info-content">株式会社ウェルネス、abc株式会社</div></div>
+            </div>
+            
+            <p class="info-note">展覧会名： 『雨の日の星空』 (HASHIMOTO Maki × 9 GEIDAI Students 2026)</p>
+            <p class="info-note">※本展終了後、都内近郊某所にて関連イベントの実施を予定しております。</p>
+            
+            <div class="info-map-container">
+                <img src="map.png" alt="Map" class="info-map-img">
+            </div>
+        </section>
     </div>
 
-    <section id="news">
-        <h2>News</h2>
-        <div class="news-item">
-            <span class="date">2026.03.31</span>
-            <p>公式サイトを公開しました。<br>
-            <a href="pdf/press_release_0331.pdf" target="_blank" style="color:#0000ee;">▶︎ プレスリリースを表示（PDF）</a></p>
-        </div>
-    </section>
-
-    <section id="info">
-        <h2>Exhibition</h2>
-        <p><strong>会期：</strong>2026年8月18日(火) - 8月28日(金)</p>
-        <p><strong>会場：</strong>Gallery Blue 3143 (南青山)</p>
-        <p><strong>出演：</strong>橋本真希 (Rain Tree) / 東京藝術大学油画専攻 有志9名</p>
-    </section>
-
-    <nav class="links">
-        <a href="https://x.com/rtgeidaipj2026" target="_blank">X (Twitter)</a>
-        <a href="https://www.instagram.com/rtgeidaipj2026/" target="_blank">Instagram</a>
-    </nav>
-
     <footer>
-        &copy; 2026 『雨の日の星空』 Project All Rights Reserved.
+        <p>© 2026 橋本真希×藝大生プロジェクト. All Rights Reserved.</p>
     </footer>
-</div>
 
+    <script>
+        function toggleNews(id) {
+            const content = document.getElementById('news-content-' + id);
+            content.classList.toggle('open');
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll("section").forEach(s => observer.observe(s));
+        });
+    </script>
 </body>
 </html>
