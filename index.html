@@ -96,19 +96,26 @@
         h1 { font-size: clamp(28px, 6vw, 48px); font-weight: 500; margin: 0 0 15px 0; }
         .subtitle { font-family: var(--font-eng); font-size: 13px; color: var(--accent-color); letter-spacing: 0.2em; }
 
-        .hero-placeholder {
-            width: 100%;
-            max-width: 600px;
-            height: 400px;
-            background-color: #e0e0e0;
-            margin: 60px auto 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-radius: 4px;
-        }
+.hero-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 60px auto 0; /* タイトルとの距離を調整 */
+}
+
+.main-visual {
+    width: 90%; /* スマホでの余白を確保 */
+    max-width: 640px; /* 3:2や正方形が最も美しく見えるサイズ */
+    height: auto;
+    background-color: #fff; /* 白いマット（額装の台紙） */
+    padding: 12px; /* 額の縁の太さ */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06); /* 柔らかな影 */
+    border-radius: 2px;
+    transition: transform 0.6s ease;
+}
+.main-visual:hover {
+    transform: translateY(-5px); /* 少しだけ浮き上がる遊び心 */
+}
 
         .section-title { font-family: var(--font-eng); font-size: 14px; text-align: center; margin-bottom: 60px; color: var(--accent-color); letter-spacing: 0.2em; }
 
@@ -198,9 +205,10 @@
             <p class="subtitle">HASHIMOTO Maki × 9 GEIDAI Students 2026</p>
         </section>
         
-        <div class="hero-placeholder">
-            <div style="color: #999; font-size: 14px; letter-spacing: 0.2em;">Main Visual: Coming Soon</div>
-        </div>
+<div class="hero-container">
+    <img src="main_vs.jpg" alt="『雨の日の星空』メインビジュアル" class="main-visual">
+</div>
+        
     </header>
 
     <div class="container">
