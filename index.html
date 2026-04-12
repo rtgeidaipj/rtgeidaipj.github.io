@@ -75,15 +75,16 @@
 
         section.visible { opacity: 1; transform: translateY(0); }
 
-        header {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 0;
-        }
+header {
+    /* 100vh（画面いっぱい）だと広すぎるので、少し縮めます */
+    min-height: 80vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 0 20px; /* 下のパディングを減らします */
+}
 
         .project-label {
             font-size: 14px;
@@ -100,8 +101,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    /* 60px(上) auto(左右中央) 120px(下) に変更 */
-    margin: 60px auto 120px; 
+    /* 上の余白を 60px → 20px にギュッと縮めます */
+    margin: 20px auto 120px; 
 }
 
 .main-visual {
