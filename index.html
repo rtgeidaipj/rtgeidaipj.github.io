@@ -76,44 +76,41 @@
         section.visible { opacity: 1; transform: translateY(0); }
 
 header {
-    /* 100vh（画面いっぱい）だと広すぎるので、少し縮めます */
-    min-height: 80vh; 
+    min-height: auto; /* 高さを固定せず、コンテンツに合わせて可変に */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 60px 0 20px; /* 下のパディングを減らします */
+    padding: 80px 0 40px;
 }
-
-        .project-label {
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-        }
-
-        h1 { font-size: clamp(28px, 6vw, 48px); font-weight: 500; margin: 0 0 15px 0; }
-        .subtitle { font-family: var(--font-eng); font-size: 13px; color: var(--accent-color); letter-spacing: 0.2em; }
 
 .hero-container {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* 上の余白を 60px → 20px にギュッと縮めます */
-    margin: 20px auto 120px; 
+    /* タイトルテキストとの距離を 40px 程度に。
+       下のNEWSとの距離は 120px を維持 */
+    margin: 40px auto 120px; 
 }
 
 .main-visual {
-    width: 90%; /* スマホでの余白を確保 */
-    max-width: 640px; /* 3:2や正方形が最も美しく見えるサイズ */
+    width: 100%; 
+    /* 横長フライヤーをしっかり見せるため、最大幅を 900px に拡大 */
+    max-width: 900px; 
     height: auto;
-    background-color: #fff; /* 白いマット（額装の台紙） */
-    padding: 12px; /* 額の縁の太さ */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.06); /* 柔らかな影 */
+    background-color: #fff; /* 白いマット台紙 */
+    padding: 10px; /* 額装の縁 */
+    box-shadow: 0 15px 45px rgba(0,0,0,0.08);
     border-radius: 2px;
-    transition: transform 0.6s ease;
+}
+
+/* スマホ表示での調整 */
+@media (max-width: 768px) {
+    .main-visual {
+        width: 95%; /* スマホでは画面端まで使って大きく表示 */
+        padding: 5px;
+    }
 }
 .main-visual:hover {
     transform: translateY(-5px); /* 少しだけ浮き上がる遊び心 */
@@ -200,18 +197,17 @@ header {
 </head>
 <body>
 
-    <header class="container">
-        <section class="title-area">
-            <div class="project-label">橋本真希 × 藝大生プロジェクト</div>
-            <h1>『雨の日の星空』</h1>
-            <p class="subtitle">HASHIMOTO Maki × 9 GEIDAI Students 2026</p>
-        </section>
-        
-<div class="hero-container">
-    <img src="main_vs.jpg" alt="『雨の日の星空』メインビジュアル" class="main-visual">
-</div>
-        
-    </header>
+<header class="container">
+    <section class="title-area">
+        <div class="project-label">橋本真希 × 藝大生プロジェクト</div>
+        <h1>『雨の日の星空』</h1>
+        <p class="subtitle">HASHIMOTO Maki × 9 GEIDAI Students 2026</p>
+    </section>
+    
+    <div class="hero-container">
+        <img src="main_vs.jpg" alt="『雨の日の星空』フライヤービジュアル" class="main-visual">
+    </div>
+</header>
 
     <div class="container">
         
