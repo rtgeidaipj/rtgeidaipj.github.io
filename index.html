@@ -193,10 +193,190 @@ header section {
             .personal-message { padding: 60px 20px; }
             .maki-portrait { max-width: 150px; }
         }
+/* [ADD] ハンバーガーメニュー＆ナビゲーション */
+.site-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(248,248,248,0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* PC：横並びナビ */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 14px 0;
+}
+.nav-links a {
+    font-family: var(--font-eng);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--text-color); }
+
+/* スマホ：ハンバーガー */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 8px; right: 16px;
+    background: none;
+    border: none;
+}
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--text-color);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.overlay-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(248,248,248,0.97);
+    z-index: 99;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.overlay-menu.open {
+    display: flex;
+    opacity: 1;
+}
+.overlay-menu a {
+    font-family: var(--font-eng);
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+.overlay-menu a:first-of-type { border-top: 1px solid #eee; }
+.overlay-menu .overlay-info {
+    font-family: var(--font-eng);
+    font-size: 10px;
+    color: var(--accent-color);
+    letter-spacing: 0.2em;
+    margin-top: 32px;
+}
+
+/* カウントダウン */
+.countdown {
+    text-align: center;
+    padding: 12px 0 10px;
+    border-bottom: 1px solid #eee;
+}
+.countdown-label {
+    font-family: var(--font-eng);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 6px;
+}
+.countdown-nums {
+    display: inline-flex;
+    gap: 16px;
+    align-items: baseline;
+}
+.cd-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cd-num {
+    font-family: var(--font-eng);
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--text-color);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+.cd-lbl {
+    font-family: var(--font-eng);
+    font-size: 9px;
+    color: #bbb;
+    letter-spacing: 0.2em;
+    margin-top: 4px;
+}
+.cd-sep {
+    font-size: 18px;
+    color: #ddd;
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+/* ナビ分の余白をbodyトップに確保 */
+body { padding-top: 48px; }
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .site-nav { height: 52px; }
+    body { padding-top: 52px; }
+    .cd-num { font-size: 20px; }
+}
+        
     </style>
 </head>
 <body>
+<!-- [ADD] ナビゲーション＋カウントダウン -->
+<nav class="site-nav">
+    <div class="nav-links">
+        <a href="#news">NEWS</a>
+        <a href="#statement">STATEMENT</a>
+        <a href="#artists">ARTISTS</a>
+        <a href="#information">INFORMATION</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
 
+<div class="overlay-menu" id="overlayMenu">
+    <a href="#news" onclick="toggleMenu()">NEWS</a>
+    <a href="#statement" onclick="toggleMenu()">STATEMENT</a>
+    <a href="#artists" onclick="toggleMenu()">ARTISTS</a>
+    <a href="#information" onclick="toggleMenu()">INFORMATION</a>
+    <div class="overlay-info">2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</div>
+</div>
+
+<div class="countdown">
+    <span class="countdown-label">2026.8.18 開幕</span>
+    <div class="countdown-nums">
+        <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">DAYS</span></div>
+        <span class="cd-sep">·</span>
+        <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">HRS</span></div>
+        <span class="cd-sep">·</span>
+        <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">MIN</span></div>
+        <span class="cd-sep">·</span>
+        <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">SEC</span></div>
+    </div>
+</div>
 <header class="container">
     <section class="title-area">
         <div class="project-label">橋本真希 × 藝大生プロジェクト</div>
@@ -326,7 +506,30 @@ header section {
             const content = document.getElementById('news-content-' + id);
             content.classList.toggle('open');
         }
+// [ADD] ハンバーガーメニュー開閉
+function toggleMenu() {
+    const btn = document.getElementById('hamburger');
+    const menu = document.getElementById('overlayMenu');
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
 
+// [ADD] カウントダウン（2026.8.18 12:00 JST）
+function updateCountdown() {
+    const target = new Date('2026-08-18T12:00:00+09:00');
+    const diff = target - new Date();
+    if (diff <= 0) {
+        document.querySelector('.countdown').innerHTML = '<span class="countdown-label">本日開幕</span>';
+        return;
+    }
+    document.getElementById('cd-d').textContent = Math.floor(diff / 86400000);
+    document.getElementById('cd-h').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+    document.getElementById('cd-m').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+    document.getElementById('cd-s').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
        document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
