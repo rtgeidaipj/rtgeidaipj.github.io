@@ -73,7 +73,7 @@
         section.visible { opacity: 1; transform: translateY(0); }
 
 header {
-    min-height: auto; /* 高さを固定せず、コンテンツに合わせて可変に */
+    min-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -86,32 +86,27 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* タイトルテキストとの距離を 40px 程度に。
-       下のNEWSとの距離は 120px を維持 */
     margin: 40px auto 120px; 
 }
 
 .main-visual {
     width: 100%; 
-    /* 横長フライヤーをしっかり見せるため、最大幅を 900px に拡大 */
     max-width: 900px; 
     height: auto;
-    background-color: #fff; /* 白いマット台紙 */
-    padding: 10px; /* 額装の縁 */
+    background-color: #fff;
+    padding: 10px;
     box-shadow: 0 15px 45px rgba(0,0,0,0.08);
     border-radius: 2px;
 }
 
-/* スマホ表示での調整 */
 @media (max-width: 768px) {
     .main-visual {
-        width: 95%; /* スマホでは画面端まで使って大きく表示 */
+        width: 95%;
         padding: 5px;
     }
 }
 
-
-        /* [ADD] ヘッダー内のsectionはフェードイン対象外に（タイトルが最初から見えるように） */
+        /* [ADD] ヘッダー内のsectionはフェードイン対象外に */
 header section {
     opacity: 1;
     transform: none;
@@ -391,6 +386,80 @@ body { padding-top: 48px; }
     body { padding-top: 52px; }
     .cd-num { font-size: 20px; }
 }
+
+/* [ADD] ARTISTSセクション再設計 */
+.artist-divider {
+    width: 1px;
+    height: 40px;
+    background: #ddd;
+    margin: -40px auto 56px;
+}
+.students-progress {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.progress-count {
+    font-family: var(--font-eng);
+    font-size: 11px;
+    color: var(--text-color);
+    letter-spacing: 0.1em;
+}
+.progress-count span {
+    color: var(--accent-color);
+}
+.progress-bar-wrap {
+    width: 120px;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 0 auto 48px;
+}
+.progress-bar-fill {
+    height: 1px;
+    background: var(--text-color);
+    width: 11.1%;
+}
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.artist-item {
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+.artist-item:nth-child(1),
+.artist-item:nth-child(2),
+.artist-item:nth-child(3) {
+    border-top: 1px solid #eee;
+}
+.artist-page-link {
+    font-size: 18px;
+    color: var(--text-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0.05em;
+    transition: opacity 0.3s;
+}
+.artist-page-link:hover { opacity: 0.5; }
+.artist-arrow {
+    font-family: var(--font-eng);
+    font-size: 11px;
+    color: var(--accent-color);
+}
+.artist-locked {
+    font-size: 18px;
+    color: #ccc;
+    letter-spacing: 0.05em;
+}
+@media (max-width: 768px) {
+    .artists-grid { grid-template-columns: repeat(2, 1fr); }
+    .artist-item:nth-child(3) { border-top: none; }
+}
         
     </style>
 </head>
@@ -501,7 +570,7 @@ body { padding-top: 48px; }
                     <p>「アイドル」と「アーティスト」<br>違う場所に立っているようでいて、その根はどこかで静かにつながっていると感じています。</p>
                     <p>アイドルとして活動する中で、私はいつも「誰かに届くこと」を考えてきました。<br>それは作品をつくることとは異なるようでいて、実はとてもよく似た祈りのような行為だと思っています。</p>
                     <p>絵画というかたちで表現に向き合いながら、自分のまなざしはどこへ向いているのか、誰に手を伸ばしているのかを、あらためて問い直しました。</p>
-                    <p>「アーティスト」と「アイドル」は違う立場に見えても、どちらも“誰かのまなざしに触れて、はじめて輪郭を持つ”ものです。</p>
+                    <p>「アーティスト」と「アイドル」は違う立場に見えても、どちらも"誰かのまなざしに触れて、はじめて輪郭を持つ"ものです。</p>
                     <p>その事実を抱えたまま、今回、私はひとりの作家として制作に向き合いました。</p>
                     <p>『雨の日の星空』のように、厚い雲の向こうを信じる気持ちが、この展示を通してそっと誰かの心に届いたら嬉しいです。</p>
                     
@@ -514,6 +583,7 @@ body { padding-top: 48px; }
             </div>
         </section>
 
+        <!-- [CHANGE] ARTISTSセクション再設計：プロフィールページへの動線・進捗インジケーター追加 -->
         <section id="artists">
             <h2 class="section-title">ARTISTS</h2>
             <div class="artist-group">
@@ -522,19 +592,28 @@ body { padding-top: 48px; }
                     <li>橋本真希 <a href="https://www.instagram.com/hashimoto_maki_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link">Instagram</a></li>
                 </ul>
             </div>
+            <div class="artist-divider"></div>
             <div class="artist-group">
                 <span class="group-name">Tokyo University of the Arts Students</span>
-                <ul class="artist-list">
-                   <li><a href="ame.html">あめ</a> <a href="https://www.instagram.com/prism_tensichan" target="_blank" class="social-link">Instagram</a></li>
-                    <li>加藤彩 <a href="https://instagram.com/utoka_47_" target="_blank" class="social-link">Instagram</a></li>
-                    <li>小橋柚奈 <a href="https://instagram.com/tti_1102" target="_blank" class="social-link">Instagram</a></li>
-                    <li>こばら <a href="https://www.instagram.com/g_o_e_k_a_k_i?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link">Instagram</a></li>
-                    <li>小柴海亜 <a href="https://instagram.com/noahoimo" target="_blank" class="social-link">Instagram</a></li>
-                    <li>龔惠雅 <a href="https://instagram.com/admt_q" target="_blank" class="social-link">Instagram</a></li>
-                    <li>田辺朔葉 <a href="https://instagram.com/tanabe.motoha" target="_blank" class="social-link">Instagram</a></li>
-                    <li>みーや <a href="https://instagram.com/harui._.miya" target="_blank" class="social-link">Instagram</a></li>
-                    <li>びゅん <a href="https://instagram.com/byun_tears" target="_blank" class="social-link">Instagram</a></li>
-                </ul>
+                <div class="students-progress">
+                    <span class="progress-count">1 <span>/ 9 profiles open</span></span>
+                </div>
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar-fill"></div>
+                </div>
+                <div class="artists-grid">
+                    <div class="artist-item">
+                        <a href="ame.html" class="artist-page-link">あめ <span class="artist-arrow">→</span></a>
+                    </div>
+                    <div class="artist-item"><span class="artist-locked">加藤彩</span></div>
+                    <div class="artist-item"><span class="artist-locked">小橋柚奈</span></div>
+                    <div class="artist-item"><span class="artist-locked">こばら</span></div>
+                    <div class="artist-item"><span class="artist-locked">小柴海亜</span></div>
+                    <div class="artist-item"><span class="artist-locked">龔惠雅</span></div>
+                    <div class="artist-item"><span class="artist-locked">田辺朔葉</span></div>
+                    <div class="artist-item"><span class="artist-locked">みーや</span></div>
+                    <div class="artist-item"><span class="artist-locked">びゅん</span></div>
+                </div>
             </div>
         </section>
 
@@ -612,8 +691,8 @@ setInterval(updateCountdown, 1000);
        document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-    }, { threshold: 0.05 }); // ← ①「0.1」を「0.05」に変更
-    document.querySelectorAll(".container section").forEach(s => observer.observe(s)); // ← ②「section」を「.container section」に変更
+    }, { threshold: 0.05 });
+    document.querySelectorAll(".container section").forEach(s => observer.observe(s));
 });
     </script>
 </body>
