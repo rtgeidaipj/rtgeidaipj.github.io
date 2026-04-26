@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@rtgeidaipj2026">
+<meta name="twitter:image" content="https://rtgeidaipj.github.io/ame_profile.jpg">
+<meta property="og:url" content="https://rtgeidaipj.github.io/ame.html">
+<meta property="og:title" content="あめ ― 作家紹介 ｜ 雨の日の星空">
+<meta property="og:description" content="絵画を通して見えないものを見えるようにすること。東京藝術大学・あめの制作への想い。">
+<meta property="og:image" content="https://rtgeidaipj.github.io/ame_profile.jpg">
+<meta property="og:type" content="website">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2GFRT45G53"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2GFRT45G53');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あめ ― 作家紹介 ｜ 雨の日の星空</title>
+<meta name="description" content="東京藝術大学・あめ。絵画を通して見えないものを見えるようにすること。展覧会『雨の日の星空』出展作家の制作への想いを紹介します。">
+<link rel="canonical" href="https://rtgeidaipj.github.io/ame.html">
+
+<link rel="preload" as="image" href="ame_profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --bg-color: #f8f8f8;
+        --text-color: #2b2b2b;
+        --accent-color: #888;
+        --font-main: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
+        --font-eng: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-main);
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 2.2;
+        letter-spacing: 0.12em;
+        -webkit-font-smoothing: antialiased;
+        padding-top: 48px; /* ナビ分の余白 */
+    }
+
+    a { color: var(--text-color); text-decoration: none; transition: opacity 0.3s; }
+    a:hover { opacity: 0.6; }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    /* =====================
+       サイトナビ（index.htmlと共通）
+    ===================== */
+    .site-nav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 100;
+        background: rgba(248,248,248,0.92);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding: 14px 0;
+    }
+    .nav-links a {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+        transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--text-color); }
+    .nav-links a.nav-active { color: var(--text-color); }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px; height: 44px;
+        padding: 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 8px; right: 16px;
+        background: none; border: none;
+    }
+    .hamburger span {
+        display: block;
+        width: 22px; height: 1px;
+        background: var(--text-color);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .overlay-menu {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(248,248,248,0.97);
+        z-index: 99;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+    .overlay-menu.open { display: flex; opacity: 1; }
+    .overlay-menu a {
+        font-family: var(--font-eng);
+        font-size: 14px;
+        letter-spacing: 0.25em;
+        color: var(--text-color);
+        padding: 20px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+    .overlay-menu a:first-of-type { border-top: 1px solid #eee; }
+    .overlay-menu .overlay-info {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        color: var(--accent-color);
+        letter-spacing: 0.2em;
+        margin-top: 32px;
+    }
+
+    /* =====================
+       パンくず
+    ===================== */
+    .breadcrumb {
+        padding: 28px 0 0;
+        margin-bottom: 0;
+    }
+    .breadcrumb a, .breadcrumb span {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+    }
+    .breadcrumb span { margin: 0 8px; }
+
+    /* =====================
+       アーティストヒーロー
+    ===================== */
+    .artist-hero {
+        display: flex;
+        align-items: flex-start;
+        gap: 60px;
+        padding: 50px 0 80px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* 画像エリア */
+    .hero-image-wrap {
+        flex: 0 0 340px;
+        position: relative;
+    }
+    .hero-image-wrap img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 2px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.10);
+    }
+    /* 通し番号 */
+    .artist-number {
+        position: absolute;
+        top: -20px;
+        right: 0;
+        font-family: var(--font-eng);
+        font-size: 11px;
+        color: #bbb;
+        letter-spacing: 0.15em;
+    }
+
+    /* テキストエリア */
+    .hero-text {
+        flex: 1;
+        padding-top: 20px;
+    }
+    .hero-label {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.25em;
+        color: var(--accent-color);
+        display: block;
+        margin-bottom: 20px;
+    }
+    .hero-name {
+        font-size: 42px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        line-height: 1.2;
+        margin: 0 0 12px;
+    }
+    .hero-univ {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        color: var(--accent-color);
+        letter-spacing: 0.2em;
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    .hero-sns a {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+        border: 1px solid #ccc;
+        padding: 6px 18px;
+        border-radius: 2px;
+        display: inline-block;
+        margin-right: 10px;
+        transition: all 0.3s;
+    }
+    .hero-sns a:hover {
+        color: var(--text-color);
+        border-color: var(--text-color);
+        opacity: 1;
+    }
+
+    /* =====================
+       制作への想い
+    ===================== */
+    .section-title {
+        font-family: var(--font-eng);
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 60px;
+        color: var(--accent-color);
+        letter-spacing: 0.2em;
+    }
+
+    /* フェードイン */
+    .fade-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        margin-bottom: 100px;
+    }
+    .fade-section.visible { opacity: 1; transform: translateY(0); }
+
+    .comment-block {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+    .comment-label {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.25em;
+        color: var(--accent-color);
+        display: block;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .comment-text {
+        font-size: 15px;
+        line-height: 2.4;
+        text-align: justify;
+        border-left: 1px solid #bbb;
+        padding-left: 24px;
+    }
+    .comment-text p { margin: 0 0 1.6em; }
+
+    /* =====================
+       作品・展示情報
+    ===================== */
+    .profile-grid {
+        max-width: 680px;
+        margin: 0 auto;
+        border-top: 1px solid #ddd;
+        padding-top: 40px;
+    }
+    .profile-row {
+        display: flex;
+        gap: 0;
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+    .profile-label {
+        width: 120px;
+        flex-shrink: 0;
+        font-family: var(--font-eng);
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+        padding-top: 4px;
+    }
+    .profile-value { flex: 1; }
+
+    /* =====================
+       回遊ナビ：他の作家を見る
+    ===================== */
+    .artists-nav {
+        border-top: 1px solid #ddd;
+        padding-top: 60px;
+        margin-bottom: 100px;
+    }
+    .artists-nav-label {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.25em;
+        color: var(--accent-color);
+        text-align: center;
+        display: block;
+        margin-bottom: 36px;
+    }
+
+    /* 横スクロールリスト */
+    .artists-scroll {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0;
+        list-style: none;
+        padding: 0; margin: 0;
+    }
+    .artists-scroll li {
+        position: relative;
+    }
+    .artists-scroll li a,
+    .artists-scroll li span {
+        display: block;
+        font-size: 13px;
+        padding: 14px 20px;
+        letter-spacing: 0.1em;
+        color: var(--accent-color);
+        transition: color 0.3s;
+        white-space: nowrap;
+    }
+    .artists-scroll li a:hover { color: var(--text-color); opacity: 1; }
+    /* 現在のページ */
+    .artists-scroll li.current span {
+        color: var(--text-color);
+        font-weight: 500;
+        border-bottom: 1px solid var(--text-color);
+    }
+    /* まだページ未作成の作家はグレーアウト */
+    .artists-scroll li.tba a {
+        color: #ccc;
+        cursor: default;
+        pointer-events: none;
+    }
+    /* 区切り */
+    .artists-scroll li + li::before {
+        content: "·";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #ddd;
+        font-size: 12px;
+    }
+
+    /* 前後ナビ */
+    .prev-next {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid #eee;
+    }
+    .prev-next a, .prev-next span {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+    }
+    .prev-next span { color: #ddd; }
+
+    /* =====================
+       フッター
+    ===================== */
+    footer {
+        text-align: center;
+        padding: 60px 0;
+        font-size: 11px;
+        color: #aaa;
+        font-family: var(--font-eng);
+        letter-spacing: 0.2em;
+        border-top: 1px solid #eee;
+    }
+    footer a { color: #aaa; }
+
+    /* =====================
+       レスポンシブ
+    ===================== */
+    @media (max-width: 768px) {
+        body { padding-top: 52px; }
+        .container { padding: 0 25px; }
+        .nav-links { display: none; }
+        .hamburger { display: flex; }
+        .site-nav { height: 52px; }
+
+        .artist-hero {
+            flex-direction: column;
+            gap: 30px;
+            padding: 30px 0 60px;
+        }
+        .hero-image-wrap {
+            flex: none;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+        .artist-number { top: -16px; }
+        .hero-name { font-size: 32px; }
+        .profile-row { flex-direction: column; gap: 4px; }
+        .profile-label { width: auto; }
+        .prev-next { flex-direction: column; gap: 16px; text-align: center; }
+    }
+</style>
+</head>
+<body>
+
+<!-- ナビゲーション（index.htmlと共通構造） -->
+<nav class="site-nav">
+    <div class="nav-links">
+        <a href="index.html">← TOP</a>
+        <a href="index.html#news">NEWS</a>
+        <a href="index.html#statement">STATEMENT</a>
+        <a href="index.html#artists" class="nav-active">ARTISTS</a>
+        <a href="index.html#information">INFORMATION</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- オーバーレイメニュー（スマホ用） -->
+<div class="overlay-menu" id="overlayMenu">
+    <a href="index.html" onclick="toggleMenu()">TOP</a>
+    <a href="index.html#news" onclick="toggleMenu()">NEWS</a>
+    <a href="index.html#statement" onclick="toggleMenu()">STATEMENT</a>
+    <a href="index.html#artists" onclick="toggleMenu()">ARTISTS</a>
+    <a href="index.html#information" onclick="toggleMenu()">INFORMATION</a>
+    <div class="overlay-info">2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</div>
+</div>
+
+<div class="container">
+
+    <!-- パンくず -->
+    <nav class="breadcrumb">
+        <a href="index.html">雨の日の星空</a>
+        <span>/</span>
+        <a href="index.html#artists">ARTISTS</a>
+        <span>/</span>
+        あめ
+    </nav>
+
+    <!-- ヒーローエリア -->
+    <div class="artist-hero">
+        <div class="hero-image-wrap">
+            <span class="artist-number">01 / 09</span>
+            <img src="ame_profile.jpg"
+                 alt="あめ – Artist Profile Card"
+                 fetchpriority="high">
+        </div>
+        <div class="hero-text">
+            <span class="hero-label">ARTIST PROFILE</span>
+            <h1 class="hero-name">あめ</h1>
+            <span class="hero-univ">Tokyo University of the Arts</span>
+
+            <div class="hero-sns">
+                <a href="https://www.instagram.com/prism_tensichan" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 制作への想い -->
+    <section class="fade-section" style="padding-top: 80px;">
+        <h2 class="section-title">ARTIST COMMENT</h2>
+        <div class="comment-block">
+            <span class="comment-label">制作への想い</span>
+            <div class="comment-text">
+                <p>本展で、絵画を通して見えないものを見えるようにすること。</p>
+                <p>改めて絵画と作家のあいだにある問いを明らかにし、鑑賞者にまなざしを届けたいと考えています。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- プロフィール情報 -->
+    <section class="fade-section">
+        <h2 class="section-title">PROFILE</h2>
+        <div class="profile-grid">
+            <div class="profile-row">
+                <div class="profile-label">NAME</div>
+                <div class="profile-value">あめ</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-label">AFFILIATION</div>
+                <div class="profile-value">東京藝術大学</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-label">THEME</div>
+                <div class="profile-value">絵画を通して見えないものを見えるようにすること</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-label">EXHIBITION</div>
+                <div class="profile-value">『雨の日の星空』2026.8.18 – 8.28<br>Gallery Blue 3143（南青山）</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 回遊ナビ：他の作家を見る -->
+    <section class="fade-section artists-nav">
+        <span class="artists-nav-label">OTHER ARTISTS</span>
+        <ul class="artists-scroll">
+            <!-- 現在のページ -->
+            <li class="current"><span>あめ</span></li>
+            <!-- 以下、ページ完成次第 class="tba" を外してhrefを設定 -->
+            <li class="tba"><a href="kato.html">加藤彩</a></li>
+            <li class="tba"><a href="kobashi.html">小橋柚奈</a></li>
+            <li class="tba"><a href="kobara.html">こばら</a></li>
+            <li class="tba"><a href="koshiba.html">小柴海亜</a></li>
+            <li class="tba"><a href="gong.html">龔惠雅</a></li>
+            <li class="tba"><a href="tanabe.html">田辺朔葉</a></li>
+            <li class="tba"><a href="miiya.html">みーや</a></li>
+            <li class="tba"><a href="byun.html">びゅん</a></li>
+        </ul>
+
+        <!-- 前後ナビ -->
+        <div class="prev-next">
+            <a href="index.html#artists">← ARTISTS 一覧へ</a>
+            <span>次のページ準備中</span>
+        </div>
+    </section>
+
+</div><!-- /.container -->
+
+<footer>
+    <p><a href="index.html">『雨の日の星空』</a> &nbsp;|&nbsp; 2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</p>
+    <p style="margin-top:10px;">© 2026 橋本真希×藝大生プロジェクト. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // ハンバーガーメニュー（index.htmlと共通）
+    function toggleMenu() {
+        const btn = document.getElementById('hamburger');
+        const menu = document.getElementById('overlayMenu');
+        btn.classList.toggle('open');
+        menu.classList.toggle('open');
+        document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+
+    // スクロールフェードイン
+    document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add("visible");
+            });
+        }, { threshold: 0.05 });
+        document.querySelectorAll(".fade-section").forEach(s => observer.observe(s));
+    });
+</script>
+</body>
+</html>
