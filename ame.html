@@ -280,6 +280,24 @@
         padding-left: 24px;
     }
     .comment-text p { margin: 0 0 1.6em; }
+    .comment-more {
+        display: none;
+        margin-top: 8px;
+    }
+    .comment-more.open { display: block; }
+    .comment-toggle {
+        font-size: 12px;
+        color: var(--accent-color);
+        cursor: pointer;
+        text-decoration: underline;
+        display: block;
+        text-align: center;
+        margin: 16px auto 0;
+        background: none;
+        border: none;
+        font-family: var(--font-eng);
+        letter-spacing: 0.15em;
+    }
 
     /* =====================
        作品・展示情報
@@ -493,9 +511,17 @@
         <h2 class="section-title">ARTIST COMMENT</h2>
         <div class="comment-block">
             <span class="comment-label">制作への想い</span>
+            <!-- 冒頭1段落を引用リードとして表示 -->
             <div class="comment-text">
-                <p>本展で、絵画を通して見えないものを見えるようにすること。</p>
-                <p>改めて絵画と作家のあいだにある問いを明らかにし、鑑賞者にまなざしを届けたいと考えています。</p>
+                <p>あめは制作において、記憶や夢といった実体は無いが、確かに存在するものを、輪郭をもたらす描写から見えないものを見えるようにすることを題材とし、パール材から油絵具を練り、角度や光で印象が変化する絵画を制作しています。</p>
+            </div>
+            <button class="comment-toggle" id="commentToggle" onclick="toggleComment()">Read More</button>
+            <div class="comment-more" id="commentMore">
+                <div class="comment-text">
+                    <p>『ほしぞらのねがいごと』シリーズによく見られるように、パール材を使った表現は、見る角度や光の当たり方で印象や色彩が変化することから、物事を一つの側面から見ることにとらわれないことを示しています。</p>
+                    <p>現代の中で目に見えることばかりを見つめ大切な、目には見えない存在がどこか忘れられその輪郭を失いつつあるように感じています。だからこそ改めて作品を通して、記憶や感情、想い。誰かの面影。忘れてはならない優しさといったそれぞれの内面にある語り出さない本質を作品と対話することで、間接的に思い出すような絵画と鑑賞者の関係性を構築したいと考えています。</p>
+                    <p>そのためにも、言葉や物語ることによって、見えない世界へのまなざしを持ち、鑑賞者との対話から立ち上がらせる絵画との関わり方を制作や展示の中で実験的に行っています。</p>
+                </div>
             </div>
         </div>
     </section>
@@ -512,7 +538,6 @@
                 <div class="profile-label">AFFILIATION</div>
                 <div class="profile-value">東京藝術大学</div>
             </div>
-           
             <div class="profile-row">
                 <div class="profile-label">EXHIBITION</div>
                 <div class="profile-value">『雨の日の星空』2026.8.18 – 8.28<br>Gallery Blue 3143（南青山）</div>
@@ -552,6 +577,14 @@
 </footer>
 
 <script>
+    // ARTIST COMMENT Read More
+    function toggleComment() {
+        const more = document.getElementById('commentMore');
+        const btn = document.getElementById('commentToggle');
+        more.classList.toggle('open');
+        btn.textContent = more.classList.contains('open') ? 'Close' : 'Read More';
+    }
+
     // ハンバーガーメニュー（index.htmlと共通）
     function toggleMenu() {
         const btn = document.getElementById('hamburger');
