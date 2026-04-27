@@ -327,6 +327,88 @@
     .profile-value { flex: 1; }
 
     /* =====================
+       展示歴
+    ===================== */
+    .ex-category {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        color: #aaa;
+        display: block;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+    }
+    .solo-block { margin-bottom: 48px; }
+    .solo-item {
+        display: flex;
+        align-items: baseline;
+        gap: 20px;
+        padding: 16px 0;
+        border-bottom: 1px solid #eee;
+    }
+    .solo-title { font-size: 17px; font-weight: 500; letter-spacing: 0.05em; flex: 1; }
+    .solo-venue {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        color: #888;
+        letter-spacing: 0.1em;
+    }
+    .solo-year {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        color: #bbb;
+        letter-spacing: 0.1em;
+        white-space: nowrap;
+    }
+    .year-group { margin-bottom: 32px; }
+    .year-label {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        color: #bbb;
+        letter-spacing: 0.2em;
+        display: block;
+        margin-bottom: 0;
+    }
+    .group-item {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px 20px;
+        padding: 14px 0;
+        border-bottom: 1px solid #eee;
+        align-items: baseline;
+        position: relative;
+    }
+    .group-item:first-of-type { border-top: 1px solid #eee; }
+    .group-title { font-size: 14px; letter-spacing: 0.05em; }
+    .group-venue {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        color: #888;
+        letter-spacing: 0.05em;
+        text-align: right;
+    }
+    .group-item.current .group-title { font-weight: 500; }
+    .group-item.current .group-venue { color: var(--text-color); }
+    .group-item.current::before {
+        content: "";
+        position: absolute;
+        left: -16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--text-color);
+    }
+    @media (max-width: 768px) {
+        .solo-item { flex-wrap: wrap; gap: 4px 12px; }
+        .group-item { grid-template-columns: 1fr; }
+        .group-venue { text-align: left; }
+        .group-item.current::before { display: none; }
+    }
+
+    /* =====================
        回遊ナビ：他の作家を見る
     ===================== */
     .artists-nav {
@@ -498,7 +580,7 @@
         <div class="hero-text">
             <span class="hero-label">ARTIST PROFILE</span>
             <h1 class="hero-name">あめ</h1>
-            <span class="hero-univ">東京藝術大学</span>
+            <span class="hero-univ">Tokyo University of the Arts</span>
 
             <div class="hero-sns">
                 <a href="https://www.instagram.com/prism_tensichan" target="_blank">Instagram</a>
@@ -538,10 +620,50 @@
                 <div class="profile-label">AFFILIATION</div>
                 <div class="profile-value">東京藝術大学</div>
             </div>
-            <div class="profile-row">
-                <div class="profile-label">EXHIBITION</div>
-                <div class="profile-value">『雨の日の星空』2026.8.18 – 8.28<br>Gallery Blue 3143（南青山）</div>
+        </div>
+    </section>
+
+    <!-- 展示歴 -->
+    <section class="fade-section">
+        <h2 class="section-title">EXHIBITION</h2>
+        <div class="profile-grid">
+
+            <!-- 個展 -->
+            <div class="solo-block">
+                <span class="ex-category">SOLO</span>
+                <div class="solo-item">
+                    <span class="solo-title">ほしぞらのねがいごと</span>
+                    <span class="solo-venue">JITSUZAISEI</span>
+                    <span class="solo-year">2025</span>
+                </div>
             </div>
+
+            <!-- グループ展 -->
+            <div class="group-block">
+                <span class="ex-category">GROUP</span>
+                <div class="year-group">
+                    <span class="year-label">2025</span>
+                    <div class="group-item"><span class="group-title">童話展 3</span><span class="group-venue">Boji Hair + gallery</span></div>
+                    <div class="group-item"><span class="group-title">Hug my self あの日のわたしへ</span><span class="group-venue">peel south</span></div>
+                    <div class="group-item"><span class="group-title">BILLIKEN CREATORS COOL OSAKA</span><span class="group-venue">大丸梅田店 13F 特別催事場</span></div>
+                    <div class="group-item"><span class="group-title">街とナラティブ</span><span class="group-venue">HAGISO</span></div>
+                    <div class="group-item"><span class="group-title">Small Art Exhibition 2025 Swimmy</span><span class="group-venue">アトリエ三月</span></div>
+                    <div class="group-item"><span class="group-title">五芸祭2025 Connect</span><span class="group-venue">沖縄県立芸術大学</span></div>
+                    <div class="group-item"><span class="group-title">Tシャツドローイング公開制作</span><span class="group-venue">藝大アートプラザ</span></div>
+                    <div class="group-item"><span class="group-title">十人十色</span><span class="group-venue">nada art gallery</span></div>
+                    <div class="group-item"><span class="group-title">ZEROTEN 2025 -OSAKA-</span><span class="group-venue">大丸梅田店 11F ART GALLERY UMEDA</span></div>
+                    <div class="group-item"><span class="group-title">藝祭 2025 たまゆら</span><span class="group-venue">東京藝術大学 上野校地</span></div>
+                    <div class="group-item"><span class="group-title">十人十色</span><span class="group-venue">大丸下関店</span></div>
+                    <div class="group-item"><span class="group-title">東京藝術大学一年進級展 CINEMA</span><span class="group-venue">元映画館</span></div>
+                </div>
+                <div class="year-group">
+                    <span class="year-label">2026</span>
+                    <div class="group-item"><span class="group-title">可視光</span><span class="group-venue">ギャラリーうえまち</span></div>
+                    <div class="group-item"><span class="group-title">五芸祭 2026　きょうを、てらす展・エネルギャラリー展</span><span class="group-venue">京都市立芸術大学</span></div>
+                    <div class="group-item current"><span class="group-title">雨の日の星空</span><span class="group-venue">Gallery Blue 3143</span></div>
+                </div>
+            </div>
+
         </div>
     </section>
 
