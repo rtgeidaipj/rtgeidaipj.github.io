@@ -122,6 +122,22 @@ header section {
         .news-toggle { font-size: 12px; color: var(--accent-color); cursor: pointer; text-decoration: underline; margin-top: 10px; display: inline-block; }
         .pdf-link { display: inline-block; margin-top: 15px; font-size: 13px; border: 1px solid #555; padding: 5px 15px; border-radius: 2px; }
 
+        /* [ADD] NEWS 上位2件以外を折りたたむ */
+        .news-older { display: none; }
+        .news-more-btn {
+            display: block;
+            text-align: center;
+            margin-top: 16px;
+            font-family: var(--font-eng);
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            color: var(--accent-color);
+            cursor: pointer;
+            text-decoration: underline;
+            background: none;
+            border: none;
+        }
+
         .statement-text { text-align: justify; max-width: 700px; margin: 0 auto; font-size: 15px; }
         .statement-text p { margin-bottom: 40px; }
         /* [ADD] Project Statement 引用ブロックと続きを読む */
@@ -416,7 +432,6 @@ body { padding-top: 48px; }
 .progress-bar-fill {
     height: 1px;
     background: var(--text-color);
-    width: 11.1%;
 }
 .artists-grid {
     display: grid;
@@ -519,17 +534,28 @@ body { padding-top: 48px; }
         
         <section id="news">
             <h2 class="section-title">NEWS</h2>
-<article class="news-item">
-    <span class="news-date">2026.04.26<span class="news-tag">UPDATE</span></span>
-    <span class="news-headline">アーティストプロフィールページ公開開始（第1弾：あめ）</span>
-    <div class="news-content" id="news-content-3">
-        <p>藝大生9名のアーティストプロフィールページを順次公開してまいります。</p>
-        <p>第1弾として、本展メインビジュアルを手がけた<strong><a href="ame.html">あめ</a></strong>のページを公開しました。制作への想いをぜひご覧ください。</p>
-        <p>今後、残り8名のページも随時公開予定です。</p>
-    </div>
-    <div class="news-toggle" onclick="toggleNews(3)">Read More / Close</div>
-</article>
             <article class="news-item">
+                <span class="news-date">2026.04.29<span class="news-tag">UPDATE</span></span>
+                <span class="news-headline">アーティストプロフィールページ公開（加藤彩）</span>
+                <div class="news-content" id="news-content-4">
+                    <p>藝大生プロフィールページの第2弾として、<strong><a href="kato.html">加藤彩</a></strong>のページを公開しました。</p>
+                    <p>今後も残りの作家のページを順次公開予定です。お楽しみに。</p>
+                </div>
+                <div class="news-toggle" onclick="toggleNews(4)">Read More / Close</div>
+            </article>
+            <article class="news-item">
+                <span class="news-date">2026.04.26<span class="news-tag">UPDATE</span></span>
+                <span class="news-headline">アーティストプロフィールページ公開開始（第1弾：あめ）</span>
+                <div class="news-content" id="news-content-3">
+                    <p>藝大生9名のアーティストプロフィールページを順次公開してまいります。</p>
+                    <p>第1弾として、本展メインビジュアルを手がけた<strong><a href="ame.html">あめ</a></strong>のページを公開しました。制作への想いをぜひご覧ください。</p>
+                    <p>今後、残り8名のページも随時公開予定です。</p>
+                </div>
+                <div class="news-toggle" onclick="toggleNews(3)">Read More / Close</div>
+            </article>
+        <!-- [ADD] 上位2件より古い記事は折りたたむ -->
+            <div class="news-older" id="newsOlder">
+<article class="news-item">
                 <span class="news-date">2026.04.12<span class="news-tag">UPDATE</span></span>
                 <span class="news-headline">メインビジュアル公開（制作：藝大生 あめ）</span>
                 <div class="news-content" id="news-content-2">
@@ -551,6 +577,8 @@ body { padding-top: 48px; }
                 </div>
                 <div class="news-toggle" onclick="toggleNews(1)">Read More / Close</div>
             </article>
+            </div>
+            <button class="news-more-btn" id="newsMoreBtn" onclick="toggleOlderNews()">View All News</button>
         </section>
 
         <section id="statement">
@@ -606,16 +634,18 @@ body { padding-top: 48px; }
             <div class="artist-group">
                 <span class="group-name">Tokyo University of the Arts Students</span>
                 <div class="students-progress">
-                    <span class="progress-count">1 <span>/ 9 profiles open</span></span>
+                    <span class="progress-count">2 <span>/ 9 profiles open</span></span>
                 </div>
                 <div class="progress-bar-wrap">
-                    <div class="progress-bar-fill"></div>
+                    <div class="progress-bar-fill" style="width:22.2%"></div>
                 </div>
                 <div class="artists-grid">
                     <div class="artist-item">
                         <a href="ame.html" class="artist-page-link">あめ <span class="artist-arrow">→</span></a>
                     </div>
-                    <div class="artist-item"><span class="artist-locked">加藤彩</span></div>
+                    <div class="artist-item">
+                        <a href="kato.html" class="artist-page-link">加藤彩 <span class="artist-arrow">→</span></a>
+                    </div>
                     <div class="artist-item"><span class="artist-locked">小橋柚奈</span></div>
                     <div class="artist-item"><span class="artist-locked">こばら</span></div>
                     <div class="artist-item"><span class="artist-locked">小柴海亜</span></div>
@@ -667,6 +697,14 @@ body { padding-top: 48px; }
             const content = document.getElementById('news-content-' + id);
             content.classList.toggle('open');
         }
+        // [ADD] 古いNEWSの展開・折りたたみ
+function toggleOlderNews() {
+    const older = document.getElementById('newsOlder');
+    const btn = document.getElementById('newsMoreBtn');
+    const isOpen = older.style.display === 'block';
+    older.style.display = isOpen ? 'none' : 'block';
+    btn.textContent = isOpen ? 'View All News' : 'Close';
+}
         // [ADD] Project Statement の続きを読む
 function toggleStatement() {
     const more = document.getElementById('stMore');
