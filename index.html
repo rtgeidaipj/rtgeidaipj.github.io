@@ -534,6 +534,17 @@ body { padding-top: 48px; }
         
         <section id="news">
             <h2 class="section-title">NEWS</h2>
+            <!-- [ADD 2026.05.04] こばらプロフィールページ公開 -->
+            <article class="news-item">
+                <span class="news-date">2026.05.04<span class="news-tag">UPDATE</span></span>
+                <span class="news-headline">アーティストプロフィールページ公開（こばら）</span>
+                <div class="news-content" id="news-content-6">
+                    <p>藝大生プロフィールページの第4弾として、<strong><a href="kobara.html">こばら</a></strong>のページを公開しました。</p>
+                    <p>「ボンジー」という存在を追いかけることから始まる、こばらの制作。その軌跡は、いつしか自身の成長の記録へと変わっていく——制作への想いをぜひご覧ください。</p>
+                    <p>今後も残りの作家のページを順次公開予定です。お楽しみに。</p>
+                </div>
+                <div class="news-toggle" onclick="toggleNews(6)">Read More / Close</div>
+            </article>
             <!-- [ADD 2026.05.04] 小橋柚奈プロフィールページ公開 -->
             <article class="news-item">
                 <span class="news-date">2026.05.04<span class="news-tag">UPDATE</span></span>
@@ -645,11 +656,11 @@ body { padding-top: 48px; }
                 <span class="group-name">Tokyo University of the Arts Students</span>
                 <!-- [CHANGE 2026.05.04] 3/9 に更新 -->
                 <div class="students-progress">
-                    <span class="progress-count">3 <span>/ 9 profiles open</span></span>
+                    <span class="progress-count">4 <span>/ 9 profiles open</span></span>
                 </div>
                 <div class="progress-bar-wrap">
                     <!-- [CHANGE 2026.05.04] バー幅 22.2% → 33.3% -->
-                    <div class="progress-bar-fill" style="width:33.3%"></div>
+                    <div class="progress-bar-fill" style="width:44.4%"></div>
                 </div>
                 <div class="artists-grid">
                     <div class="artist-item">
@@ -662,7 +673,10 @@ body { padding-top: 48px; }
                     <div class="artist-item">
                         <a href="kobashi.html" class="artist-page-link">小橋柚奈 <span class="artist-arrow">→</span></a>
                     </div>
-                    <div class="artist-item"><span class="artist-locked">こばら</span></div>
+                    <!-- [CHANGE 2026.05.04] こばらをリンク化 -->
+                    <div class="artist-item">
+                        <a href="kobara.html" class="artist-page-link">こばら <span class="artist-arrow">→</span></a>
+                    </div>
                     <div class="artist-item"><span class="artist-locked">小柴海亜</span></div>
                     <div class="artist-item"><span class="artist-locked">龔惠雅</span></div>
                     <div class="artist-item"><span class="artist-locked">田辺朔葉</span></div>
