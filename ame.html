@@ -168,7 +168,6 @@
         border-bottom: 1px solid #ddd;
     }
 
-    /* 画像エリア */
     .hero-image-wrap {
         flex: 0 0 340px;
         position: relative;
@@ -180,7 +179,6 @@
         border-radius: 2px;
         box-shadow: 0 20px 60px rgba(0,0,0,0.10);
     }
-    /* 通し番号 */
     .artist-number {
         position: absolute;
         top: -20px;
@@ -191,7 +189,6 @@
         letter-spacing: 0.15em;
     }
 
-    /* テキストエリア */
     .hero-text {
         flex: 1;
         padding-top: 20px;
@@ -250,7 +247,6 @@
         letter-spacing: 0.2em;
     }
 
-    /* フェードイン */
     .fade-section {
         opacity: 0;
         transform: translateY(30px);
@@ -300,7 +296,7 @@
     }
 
     /* =====================
-       作品・展示情報
+       プロフィール情報
     ===================== */
     .profile-grid {
         max-width: 680px;
@@ -409,7 +405,7 @@
     }
 
     /* =====================
-       回遊ナビ：他の作家を見る
+       回遊ナビ
     ===================== */
     .artists-nav {
         border-top: 1px solid #ddd;
@@ -425,8 +421,6 @@
         display: block;
         margin-bottom: 36px;
     }
-
-    /* 横スクロールリスト */
     .artists-scroll {
         display: flex;
         justify-content: center;
@@ -435,9 +429,7 @@
         list-style: none;
         padding: 0; margin: 0;
     }
-    .artists-scroll li {
-        position: relative;
-    }
+    .artists-scroll li { position: relative; }
     .artists-scroll li a,
     .artists-scroll li span {
         display: block;
@@ -449,19 +441,16 @@
         white-space: nowrap;
     }
     .artists-scroll li a:hover { color: var(--text-color); opacity: 1; }
-    /* 現在のページ */
     .artists-scroll li.current span {
         color: var(--text-color);
         font-weight: 500;
         border-bottom: 1px solid var(--text-color);
     }
-    /* まだページ未作成の作家はグレーアウト */
     .artists-scroll li.tba a {
         color: #ccc;
         cursor: default;
         pointer-events: none;
     }
-    /* 区切り */
     .artists-scroll li + li::before {
         content: "·";
         position: absolute;
@@ -472,7 +461,6 @@
         font-size: 12px;
     }
 
-    /* 前後ナビ */
     .prev-next {
         display: flex;
         justify-content: space-between;
@@ -534,7 +522,6 @@
 </head>
 <body>
 
-<!-- ナビゲーション（index.htmlと共通構造） -->
 <nav class="site-nav">
     <div class="nav-links">
         <a href="index.html">← TOP</a>
@@ -548,7 +535,6 @@
     </button>
 </nav>
 
-<!-- オーバーレイメニュー（スマホ用） -->
 <div class="overlay-menu" id="overlayMenu">
     <a href="index.html" onclick="toggleMenu()">TOP</a>
     <a href="index.html#news" onclick="toggleMenu()">NEWS</a>
@@ -560,7 +546,6 @@
 
 <div class="container">
 
-    <!-- パンくず -->
     <nav class="breadcrumb">
         <a href="index.html">雨の日の星空</a>
         <span>/</span>
@@ -569,7 +554,6 @@
         あめ
     </nav>
 
-    <!-- ヒーローエリア -->
     <div class="artist-hero">
         <div class="hero-image-wrap">
             <span class="artist-number">01 / 09</span>
@@ -588,12 +572,10 @@
         </div>
     </div>
 
-    <!-- 制作への想い -->
     <section class="fade-section" style="padding-top: 80px;">
         <h2 class="section-title">ARTIST COMMENT</h2>
         <div class="comment-block">
             <span class="comment-label">制作への想い</span>
-            <!-- 冒頭1段落を引用リードとして表示 -->
             <div class="comment-text">
                 <p>あめは制作において、記憶や夢といった実体は無いが、確かに存在するものを、輪郭をもたらす描写から見えないものを見えるようにすることを題材とし、パール材から油絵具を練り、角度や光で印象が変化する絵画を制作しています。</p>
             </div>
@@ -608,7 +590,6 @@
         </div>
     </section>
 
-    <!-- プロフィール情報 -->
     <section class="fade-section">
         <h2 class="section-title">PROFILE</h2>
         <div class="profile-grid">
@@ -623,12 +604,10 @@
         </div>
     </section>
 
-    <!-- 展示歴 -->
     <section class="fade-section">
         <h2 class="section-title">EXHIBITION</h2>
         <div class="profile-grid">
 
-            <!-- 個展 -->
             <div class="solo-block">
                 <span class="ex-category">SOLO</span>
                 <div class="solo-item">
@@ -638,7 +617,6 @@
                 </div>
             </div>
 
-            <!-- グループ展 -->
             <div class="group-block">
                 <span class="ex-category">GROUP</span>
                 <div class="year-group">
@@ -667,15 +645,14 @@
         </div>
     </section>
 
-    <!-- 回遊ナビ：他の作家を見る -->
+    <!-- 回遊ナビ -->
     <section class="fade-section artists-nav">
         <span class="artists-nav-label">OTHER ARTISTS</span>
         <ul class="artists-scroll">
-            <!-- 現在のページ -->
             <li class="current"><span>あめ</span></li>
-            <!-- 以下、ページ完成次第 class="tba" を外してhrefを設定 -->
-            <li><a href="kato.html" class="artist-page-link">加藤彩 <span class="artist-arrow">→</span></a></li>
-            <li class="tba"><a href="kobashi.html">小橋柚奈</a></li>
+            <li><a href="kato.html">加藤彩</a></li>
+            <!-- [CHANGE 2026.05.04] 小橋柚奈をtba解除してリンク化 -->
+            <li><a href="kobashi.html">小橋柚奈</a></li>
             <li class="tba"><a href="kobara.html">こばら</a></li>
             <li class="tba"><a href="koshiba.html">小柴海亜</a></li>
             <li class="tba"><a href="gong.html">龔惠雅</a></li>
@@ -684,10 +661,9 @@
             <li class="tba"><a href="byun.html">びゅん</a></li>
         </ul>
 
-        <!-- 前後ナビ -->
         <div class="prev-next">
             <a href="index.html#artists">← ARTISTS 一覧へ</a>
-            <span>次のページ準備中</span>
+            <a href="kato.html">加藤彩 →</a>
         </div>
     </section>
 
@@ -699,7 +675,6 @@
 </footer>
 
 <script>
-    // ARTIST COMMENT Read More
     function toggleComment() {
         const more = document.getElementById('commentMore');
         const btn = document.getElementById('commentToggle');
@@ -707,7 +682,6 @@
         btn.textContent = more.classList.contains('open') ? 'Close' : 'Read More';
     }
 
-    // ハンバーガーメニュー（index.htmlと共通）
     function toggleMenu() {
         const btn = document.getElementById('hamburger');
         const menu = document.getElementById('overlayMenu');
@@ -716,7 +690,6 @@
         document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
     }
 
-    // スクロールフェードイン
     document.addEventListener("DOMContentLoaded", function () {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
