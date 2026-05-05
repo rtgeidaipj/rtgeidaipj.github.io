@@ -3,11 +3,11 @@
 <head>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rtgeidaipj2026">
-<meta name="twitter:image" content="https://rtgeidaipj.github.io/kato_profile.jpg">
-<meta property="og:url" content="https://rtgeidaipj.github.io/kato.html">
-<meta property="og:title" content="加藤彩 ― 作家紹介 ｜ 雨の日の星空">
-<meta property="og:description" content="人間の心理を起点に制作する東京藝術大学・加藤彩の制作への想い。">
-<meta property="og:image" content="https://rtgeidaipj.github.io/kato_profile.jpg">
+<meta name="twitter:image" content="https://rtgeidaipj.github.io/ame_profile.jpg">
+<meta property="og:url" content="https://rtgeidaipj.github.io/ame.html">
+<meta property="og:title" content="あめ ― 作家紹介 ｜ 雨の日の星空">
+<meta property="og:description" content="絵画を通して見えないものを見えるようにすること。東京藝術大学・あめの制作への想い。">
+<meta property="og:image" content="https://rtgeidaipj.github.io/ame_profile.jpg">
 <meta property="og:type" content="website">
 
 <!-- Google tag (gtag.js) -->
@@ -21,11 +21,11 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>加藤彩 ― 作家紹介 ｜ 雨の日の星空</title>
-<meta name="description" content="東京藝術大学・加藤彩。人間の心理を起点に制作する作家の制作への想い。展覧会『雨の日の星空』出展作家。">
-<link rel="canonical" href="https://rtgeidaipj.github.io/kato.html">
+<title>あめ ― 作家紹介 ｜ 雨の日の星空</title>
+<meta name="description" content="東京藝術大学・あめ。絵画を通して見えないものを見えるようにすること。展覧会『雨の日の星空』出展作家の制作への想いを紹介します。">
+<link rel="canonical" href="https://rtgeidaipj.github.io/ame.html">
 
-<link rel="preload" as="image" href="kato_profile.jpg">
+<link rel="preload" as="image" href="ame_profile.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
         line-height: 2.2;
         letter-spacing: 0.12em;
         -webkit-font-smoothing: antialiased;
-        padding-top: 48px;
+        padding-top: 48px; /* ナビ分の余白 */
     }
 
     a { color: var(--text-color); text-decoration: none; transition: opacity 0.3s; }
@@ -60,6 +60,9 @@
         padding: 0 40px;
     }
 
+    /* =====================
+       サイトナビ（index.htmlと共通）
+    ===================== */
     .site-nav {
         position: fixed;
         top: 0; left: 0; right: 0;
@@ -139,6 +142,9 @@
         margin-top: 32px;
     }
 
+    /* =====================
+       パンくず
+    ===================== */
     .breadcrumb {
         padding: 28px 0 0;
         margin-bottom: 0;
@@ -151,6 +157,9 @@
     }
     .breadcrumb span { margin: 0 8px; }
 
+    /* =====================
+       アーティストヒーロー
+    ===================== */
     .artist-hero {
         display: flex;
         align-items: flex-start;
@@ -158,6 +167,7 @@
         padding: 50px 0 80px;
         border-bottom: 1px solid #ddd;
     }
+
     .hero-image-wrap {
         flex: 0 0 340px;
         position: relative;
@@ -178,6 +188,7 @@
         color: #bbb;
         letter-spacing: 0.15em;
     }
+
     .hero-text {
         flex: 1;
         padding-top: 20px;
@@ -205,6 +216,7 @@
         display: block;
         margin-bottom: 40px;
     }
+
     .hero-sns a {
         font-family: var(--font-eng);
         font-size: 11px;
@@ -223,6 +235,9 @@
         opacity: 1;
     }
 
+    /* =====================
+       制作への想い
+    ===================== */
     .section-title {
         font-family: var(--font-eng);
         font-size: 14px;
@@ -261,7 +276,28 @@
         padding-left: 24px;
     }
     .comment-text p { margin: 0 0 1.6em; }
+    .comment-more {
+        display: none;
+        margin-top: 8px;
+    }
+    .comment-more.open { display: block; }
+    .comment-toggle {
+        font-size: 12px;
+        color: var(--accent-color);
+        cursor: pointer;
+        text-decoration: underline;
+        display: block;
+        text-align: center;
+        margin: 16px auto 0;
+        background: none;
+        border: none;
+        font-family: var(--font-eng);
+        letter-spacing: 0.15em;
+    }
 
+    /* =====================
+       プロフィール情報
+    ===================== */
     .profile-grid {
         max-width: 680px;
         margin: 0 auto;
@@ -286,6 +322,9 @@
     }
     .profile-value { flex: 1; }
 
+    /* =====================
+       展示歴
+    ===================== */
     .ex-category {
         font-family: var(--font-eng);
         font-size: 10px;
@@ -295,6 +334,28 @@
         margin-bottom: 20px;
         padding-bottom: 10px;
         border-bottom: 1px solid #eee;
+    }
+    .solo-block { margin-bottom: 48px; }
+    .solo-item {
+        display: flex;
+        align-items: baseline;
+        gap: 20px;
+        padding: 16px 0;
+        border-bottom: 1px solid #eee;
+    }
+    .solo-title { font-size: 17px; font-weight: 500; letter-spacing: 0.05em; flex: 1; }
+    .solo-venue {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        color: #888;
+        letter-spacing: 0.1em;
+    }
+    .solo-year {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        color: #bbb;
+        letter-spacing: 0.1em;
+        white-space: nowrap;
     }
     .year-group { margin-bottom: 32px; }
     .year-label {
@@ -337,11 +398,15 @@
         background: var(--text-color);
     }
     @media (max-width: 768px) {
+        .solo-item { flex-wrap: wrap; gap: 4px 12px; }
         .group-item { grid-template-columns: 1fr; }
         .group-venue { text-align: left; }
         .group-item.current::before { display: none; }
     }
 
+    /* =====================
+       回遊ナビ
+    ===================== */
     .artists-nav {
         border-top: 1px solid #ddd;
         padding-top: 60px;
@@ -412,6 +477,9 @@
     }
     .prev-next span { color: #ddd; }
 
+    /* =====================
+       フッター
+    ===================== */
     footer {
         text-align: center;
         padding: 60px 0;
@@ -423,6 +491,9 @@
     }
     footer a { color: #aaa; }
 
+    /* =====================
+       レスポンシブ
+    ===================== */
     @media (max-width: 768px) {
         body { padding-top: 52px; }
         .container { padding: 0 25px; }
@@ -480,23 +551,23 @@
         <span>/</span>
         <a href="index.html#artists">ARTISTS</a>
         <span>/</span>
-        加藤彩
+        あめ
     </nav>
 
     <div class="artist-hero">
         <div class="hero-image-wrap">
-            <span class="artist-number">02 / 09</span>
-            <img src="kato_profile.jpg"
-                 alt="加藤彩 – Artist Profile Card"
+            <span class="artist-number">01 / 09</span>
+            <img src="ame_profile.jpg"
+                 alt="あめ – Artist Profile Card"
                  fetchpriority="high">
         </div>
         <div class="hero-text">
             <span class="hero-label">ARTIST PROFILE</span>
-            <h1 class="hero-name">加藤彩</h1>
+            <h1 class="hero-name">あめ</h1>
             <span class="hero-univ">Tokyo University of the Arts</span>
 
             <div class="hero-sns">
-                <a href="https://instagram.com/utoka_47_" target="_blank">Instagram</a>
+                <a href="https://www.instagram.com/prism_tensichan" target="_blank">Instagram</a>
             </div>
         </div>
     </div>
@@ -506,9 +577,15 @@
         <div class="comment-block">
             <span class="comment-label">制作への想い</span>
             <div class="comment-text">
-                <p>私は普段、その時々にふと意識に引っかかる人間の心理を起点に、具体的なモチーフを選び制作しています。</p>
-                <p>「Mon種々」は、思考を巡らせる中で生まれた衝動的なアウトプットであり、これまでの油画作品とは異なるアプローチから生まれた作品です。</p>
-                <p>意図を超えて立ち現れたこの表現は、自身の制作の新たな可能性を示すものでもあり、現在の私にとって重要な位置を占めています。</p>
+                <p>あめは制作において、記憶や夢といった実体は無いが、確かに存在するものを、輪郭をもたらす描写から見えないものを見えるようにすることを題材とし、パール材から油絵具を練り、角度や光で印象が変化する絵画を制作しています。</p>
+            </div>
+            <button class="comment-toggle" id="commentToggle" onclick="toggleComment()">Read More</button>
+            <div class="comment-more" id="commentMore">
+                <div class="comment-text">
+                    <p>『ほしぞらのねがいごと』シリーズによく見られるように、パール材を使った表現は、見る角度や光の当たり方で印象や色彩が変化することから、物事を一つの側面から見ることにとらわれないことを示しています。</p>
+                    <p>現代の中で目に見えることばかりを見つめ大切な、目には見えない存在がどこか忘れられその輪郭を失いつつあるように感じています。だからこそ改めて作品を通して、記憶や感情、想い。誰かの面影。忘れてはならない優しさといったそれぞれの内面にある語り出さない本質を作品と対話することで、間接的に思い出すような絵画と鑑賞者の関係性を構築したいと考えています。</p>
+                    <p>そのためにも、言葉や物語ることによって、見えない世界へのまなざしを持ち、鑑賞者との対話から立ち上がらせる絵画との関わり方を制作や展示の中で実験的に行っています。</p>
+                </div>
             </div>
         </div>
     </section>
@@ -518,7 +595,7 @@
         <div class="profile-grid">
             <div class="profile-row">
                 <div class="profile-label">NAME</div>
-                <div class="profile-value">加藤彩</div>
+                <div class="profile-value">あめ</div>
             </div>
             <div class="profile-row">
                 <div class="profile-label">AFFILIATION</div>
@@ -531,18 +608,36 @@
         <h2 class="section-title">EXHIBITION</h2>
         <div class="profile-grid">
 
+            <div class="solo-block">
+                <span class="ex-category">SOLO</span>
+                <div class="solo-item">
+                    <span class="solo-title">ほしぞらのねがいごと</span>
+                    <span class="solo-venue">JITSUZAISEI</span>
+                    <span class="solo-year">2025</span>
+                </div>
+            </div>
+
             <div class="group-block">
                 <span class="ex-category">GROUP</span>
                 <div class="year-group">
-                    <span class="year-label">2024</span>
-                    <div class="group-item"><span class="group-title">藝祭 2024 えん</span><span class="group-venue">東京藝術大学 上野校地</span></div>
-                </div>
-                <div class="year-group">
                     <span class="year-label">2025</span>
+                    <div class="group-item"><span class="group-title">童話展 3</span><span class="group-venue">Boji Hair + gallery</span></div>
+                    <div class="group-item"><span class="group-title">Hug my self あの日のわたしへ</span><span class="group-venue">peel south</span></div>
+                    <div class="group-item"><span class="group-title">BILLIKEN CREATORS COOL OSAKA</span><span class="group-venue">大丸梅田店 13F 特別催事場</span></div>
+                    <div class="group-item"><span class="group-title">街とナラティブ</span><span class="group-venue">HAGISO</span></div>
+                    <div class="group-item"><span class="group-title">Small Art Exhibition 2025 Swimmy</span><span class="group-venue">アトリエ三月</span></div>
+                    <div class="group-item"><span class="group-title">五芸祭2025 Connect</span><span class="group-venue">沖縄県立芸術大学</span></div>
+                    <div class="group-item"><span class="group-title">Tシャツドローイング公開制作</span><span class="group-venue">藝大アートプラザ</span></div>
+                    <div class="group-item"><span class="group-title">十人十色</span><span class="group-venue">nada art gallery</span></div>
+                    <div class="group-item"><span class="group-title">ZEROTEN 2025 -OSAKA-</span><span class="group-venue">大丸梅田店 11F ART GALLERY UMEDA</span></div>
                     <div class="group-item"><span class="group-title">藝祭 2025 たまゆら</span><span class="group-venue">東京藝術大学 上野校地</span></div>
+                    <div class="group-item"><span class="group-title">十人十色</span><span class="group-venue">大丸下関店</span></div>
+                    <div class="group-item"><span class="group-title">東京藝術大学一年進級展 CINEMA</span><span class="group-venue">元映画館</span></div>
                 </div>
                 <div class="year-group">
                     <span class="year-label">2026</span>
+                    <div class="group-item"><span class="group-title">可視光</span><span class="group-venue">ギャラリーうえまち</span></div>
+                    <div class="group-item"><span class="group-title">五芸祭 2026　きょうを、てらす展・エネルギャラリー展</span><span class="group-venue">京都市立芸術大学</span></div>
                     <div class="group-item current"><span class="group-title">雨の日の星空</span><span class="group-venue">Gallery Blue 3143</span></div>
                 </div>
             </div>
@@ -554,23 +649,23 @@
     <section class="fade-section artists-nav">
         <span class="artists-nav-label">OTHER ARTISTS</span>
         <ul class="artists-scroll">
-            <li><a href="ame.html">あめ</a></li>
-            <li class="current"><span>加藤彩</span></li>
+            <li class="current"><span>あめ</span></li>
+            <li><a href="kato.html">加藤彩</a></li>
             <!-- [CHANGE 2026.05.04] 小橋柚奈をtba解除してリンク化 -->
             <li><a href="kobashi.html">小橋柚奈</a></li>
             <!-- [CHANGE 2026.05.04] こばらをtba解除 -->
             <li><a href="kobara.html">こばら</a></li>
-            <li class="tba"><a href="koshiba.html">小柴海亜</a></li>
+            <!-- [CHANGE] 小柴海亜をtba解除 -->
+            <li><a href="koshiba.html">小柴海亜</a></li>
             <li class="tba"><a href="gong.html">龔惠雅</a></li>
             <li class="tba"><a href="tanabe.html">田辺朔葉</a></li>
             <li class="tba"><a href="miiya.html">みーや</a></li>
             <li class="tba"><a href="byun.html">びゅん</a></li>
         </ul>
 
-        <!-- [CHANGE 2026.05.04] 前後ナビに小橋柚奈を追加 -->
         <div class="prev-next">
-            <a href="ame.html">← あめ</a>
-            <a href="kobashi.html">小橋柚奈 →</a>
+            <a href="index.html#artists">← ARTISTS 一覧へ</a>
+            <a href="kato.html">加藤彩 →</a>
         </div>
     </section>
 
@@ -582,6 +677,13 @@
 </footer>
 
 <script>
+    function toggleComment() {
+        const more = document.getElementById('commentMore');
+        const btn = document.getElementById('commentToggle');
+        more.classList.toggle('open');
+        btn.textContent = more.classList.contains('open') ? 'Close' : 'Read More';
+    }
+
     function toggleMenu() {
         const btn = document.getElementById('hamburger');
         const menu = document.getElementById('overlayMenu');
