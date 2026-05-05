@@ -122,7 +122,7 @@ header section {
         .news-toggle { font-size: 12px; color: var(--accent-color); cursor: pointer; text-decoration: underline; margin-top: 10px; display: inline-block; }
         .pdf-link { display: inline-block; margin-top: 15px; font-size: 13px; border: 1px solid #555; padding: 5px 15px; border-radius: 2px; }
 
-        /* [ADD] NEWS 上位2件以外を折りたたむ */
+        /* NEWS 上位3件以外を折りたたむ */
         .news-older { display: none; }
         .news-more-btn {
             display: block;
@@ -567,6 +567,8 @@ body { padding-top: 48px; }
                 </div>
                 <div class="news-toggle" onclick="toggleNews(5)">Read More / Close</div>
             </article>
+        <!-- [CHANGE] 上位3件を常時表示・4件目以降を折りたたむ -->
+            <div class="news-older" id="newsOlder">
             <article class="news-item">
                 <span class="news-date">2026.04.29<span class="news-tag">UPDATE</span></span>
                 <span class="news-headline">アーティストプロフィールページ公開（加藤彩）</span>
@@ -576,8 +578,6 @@ body { padding-top: 48px; }
                 </div>
                 <div class="news-toggle" onclick="toggleNews(4)">Read More / Close</div>
             </article>
-        <!-- [ADD] 上位2件より古い記事は折りたたむ -->
-            <div class="news-older" id="newsOlder">
 <article class="news-item">
                 <span class="news-date">2026.04.26<span class="news-tag">UPDATE</span></span>
                 <span class="news-headline">アーティストプロフィールページ公開開始（第1弾：あめ）</span>
