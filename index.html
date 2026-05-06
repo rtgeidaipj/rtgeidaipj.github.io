@@ -602,6 +602,38 @@ body { padding-top: 48px; }
         
         <section id="news">
             <h2 class="section-title">NEWS</h2>
+            <!-- [ADD 2026.05.06] びゅんプロフィールページ公開 -->
+            <article class="news-item">
+                <span class="news-date">2026.05.06<span class="news-tag">UPDATE</span></span>
+                <span class="news-headline">アーティストプロフィールページ公開（びゅん）</span>
+                <div class="news-content" id="news-content-11">
+                    <p>藝大生プロフィールページの第9弾（最終弾）として、<strong><a href="byun.html">びゅん</a></strong>のページを公開しました。</p>
+                    <p>「色と想像と現実の間の確かなリアル」を問いながら、絵画を中心にファッション・映像・パフォーマンスを横断するインスタレーションを制作するびゅん。BSフジ・東京新聞・東京メトロ等にも取り上げられてきた表現者です。制作への想いをぜひご覧ください。</p>
+                </div>
+                <div class="news-toggle" onclick="toggleNews(11)">Read More / Close</div>
+            </article>
+            <!-- [ADD 2026.05.06] みーやプロフィールページ公開 -->
+            <article class="news-item">
+                <span class="news-date">2026.05.06<span class="news-tag">UPDATE</span></span>
+                <span class="news-headline">アーティストプロフィールページ公開（みーや）</span>
+                <div class="news-content" id="news-content-10">
+                    <p>藝大生プロフィールページの第8弾として、<strong><a href="miiya.html">みーや</a></strong>のページを公開しました。</p>
+                    <p>子どもが持つ自由で無垢な感性に惹かれ、理性や形式に縛られすぎることなく直感と衝動に従って描くみーや。躍動感のある色彩から「楽しい」と感じられる瞬間の共有を大切に制作しています。制作への想いをぜひご覧ください。</p>
+                </div>
+                <div class="news-toggle" onclick="toggleNews(10)">Read More / Close</div>
+            </article>
+            <!-- [ADD 2026.05.06] 田辺朔葉プロフィールページ公開 -->
+            <article class="news-item">
+                <span class="news-date">2026.05.06<span class="news-tag">UPDATE</span></span>
+                <span class="news-headline">アーティストプロフィールページ公開（田辺朔葉）</span>
+                <div class="news-content" id="news-content-9">
+                    <p>藝大生プロフィールページの第7弾として、<strong><a href="tanabe.html">田辺朔葉</a></strong>のページを公開しました。</p>
+                    <p>「他者を認識するとはどのようなことなのか」を問いとして肖像画制作を行う田辺朔葉。こがらし輸音 著『水底に落とした銀河』（双葉社）の装画を手がけ、第5回ホキ美術館大賞展・第8回宮本三郎デッサン大賞展への入選も果たす表現者です。制作への想いをぜひご覧ください。</p>
+                </div>
+                <div class="news-toggle" onclick="toggleNews(9)">Read More / Close</div>
+            </article>
+        <!-- [CHANGE] 上位3件を常時表示・4件目以降を折りたたむ -->
+            <div class="news-older" id="newsOlder">
             <!-- [ADD 2026.05.05] 龔惠雅プロフィールページ公開 -->
             <article class="news-item">
                 <span class="news-date">2026.05.05<span class="news-tag">UPDATE</span></span>
@@ -624,7 +656,6 @@ body { padding-top: 48px; }
                 </div>
                 <div class="news-toggle" onclick="toggleNews(7)">Read More / Close</div>
             </article>
-            <!-- [ADD 2026.05.04] こばらプロフィールページ公開 -->
             <article class="news-item">
                 <span class="news-date">2026.05.04<span class="news-tag">UPDATE</span></span>
                 <span class="news-headline">アーティストプロフィールページ公開（こばら）</span>
@@ -635,8 +666,6 @@ body { padding-top: 48px; }
                 </div>
                 <div class="news-toggle" onclick="toggleNews(6)">Read More / Close</div>
             </article>
-        <!-- [CHANGE] 上位3件を常時表示・4件目以降を折りたたむ -->
-            <div class="news-older" id="newsOlder">
             <!-- [ADD 2026.05.04] 小橋柚奈プロフィールページ公開 -->
             <article class="news-item">
                 <span class="news-date">2026.05.04<span class="news-tag">UPDATE</span></span>
@@ -744,13 +773,13 @@ body { padding-top: 48px; }
             <div class="artist-divider"></div>
             <div class="artist-group">
                 <span class="group-name">Tokyo University of the Arts Students</span>
-                <!-- [CHANGE 2026.05.04] 3/9 に更新 -->
+                <!-- [CHANGE 2026.05.06] 9/9 に更新 -->
                 <div class="students-progress">
-                    <span class="progress-count">6 <span>/ 9 profiles open</span></span>
+                    <span class="progress-count">9 <span>/ 9 profiles open</span></span>
                 </div>
                 <div class="progress-bar-wrap">
-                    <!-- [CHANGE 2026.05.04] バー幅 22.2% → 33.3% -->
-                    <div class="progress-bar-fill" style="width:66.6%"></div>
+                    <!-- [CHANGE 2026.05.06] バー幅 100% -->
+                    <div class="progress-bar-fill" style="width:100%"></div>
                 </div>
                 <div class="artists-grid">
                     <div class="artist-item">
@@ -759,25 +788,30 @@ body { padding-top: 48px; }
                     <div class="artist-item">
                         <a href="kato.html" class="artist-page-link">加藤彩 <span class="artist-arrow">→</span></a>
                     </div>
-                    <!-- [CHANGE 2026.05.04] 小橋柚奈をリンク化 -->
                     <div class="artist-item">
                         <a href="kobashi.html" class="artist-page-link">小橋柚奈 <span class="artist-arrow">→</span></a>
                     </div>
-                    <!-- [CHANGE 2026.05.04] こばらをリンク化 -->
                     <div class="artist-item">
                         <a href="kobara.html" class="artist-page-link">こばら <span class="artist-arrow">→</span></a>
                     </div>
-                    <!-- [CHANGE] 小柴海亜をリンク化 -->
                     <div class="artist-item">
                         <a href="koshiba.html" class="artist-page-link">小柴海亜 <span class="artist-arrow">→</span></a>
                     </div>
-                    <!-- [CHANGE 2026.05.05] 龔惠雅をリンク化 -->
                     <div class="artist-item">
                         <a href="gong.html" class="artist-page-link">龔惠雅 <span class="artist-arrow">→</span></a>
                     </div>
-                    <div class="artist-item"><span class="artist-locked">田辺朔葉</span></div>
-                    <div class="artist-item"><span class="artist-locked">みーや</span></div>
-                    <div class="artist-item"><span class="artist-locked">びゅん</span></div>
+                    <!-- [CHANGE 2026.05.06] 田辺朔葉をリンク化 -->
+                    <div class="artist-item">
+                        <a href="tanabe.html" class="artist-page-link">田辺朔葉 <span class="artist-arrow">→</span></a>
+                    </div>
+                    <!-- [CHANGE 2026.05.06] みーやをリンク化 -->
+                    <div class="artist-item">
+                        <a href="miiya.html" class="artist-page-link">みーや <span class="artist-arrow">→</span></a>
+                    </div>
+                    <!-- [CHANGE 2026.05.06] びゅんをリンク化 -->
+                    <div class="artist-item">
+                        <a href="byun.html" class="artist-page-link">びゅん <span class="artist-arrow">→</span></a>
+                    </div>
                 </div>
             </div>
         </section>
