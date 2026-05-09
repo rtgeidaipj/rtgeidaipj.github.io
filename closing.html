@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@rtgeidaipj2026">
+<meta name="twitter:image" content="https://rtgeidaipj.github.io/main_vs.jpg">
+<meta property="og:url" content="https://rtgeidaipj.github.io/closing.html">
+<meta property="og:title" content="クロージングパーティー ｜ 雨の日の星空">
+<meta property="og:description" content="2026年8月31日（月）開催。橋本真希（Rain Tree）・藝大生9名が登壇するクロージングパーティーへ、抽選で10名様をご招待。星空登録で抽選口数を増やそう。">
+<meta property="og:image" content="https://rtgeidaipj.github.io/main_vs.jpg">
+<meta property="og:type" content="website">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2GFRT45G53"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2GFRT45G53');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>クロージングパーティー ｜ 雨の日の星空</title>
+<meta name="description" content="展覧会『雨の日の星空』クロージングパーティー。2026年8月31日（月）12:00〜14:00、都内某所にて10名様をご招待。星空登録で抽選口数を増やそう。">
+<link rel="canonical" href="https://rtgeidaipj.github.io/closing.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --bg-color: #f8f8f8;
+        --text-color: #2b2b2b;
+        --accent-color: #888;
+        --font-main: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
+        --font-eng: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        /* [ADD 2026.05.10] 星空登録ページ専用カラー */
+        --navy: #1e3a5f;
+        --gold: #c9a84c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: var(--font-main);
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 2.2;
+        letter-spacing: 0.12em;
+        -webkit-font-smoothing: antialiased;
+        padding-top: 48px;
+    }
+
+    a { color: var(--text-color); text-decoration: none; transition: opacity 0.3s; }
+    a:hover { opacity: 0.6; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+
+    /* ナビ */
+    .site-nav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 100;
+        background: rgba(248,248,248,0.92);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        padding: 14px 0;
+        flex-wrap: wrap;
+    }
+    .nav-links a {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+        transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--text-color); opacity: 1; }
+    .nav-links .nav-active {
+        color: var(--navy) !important;
+        border-bottom: 1px solid var(--navy);
+        padding-bottom: 1px;
+    }
+    .nav-sep { font-family: var(--font-eng); font-size: 11px; color: #ddd; pointer-events: none; }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px; height: 44px;
+        padding: 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 8px; right: 16px;
+        background: none; border: none;
+    }
+    .hamburger span { display: block; width: 22px; height: 1px; background: var(--text-color); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+    .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .overlay-menu {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(248,248,248,0.97);
+        z-index: 99;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+    .overlay-menu.open { display: flex; opacity: 1; }
+    .overlay-menu a {
+        font-family: var(--font-eng);
+        font-size: 14px;
+        letter-spacing: 0.25em;
+        color: var(--text-color);
+        padding: 20px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+    .overlay-menu a:first-of-type { border-top: 1px solid #eee; }
+    .overlay-menu .overlay-info {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        color: var(--accent-color);
+        letter-spacing: 0.2em;
+        margin-top: 32px;
+    }
+
+    /* パンくず */
+    .breadcrumb { padding: 28px 0 0; }
+    .breadcrumb a, .breadcrumb span {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+    }
+    .breadcrumb span { margin: 0 8px; }
+
+    /* ヒーロー */
+    .cl-hero {
+        padding: 56px 0 52px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+    .cl-hero-label {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.28em;
+        color: var(--accent-color);
+        display: block;
+        margin-bottom: 20px;
+    }
+    .cl-hero-date {
+        font-family: var(--font-eng);
+        font-size: 13px;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+        display: block;
+        margin-bottom: 16px;
+    }
+    .cl-hero-title {
+        font-size: 32px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        margin: 0 0 24px;
+    }
+    .cl-hero-cap {
+        font-family: var(--font-eng);
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+        border: 1px solid #ddd;
+        display: inline-block;
+        padding: 8px 28px;
+    }
+
+    /* セクション */
+    .cl-sec { padding: 56px 0; border-bottom: 1px solid #eee; }
+    .cl-sec-title {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.28em;
+        color: var(--accent-color);
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    /* 概要テーブル */
+    .cl-table {
+        max-width: 580px;
+        margin: 0 auto;
+        border-top: 0.5px solid #eee;
+    }
+    .cl-row {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 0 28px;
+        padding: 18px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 14px;
+        line-height: 1.9;
+        align-items: baseline;
+    }
+    .cl-row-label {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        color: #aaa;
+        padding-top: 4px;
+    }
+
+    /* 抽選セクション */
+    .cl-lottery {
+        padding: 56px 0;
+        border-bottom: 1px solid #eee;
+        background: #fff;
+        margin: 0 -40px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .cl-lottery-body {
+        font-size: 15px;
+        color: #555;
+        text-align: center;
+        line-height: 2.4;
+        margin-bottom: 44px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cl-lottery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 560px;
+        margin: 0 auto 24px;
+        border: 1px solid #ddd;
+    }
+    .cl-lottery-item {
+        padding: 24px 16px;
+        text-align: center;
+        border-right: 1px solid #ddd;
+        background: var(--bg-color);
+    }
+    .cl-lottery-item:last-child { border-right: none; }
+    .cl-lottery-l {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        color: #bbb;
+        display: block;
+        margin-bottom: 8px;
+    }
+    .cl-lottery-name {
+        font-size: 13px;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 6px;
+    }
+    .cl-lottery-star {
+        font-family: var(--font-eng);
+        font-size: 12px;
+        color: var(--gold);
+        font-weight: 500;
+    }
+    .cl-lottery-note {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        color: #aaa;
+        text-align: center;
+        letter-spacing: 0.1em;
+        line-height: 2;
+    }
+
+    /* CTA */
+    .cl-cta {
+        padding: 56px 0;
+        border-bottom: 1px solid #eee;
+        text-align: center;
+    }
+    .cl-cta-body {
+        font-size: 15px;
+        color: #555;
+        margin-bottom: 28px;
+        line-height: 2.3;
+    }
+    .cl-cta-btn {
+        display: inline-block;
+        font-family: var(--font-eng);
+        font-size: 12px;
+        letter-spacing: 0.25em;
+        color: #fff;
+        background: var(--navy);
+        padding: 16px 40px;
+        border-radius: 2px;
+        transition: opacity 0.3s;
+    }
+    .cl-cta-btn:hover { opacity: 0.75; color: #fff; }
+
+    footer {
+        text-align: center;
+        padding: 60px 0;
+        font-family: var(--font-eng);
+        font-size: 10px;
+        color: #bbb;
+        letter-spacing: 0.2em;
+    }
+    footer a { color: #bbb; }
+
+    @media (max-width: 768px) {
+        body { padding-top: 52px; }
+        .container { padding: 0 25px; }
+        .nav-links { display: none; }
+        .hamburger { display: flex; }
+        .site-nav { height: 52px; }
+        .cl-lottery { margin: 0 -25px; padding-left: 25px; padding-right: 25px; }
+        .cl-lottery-grid { grid-template-columns: 1fr; }
+        .cl-lottery-item { border-right: none; border-bottom: 1px solid #ddd; }
+        .cl-lottery-item:last-child { border-bottom: none; }
+        .cl-row { grid-template-columns: 70px 1fr; gap: 0 16px; }
+    }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="nav-links">
+        <a href="index.html">← TOP</a>
+        <a href="index.html#news">NEWS</a>
+        <a href="index.html#statement">STATEMENT</a>
+        <a href="index.html#artists">ARTISTS</a>
+        <a href="index.html#information">INFORMATION</a>
+        <span class="nav-sep">|</span>
+        <a href="hoshizora.html">星空登録受付中</a>
+        <span class="nav-sep">|</span>
+        <a href="tokuten.html">特典</a>
+        <span class="nav-sep">|</span>
+        <a href="closing.html" class="nav-active">クロージングパーティー 8.31</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<div class="overlay-menu" id="overlayMenu">
+    <a href="index.html" onclick="toggleMenu()">TOP</a>
+    <a href="index.html#news" onclick="toggleMenu()">NEWS</a>
+    <a href="index.html#statement" onclick="toggleMenu()">STATEMENT</a>
+    <a href="index.html#artists" onclick="toggleMenu()">ARTISTS</a>
+    <a href="index.html#information" onclick="toggleMenu()">INFORMATION</a>
+    <a href="hoshizora.html" onclick="toggleMenu()">星空登録受付中</a>
+    <a href="tokuten.html" onclick="toggleMenu()">特典</a>
+    <a href="closing.html" onclick="toggleMenu()">クロージングパーティー 8.31</a>
+    <div class="overlay-info">2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</div>
+</div>
+
+<div class="container">
+
+    <nav class="breadcrumb">
+        <a href="index.html">雨の日の星空</a>
+        <span>/</span>
+        クロージングパーティー
+    </nav>
+
+    <!-- ヒーロー -->
+    <div class="cl-hero">
+        <span class="cl-hero-label">SPECIAL EVENT</span>
+        <span class="cl-hero-date">2 0 2 6 . 8 . 3 1（月）1 2 : 0 0 – 1 4 : 0 0 · 都内某所</span>
+        <h1 class="cl-hero-title">クロージングパーティー</h1>
+        <span class="cl-hero-cap">10名様ご招待</span>
+    </div>
+
+    <!-- 概要 -->
+    <div class="cl-sec">
+        <p class="cl-sec-title">O V E R V I E W</p>
+        <div class="cl-table">
+            <div class="cl-row">
+                <span class="cl-row-label">日 時</span>
+                <span>2026年8月31日（月）12:00 – 14:00</span>
+            </div>
+            <div class="cl-row">
+                <span class="cl-row-label">場 所</span>
+                <span>都内某所（当選者にメールにてご案内します）</span>
+            </div>
+            <div class="cl-row">
+                <span class="cl-row-label">定 員</span>
+                <span>抽選にて10名様をご招待</span>
+            </div>
+            <div class="cl-row">
+                <span class="cl-row-label">登 壇</span>
+                <span>橋本真希（Rain Tree）・藝大生9名<br><span style="font-size:13px;color:#aaa;">＋ ゲスト登壇者 後日発表</span></span>
+            </div>
+            <div class="cl-row">
+                <span class="cl-row-label">料 金</span>
+                <span>無料</span>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /.container -->
+
+<!-- 抽選（フル幅背景） -->
+<div class="cl-lottery">
+    <div class="container">
+        <p class="cl-sec-title">L O T T E R Y</p>
+        <p class="cl-lottery-body">★1つにつき1口、抽選箱にあなたの名前が入ります。★が多いほど、当選確率が上がります。<br>来場するほど、友達を誘うほど、夜空は満ちていきます。</p>
+        <div class="cl-lottery-grid">
+            <div class="cl-lottery-item">
+                <span class="cl-lottery-l">登 録</span>
+                <span class="cl-lottery-name">星空登録</span>
+                <span class="cl-lottery-star">★ 1</span>
+            </div>
+            <div class="cl-lottery-item">
+                <span class="cl-lottery-l">来 場</span>
+                <span class="cl-lottery-name">毎日チェックイン</span>
+                <span class="cl-lottery-star">★ 最大10</span>
+            </div>
+            <div class="cl-lottery-item">
+                <span class="cl-lottery-l">紹 介</span>
+                <span class="cl-lottery-name">友達を誘う</span>
+                <span class="cl-lottery-star">★ 最大5</span>
+            </div>
+        </div>
+        <p class="cl-lottery-note">★ 合計最大16口 · 抽選は8/28に実施 · 当選者にメール通知</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- CTA -->
+    <div class="cl-cta">
+        <p class="cl-cta-body">まだ星空登録がお済みでない方はこちら。<br>登録するだけで ★1つが付与されます。</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBB0a86_Ip6mbJZLgHIVFhyf-Q2yfwfxwh5kVIJSv4pVkqWA/viewform?usp=header"
+           target="_blank"
+           class="cl-cta-btn">星 空 登 録 を す る →</a>
+    </div>
+
+</div><!-- /.container -->
+
+<footer>
+    <p><a href="index.html">『雨の日の星空』</a> &nbsp;|&nbsp; 2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</p>
+    <p style="margin-top:10px;">© 2026 橋本真希×藝大生プロジェクト. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const btn = document.getElementById('hamburger');
+        const menu = document.getElementById('overlayMenu');
+        btn.classList.toggle('open');
+        menu.classList.toggle('open');
+        document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+</script>
+</body>
+</html>

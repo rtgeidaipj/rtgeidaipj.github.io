@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@rtgeidaipj2026">
+<meta name="twitter:image" content="https://rtgeidaipj.github.io/main_vs.jpg">
+<meta property="og:url" content="https://rtgeidaipj.github.io/tokuten.html">
+<meta property="og:title" content="星空登録の特典 ｜ 雨の日の星空">
+<meta property="og:description" content="展覧会『雨の日の星空』をより深く楽しんだ記録が、特典になります。来場・友達紹介で集めた★の数でクロージングパーティーの抽選口数と来場証明NFTのレアリティが変わります。">
+<meta property="og:image" content="https://rtgeidaipj.github.io/main_vs.jpg">
+<meta property="og:type" content="website">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2GFRT45G53"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2GFRT45G53');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星空登録の特典 ｜ 雨の日の星空</title>
+<meta name="description" content="展覧会『雨の日の星空』の星空登録特典ページ。来場・友達紹介で集めた★の数でクロージングパーティーの抽選口数が増え、来場証明NFTのレアリティが変わります。">
+<link rel="canonical" href="https://rtgeidaipj.github.io/tokuten.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --bg-color: #f8f8f8;
+        --text-color: #2b2b2b;
+        --accent-color: #888;
+        --font-main: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
+        --font-eng: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        /* [ADD 2026.05.10] 星空登録ページ専用カラー */
+        --navy: #1e3a5f;
+        --gold: #c9a84c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: var(--font-main);
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 2.2;
+        letter-spacing: 0.12em;
+        -webkit-font-smoothing: antialiased;
+        padding-top: 48px;
+    }
+
+    a { color: var(--text-color); text-decoration: none; transition: opacity 0.3s; }
+    a:hover { opacity: 0.6; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+
+    /* ナビ */
+    .site-nav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 100;
+        background: rgba(248,248,248,0.92);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        padding: 14px 0;
+        flex-wrap: wrap;
+    }
+    .nav-links a {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+        transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--text-color); opacity: 1; }
+    .nav-links .nav-active {
+        color: var(--navy) !important;
+        border-bottom: 1px solid var(--navy);
+        padding-bottom: 1px;
+    }
+    .nav-sep { font-family: var(--font-eng); font-size: 11px; color: #ddd; pointer-events: none; }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px; height: 44px;
+        padding: 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 8px; right: 16px;
+        background: none; border: none;
+    }
+    .hamburger span { display: block; width: 22px; height: 1px; background: var(--text-color); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+    .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .overlay-menu {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(248,248,248,0.97);
+        z-index: 99;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+    .overlay-menu.open { display: flex; opacity: 1; }
+    .overlay-menu a {
+        font-family: var(--font-eng);
+        font-size: 14px;
+        letter-spacing: 0.25em;
+        color: var(--text-color);
+        padding: 20px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+    .overlay-menu a:first-of-type { border-top: 1px solid #eee; }
+    .overlay-menu .overlay-info {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        color: var(--accent-color);
+        letter-spacing: 0.2em;
+        margin-top: 32px;
+    }
+
+    /* パンくず */
+    .breadcrumb { padding: 28px 0 0; }
+    .breadcrumb a, .breadcrumb span {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+    }
+    .breadcrumb span { margin: 0 8px; }
+
+    /* ヒーロー */
+    .tk-hero { padding: 56px 0 44px; border-bottom: 1px solid #ddd; text-align: center; }
+    .tk-hero-label {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.28em;
+        color: var(--accent-color);
+        display: block;
+        margin-bottom: 20px;
+    }
+    .tk-hero-title { font-size: 32px; font-weight: 500; letter-spacing: 0.2em; margin: 0 0 20px; }
+    .tk-hero-body { font-size: 15px; color: #444; line-height: 2.4; max-width: 560px; margin: 0 auto; }
+
+    /* セクション */
+    .tk-sec { padding: 56px 0; border-bottom: 1px solid #eee; }
+    .tk-sec-title {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.28em;
+        color: var(--accent-color);
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    /* 特典カード01（大） */
+    .tk-card-main {
+        border: 1px solid #ddd;
+        background: #fff;
+        padding: 36px 32px;
+        margin-bottom: 24px;
+    }
+    .tk-card-num {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.25em;
+        color: var(--navy);
+        display: block;
+        margin-bottom: 12px;
+        font-weight: 500;
+    }
+    .tk-card-title { font-size: 20px; font-weight: 500; margin: 0 0 18px; letter-spacing: 0.05em; }
+    .tk-card-body { font-size: 14px; color: #555; line-height: 2.3; margin: 0 0 24px; }
+
+    /* 口数イメージ図 */
+    .tk-diagram {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border-top: 1px solid #eee;
+        padding-top: 24px;
+    }
+    .tk-diagram-item { text-align: center; flex: 1; }
+    .tk-diagram-star {
+        font-family: var(--font-eng);
+        font-size: 16px;
+        color: var(--gold);
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+    }
+    .tk-diagram-label {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        color: var(--accent-color);
+        letter-spacing: 0.1em;
+        display: block;
+        line-height: 1.8;
+    }
+    .tk-diagram-arrow { font-size: 20px; color: var(--gold); flex-shrink: 0; }
+
+    /* 特典カード02（小） */
+    .tk-card-sub {
+        border: 1px solid #eee;
+        background: #fff;
+        padding: 32px;
+    }
+    .tk-card-sub-title {
+        font-size: 17px;
+        font-weight: 500;
+        margin: 0 0 16px;
+        letter-spacing: 0.05em;
+    }
+    .tk-card-meta {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        color: var(--accent-color);
+        letter-spacing: 0.15em;
+        font-weight: 400;
+        margin-left: 12px;
+    }
+
+    /* レアリティ表 */
+    .tk-rarity {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    .tk-rarity td { padding: 12px 16px; border-bottom: 1px solid #eee; }
+    .tk-rarity tr:first-child td { border-top: 1px solid #eee; }
+    .tk-rarity td:first-child {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        color: var(--accent-color);
+        letter-spacing: 0.1em;
+        width: 110px;
+    }
+    .tk-card-note {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        color: #aaa;
+        letter-spacing: 0.1em;
+        margin-top: 10px;
+        line-height: 1.9;
+    }
+    .tk-nft-note {
+        border-left: 2px solid var(--gold);
+        padding: 12px 16px;
+        margin-top: 16px;
+        font-size: 13px;
+        color: #555;
+        line-height: 2.2;
+        background: #fff;
+    }
+
+    /* SEE ALSO */
+    .tk-seealso {
+        padding: 48px 0;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+    .tk-seealso a {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+        border: 1px solid #ddd;
+        padding: 10px 24px;
+        display: inline-block;
+        margin: 6px 8px;
+        border-radius: 2px;
+        transition: all 0.3s;
+    }
+    .tk-seealso a:hover { color: var(--text-color); border-color: var(--text-color); opacity: 1; }
+
+    footer {
+        text-align: center;
+        padding: 60px 0;
+        font-family: var(--font-eng);
+        font-size: 10px;
+        color: #bbb;
+        letter-spacing: 0.2em;
+    }
+    footer a { color: #bbb; }
+
+    @media (max-width: 768px) {
+        body { padding-top: 52px; }
+        .container { padding: 0 25px; }
+        .nav-links { display: none; }
+        .hamburger { display: flex; }
+        .site-nav { height: 52px; }
+        .tk-diagram { flex-direction: column; gap: 12px; }
+        .tk-diagram-arrow { transform: rotate(90deg); }
+    }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="nav-links">
+        <a href="index.html">← TOP</a>
+        <a href="index.html#news">NEWS</a>
+        <a href="index.html#statement">STATEMENT</a>
+        <a href="index.html#artists">ARTISTS</a>
+        <a href="index.html#information">INFORMATION</a>
+        <span class="nav-sep">|</span>
+        <a href="hoshizora.html">星空登録受付中</a>
+        <span class="nav-sep">|</span>
+        <a href="tokuten.html" class="nav-active">特典</a>
+        <span class="nav-sep">|</span>
+        <a href="closing.html">クロージングパーティー 8.31</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<div class="overlay-menu" id="overlayMenu">
+    <a href="index.html" onclick="toggleMenu()">TOP</a>
+    <a href="index.html#news" onclick="toggleMenu()">NEWS</a>
+    <a href="index.html#statement" onclick="toggleMenu()">STATEMENT</a>
+    <a href="index.html#artists" onclick="toggleMenu()">ARTISTS</a>
+    <a href="index.html#information" onclick="toggleMenu()">INFORMATION</a>
+    <a href="hoshizora.html" onclick="toggleMenu()">星空登録受付中</a>
+    <a href="tokuten.html" onclick="toggleMenu()">特典</a>
+    <a href="closing.html" onclick="toggleMenu()">クロージングパーティー 8.31</a>
+    <div class="overlay-info">2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</div>
+</div>
+
+<div class="container">
+
+    <nav class="breadcrumb">
+        <a href="index.html">雨の日の星空</a>
+        <span>/</span>
+        <a href="hoshizora.html">星空登録</a>
+        <span>/</span>
+        星空登録の特典
+    </nav>
+
+    <div class="tk-hero">
+        <span class="tk-hero-label">HOSHIZORA BENEFITS</span>
+        <h1 class="tk-hero-title">星空登録の特典</h1>
+        <p class="tk-hero-body">展覧会に来るほど、友達を誘うほど、★が増えていきます。<br>集めた★は、クロージングパーティーの抽選口数と来場証明NFTのレアリティに反映されます。</p>
+    </div>
+
+    <div class="tk-sec">
+        <p class="tk-sec-title">★ B E N E F I T S — ★ で 変 わ る 特 典</p>
+
+        <!-- 特典01 クロージングパーティー -->
+        <div class="tk-card-main">
+            <span class="tk-card-num">01</span>
+            <h2 class="tk-card-title">クロージングパーティー 抽選招待</h2>
+            <p class="tk-card-body">★1つにつき1口、クロージングパーティー（8/31）の抽選箱にあなたの名前が入ります。★1つでも当選の可能性があります。★が多いほど、当選確率が上がります。<br>毎日来て、友達を5人誘えば★最大16口。</p>
+            <div class="tk-diagram">
+                <div class="tk-diagram-item">
+                    <span class="tk-diagram-star">★ 1</span>
+                    <span class="tk-diagram-label">抽選箱に<br>1口入る</span>
+                </div>
+                <span class="tk-diagram-arrow">→</span>
+                <div class="tk-diagram-item">
+                    <span class="tk-diagram-star">★ 16</span>
+                    <span class="tk-diagram-label">抽選箱に<br>16口入る<br>（★1の方と比べて16倍）</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 特典02 来場証明NFT -->
+        <div class="tk-card-sub">
+            <span class="tk-card-num">02</span>
+            <h2 class="tk-card-sub-title">来場証明 NFT <span class="tk-card-meta">会期後 メール通知</span></h2>
+            <p class="tk-card-body" style="font-size:14px;color:#555;line-height:2.3;margin:0 0 4px;">★の合計数に応じてレアリティが変わる来場証明NFTを発行。登録したメールアドレス宛に、会期終了後にご案内します。</p>
+            <table class="tk-rarity">
+                <tr><td>★ 2〜4</td><td>通常版</td></tr>
+                <tr><td>★ 5〜9</td><td>レア版</td></tr>
+                <tr><td>★ 10〜16</td><td>超レア版</td></tr>
+            </table>
+            <p class="tk-card-note">※ ★2以上が発行対象です</p>
+            <div class="tk-nft-note">NFTの受け取りに、特別な知識や事前の準備（ウォレット等）は不要です。メールでお届けするリンクから、どなたでも簡単にコレクションいただけます。</div>
+        </div>
+    </div>
+
+    <div class="tk-seealso">
+        <a href="hoshizora.html">星空登録をする →</a>
+        <a href="closing.html">クロージングパーティー →</a>
+    </div>
+
+</div><!-- /.container -->
+
+<footer>
+    <p><a href="index.html">『雨の日の星空』</a> &nbsp;|&nbsp; 2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</p>
+    <p style="margin-top:10px;">© 2026 橋本真希×藝大生プロジェクト. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const btn = document.getElementById('hamburger');
+        const menu = document.getElementById('overlayMenu');
+        btn.classList.toggle('open');
+        menu.classList.toggle('open');
+        document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+</script>
+</body>
+</html>
