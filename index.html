@@ -113,10 +113,10 @@ header section {
 }
         .section-title { font-family: var(--font-eng); font-size: 14px; text-align: center; margin-bottom: 60px; color: var(--accent-color); letter-spacing: 0.2em; }
 
-        .news-item { border-bottom: 1px solid #ddd; padding: 30px 0; }
-        .news-date { font-family: var(--font-eng); font-size: 13px; color: var(--accent-color); display: block; margin-bottom: 10px; }
+        .news-item { border-bottom: 1px solid #ddd; padding: 20px 0; }
+        .news-date { font-family: var(--font-eng); font-size: 11px; color: var(--accent-color); display: block; margin-bottom: 8px; }
         .news-tag { font-size: 11px; border: 1px solid #ddd; padding: 2px 8px; margin-left: 10px; border-radius: 2px; }
-        .news-headline { font-size: 18px; font-weight: 500; margin-bottom: 15px; display: block; }
+        .news-headline { font-size: 15px; font-weight: 500; margin-bottom: 10px; display: block; }
         .news-content { font-size: 14px; line-height: 2; color: #555; display: none; margin-top: 20px; }
         .news-content.open { display: block; }
         .news-toggle { font-size: 12px; color: var(--accent-color); cursor: pointer; text-decoration: underline; margin-top: 10px; display: inline-block; }
@@ -140,6 +140,29 @@ header section {
 
         .statement-text { text-align: justify; max-width: 700px; margin: 0 auto; font-size: 15px; }
         .statement-text p { margin-bottom: 40px; }
+        /* [ADD 2026.05.10] NARRATIVE EXPERIENCEレイアウト */
+        .narrative-layout {
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+        }
+        .narrative-text { flex: 1; }
+        .narrative-image {
+            flex: 0 0 160px;
+            width: 160px;
+            height: 160px;
+        }
+        /* [ADD 2026.05.10] ヒーローリード文 */
+        .hero-lead { max-width:900px; margin:0 auto 28px; text-align:center; }
+        .hero-lead-date { font-family:var(--font-eng); font-size:26px; font-weight:300; letter-spacing:0.05em; color:var(--text-color); margin-bottom:6px; }
+        .hero-lead-venue { font-family:var(--font-eng); font-size:15px; font-weight:500; letter-spacing:0.15em; color:#1e5fa5; margin-bottom:4px; }
+        .hero-lead-free { font-family:var(--font-eng); font-size:12px; letter-spacing:0.18em; color:var(--text-color); font-weight:500; margin-bottom:14px; }
+        .hero-lead-desc { font-family:var(--font-main); font-size:14px; color:var(--text-color); line-height:2.2; letter-spacing:0.12em; margin-bottom:20px; }
+        .hero-lead-divider { width:40px; height:1px; background:#ddd; margin:0 auto 20px; }
+        .hero-lead-copy { font-family:var(--font-main); font-size:15px; color:var(--text-color); line-height:2.4; letter-spacing:0.12em; margin-bottom:0; padding:0 20px; }
+        .hero-lead-hr { border:none; border-top:1px solid #ddd; margin:36px 0; }
+        .hero-lead-hoshi { font-family:var(--font-eng); font-size:13px; letter-spacing:0.15em; color:#c9a84c; margin-bottom:12px; font-weight:500; }
+        .hero-lead-sub { font-family:var(--font-main); font-size:13px; color:#555; line-height:2; letter-spacing:0.08em; margin-bottom:0; }
         /* [ADD] Project Statement 引用ブロックと続きを読む */
 .statement-lead {
     border-left: 1px solid #bbb;
@@ -254,6 +277,15 @@ header section {
             .info-row { flex-direction: column; }
             .personal-message { padding: 60px 20px; }
             .maki-portrait { max-width: 150px; }
+            /* [ADD 2026.05.10] スマホでNARRATIVEを縦積みに */
+            .narrative-layout { flex-direction: column-reverse; }
+            .narrative-image { width: 100%; height: 200px; flex: none; }
+            /* [ADD 2026.05.10] スマホでhero-leadのフォント調整 */
+            .hero-lead-date { font-size: 20px; }
+            .hero-lead-venue { font-size: 13px; letter-spacing: 0.1em; }
+            .hero-lead-free { font-size: 11px; letter-spacing: 0.12em; }
+            .hero-lead-copy { font-size: 13px; letter-spacing: 0.08em; padding: 0; }
+            .hero-lead-hoshi { font-size: 11px; letter-spacing: 0.1em; }
         }
 /* [ADD] ハンバーガーメニュー＆ナビゲーション */
 .site-nav {
@@ -403,61 +435,130 @@ body { padding-top: 48px; }
     .cd-num { font-size: 20px; }
 }
 
-/* [ADD 2026.05.05] 5/10ティザーバナー */
-.teaser-banner {
+/* [ADD 2026.05.10] 3カードバナー */
+/* [CHANGE 2026.05.10] 3カードバナー → 主役1枚＋サブ2枚の縦積み構成に変更 */
+.info-cards {
+    display: flex;
+    flex-direction: column;
     max-width: 900px;
     margin: 0 auto 80px;
     border: 1px solid #ddd;
-    padding: 28px 40px;
+    background: #fff;
+}
+/* 星空登録（主役・横長） */
+.info-card-main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    padding: 32px 36px;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
     background: #fff;
+    transition: background 0.3s;
+    gap: 24px;
 }
-.teaser-date {
+.info-card-main:hover { background: #f8f8f8; opacity: 1; }
+.info-card-main-left { flex: 1; text-align: center; }
+.info-card-main-tag {
     font-family: var(--font-eng);
-    font-size: 28px;
-    font-weight: 300;
-    letter-spacing: 0.05em;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: #bbb;
+    display: block;
+    margin-bottom: 8px;
+}
+.info-card-main-title {
+    font-size: 20px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
     color: var(--text-color);
-    white-space: nowrap;
-    line-height: 1;
+    letter-spacing: 0.05em;
 }
-.teaser-divider {
-    width: 1px;
-    height: 36px;
-    background: #ddd;
-    flex-shrink: 0;
-}
-.teaser-text {
-    flex: 1;
-}
-.teaser-label {
+.info-card-main-body {
     font-family: var(--font-eng);
     font-size: 11px;
-    letter-spacing: 0.15em;
-    color: var(--text-color);
-    display: block;
-    margin-bottom: 4px;
-}
-.teaser-body {
-    font-family: var(--font-eng);
-    font-size: 12px;
-    letter-spacing: 0.2em;
     color: var(--accent-color);
+    letter-spacing: 0.1em;
     line-height: 1.8;
+    display: block;
+}
+.info-card-main-arrow {
+    font-family: var(--font-eng);
+    font-size: 18px;
+    color: #ccc;
+    flex-shrink: 0;
+}
+/* サブ2枚（横並び） */
+.info-card-sub-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.info-card {
+    background: #fff;
+    padding: 24px 28px;
+    border-right: 1px solid #ddd;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s;
+}
+.info-card:last-child { border-right: none; }
+.info-card:hover { background: #f8f8f8; opacity: 1; }
+.info-card-tag {
+    font-family: var(--font-eng);
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: #bbb;
+    display: block;
+    margin-bottom: 10px;
+}
+.info-card-title {
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text-color);
+    letter-spacing: 0.05em;
+}
+.info-card-body {
+    font-family: var(--font-eng);
+    font-size: 10px;
+    color: var(--accent-color);
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+    display: block;
 }
 @media (max-width: 768px) {
-    .teaser-banner {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 24px 20px;
-        margin: -40px 20px 80px;
-        gap: 12px;
+    .info-cards { margin: 0 0 80px; }
+    .info-card-main { flex-direction: column; align-items: flex-start; padding: 24px 20px; }
+    .info-card-main-arrow { display: none; }
+    .info-card-sub-row { grid-template-columns: 1fr; }
+    .info-card { border-right: none; border-top: 1px solid #ddd; }
+}
+.nav-sep {
+    font-family: var(--font-eng);
+    font-size: 11px;
+    color: #ddd;
+    pointer-events: none;
+}
+.nav-highlight {
+    font-family: var(--font-eng);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--text-color) !important;
+    border-bottom: 1px solid var(--text-color);
+    padding-bottom: 1px;
+}
+@media (max-width: 768px) {
+    .info-cards {
+        grid-template-columns: 1fr;
+        margin: 0 0 80px;
     }
-    .teaser-divider { width: 40px; height: 1px; }
-    .teaser-date { font-size: 22px; }
+    .info-card {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+    .info-card:last-child { border-bottom: none; }
 }
 
 /* [ADD] ARTISTSセクション再設計 */
@@ -540,9 +641,17 @@ body { padding-top: 48px; }
 <nav class="site-nav">
     <div class="nav-links">
         <a href="#news">NEWS</a>
+        <a href="#about">ABOUT</a>
         <a href="#statement">STATEMENT</a>
         <a href="#artists">ARTISTS</a>
         <a href="#information">INFORMATION</a>
+        <!-- [ADD 2026.05.10] 星空登録・特典・クロージングパーティーリンク追加 -->
+        <span class="nav-sep">|</span>
+        <a href="hoshizora.html" class="nav-highlight">星空登録受付中</a>
+        <span class="nav-sep">|</span>
+        <a href="tokuten.html">特典</a>
+        <span class="nav-sep">|</span>
+        <a href="closing.html">クロージングパーティー 8.31</a>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -550,12 +659,16 @@ body { padding-top: 48px; }
 </nav>
 
 <div class="overlay-menu" id="overlayMenu">
-<!-- [ADD] TOPへ戻るリンクをメニューの先頭に追加 -->
-<a href="#" onclick="toggleMenu()">TOP</a>
+    <a href="#" onclick="toggleMenu()">TOP</a>
     <a href="#news" onclick="toggleMenu()">NEWS</a>
+    <a href="#about" onclick="toggleMenu()">ABOUT</a>
     <a href="#statement" onclick="toggleMenu()">STATEMENT</a>
     <a href="#artists" onclick="toggleMenu()">ARTISTS</a>
     <a href="#information" onclick="toggleMenu()">INFORMATION</a>
+    <!-- [ADD 2026.05.10] 星空登録・特典・クロージングパーティーリンク追加 -->
+    <a href="hoshizora.html" onclick="toggleMenu()">星空登録受付中</a>
+    <a href="tokuten.html" onclick="toggleMenu()">特典</a>
+    <a href="closing.html" onclick="toggleMenu()">クロージングパーティー 8.31</a>
     <div class="overlay-info">2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</div>
 </div>
 
@@ -572,8 +685,10 @@ body { padding-top: 48px; }
     </div>
 </div>
 <header class="container">
-    <section class="title-area">
-        <div class="project-label">橋本真希 × 藝大生プロジェクト</div>
+    <section class="title-area" style="padding-top:40px;">
+        <!-- [ADD 2026.05.10] 展覧会の紹介文を冒頭に追加 -->
+        <p style="font-family:var(--font-main); font-size:16px; color:var(--text-color); letter-spacing:0.12em; line-height:2.2; margin-bottom:14px;">秋元康氏総合プロデュースのガールズグループ「Rain Tree」のメンバー<br>橋本真希と、東京藝術大学生9名による合同展覧会</p>
+        <div class="project-label" style="font-size:12px; letter-spacing:0.2em;">橋本真希 × 藝大生プロジェクト</div>
         <h1>『雨の日の星空』</h1>
         <p class="subtitle">HASHIMOTO Maki × 9 GEIDAI Students 2026</p>
     </section>
@@ -586,13 +701,39 @@ body { padding-top: 48px; }
      fetchpriority="high">
     </div>
 
-    <!-- [ADD 2026.05.05] 5/10ティザーバナー -->
-    <div class="teaser-banner">
-        <span class="teaser-date">5.10</span>
-        <div class="teaser-divider"></div>
-        <div class="teaser-text">
-            <span class="teaser-label">Project Details</span>
-            <span class="teaser-body">coming soon</span>
+    <!-- [CHANGE 2026.05.10] リード文をB案に変更・会場情報を主役に -->
+    <div class="hero-lead">
+        <p class="hero-lead-date">2026.8.18 – 8.28</p>
+        <p class="hero-lead-venue">南青山 Gallery Blue 3143</p>
+        <p class="hero-lead-free">入場無料・予約不要</p>
+        <p class="hero-lead-desc">南青山の静かなギャラリーで、作品と一対一で向き合う時間をお楽しみください。</p>
+        <div class="hero-lead-divider"></div>
+        <p class="hero-lead-copy">まなざしが交差する11日間。<br>絵画と声が織りなす空間を、ぜひ会場で。</p>
+        <hr class="hero-lead-hr">
+        <p class="hero-lead-hoshi">星空登録（事前エントリー）— 8月17日まで受付中</p>
+        <p class="hero-lead-sub">展覧会をより深く楽しむための「星空登録」を受付中です。<br>来場や友達紹介の記録が星（★）となって残ります。</p>
+    </div>
+    <!-- [CHANGE 2026.05.10] 3カードバナー → 主役1枚＋サブ2枚構成に変更 -->
+    <div class="info-cards">
+        <a href="hoshizora.html" class="info-card-main">
+            <div class="info-card-main-left">
+                <span class="info-card-main-tag">REGISTRATION</span>
+                <span class="info-card-main-title">星空登録</span>
+                <span class="info-card-main-body">登録・来場・友達紹介で★を集めよう。来場するほど、展示との出会いが深まります。</span>
+            </div>
+            <span class="info-card-main-arrow">→</span>
+        </a>
+        <div class="info-card-sub-row">
+            <a href="tokuten.html" class="info-card">
+                <span class="info-card-tag">BENEFITS</span>
+                <span class="info-card-title">星空登録の特典を見る</span>
+                <span class="info-card-body">NFT · 抽選</span>
+            </a>
+            <a href="closing.html" class="info-card">
+                <span class="info-card-tag">EVENT — 2026.8.31</span>
+                <span class="info-card-title">クロージングパーティー</span>
+                <span class="info-card-body">10名様ご招待 · 要抽選</span>
+            </a>
         </div>
     </div>
 
@@ -602,6 +743,17 @@ body { padding-top: 48px; }
         
         <section id="news">
             <h2 class="section-title">NEWS</h2>
+            <!-- [ADD 2026.05.10] 星空登録・特典・クロージングパーティー公開 -->
+            <article class="news-item">
+                <span class="news-date">2026.05.10<span class="news-tag">NEW</span></span>
+                <span class="news-headline">星空登録・特典・クロージングパーティーの詳細を公開しました</span>
+                <div class="news-content" id="news-content-12">
+                    <p>2026年8月18日（火）より、東京・南青山のGallery Blue 3143にて開催する展覧会『雨の日の星空』。本日より、会期をより深く楽しんでいただくための「星空登録（事前エントリー）」を開始しました。</p>
+                    <p>ニックネームを登録すると最初の★が1つ付与されます。来場チェックインや友達紹介で★を集めるほど、8月31日（月）開催のクロージングパーティーへの抽選口数が増えます。クロージングパーティーには、抽選で10名様をご招待します。また、集めた★の数に応じた来場証明NFTを会期終了後に発行いたします。</p>
+                    <p>詳細は各ページをご確認ください。事前エントリーは2026年8月17日（月）23:59まで受け付けます。</p>
+                </div>
+                <div class="news-toggle" onclick="toggleNews(12)">Read More / Close</div>
+            </article>
             <!-- [ADD 2026.05.06] びゅんプロフィールページ公開 -->
             <article class="news-item">
                 <span class="news-date">2026.05.06<span class="news-tag">UPDATE</span></span>
@@ -622,6 +774,8 @@ body { padding-top: 48px; }
                 </div>
                 <div class="news-toggle" onclick="toggleNews(10)">Read More / Close</div>
             </article>
+        <!-- [CHANGE] 上位3件を常時表示・4件目以降を折りたたむ -->
+            <div class="news-older" id="newsOlder">
             <!-- [ADD 2026.05.06] 田辺朔葉プロフィールページ公開 -->
             <article class="news-item">
                 <span class="news-date">2026.05.06<span class="news-tag">UPDATE</span></span>
@@ -632,8 +786,6 @@ body { padding-top: 48px; }
                 </div>
                 <div class="news-toggle" onclick="toggleNews(9)">Read More / Close</div>
             </article>
-        <!-- [CHANGE] 上位3件を常時表示・4件目以降を折りたたむ -->
-            <div class="news-older" id="newsOlder">
             <!-- [ADD 2026.05.05] 龔惠雅プロフィールページ公開 -->
             <article class="news-item">
                 <span class="news-date">2026.05.05<span class="news-tag">UPDATE</span></span>
@@ -722,29 +874,42 @@ body { padding-top: 48px; }
             <button class="news-more-btn" id="newsMoreBtn" onclick="toggleOlderNews()">View All News</button>
         </section>
 
+        <!-- [ADD 2026.05.10] ABOUTセクション追加 -->
+        <section id="about">
+            <h2 class="section-title">ABOUT</h2>
+            <div class="statement-text">
+                <p>本展は、厚い雲の先にある星空を信じるように、見えない未来に希望のまなざしを持ち、表現を続けてきた10名の作家による舞台です。</p>
+                <p>「アイドル」と「アーティスト」。異なる領域に立つ両者に共通するのは、「誰かに見つけられ、支えられる」というファンダム（支持者）との深い関係性です。本展では、表現者が抱える「まなざし」をテーマに、橋本真希を含む10名の作家による、それぞれの視点を投影した絵画作品を一堂に展示します。</p>
+                <p>アイドルとしてのアイデンティティを絵画という形態に昇華する橋本真希と、アイドルプロデュースに代表される「ファンダム」という要素を自らの表現に取り込む藝大生たち。表現者としての境界を越えて、鑑賞者やファンとの新たな関係の構築を目指す、実験的な試みをお届けします。</p>
+                <div style="border-top:1px solid #eee; margin-top:48px; padding-top:48px;">
+                    <span class="statement-sub">NARRATIVE EXPERIENCE</span>
+                    <div class="narrative-layout">
+                        <div class="narrative-text">
+                            <p style="font-size:16px; font-weight:500; margin-bottom:20px; letter-spacing:0.05em;">声で綴る、まなざしの物語 — 橋本真希による朗読</p>
+                            <p style="font-size:14px; color:var(--text-color); line-height:2.5; text-align:justify;">会場内では、出展する各作家が執筆したまなざしにまつわるテキストを、橋本真希が朗読する音声ガイドの導入を予定しています。来場者が各作品に付随するQRコードをスマートフォンで読み取ることで、絵画という視覚表現と橋本の「声」によるナラティブが共鳴。作家一人ひとりの背景や物語を、耳元で語りかけられるようなパーソナルな体験として提供します。</p>
+                            <p style="font-family:var(--font-eng); font-size:10px; color:#aaa; letter-spacing:0.1em; line-height:1.9; margin-top:12px;">※ 朗読解説の実施内容および形式は、予告なく変更となる場合がございます。</p>
+                        </div>
+                        <div class="narrative-image">
+                            <img src="maki_narrative.JPG" alt="橋本真希" style="width:100%; height:100%; object-fit:cover; object-position:center top; border-radius:2px; display:block;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="statement">
             <h2 class="section-title">STATEMENT</h2>
             <div class="statement-text">
-                <span class="statement-sub">Project Statement</span>
-                <!-- [CHANGE] Project Statement を引用リード＋続きを読む構造に変更 -->
-<div class="statement-lead">
-    <p>本展は雨の日に輝く星空を信じるように、藝大生とRain Tree橋本真希という見えない未来に希望のまなざしを持ち、厚い雲の先にある星空に手を伸ばし続けてきた10名の表現者による舞台です。</p>
-</div>
-
-<button class="statement-toggle" id="stToggle" onclick="toggleStatement()">Read More</button>
-
-<div class="statement-more" id="stMore">
-    
-    <p>まなざしによって私たちは境界を越えられるのか。今回、橋本真希さんは培ってきたアイドルとしてのアイデンティティを絵画という異なる形態に昇華し、藝大生と共に1人の作家として共に制作に向き合います。また藝大生にとっては、アイドルプロデュースに代表されるファンダムという要素を意識し、SNSやマスメディアを活用したプロモーションやファン獲得の方法を、アイドルとは異なる立場から考え、向き合う機会にもなります。</p>
-
-    <p>この展覧会までの半年間をかけたアートプロジェクトとして、両者が問題意識を持って発見していく過程を提示します。また会場ではまなざしを題材にしたテキストからそれぞれの背負ってきた背景を明らかにすることで、物語性をメディウムとして、作家と鑑賞者の境界を横断して対話を試みます。</p>
-
-    <p>「アーティスト」と「アイドル」は、表現の形式も置かれている場所も違います。しかしその根にある構造は、驚くほど似ており、"ファンを獲得し、その支持の上に存在が成り立つ"という仕組みなのです。私たちは常に、「名前を売ること」「誰に、どのように届くのか」「求められるとは何か」という問いの中で表現を続けています。そこには、ひとつの正解があるわけではありません。</p>
-
-    <p>立場も戦略も異なる。けれど、そのどれもが"誰かに見つけられ、支えられる"というファンダムの上に成り立っていると考察できることから、この展示はアイドルと藝大生という異なる領域に立つ表現者がそれぞれのスタンスを持ち寄り、「表現とファンの関係」を可視化する意図を含んでいます。本展は表現者のまなざしとファンダムへの関わり。この二つの軸により構成されています。藝大生とアイドルという異色の組み合わせによって見えてくる新たなアートシーンをお届けします。</p>
-</div>
+                <span class="statement-sub">藝大生より — Project Statement</span>
+                <!-- [CHANGE 2026.05.10] 全文表示に変更（Read More廃止） -->
+                <div class="statement-lead">
+                    <p>まなざしによって私たちは境界を越えられるのか。今回、橋本真希さんは培ってきたアイドルとしてのアイデンティティを絵画という異なる形態に昇華し、藝大生と共に1人の作家として共に制作に向き合います。また藝大生にとっては、アイドルプロデュースに代表されるファンダムという要素を意識し、SNSやマスメディアを活用したプロモーションやファン獲得の方法を、アイドルとは異なる立場から考え、向き合う機会にもなります。</p>
+                    <p>この展覧会までの半年間をかけたアートプロジェクトとして、両者が問題意識を持って発見していく過程を提示します。また会場ではまなざしを題材にしたテキストからそれぞれの背負ってきた背景を明らかにすることで、物語性をメディウムとして、作家と鑑賞者の境界を横断して対話を試みます。</p>
+                    <p>「アーティスト」と「アイドル」は、表現の形式も置かれている場所も違います。しかしその根にある構造は、驚くほど似ており、"ファンを獲得し、その支持の上に存在が成り立つ"という仕組みなのです。私たちは常に、「名前を売ること」「誰に、どのように届くのか」「求められるとは何か」という問いの中で表現を続けています。そこには、ひとつの正解があるわけではありません。</p>
+                    <p>立場も戦略も異なる。けれど、そのどれもが"誰かに見つけられ、支えられる"というファンダムの上に成り立っていると考察できることから、この展示はアイドルと藝大生という異なる領域に立つ表現者がそれぞれのスタンスを持ち寄り、「表現とファンの関係」を可視化する意図を含んでいます。本展は表現者のまなざしとファンダムへの関わり。この二つの軸により構成されています。藝大生とアイドルという異色の組み合わせによって見えてくる新たなアートシーンをお届けします。</p>
+                </div>
                 <div class="personal-message">
-                    <span class="statement-sub">Personal Message</span>
+                    <span class="statement-sub">橋本真希 — Personal Message</span>
                     <p>「アイドル」と「アーティスト」<br>違う場所に立っているようでいて、その根はどこかで静かにつながっていると感じています。</p>
                     <p>アイドルとして活動する中で、私はいつも「誰かに届くこと」を考えてきました。<br>それは作品をつくることとは異なるようでいて、実はとてもよく似た祈りのような行為だと思っています。</p>
                     <p>絵画というかたちで表現に向き合いながら、自分のまなざしはどこへ向いているのか、誰に手を伸ばしているのかを、あらためて問い直しました。</p>
@@ -767,20 +932,16 @@ body { padding-top: 48px; }
             <div class="artist-group">
                 <span class="group-name">Rain Tree</span>
                 <ul class="artist-list">
-                    <li>橋本真希 <a href="https://www.instagram.com/hashimoto_maki_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link">Instagram</a></li>
+                    <li>橋本真希 <a href="https://www.instagram.com/hashimoto_maki_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link">Instagram</a><br>
+                        <span style="font-family:var(--font-eng); font-size:11px; color:var(--accent-color); letter-spacing:0.1em; display:block; line-height:1.8;">Rain Tree 公式サイト：<a href="https://rt-official.jp/" target="_blank" style="color:var(--accent-color);">https://rt-official.jp/</a></span>
+                        <span style="font-family:var(--font-main); font-size:11px; color:var(--accent-color); letter-spacing:0.15em; display:block; line-height:1.8;">秋元康氏総合プロデュース・16名によるガールズグループ</span>
+                    </li>
                 </ul>
             </div>
             <div class="artist-divider"></div>
             <div class="artist-group">
                 <span class="group-name">Tokyo University of the Arts Students</span>
-                <!-- [CHANGE 2026.05.06] 9/9 に更新 -->
-                <div class="students-progress">
-                    <span class="progress-count">9 <span>/ 9 profiles open</span></span>
-                </div>
-                <div class="progress-bar-wrap">
-                    <!-- [CHANGE 2026.05.06] バー幅 100% -->
-                    <div class="progress-bar-fill" style="width:100%"></div>
-                </div>
+                <!-- [CHANGE 2026.05.10] 全員公開済みのため進捗インジケーター削除 -->
                 <div class="artists-grid">
                     <div class="artist-item">
                         <a href="ame.html" class="artist-page-link">あめ <span class="artist-arrow">→</span></a>
@@ -828,10 +989,12 @@ body { padding-top: 48px; }
             </div>
             
             <p class="info-note">展覧会名： 『雨の日の星空』 (HASHIMOTO Maki × 9 GEIDAI Students 2026)</p>
-            <p class="info-note">※本展終了後、都内近郊某所にて関連イベントの実施を予定しております。</p>
             
             <div class="info-map-container">
-                <img src="map.png" alt="Map" class="info-map-img">
+                <a href="https://maps.google.com/?q=Gallery+Blue+3143+東京都港区南青山3-14-3" target="_blank" title="Google Mapで見る">
+                    <img src="map.png" alt="Map" class="info-map-img" style="cursor:pointer;">
+                </a>
+                <p style="font-family:var(--font-eng); font-size:10px; color:#aaa; letter-spacing:0.15em; text-align:center; margin-top:10px;">↗ Google Map で見る</p>
             </div>
 <!-- [ADD] ディスクレーマー -->
 <div class="disclaimer">
