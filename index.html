@@ -303,8 +303,10 @@ header section {
 .nav-links {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    padding: 14px 0;
+    align-items: center;
+    gap: 24px;
+    padding: 14px 20px;
+    flex-wrap: nowrap;
 }
 .nav-links a {
     font-family: var(--font-eng);
@@ -349,11 +351,14 @@ header section {
     background: rgba(248,248,248,0.97);
     z-index: 99;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 0;
     opacity: 0;
     transition: opacity 0.4s;
+    overflow-y: auto;
+    padding-top: 60px;
+    padding-bottom: 40px;
 }
 .overlay-menu.open {
     display: flex;
