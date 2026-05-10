@@ -155,7 +155,8 @@ header section {
         /* [ADD 2026.05.10] ヒーローリード文 */
         .hero-lead { max-width:900px; margin:0 auto 28px; text-align:center; }
         .hero-lead-date { font-family:var(--font-eng); font-size:26px; font-weight:300; letter-spacing:0.05em; color:var(--text-color); margin-bottom:6px; }
-        .hero-lead-venue { font-family:var(--font-eng); font-size:15px; font-weight:500; letter-spacing:0.15em; color:#1e5fa5; margin-bottom:4px; }
+        .hero-lead-venue { font-family:var(--font-eng); font-size:26px; font-weight:300; letter-spacing:0.05em; color:#1a4a8a; margin-bottom:4px; text-decoration:none; display:block; transition: opacity 0.3s; }
+        .hero-lead-venue:hover { opacity:0.7; }
         .hero-lead-free { font-family:var(--font-eng); font-size:12px; letter-spacing:0.18em; color:var(--text-color); font-weight:500; margin-bottom:14px; }
         .hero-lead-desc { font-family:var(--font-main); font-size:14px; color:var(--text-color); line-height:2.2; letter-spacing:0.12em; margin-bottom:20px; }
         .hero-lead-divider { width:40px; height:1px; background:#ddd; margin:0 auto 20px; }
@@ -282,7 +283,7 @@ header section {
             .narrative-image { width: 100%; height: 200px; flex: none; }
             /* [ADD 2026.05.10] スマホでhero-leadのフォント調整 */
             .hero-lead-date { font-size: 20px; }
-            .hero-lead-venue { font-size: 13px; letter-spacing: 0.1em; }
+            .hero-lead-venue { font-size: 18px; letter-spacing: 0.05em; }
             .hero-lead-free { font-size: 11px; letter-spacing: 0.12em; }
             .hero-lead-copy { font-size: 13px; letter-spacing: 0.08em; padding: 0; }
             .hero-lead-hoshi { font-size: 11px; letter-spacing: 0.1em; }
@@ -704,7 +705,7 @@ body { padding-top: 48px; }
     <!-- [CHANGE 2026.05.10] リード文をB案に変更・会場情報を主役に -->
     <div class="hero-lead">
         <p class="hero-lead-date">2026.8.18 – 8.28</p>
-        <p class="hero-lead-venue">南青山 Gallery Blue 3143</p>
+        <a href="#information" class="hero-lead-venue">南青山 Gallery Blue 3143</a>
         <p class="hero-lead-free">入場無料・予約不要</p>
         <p class="hero-lead-desc">南青山の静かなギャラリーで、作品と一対一で向き合う時間をお楽しみください。</p>
         <div class="hero-lead-divider"></div>
