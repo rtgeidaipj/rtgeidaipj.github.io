@@ -753,9 +753,28 @@ body { padding-top: 48px; }
         
         <section id="news">
             <h2 class="section-title">NEWS</h2>
+            <!-- [ADD 2026.06.16] 橋本真希の制作過程とあめのコメントを掲載 -->
+            <article class="news-item">
+                <span class="news-date">2026.06.16<span class="news-tag">NEW</span></span>
+                <span class="news-headline">橋本真希の制作過程とあめのコメントを掲載しました</span>
+                <div class="news-content" id="news-content-13">
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:20px;">
+                        <img src="maki_process_1.jpg" alt="橋本真希 制作過程①下絵（鉛筆）" style="width:100%;display:block;border-radius:2px;">
+                        <img src="maki_process_2.jpg" alt="橋本真希 制作過程②黒入れ" style="width:100%;display:block;border-radius:2px;">
+                        <img src="maki_process_3.jpg" alt="橋本真希 制作過程③色彩" style="width:100%;display:block;border-radius:2px;">
+                    </div>
+                    <p style="font-size:13px;color:#888;margin:0 0 20px;">橋本真希：「お花と、私の好きなファッションを融合してみました」</p>
+                    <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
+                    <p style="font-family:var(--font-eng);font-size:11px;color:#888;margin:0 0 8px;letter-spacing:0.1em;">あめ（東京藝術大学）</p>
+                    <blockquote style="border-left:1px solid #ddd;margin:0 0 24px;padding:4px 0 4px 16px;font-size:14px;line-height:2.2;color:#555;">シックな花で構成された衣装と、宙に浮いたトルソーのモチーフからアイドルとしての、橋本さんの舞台での一つの心象を読み解けるように思います。選ばれた花の配色、葉の品あるふるまいから、開演前にご自身と一つになりこれから舞台で立つ衣装と向き合うことの緊張感。袖を通すことで衣装に込められた想いと心を共鳴させる瞬間のまなざしが表れているのではないかと読み取りました。宙に浮いているトルソーの図像も、まさに今から衣装の心と対話し、理解していく瞬間そのものを表しているのではないかと考えました。ぜひ、意図をお伺いしたいです。</blockquote>
+                    <p style="font-family:var(--font-eng);font-size:11px;color:#888;margin:0 0 8px;letter-spacing:0.1em;">橋本真希より</p>
+                    <blockquote style="border-left:1px solid #ddd;margin:0 0 20px;padding:4px 0 4px 16px;font-size:14px;line-height:2.2;color:#555;">制作時は明確な答えを用意するというより、「服と人との間にある目に見えない対話」を描きたいと思っていました。そのため、いただいた「衣装の心と対話する瞬間」という解釈はとても興味深く、むしろ私自身が作品から教えていただいたような感覚です。作品は完成した時点で鑑賞者のものでもあると思っているので、そのように受け取っていただけたことを嬉しく思います。</blockquote>
+                </div>
+                <div class="news-toggle" onclick="toggleNews(13)">Read More / Close</div>
+            </article>
             <!-- [ADD 2026.05.10] 星空登録・特典・クロージングパーティー公開 -->
             <article class="news-item">
-                <span class="news-date">2026.05.10<span class="news-tag">NEW</span></span>
+                <span class="news-date">2026.05.10</span>
                 <span class="news-headline">星空登録・特典・クロージングパーティーの詳細を公開しました</span>
                 <div class="news-content" id="news-content-12">
                     <p>2026年8月18日（火）より、東京・南青山のGallery Blue 3143にて開催する展覧会『雨の日の星空』。本日より、会期をより深く楽しんでいただくための「星空登録（事前エントリー）」を開始しました。</p>
@@ -774,6 +793,9 @@ body { padding-top: 48px; }
                 </div>
                 <div class="news-toggle" onclick="toggleNews(11)">Read More / Close</div>
             </article>
+        <!-- [CHANGE] 上位3件を常時表示・4件目以降を折りたたむ -->
+            <div class="news-older" id="newsOlder">
+            <!-- [MOVE 2026.06.15] 4件目に繰り下げ -->
             <!-- [ADD 2026.05.06] みーやプロフィールページ公開 -->
             <article class="news-item">
                 <span class="news-date">2026.05.06<span class="news-tag">UPDATE</span></span>
@@ -784,8 +806,6 @@ body { padding-top: 48px; }
                 </div>
                 <div class="news-toggle" onclick="toggleNews(10)">Read More / Close</div>
             </article>
-        <!-- [CHANGE] 上位3件を常時表示・4件目以降を折りたたむ -->
-            <div class="news-older" id="newsOlder">
             <!-- [ADD 2026.05.06] 田辺朔葉プロフィールページ公開 -->
             <article class="news-item">
                 <span class="news-date">2026.05.06<span class="news-tag">UPDATE</span></span>
