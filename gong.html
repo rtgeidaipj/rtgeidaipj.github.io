@@ -64,26 +64,32 @@
         position: fixed;
         top: 0; left: 0; right: 0;
         z-index: 100;
-        background: rgba(248,248,248,0.92);
+        background: rgba(251, 246, 238, 0.92);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: 1px solid #e0d6c4;
     }
+    /* [EDIT 2026.06.30] nav gap 40px→22px, font-size:13px, letter-spacing:0.05em を追加 */
     .nav-links {
         display: flex;
         justify-content: center;
-        gap: 40px;
+        align-items: center;
+        gap: 22px;
         padding: 14px 0;
+        font-size: 13px;
+        letter-spacing: 0.05em;
     }
     .nav-links a {
-        font-family: var(--font-eng);
-        font-size: 11px;
-        letter-spacing: 0.2em;
-        color: var(--accent-color);
+        font-family: var(--font-main);
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        color: #5a5048;
         transition: color 0.3s;
     }
     .nav-links a:hover { color: var(--text-color); }
     .nav-links a.nav-active { color: var(--text-color); }
+    /* [ADD 2026.06.30] 星空登録ハイライト（赤茶） */
+    .nav-links a.nav-hl { color: #c95a3a !important; font-weight: 500; }
 
     .hamburger {
         display: none;
@@ -107,11 +113,11 @@
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-    .overlay-menu {
+        .overlay-menu {
         display: none;
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(248,248,248,0.97);
+        background: rgba(251, 246, 238, 0.98);
         z-index: 99;
         flex-direction: column;
         justify-content: center;
@@ -121,20 +127,20 @@
     }
     .overlay-menu.open { display: flex; opacity: 1; }
     .overlay-menu a {
-        font-family: var(--font-eng);
+        font-family: var(--font-main);
         font-size: 14px;
-        letter-spacing: 0.25em;
-        color: var(--text-color);
+        letter-spacing: 0.1em;
+        color: #1a1a1a;
         padding: 20px 0;
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #ebe2d3;
     }
-    .overlay-menu a:first-of-type { border-top: 1px solid #eee; }
+    .overlay-menu a:first-of-type { border-top: 1px solid #ebe2d3; }
     .overlay-menu .overlay-info {
         font-family: var(--font-eng);
         font-size: 10px;
-        color: var(--accent-color);
+        color: #8a8076;
         letter-spacing: 0.2em;
         margin-top: 32px;
     }
@@ -407,16 +413,19 @@
     }
     .prev-next span { color: #ddd; }
 
+        /* フッター（新トーンに統一 2026.06.25） */
     footer {
         text-align: center;
-        padding: 60px 0;
-        font-size: 11px;
-        color: #aaa;
-        font-family: var(--font-eng);
-        letter-spacing: 0.2em;
-        border-top: 1px solid #eee;
+        padding: 50px 24px;
+        background: #fbf6ee;
+        border-top: 1px solid #e0d6c4;
+        font-family: var(--font-main);
+        font-size: 13px;
+        color: #8a8076;
+        letter-spacing: 0.1em;
     }
-    footer a { color: #aaa; }
+    footer a { color: #5a5048; }
+    footer p { line-height: 2.0; }
 
     @media (max-width: 768px) {
         body { padding-top: 52px; }
@@ -439,10 +448,14 @@
 <nav class="site-nav">
     <div class="nav-links">
         <a href="index.html">← TOP</a>
-        <a href="index.html#news">NEWS</a>
-        <a href="index.html#statement">STATEMENT</a>
-        <a href="index.html#artists" class="nav-active">ARTISTS</a>
-        <a href="index.html#information">INFORMATION</a>
+        <a href="index.html#news">お知らせ</a>
+        <a href="index.html#artists">作家</a>
+        <a href="access.html">アクセス</a>
+        <a href="faq.html">FAQ</a>
+        <span class="nav-sep">|</span>
+        <a href="hoshizora.html" class="nav-hl">星空登録受付中</a>
+        <span class="nav-sep">|</span>
+        <a href="tokuten.html">特典</a>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -450,11 +463,13 @@
 </nav>
 
 <div class="overlay-menu" id="overlayMenu">
-    <a href="index.html" onclick="toggleMenu()">TOP</a>
-    <a href="index.html#news" onclick="toggleMenu()">NEWS</a>
-    <a href="index.html#statement" onclick="toggleMenu()">STATEMENT</a>
-    <a href="index.html#artists" onclick="toggleMenu()">ARTISTS</a>
-    <a href="index.html#information" onclick="toggleMenu()">INFORMATION</a>
+    <a href="index.html" onclick="toggleMenu()">トップ</a>
+    <a href="index.html#news" onclick="toggleMenu()">お知らせ</a>
+    <a href="index.html#artists" onclick="toggleMenu()">作家</a>
+    <a href="access.html" onclick="toggleMenu()">アクセス</a>
+    <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+    <a href="hoshizora.html" onclick="toggleMenu()">星空登録受付中</a>
+    <a href="tokuten.html" onclick="toggleMenu()">特典</a>
     <div class="overlay-info">2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</div>
 </div>
 
@@ -463,7 +478,7 @@
     <nav class="breadcrumb">
         <a href="index.html">雨の日の星空</a>
         <span>/</span>
-        <a href="index.html#artists">ARTISTS</a>
+        <a href="index.html#artists">作家</a>
         <span>/</span>
         龔惠雅
     </nav>
@@ -563,8 +578,14 @@
 </div><!-- /.container -->
 
 <footer>
-    <p><a href="index.html">『雨の日の星空』</a> &nbsp;|&nbsp; 2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</p>
-    <p style="margin-top:10px;">© 2026 橋本真希×藝大生プロジェクト. All Rights Reserved.</p>
+    <p style="margin:0 0 12px;">『雨の日の星空』 2026.8.18 – 8.28 &nbsp;|&nbsp; Gallery Blue 3143</p>
+    <p style="margin:0;">
+        <a href="index.html">トップ</a> &nbsp;
+        <a href="access.html">アクセス</a>
+        <a href="faq.html">FAQ</a> &nbsp;
+        <a href="https://twitter.com/rtgeidaipj2026" target="_blank">X</a> &nbsp;
+    </p>
+    <p style="margin-top:14px; font-size:11px;">© 2026『雨の日の星空』展実行委員会</p>
 </footer>
 
 <script>

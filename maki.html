@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>橋本真希(Rain Tree) — 作家紹介 ｜ 雨の日の星空</title>
+<meta name="description" content="アイドル・橋本真希(Rain Tree)。秋元康氏総合プロデュース「Rain Tree」のメンバーが本展に参加。制作作品と本人からのメッセージ。">
+
+<!-- OGP -->
+<meta property="og:url" content="https://rtgeidaipj.github.io/maki.html">
+<meta property="og:title" content="橋本真希(Rain Tree) — 作家紹介 ｜ 雨の日の星空">
+<meta property="og:description" content="アイドル・橋本真希(Rain Tree)が本展に参加。制作作品と本人からのメッセージ。">
+<meta property="og:image" content="https://rtgeidaipj.github.io/maki_process_0.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@rtgeidaipj2026">
+<meta name="twitter:image" content="https://rtgeidaipj.github.io/maki_process_0.jpg">
+<link rel="canonical" href="https://rtgeidaipj.github.io/maki.html">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2GFRT45G53"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2GFRT45G53');
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg-cream: #fbf6ee;
+    --bg-paper: #f5ede0;
+    --bg-sky-soft: #e8f1f8;
+    --text-main: #1a1a1a;
+    --text-sub: #4a4a4a;
+    --text-mute: #8a8076;
+    --accent-warm: #c95a3a;
+    --gold: #d4a574;
+    --navy: #1e3a5f;
+    --border-paper: #e0d6c4;
+    --border-soft: #ebe2d3;
+    --font-main: 'Shippori Mincho','游明朝',YuMincho,serif;
+    --font-eng: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--font-main);
+    background: var(--bg-cream);
+    color: var(--text-main);
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ====== NAVIGATION ====== */
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(251, 246, 238, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-paper);
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 28px;
+    position: relative;
+}
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    font-size: 13px;
+    color: #5a5048;
+    letter-spacing: 0.05em;
+    flex-wrap: wrap;
+}
+.nav-links a:hover { color: var(--text-main); }
+.nav-sep { color: var(--border-paper); }
+.nav-hl { color: var(--accent-warm); font-weight: 500; }
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    padding: 0;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.hamburger span {
+    display: block;
+    height: 1.5px;
+    background: var(--text-main);
+    transition: 0.3s;
+}
+
+.overlay-menu {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-cream);
+    z-index: 200;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+.overlay-menu.open { transform: translateY(0); }
+.overlay-menu a {
+    padding: 18px 32px;
+    font-size: 14px;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border-soft);
+}
+.overlay-info {
+    padding: 24px 32px;
+    font-size: 12px;
+    color: var(--text-mute);
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+}
+
+/* ====== PAGE LAYOUT ====== */
+.page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 50px 28px 100px;
+}
+
+.breadcrumb {
+    font-size: 12px;
+    color: var(--text-mute);
+    letter-spacing: 0.05em;
+    margin-bottom: 50px;
+}
+.breadcrumb a { border-bottom: 1px dotted var(--text-mute); padding-bottom: 1px; }
+.breadcrumb .sep { margin: 0 8px; color: var(--border-paper); }
+
+/* ====== HERO ====== */
+.mk-hero {
+    text-align: center;
+    margin-bottom: 70px;
+}
+.mk-hero-label {
+    display: inline-block;
+    background: linear-gradient(135deg, #5cb6b1 0%, #3a9994 100%);
+    color: #fff;
+    font-family: var(--font-eng);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    padding: 4px 14px;
+    margin-bottom: 28px;
+}
+.mk-hero-name-jp {
+    font-size: 38px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    margin: 0 0 10px;
+    color: var(--text-main);
+}
+.mk-hero-name-en {
+    font-family: var(--font-eng);
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    color: var(--text-mute);
+    margin: 0 0 30px;
+}
+.mk-hero-portrait {
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ====== PROFILE ====== */
+.mk-profile {
+    background: var(--bg-paper);
+    padding: 40px 36px;
+    margin-bottom: 70px;
+    border: 1px solid var(--border-paper);
+}
+.mk-profile-row {
+    display: flex;
+    border-bottom: 0.5px solid var(--border-soft);
+    padding: 14px 0;
+    font-size: 13px;
+    line-height: 1.9;
+}
+.mk-profile-row:first-child { padding-top: 0; }
+.mk-profile-row:last-child { border-bottom: none; padding-bottom: 0; }
+.mk-profile-label {
+    width: 130px;
+    flex-shrink: 0;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--text-mute);
+    padding-top: 3px;
+}
+.mk-profile-value { color: var(--text-main); }
+.mk-profile-value a {
+    color: var(--accent-warm);
+    border-bottom: 1px dotted var(--accent-warm);
+    padding-bottom: 1px;
+}
+
+@media (max-width: 600px) {
+    .mk-profile { padding: 28px 22px; }
+    .mk-profile-row { flex-direction: column; padding: 12px 0; }
+    .mk-profile-label { width: auto; padding-bottom: 6px; }
+}
+
+/* ====== SECTION ====== */
+.mk-sec {
+    margin-bottom: 80px;
+}
+.mk-sec-head {
+    font-family: var(--font-eng);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--accent-warm);
+    text-align: center;
+    margin-bottom: 12px;
+}
+.mk-sec-title {
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    text-align: center;
+    margin: 0 0 40px;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+/* ====== MESSAGE (本人からのメッセージ) ====== */
+.mk-message {
+    background: #fff;
+    border: 1px solid var(--border-paper);
+    padding: 50px 40px;
+}
+.mk-message p {
+    font-size: 15px;
+    line-height: 2.4;
+    color: var(--text-main);
+    margin: 0 0 20px;
+    letter-spacing: 0.04em;
+}
+.mk-message p:last-of-type { margin-bottom: 0; }
+.mk-handwritten {
+    margin-top: 50px;
+    text-align: center;
+}
+.mk-handwritten img {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+    display: inline-block;
+}
+.mk-portrait-small {
+    max-width: 150px;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 600px) {
+    .mk-message { padding: 32px 22px; }
+    .mk-message p { font-size: 14px; line-height: 2.2; }
+}
+
+/* ====== WORK (制作中の作品) ====== */
+.mk-work-comment {
+    background: var(--bg-paper);
+    padding: 24px 30px;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 15px;
+    line-height: 2.2;
+    color: var(--text-main);
+    border-left: 3px solid var(--accent-warm);
+}
+.mk-work-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+}
+.mk-work-images img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+}
+.mk-work-caption {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-mute);
+    margin-top: 14px;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 600px) {
+    .mk-work-images { grid-template-columns: 1fr 1fr; }
+    .mk-work-comment { padding: 20px 22px; font-size: 14px; }
+}
+
+/* ====== DIALOG (あめとの対話) ====== */
+.mk-dialog {
+    background: #fff;
+    border: 1px solid var(--border-paper);
+    padding: 40px 36px;
+}
+.mk-dialog-block {
+    margin-bottom: 30px;
+}
+.mk-dialog-block:last-child { margin-bottom: 0; }
+.mk-dialog-speaker {
+    font-size: 12px;
+    color: var(--accent-warm);
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dotted var(--border-paper);
+    font-weight: 500;
+}
+.mk-dialog-text {
+    font-size: 14px;
+    line-height: 2.3;
+    color: var(--text-sub);
+}
+
+@media (max-width: 600px) {
+    .mk-dialog { padding: 28px 22px; }
+}
+
+/* ====== BACK LINK ====== */
+.mk-back {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-paper);
+}
+.mk-back a {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 13px;
+    color: var(--text-main);
+    border: 0.5px solid var(--text-main);
+    letter-spacing: 0.15em;
+    transition: all 0.2s;
+}
+.mk-back a:hover {
+    background: var(--text-main);
+    color: var(--bg-cream);
+}
+
+/* ====== FOOTER ====== */
+.footer {
+    padding: 50px 24px;
+    background: var(--bg-cream);
+    border-top: 1px solid var(--border-paper);
+    text-align: center;
+}
+.footer-title {
+    font-size: 13px;
+    color: var(--text-sub);
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+}
+.footer-links a {
+    font-size: 12px;
+    color: var(--text-mute);
+    margin: 0 14px;
+    letter-spacing: 0.1em;
+}
+.footer-links a:hover { color: var(--text-main); }
+.footer-copyright {
+    font-size: 11px;
+    color: var(--text-mute);
+    margin-top: 24px;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 600px) {
+    .mk-hero-name-jp { font-size: 28px; }
+    .page { padding: 30px 20px 80px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====== NAVIGATION ====== -->
+<nav class="site-nav">
+    <div class="nav-links">
+        <a href="index.html">← TOP</a>
+        <a href="index.html#news">お知らせ</a>
+        <a href="index.html#artists">作家</a>
+        <a href="access.html">アクセス</a>
+        <a href="faq.html">FAQ</a>
+        <span class="nav-sep">|</span>
+        <a href="hoshizora.html" class="nav-hl">星空登録受付中</a>
+        <span class="nav-sep">|</span>
+        <a href="tokuten.html">特典</a>
+        <!-- [EDIT 2026.06.30] クロージングリンク削除・tokuten.htmlに統合済み -->
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<div class="overlay-menu" id="overlayMenu">
+    <a href="index.html" onclick="toggleMenu()">トップ</a>
+    <a href="index.html#news" onclick="toggleMenu()">お知らせ</a>
+    <a href="index.html#artists" onclick="toggleMenu()">作家</a>
+    <a href="access.html" onclick="toggleMenu()">アクセス</a>
+    <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+    <a href="hoshizora.html" onclick="toggleMenu()">星空登録受付中</a>
+    <a href="tokuten.html" onclick="toggleMenu()">特典</a>
+    <!-- [EDIT 2026.06.30] クロージングリンク削除 -->
+    <div class="overlay-info">2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</div>
+</div>
+
+<!-- ====== PAGE ====== -->
+<div class="page">
+
+    <nav class="breadcrumb">
+        <a href="index.html">雨の日の星空</a>
+        <span class="sep">/</span>
+        <a href="index.html#artists">作家</a>
+        <span class="sep">/</span>
+        橋本真希
+    </nav>
+
+    <!-- ====== HERO ====== -->
+    <section class="mk-hero">
+        <div class="mk-hero-label">RAIN TREE</div>
+        <h1 class="mk-hero-name-jp">橋本真希</h1>
+        <p class="mk-hero-name-en">HASHIMOTO MAKI</p>
+        <img src="maki_process_0.jpg" alt="橋本真希" class="mk-hero-portrait">
+    </section>
+
+    <!-- ====== PROFILE ====== -->
+    <section class="mk-profile">
+        <div class="mk-profile-row">
+            <div class="mk-profile-label">所属</div>
+            <div class="mk-profile-value">Rain Tree（秋元康氏総合プロデュース・16名によるガールズグループ）</div>
+        </div>
+        <div class="mk-profile-row">
+            <div class="mk-profile-label">Instagram</div>
+            <div class="mk-profile-value">
+                <a href="https://www.instagram.com/hashimoto_maki_" target="_blank" rel="noopener">@hashimoto_maki_</a>
+            </div>
+        </div>
+        <div class="mk-profile-row">
+            <div class="mk-profile-label">公式サイト</div>
+            <div class="mk-profile-value">
+                <a href="https://rt-official.jp/" target="_blank" rel="noopener">Rain Tree 公式サイト</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== MESSAGE ====== -->
+    <section class="mk-sec">
+        <p class="mk-sec-head">PERSONAL MESSAGE</p>
+        <h2 class="mk-sec-title">本人からのメッセージ</h2>
+        <div class="mk-message">
+            <p>「アイドル」と「アーティスト」<br>違う場所に立っているようでいて、その根はどこかで静かにつながっていると感じています。</p>
+            <p>アイドルとして活動する中で、私はいつも「誰かに届くこと」を考えてきました。<br>それは作品をつくることとは異なるようでいて、実はとてもよく似た祈りのような行為だと思っています。</p>
+            <p>絵画というかたちで表現に向き合いながら、自分のまなざしはどこへ向いているのか、誰に手を伸ばしているのかを、あらためて問い直しました。</p>
+            <p>「アーティスト」と「アイドル」は違う立場に見えても、どちらも"誰かのまなざしに触れて、はじめて輪郭を持つ"ものです。</p>
+            <p>その事実を抱えたまま、今回、私はひとりの作家として制作に向き合いました。</p>
+            <p>『雨の日の星空』のように、厚い雲の向こうを信じる気持ちが、この展示を通してそっと誰かの心に届いたら嬉しいです。</p>
+            <div class="mk-handwritten">
+                <img src="https://rtgeidaipj.github.io/handwritten.png" alt="橋本真希 手書きメッセージ">
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== WORK (制作中の作品) ====== -->
+    <section class="mk-sec">
+        <p class="mk-sec-head">WORK IN PROGRESS</p>
+        <h2 class="mk-sec-title">制作中の作品について</h2>
+        <p class="mk-work-comment">
+            「お花と、私の好きなファッションを融合してみました」<br>
+            <span style="font-size:12px; color:var(--text-mute); letter-spacing:0.1em;">— 橋本真希</span>
+        </p>
+        <div class="mk-work-images">
+            <img src="maki_process_0.jpg" alt="橋本真希 制作風景">
+            <img src="https://rtgeidaipj.github.io/maki_process_1.jpg" alt="制作過程① 下絵">
+            <img src="https://rtgeidaipj.github.io/maki_process_2.jpg" alt="制作過程② 黒入れ">
+            <img src="https://rtgeidaipj.github.io/maki_process_3.jpg" alt="制作過程③ 色彩">
+        </div>
+        <p class="mk-work-caption">制作風景・下絵・黒入れ・色彩 ── 完成までの軌跡</p>
+    </section>
+
+    <!-- ====== DIALOG (あめとの対話) ====== -->
+    <section class="mk-sec">
+        <p class="mk-sec-head">DIALOG</p>
+        <h2 class="mk-sec-title">藝大生・あめとの対話</h2>
+        <div class="mk-dialog">
+            <div class="mk-dialog-block">
+                <p class="mk-dialog-speaker">あめ — 東京藝術大学</p>
+                <p class="mk-dialog-text">
+                    シックな花で構成された衣装と、宙に浮いたトルソーのモチーフからアイドルとしての、橋本さんの舞台での一つの心象を読み解けるように思います。選ばれた花の配色、葉の品あるふるまいから、開演前にご自身と一つになりこれから舞台で立つ衣装と向き合うことの緊張感。袖を通すことで衣装に込められた想いと心を共鳴させる瞬間のまなざしが表れているのではないかと読み取りました。宙に浮いているトルソーの図像も、まさに今から衣装の心と対話し、理解していく瞬間そのものを表しているのではないかと考えました。ぜひ、意図をお伺いしたいです。
+                </p>
+            </div>
+            <div class="mk-dialog-block">
+                <p class="mk-dialog-speaker">橋本真希 — Rain Tree</p>
+                <p class="mk-dialog-text">
+                    制作時は明確な答えを用意するというより、「服と人との間にある目に見えない対話」を描きたいと思っていました。そのため、いただいた「衣装の心と対話する瞬間」という解釈はとても興味深く、むしろ私自身が作品から教えていただいたような感覚です。作品は完成した時点で鑑賞者のものでもあると思っているので、そのように受け取っていただけたことを嬉しく思います。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== BACK LINK ====== -->
+    <div class="mk-back">
+        <a href="index.html#artists">← 他の作家を見る</a>
+    </div>
+
+</div>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+    <p class="footer-title">『雨の日の星空』 2026.8.18 – 8.28 &nbsp;|&nbsp; Gallery Blue 3143</p>
+    <div class="footer-links">
+        <a href="index.html">トップ</a>
+        <a href="access.html">アクセス</a>
+        <a href="faq.html">FAQ</a>
+        <a href="https://twitter.com/rtgeidaipj2026" target="_blank">X</a>
+    </div>
+    <p class="footer-copyright">© 2026『雨の日の星空』展実行委員会</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('overlayMenu');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+</script>
+
+</body>
+</html>

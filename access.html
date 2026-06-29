@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACCESS | 雨の日の星空</title>
+<meta name="description" content="『雨の日の星空』展覧会の会場アクセス・周辺カフェ・ギャラリー情報。南青山 Gallery Blue 3143。2026.8.18-28 開催。入場無料・予約不要。">
+
+<!-- OGP -->
+<meta property="og:title" content="ACCESS | 雨の日の星空">
+<meta property="og:description" content="表参道駅から徒歩5分。入場無料、予約もいりません。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rtgeidaipj.github.io/access.html">
+<meta property="og:image" content="https://rtgeidaipj.github.io/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@rtgeidaipj2026">
+<meta name="twitter:image" content="https://rtgeidaipj.github.io/ogp.jpg">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2GFRT45G53"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2GFRT45G53');
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg-color: #f8f8f8;
+    --text-color: #2b2b2b;
+    --text-sub: #666;
+    --text-mute: #888;
+    --border-color: #e5e5e5;
+    --border-soft: #eee;
+    --font-main: 'Shippori Mincho', '游明朝', YuMincho, serif;
+    --font-eng: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+/* ====== ナビゲーション ====== */
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--border-soft);
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    position: relative;
+}
+
+/* [EDIT 2026.06.30] nav font-size 11px→13px, letter-spacing 0.15em→0.05em, gap 18px→22px */
+/* [EDIT 2026.06.30] nav font-family削除・font-size/letter-spacing/gap統一 */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+}
+
+/* [EDIT 2026.06.30] nav color #777→#5a5048 に統一 */
+.nav-links a {
+    text-decoration: none;
+    color: #5a5048;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--text-color); }
+
+.nav-sep { color: #ccc; }
+
+.nav-highlight {
+    color: #c9a84c !important;
+    font-weight: 500;
+}
+
+/* [ADD 2026.06.30] 現在地表示 */
+.nav-active {
+    color: var(--text-color) !important;
+    font-weight: 500;
+}
+
+/* [ADD 2026.06.30] 星空登録ハイライト（赤茶） */
+.nav-hl { color: #c95a3a !important; font-weight: 500; }
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    padding: 0;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span {
+    display: block;
+    height: 1.5px;
+    background: var(--text-color);
+    transition: 0.3s;
+}
+
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: 200;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+.overlay-menu.open { transform: translateY(0); }
+
+.overlay-menu a {
+    padding: 18px 32px;
+    font-family: var(--font-eng);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.overlay-info {
+    padding: 24px 32px;
+    font-family: var(--font-eng);
+    font-size: 11px;
+    color: var(--text-mute);
+    letter-spacing: 0.15em;
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+}
+
+/* ====== コンテンツ本体 ====== */
+.ax {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+}
+
+.ax-eng {
+    font-family: var(--font-eng);
+    letter-spacing: 0.25em;
+    font-size: 11px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 8px;
+}
+
+.ax-h1 {
+    font-family: var(--font-eng);
+    letter-spacing: 0.35em;
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+    margin: 0 0 8px;
+    color: var(--text-color);
+}
+
+.ax-h1-jp {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-mute);
+    letter-spacing: 0.3em;
+    margin: 0 0 60px;
+}
+
+.ax-lead-new {
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-color);
+    max-width: 560px;
+    margin: 0 auto 50px;
+    line-height: 2.2;
+}
+
+/* 3つの数字ボックス（日本語） */
+.ax-facts {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0 auto 60px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.ax-fact {
+    text-align: center;
+}
+
+.ax-fact-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+}
+
+.ax-fact-sub {
+    font-size: 11px;
+    color: var(--text-mute);
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+}
+
+.ax-section { margin: 60px 0; }
+
+.ax-section-title {
+    font-family: var(--font-eng);
+    letter-spacing: 0.3em;
+    font-size: 13px;
+    text-align: center;
+    color: var(--text-color);
+    margin: 0 0 8px;
+    font-weight: 400;
+}
+
+/* [EDIT 2026.06.29] 「会場について」を日本語タイトルとして独立 */
+.ax-section-title-jp-main {
+    font-family: var(--font-main);
+    letter-spacing: 0.2em;
+    font-size: 18px;
+    text-align: center;
+    color: var(--text-color);
+    margin: 0 0 40px;
+    font-weight: 400;
+}
+
+.ax-section-title-jp {
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-mute);
+    letter-spacing: 0.2em;
+    margin: 0 0 40px;
+}
+
+.ax-lead {
+    font-size: 14px;
+    color: var(--text-sub);
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 40px;
+    line-height: 2.0;
+}
+
+/* 写真ブロック（縦3枚並び） */
+.ax-photo-block { margin: 0 0 40px; }
+
+.ax-photo {
+    width: 100%;
+    display: block;
+    margin-bottom: 8px;
+    border-radius: 2px;
+}
+
+/* [ADD 2026.06.25] 外観メイン写真 */
+.ax-photo-main {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    margin-bottom: 0;
+}
+
+.ax-photo-caption {
+    font-size: 13px;
+    color: var(--text-sub);
+    text-align: center;
+    margin: 24px auto 0;
+    line-height: 2.1;
+    max-width: 520px;
+}
+
+/* [ADD 2026.06.25] 過去の展示の様子セクション */
+.ax-photo-past {
+    margin: 60px 0 0;
+    padding-top: 40px;
+    border-top: 0.5px solid var(--border-color);
+}
+/* [EDIT 2026.06.29] 過去の展示の様子セクション — タイトルを大きく */
+.ax-photo-past-title {
+    font-family: var(--font-eng);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--text-color);
+    text-align: center;
+    margin: 0 0 24px;
+}
+.ax-photo-past-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+.ax-photo-sub {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+}
+
+/* [ADD 2026.06.25] 店内写真の注記 */
+/* [EDIT 2026.06.29] ax-photo-note — 可読性改善 */
+.ax-photo-note {
+    font-family: var(--font-main);
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    margin: 20px auto 0;
+    line-height: 2;
+    max-width: 520px;
+    letter-spacing: 0.05em;
+}
+
+/* VENUE block */
+.ax-info-block {
+    background: #fff;
+    border: 0.5px solid var(--border-color);
+    padding: 32px;
+    margin-bottom: 40px;
+}
+
+.ax-info-row {
+    display: flex;
+    border-bottom: 0.5px solid var(--border-soft);
+    padding: 14px 0;
+    font-size: 13px;
+}
+
+.ax-info-row:last-of-type { border-bottom: none; }
+
+.ax-info-label {
+    font-family: var(--font-eng);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-mute);
+    width: 140px;
+    flex-shrink: 0;
+    padding-top: 3px;
+}
+
+.ax-info-value { color: var(--text-color); line-height: 1.9; }
+
+.ax-info-value a {
+    color: var(--text-color);
+    text-decoration: underline;
+    text-decoration-color: #bbb;
+    text-underline-offset: 3px;
+}
+
+.ax-route {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f5f5f5;
+    font-size: 13px;
+    line-height: 2.1;
+    color: #444;
+}
+
+.ax-route-label {
+    font-family: var(--font-eng);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-mute);
+    margin: 0 0 12px;
+}
+
+.ax-route-step {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.ax-route-num {
+    font-family: var(--font-eng);
+    font-size: 10px;
+    color: #999;
+    flex-shrink: 0;
+    padding-top: 3px;
+}
+
+/* [ADD 2026.06.29] 地図ブロック */
+.ax-map-wrap {
+    margin-top: 16px;
+    width: 100%;
+}
+.ax-map-link {
+    display: block;
+    text-align: right;
+    font-family: var(--font-eng);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--text-mute);
+    margin-top: 6px;
+    text-decoration: none;
+}
+.ax-map-link:hover { color: var(--text-color); }
+
+/* 初心者向けボックス */
+/* [EDIT 2026.06.29] ax-beginnerブロック — 可読性改善 */
+.ax-beginner-box {
+    background: #fff;
+    border: 0.5px solid var(--border-color);
+    padding: 40px 32px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.ax-beginner-label {
+    font-family: var(--font-main);
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    color: #666;
+    margin: 0 0 20px;
+}
+
+.ax-beginner-text {
+    font-family: var(--font-main);
+    font-size: 15px;
+    color: var(--text-color);
+    line-height: 2.2;
+    margin: 0 0 24px;
+}
+
+.ax-beginner-link {
+    display: inline-block;
+    font-family: var(--font-main);
+    font-size: 14px;
+    color: var(--text-color);
+    text-decoration: underline;
+    text-decoration-color: #999;
+    text-underline-offset: 5px;
+    margin-top: 8px;
+    letter-spacing: 0.05em;
+}
+
+/* Cards grid */
+.ax-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border-color);
+    border: 0.5px solid var(--border-color);
+}
+
+.ax-cards-single {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.ax-card {
+    background: #fff;
+    padding: 24px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: background 0.2s;
+}
+
+.ax-card:hover { background: #fafafa; }
+
+.ax-card-meta-row {
+    font-family: var(--font-eng);
+    font-size: 10px;
+    color: #aaa;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ax-card-arrow { font-size: 11px; color: #888; }
+
+.ax-card-name {
+    font-size: 15px;
+    color: var(--text-color);
+    margin: 0 0 4px;
+    font-weight: 500;
+}
+
+.ax-card-meta {
+    font-family: var(--font-eng);
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.ax-card-addr {
+    font-size: 12px;
+    color: var(--text-sub);
+    line-height: 1.8;
+    margin: 0 0 10px;
+}
+
+.ax-card-desc {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.9;
+    margin: 0;
+}
+
+/* Divider */
+.ax-divider {
+    width: 40px;
+    height: 1px;
+    background: #ccc;
+    margin: 80px auto;
+    border: none;
+}
+
+/* Note */
+.ax-note {
+    margin: 60px auto 0;
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-mute);
+    letter-spacing: 0.1em;
+    max-width: 520px;
+    line-height: 2.0;
+}
+
+/* [ADD 2026.06.29] CAFÉSセクション — 付加情報として背景で区別 */
+.ax-cafe-block {
+    background: #f0ede6;
+    margin: 0 -40px;
+    padding: 60px 40px;
+}
+@media (max-width: 600px) {
+    .ax-cafe-block { margin: 0 -20px; padding: 48px 20px; }
+}
+
+/* Footer */
+.ax-footer {
+    text-align: center;
+    padding: 40px 24px;
+    border-top: 1px solid var(--border-soft);
+    margin-top: 80px;
+    font-family: var(--font-eng);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--text-mute);
+}
+
+.ax-footer a {
+    color: var(--text-mute);
+    text-decoration: none;
+    margin: 0 12px;
+}
+
+.ax-footer a:hover { color: var(--text-color); }
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .ax { padding: 40px 16px 60px; }
+    .ax-h1 { font-size: 22px; letter-spacing: 0.25em; }
+    .ax-lead-new { font-size: 14px; }
+    .ax-facts { gap: 24px; }
+    .ax-fact-text { font-size: 14px; }
+    .ax-info-block { padding: 20px; }
+    .ax-info-row { flex-direction: column; padding: 12px 0; }
+    .ax-info-label { width: auto; padding-bottom: 6px; }
+    .ax-cards { grid-template-columns: 1fr; }
+    .ax-card { padding: 20px; }
+    .ax-section { margin: 40px 0; }
+    .ax-divider { margin: 50px auto; }
+    .ax-beginner-box { padding: 24px 20px; }
+    .ax-photo-past-grid { grid-template-columns: 1fr; }
+    .ax-photo-main { aspect-ratio: 4/3; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====== NAVIGATION ====== -->
+<nav class="site-nav">
+    <div class="nav-links">
+        <a href="index.html">← TOP</a>
+        <a href="index.html#news">お知らせ</a>
+        <a href="index.html#artists">作家</a>
+        <a href="access.html" class="nav-active">アクセス</a>
+        <a href="faq.html">FAQ</a>
+        <span class="nav-sep">|</span>
+        <a href="hoshizora.html" class="nav-hl">星空登録受付中</a>
+        <span class="nav-sep">|</span>
+        <a href="tokuten.html">特典</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<div class="overlay-menu" id="overlayMenu">
+    <a href="index.html" onclick="toggleMenu()">トップ</a>
+    <a href="index.html#news" onclick="toggleMenu()">お知らせ</a>
+    <a href="index.html#artists" onclick="toggleMenu()">作家</a>
+    <a href="access.html" onclick="toggleMenu()">アクセス</a>
+    <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+    <a href="hoshizora.html" onclick="toggleMenu()">星空登録受付中</a>
+    <a href="tokuten.html" onclick="toggleMenu()">特典</a>
+    <div class="overlay-info">2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</div>
+</div>
+
+<!-- ====== CONTENT ====== -->
+<div class="ax">
+
+    <p class="ax-eng">アクセス</p>
+    <h1 class="ax-h1">ACCESS</h1>
+    <p class="ax-h1-jp">会場までの道のりと、その先で出会える時間</p>
+
+    <p class="ax-lead-new">
+        表参道駅から徒歩5分。<br>
+        入場無料、予約もいりません。<br>
+        会場の前後に立ち寄れるカフェも、すぐそばにあります。
+    </p>
+
+    <div class="ax-facts">
+        <div class="ax-fact">
+            <div class="ax-fact-text">表参道駅から</div>
+            <div class="ax-fact-text">徒歩5分</div>
+        </div>
+        <div class="ax-fact">
+            <div class="ax-fact-text">入場無料</div>
+        </div>
+        <div class="ax-fact">
+            <div class="ax-fact-text">予約不要</div>
+        </div>
+    </div>
+
+    <!-- ====== VENUE ====== -->
+    <div class="ax-section">
+        <p class="ax-section-title-jp-main">会場について</p>
+
+        <div class="ax-photo-block">
+            <img src="venue_4.jpeg" alt="Gallery Blue 3143 外観" class="ax-photo ax-photo-main">
+
+            <p class="ax-photo-caption">
+                青いタイルが目印の、小さなギャラリー。<br>
+                1階の奥と2階に展示があります。<br>
+                気軽に、ふらっとお入りください。
+            </p>
+
+            <div class="ax-photo-past">
+                <p class="ax-photo-past-title">GALLERY BLUE 3143 — 過去の展示の様子</p>
+                <div class="ax-photo-past-grid">
+                    <img src="venue_5.jpeg" alt="Gallery Blue 3143 店内(過去の展示時)" class="ax-photo-sub">
+                    <img src="venue_6.jpeg" alt="Gallery Blue 3143 2階(過去の展示時)" class="ax-photo-sub">
+                </div>
+                <p class="ax-photo-note">
+                    ※ 上の店内2枚は過去の展示時に撮影されたものです。<br>
+                    写っている作品は当展覧会のものではありません。
+                </p>
+            </div>
+        </div>
+
+        <div class="ax-info-block">
+            <div class="ax-info-row">
+                <div class="ax-info-label">GALLERY</div>
+                <div class="ax-info-value"><a href="https://www.google.com/maps/place/?q=place_id:ChIJo2F-UGyLGGARueGDpHrLkl0" target="_blank" rel="noopener">Gallery Blue 3143</a></div>
+            </div>
+            <div class="ax-info-row">
+                <div class="ax-info-label">ADDRESS</div>
+                <div class="ax-info-value">〒107-0062<br>東京都港区南青山3-14-3 1F・2F</div>
+            </div>
+            <div class="ax-info-row">
+                <div class="ax-info-label">NEAREST</div>
+                <div class="ax-info-value">東京メトロ「表参道」駅 A4出口より徒歩約5分<br>東京メトロ「外苑前」駅 1A出口より徒歩約9分</div>
+            </div>
+            <div class="ax-info-row">
+                <div class="ax-info-label">HOURS</div>
+                <div class="ax-info-value">11:00 – 19:00（最終日のみ17:00まで）</div>
+            </div>
+            <div class="ax-info-row">
+                <div class="ax-info-label">ADMISSION</div>
+                <div class="ax-info-value">入場無料・予約不要</div>
+            </div>
+
+            <div class="ax-route">
+                <p class="ax-route-label">FROM OMOTESANDO STATION</p>
+                <div class="ax-route-step"><div class="ax-route-num">01</div><div>メトロ表参道A4出口を出て、右へ。</div></div>
+                <div class="ax-route-step"><div class="ax-route-num">02</div><div>表参道交差点を右へ。</div></div>
+                <div class="ax-route-step"><div class="ax-route-num">03</div><div>ポルシェ手前を右へ。Gallery Blue 3143 はすぐ先です。</div></div>
+            </div>
+
+            <!-- [EDIT 2026.06.29] iframeからmap.jpg画像表示に切り替え -->
+            <div class="ax-map-wrap">
+                <img src="map.jpg" alt="Gallery Blue 3143 地図" style="width:100%; height:auto; display:block;">
+            </div>
+            <a href="https://www.google.com/maps/place/?q=place_id:ChIJo2F-UGyLGGARueGDpHrLkl0" target="_blank" rel="noopener" class="ax-map-link">↗ Google Map で見る</a>
+        </div>
+    </div>
+
+    <hr class="ax-divider">
+
+    <!-- ====== 初心者向けボックス ====== -->
+    <div class="ax-beginner-box">
+        <p class="ax-beginner-label">— はじめての方へ —</p>
+        <p class="ax-beginner-text">
+            服装も、滞在時間も、自由です。<br>
+            5分でも、10分でも、1時間でも。<br>
+            お一人でも、お友達と数人でも、ふらっとどうぞ。
+        </p>
+        <a href="faq.html" class="ax-beginner-link">よくあるご質問を見る →</a>
+    </div>
+
+    <!-- ====== CAFÉS ====== -->
+    <!-- [EDIT 2026.06.29] 付加情報としてax-cafe-blockで背景区別 -->
+    <div class="ax-cafe-block">
+    <div class="ax-section" style="margin-top:0;">
+        <p class="ax-section-title">CAFÉS</p>
+        <p class="ax-section-title-jp">展覧会の前後に立ち寄りたいカフェ</p>
+        <p class="ax-lead" style="margin-bottom:32px;">
+            作品を見たあとの余韻を、ゆっくり言葉にする場所。<br>
+            会場から徒歩3分圏内のカフェをご案内します。
+        </p>
+
+        <div class="ax-cards">
+            <a class="ax-card" href="https://www.google.com/maps/place/?q=place_id:ChIJVVWppJ-MGGAR3tN3udCMLRY" target="_blank" rel="noopener">
+                <div class="ax-card-meta-row"><span>01 / WALK 2 MIN</span><span class="ax-card-arrow">↗</span></div>
+                <p class="ax-card-name">上島珈琲店 青山店</p>
+                <p class="ax-card-meta">NEL DRIP COFFEE</p>
+                <p class="ax-card-addr">北青山3-5-14 青山鈴木硝子ビル1F</p>
+                <p class="ax-card-desc">落ち着いた店内で、ネルドリップで淹れる滑らかな一杯を。朝7時半から夜9時まで開いており、観覧の前後にも立ち寄れます。</p>
+            </a>
+            <a class="ax-card" href="https://www.google.com/maps/place/?q=place_id:ChIJ6VIU1J-MGGARbBb5g_Wg8Ec" target="_blank" rel="noopener">
+                <div class="ax-card-meta-row"><span>02 / WALK 2 MIN</span><span class="ax-card-arrow">↗</span></div>
+                <p class="ax-card-name">Blue Bottle Coffee 青山店</p>
+                <p class="ax-card-meta">SPECIALTY COFFEE</p>
+                <p class="ax-card-addr">南青山3-13-14 増田ビル2F</p>
+                <p class="ax-card-desc">スペシャルティコーヒーで知られる人気店。観覧後のひと息にちょうどよい、静かな2階の空間。</p>
+            </a>
+            <a class="ax-card" href="https://www.google.com/maps/place/?q=place_id:ChIJNWagJlONGGARu4l11MwJCmY" target="_blank" rel="noopener">
+                <div class="ax-card-meta-row"><span>03 / WALK 2 MIN</span><span class="ax-card-arrow">↗</span></div>
+                <p class="ax-card-name">Cres. Coffee</p>
+                <p class="ax-card-meta">SPECIALTY COFFEE</p>
+                <p class="ax-card-addr">南青山3-18-19 フェスタ表参道ビル本館4F</p>
+                <p class="ax-card-desc">世界各地のスペシャルティ豆を、一杯ずつハンドドリップで。窓の外には表参道交差点が広がります。</p>
+            </a>
+            <a class="ax-card" href="https://www.google.com/maps/place/?q=place_id:ChIJydQ6SZ2NGGAR5Sc4ySgipeo" target="_blank" rel="noopener">
+                <div class="ax-card-meta-row"><span>04 / WALK 3 MIN</span><span class="ax-card-arrow">↗</span></div>
+                <p class="ax-card-name">allée 表参道</p>
+                <p class="ax-card-meta">BASQUE PATISSERIE</p>
+                <p class="ax-card-addr">北青山3-5-23 1F</p>
+                <p class="ax-card-desc">バスクチーズケーキとドリップコーヒー。静かな小さな店内で、ひとり時間に向く一席。</p>
+            </a>
+        </div>
+    </div>
+
+    <p class="ax-note">
+        ※ 各店舗の営業日・営業時間は変更となる場合があります。<br>
+        お出かけ前に、リンク先の最新情報をご確認ください。
+    </p>
+    </div>
+
+</div>
+
+<!-- ====== FOOTER ====== -->
+<footer class="ax-footer">
+    <p style="margin:0 0 12px;">『雨の日の星空』 2026.8.18 – 8.28 &nbsp;|&nbsp; Gallery Blue 3143</p>
+    <p style="margin:0;">
+        <a href="index.html">TOP</a>
+        <a href="https://twitter.com/rtgeidaipj2026" target="_blank">X</a>
+    </p>
+</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('overlayMenu');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+</script>
+
+</body>
+</html>
