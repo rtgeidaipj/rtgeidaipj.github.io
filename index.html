@@ -190,6 +190,45 @@ a { color: inherit; text-decoration: none; }
     .hero-caption-date { font-size: 14px; }
 }
 
+/* [ADD 2026.06.30] スマホ限定 星空登録バナー */
+.sp-hoshizora-banner {
+    display: none; /* PCでは非表示 */
+}
+@media (max-width: 768px) {
+    .sp-hoshizora-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #fbf6ee;
+        border-top: 1px solid #e5e0d8;
+        border-bottom: 1px solid #e5e0d8;
+        padding: 10px 16px;
+    }
+    .sp-hoshizora-banner-text {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        color: #c95a3a;
+    }
+    .sp-hoshizora-banner-btn {
+        border: 0.5px solid #c95a3a;
+        color: #c95a3a;
+        font-family: var(--font-eng);
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        padding: 5px 10px;
+        border-radius: 2px;
+        text-decoration: none;
+        background: transparent;
+        white-space: nowrap;
+        transition: background 0.2s, color 0.2s;
+    }
+    .sp-hoshizora-banner-btn:hover {
+        background: #c95a3a;
+        color: #fff;
+    }
+}
+
 /* [ADD 2026.06.25] HERO直下のキャッチコピー */
 .concept-band {
     background: var(--bg-cream);
@@ -823,6 +862,12 @@ a { color: inherit; text-decoration: none; }
         南青山 Gallery Blue 3143 / 入場無料・予約不要
     </p>
 </section>
+
+<!-- [ADD 2026.06.30] スマホ限定 星空登録バナー（PCでは非表示） -->
+<div class="sp-hoshizora-banner">
+    <span class="sp-hoshizora-banner-text">★ 星空登録 受付中（〜8/17）</span>
+    <a href="hoshizora.html" class="sp-hoshizora-banner-btn">登録する →</a>
+</div>
 
 <!-- ====== [ADD 2026.06.25] コンセプト・キャッチコピー ====== -->
 <section class="concept-band" id="about">
