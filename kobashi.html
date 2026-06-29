@@ -375,6 +375,28 @@
     }
 
     /* =====================
+
+    /* [EDIT 2026.06.30] OTHER ARTISTSセクションをmaki.html方式に統一 */
+    .artist-back {
+        text-align: center;
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid #e5e5e5;
+    }
+    .artist-back a {
+        display: inline-block;
+        padding: 14px 32px;
+        font-size: 13px;
+        color: #2b2b2b;
+        border: 0.5px solid #2b2b2b;
+        letter-spacing: 0.15em;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .artist-back a:hover {
+        background: #2b2b2b;
+        color: #fbf6ee;
+    }
        回遊ナビ：他の作家を見る
     ===================== */
     .artists-nav {
@@ -611,31 +633,10 @@
         </div>
     </section>
 
-    <!-- 回遊ナビ：他の作家を見る -->
-    <section class="fade-section artists-nav">
-        <span class="artists-nav-label">OTHER ARTISTS</span>
-        <ul class="artists-scroll">
-            <li><a href="ame.html">あめ</a></li>
-            <li><a href="kato.html">加藤彩</a></li>
-            <!-- 現在のページ -->
-            <li class="current"><span>小橋柚奈</span></li>
-            <!-- 以下、ページ完成次第 class="tba" を外してhrefを設定 -->
-            <!-- [CHANGE 2026.05.04] こばらをtba解除 -->
-            <li><a href="kobara.html">こばら</a></li>
-            <!-- [CHANGE] 小柴海亜をtba解除 -->
-            <li><a href="koshiba.html">小柴海亜</a></li>
-            <li><a href="gong.html">龔惠雅</a></li>
-            <li><a href="tanabe.html">田辺朔葉</a></li>
-            <li><a href="miiya.html">みーや</a></li>
-            <li><a href="byun.html">びゅん</a></li>
-        </ul>
-
-        <!-- 前後ナビ -->
-        <div class="prev-next">
-            <a href="kato.html">← 加藤彩</a>
-            <a href="kobara.html">こばら →</a>
-        </div>
-    </section>
+    <!-- [EDIT 2026.06.30] OTHER ARTISTSセクションをmaki.html方式に統一 -->
+    <div class="artist-back">
+        <a href="index.html#artists">← 他の作家を見る</a>
+    </div>
 
 </div><!-- /.container -->
 

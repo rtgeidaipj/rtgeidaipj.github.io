@@ -397,6 +397,28 @@
         font-size: 12px;
     }
 
+
+    /* [EDIT 2026.06.30] OTHER ARTISTSセクションをmaki.html方式に統一 */
+    .artist-back {
+        text-align: center;
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid #e5e5e5;
+    }
+    .artist-back a {
+        display: inline-block;
+        padding: 14px 32px;
+        font-size: 13px;
+        color: #2b2b2b;
+        border: 0.5px solid #2b2b2b;
+        letter-spacing: 0.15em;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .artist-back a:hover {
+        background: #2b2b2b;
+        color: #fbf6ee;
+    }
     .prev-next {
         display: flex;
         justify-content: space-between;
@@ -439,7 +461,29 @@
         .hero-name { font-size: 32px; }
         .profile-row { flex-direction: column; gap: 4px; }
         .profile-label { width: auto; }
-        .prev-next { flex-direction: column; gap: 16px; text-align: center; }
+    
+    /* [EDIT 2026.06.30] OTHER ARTISTSセクションをmaki.html方式に統一 */
+    .artist-back {
+        text-align: center;
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid #e5e5e5;
+    }
+    .artist-back a {
+        display: inline-block;
+        padding: 14px 32px;
+        font-size: 13px;
+        color: #2b2b2b;
+        border: 0.5px solid #2b2b2b;
+        letter-spacing: 0.15em;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .artist-back a:hover {
+        background: #2b2b2b;
+        color: #fbf6ee;
+    }
+    .prev-next { flex-direction: column; gap: 16px; text-align: center; }
     }
 </style>
 </head>
@@ -552,28 +596,11 @@
         </div>
     </section>
 
-    <!-- 回遊ナビ -->
-    <section class="fade-section artists-nav">
-        <span class="artists-nav-label">OTHER ARTISTS</span>
-        <ul class="artists-scroll">
-            <li><a href="ame.html">あめ</a></li>
-            <li><a href="kato.html">加藤彩</a></li>
-            <li><a href="kobashi.html">小橋柚奈</a></li>
-            <li><a href="kobara.html">こばら</a></li>
-            <li><a href="koshiba.html">小柴海亜</a></li>
-            <!-- 現在のページ -->
-            <li class="current"><span>龔惠雅</span></li>
-            <!-- 以下、ページ完成次第 class="tba" を外してhrefを設定 -->
-            <li><a href="tanabe.html">田辺朔葉</a></li>
-            <li><a href="miiya.html">みーや</a></li>
-            <li><a href="byun.html">びゅん</a></li>
-        </ul>
 
-        <div class="prev-next">
-            <a href="koshiba.html">← 小柴海亜</a>
-            <span>次のページ準備中</span>
-        </div>
-    </section>
+    <!-- [EDIT 2026.06.30] OTHER ARTISTSセクションをmaki.html方式に統一 -->
+    <div class="artist-back">
+        <a href="index.html#artists">← 他の作家を見る</a>
+    </div>
 
 </div><!-- /.container -->
 
