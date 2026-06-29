@@ -784,6 +784,23 @@ a { color: inherit; text-decoration: none; }
     letter-spacing: 0.05em;
 }
 
+/* [ADD 2026.06.30] 動画XリンクCSS */
+.maki-video-xlink {
+    display: inline-block;
+    font-family: var(--font-eng);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: var(--text-color);
+    border: 0.5px solid var(--text-color);
+    padding: 14px 32px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+.maki-video-xlink:hover {
+    background: var(--text-color);
+    color: var(--bg-cream);
+}
+
 /* [ADD 2026.06.29] 橋本真希 動画セクション（7月上旬削除予定） */
 .maki-video-section {
     background: #fff;
@@ -882,24 +899,19 @@ a { color: inherit; text-decoration: none; }
 </section>
 
 <!-- ====== 橋本真希 動画 ====== -->
-<!-- [EDIT 2026.06.30] 18:00のX投稿後にコメントアウト解除してXリンクに差し替え予定 -->
-<!--
+<!-- ====== 橋本真希 動画 ====== -->
+<!-- [EDIT 2026.06.30] mp4からXリンクに差し替え -->
 <section class="maki-video-section">
     <div class="maki-video-inner">
         <p class="maki-video-label">6/29 橋本真希より</p>
-        <div class="maki-video-wrap">
-            <video
-                src="maki_0629_2.mp4"
-                controls
-                playsinline
-                preload="metadata"
-                class="maki-video">
-                お使いのブラウザは動画再生に対応していません。
-            </video>
+        <div class="maki-video-wrap" style="text-align:center; padding: 32px 0;">
+            <a href="https://x.com/rtgeidaipj2026/status/2071473743684366645?s=20"
+               target="_blank"
+               rel="noopener"
+               class="maki-video-xlink">X（Twitter）で動画を見る →</a>
         </div>
     </div>
 </section>
--->
 <!-- ====== /橋本真希 動画 ====== -->
 
 <!-- ====== 気軽さバナー ====== -->
