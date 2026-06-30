@@ -269,6 +269,61 @@ a { color: inherit; text-decoration: none; }
     .concept-sub { font-size: 13px; line-height: 2.0; }
 }
 
+/* [ADD 2026.06.30] STATEMENTセクション */
+.statement-section {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px;
+    border-bottom: 1px solid var(--border-paper);
+}
+.statement-label {
+    font-family: var(--font-eng);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    margin: 0 0 8px;
+}
+.statement-subtitle {
+    font-size: 13px;
+    color: var(--text-sub);
+    letter-spacing: 0.2em;
+    margin: 0 0 28px;
+}
+.statement-lead {
+    font-size: 15px;
+    line-height: 2.1;
+    color: var(--text-color);
+    margin: 0 0 0;
+}
+.statement-rest {
+    display: none;
+    font-size: 14px;
+    line-height: 2.1;
+    color: var(--text-sub);
+    margin: 20px 0 0;
+}
+.statement-rest.open { display: block; }
+.statement-toggle {
+    display: inline-block;
+    margin-top: 20px;
+    font-family: var(--font-eng);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--text-color);
+    border: none;
+    border-bottom: 0.5px solid var(--text-color);
+    padding: 0 0 2px;
+    background: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.statement-toggle:hover { opacity: 0.6; }
+@media (max-width: 600px) {
+    .statement-section { padding: 40px 16px; }
+    .statement-lead { font-size: 14px; }
+}
+
 /* ====== 気軽さバナー ====== */
 .casual-band {
     background: var(--bg-cream);
@@ -898,6 +953,17 @@ a { color: inherit; text-decoration: none; }
     </p>
 </section>
 
+<!-- [ADD 2026.06.30] STATEMENTセクション（藝大生より） -->
+<section class="statement-section">
+    <p class="statement-label">Statement</p>
+    <p class="statement-subtitle">藝大生より — Project Statement</p>
+    <p class="statement-lead">まなざしによって私たちは境界を越えられるのか。今回、橋本真希さんは培ってきたアイドルとしてのアイデンティティを絵画という異なる形態に昇華し、藝大生と共に1人の作家として共に制作に向き合います。また藝大生にとっては、アイドルプロデュースに代表されるファンダムという要素を意識し、SNSやマスメディアを活用したプロモーションやファン獲得の方法を、アイドルとは異なる立場から考え、向き合う機会にもなります。</p>
+    <p class="statement-rest" id="statement-rest">この展覧会までの半年間をかけたアートプロジェクトとして、両者が問題意識を持って発見していく過程を提示します。また会場ではまなざしを題材にしたテキストからそれぞれの背負ってきた背景を明らかにすることで、物語性をメディウムとして、作家と鑑賞者の境界を横断して対話を試みます。</p>
+    <p class="statement-rest" id="statement-rest-2">「アーティスト」と「アイドル」は、表現の形式も置かれている場所も違います。しかしその根にある構造は、驚くほど似ており、"ファンを獲得し、その支持の上に存在が成り立つ"という仕組みなのです。私たちは常に、「名前を売ること」「誰に、どのように届くのか」「求められるとは何か」という問いの中で表現を続けています。そこには、ひとつの正解があるわけではありません。</p>
+    <p class="statement-rest" id="statement-rest-3">立場も戦略も異なる。けれど、そのどれもが"誰かに見つけられ、支えられる"というファンダムの上に成り立っていると考察できることから、この展示はアイドルと藝大生という異なる領域に立つ表現者がそれぞれのスタンスを持ち寄り、「表現とファンの関係」を可視化する意図を含んでいます。本展は表現者のまなざしとファンダムへの関わり。この二つの軸により構成されています。藝大生とアイドルという異色の組み合わせによって見えてくる新たなアートシーンをお届けします。</p>
+    <button class="statement-toggle" id="statement-btn" onclick="toggleStatement()">続きを読む →</button>
+</section>
+
 <!-- ====== 橋本真希 動画 ====== -->
 <!-- ====== 橋本真希 動画 ====== -->
 <!-- [EDIT 2026.06.30] Xの投稿を埋め込み表示に変更 -->
@@ -1207,6 +1273,15 @@ function toggleMenu() {
     menu.classList.toggle('open');
     document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
 }
+/* [ADD 2026.06.30] STATEMENTの続きを読む */
+function toggleStatement() {
+    const rests = document.querySelectorAll('.statement-rest');
+    const btn = document.getElementById('statement-btn');
+    const isOpen = rests[0].classList.contains('open');
+    rests.forEach(el => el.classList.toggle('open'));
+    btn.textContent = isOpen ? '続きを読む →' : '閉じる ↑';
+}
+
 function toggleNews(id) {
     const content = document.getElementById('news-content-' + id);
     if (content) content.classList.toggle('open');
