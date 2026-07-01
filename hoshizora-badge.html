@@ -191,6 +191,7 @@ a:hover { opacity: 0.6; }
    例：<div id="badgeArt"> の中を <img src="badge-star.jpg" alt=""> 等に置換
    svg・画像どちらでも良い。サイズは幅200px前後を目安に調整。
    ============================================================ */
+/* [EDIT 2026.07.01] バッジらしい丸形の二重リングで囲む */
 #badgeArt {
     width: 180px;
     height: 180px;
@@ -198,8 +199,14 @@ a:hover { opacity: 0.6; }
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
+    background: var(--navy);
+    border: 3px solid var(--gold);
+    outline: 1px solid var(--navy);
+    outline-offset: 5px;
+    box-shadow: 0 4px 16px rgba(30, 58, 95, 0.25);
 }
-#badgeArt svg { width: 100%; height: 100%; }
+#badgeArt svg { width: 55%; height: 55%; }
 
 .badge-no {
     font-family: var(--font-eng);
