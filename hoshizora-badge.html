@@ -330,7 +330,7 @@ footer p { line-height: 2.0; }
 
     <!-- noパラメータが無い/不正な場合に表示 -->
     <div class="badge-error" id="badgeError">
-        <p>バッジ情報を読み込めませんでした。<br>URLをご確認いただくか、星空登録ページからお試しください。</p>
+        <p id="badgeErrorText">バッジ情報を読み込めませんでした。<br>URLをご確認いただくか、星空登録ページからお試しください。</p>
         <a href="hoshizora.html">星空登録ページへ →</a>
     </div>
 
@@ -356,24 +356,54 @@ footer p { line-height: 2.0; }
         document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
     }
 
-    // [ADD 2026.07.01] URLパラメータ ?no=085 を読み取って番号を表示
-    // GAS側（sendEmailsToExistingResponses / onFormSubmit）が生成するURLと形式を一致させること
+    // [EDIT 2026.07.01] no直渡し方式 → token方式（GASへの問い合わせ）に変更
+    // 理由：?no=001 のように連番を直接URLに載せると、他人の番号を誰でも
+    //       打ち込んで見られてしまうため。推測不可能なトークンをGASに
+    //       問い合わせ、番号は"答え"としてのみ受け取る。
+    //
+    // ★★★ GASをデプロイしたら、下のURLをあなたのWebアプリURLに置き換えてください ★★★
+    const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwgY8wBvUS8EsesmXtQnboiF-d5kSDqBLDZmtWhQH46rMAYVBb0Q0Vu2HxAns_tZzuj/exec';
+
     (function () {
         const params = new URLSearchParams(window.location.search);
-        const no = params.get('no');
-        const isValid = no && /^[0-9]{1,3}$/.test(no);
+        const token = params.get('token');
 
         const badgeCard = document.getElementById('badgeCard');
         const badgeError = document.getElementById('badgeError');
         const badgeNo = document.getElementById('badgeNo');
+        const badgeErrorText = document.getElementById('badgeErrorText');
 
-        if (isValid) {
-            const padded = no.padStart(3, '0');
-            badgeNo.textContent = 'No.' + padded;
-        } else {
+        function showError(message) {
             badgeCard.style.display = 'none';
             badgeError.style.display = 'block';
+            if (message && badgeErrorText) {
+                badgeErrorText.textContent = message;
+            }
         }
+
+        if (!token) {
+            showError('バッジ情報を読み込めませんでした。URLをご確認いただくか、星空登録ページからお試しください。');
+            return;
+        }
+
+        if (!GAS_ENDPOINT || GAS_ENDPOINT.indexOf('http') !== 0) {
+            // GASのURLがまだ設定されていない場合（開発中の状態）
+            showError('バッジ表示の準備中です。しばらくしてから再度お試しください。');
+            return;
+        }
+
+        fetch(GAS_ENDPOINT + '?token=' + encodeURIComponent(token))
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
+                if (data.ok && data.no) {
+                    badgeNo.textContent = 'No.' + data.no;
+                } else {
+                    showError('バッジ情報を読み込めませんでした。URLをご確認いただくか、星空登録ページからお試しください。');
+                }
+            })
+            .catch(function () {
+                showError('通信エラーが発生しました。時間をおいて再度お試しください。');
+            });
     })();
 </script>
 
