@@ -208,13 +208,22 @@ a:hover { opacity: 0.6; }
 }
 #badgeArt svg { width: 55%; height: 55%; }
 
+/* [ADD 2026.07.09] パターン題名表示（現状ダミー、橋本真希が決めた正式題名に差し替え予定） */
+.badge-art-title {
+    font-family: var(--font-eng);
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    margin-top: 20px;
+}
+
 .badge-no {
     font-family: var(--font-eng);
     font-size: 32px;
     letter-spacing: 0.2em;
     color: var(--navy);
     font-weight: 500;
-    margin-top: 28px;
+    margin-top: 12px; /* [EDIT 2026.07.09] 題名要素が上に増えたため 28px→12px に調整 */
 }
 
 .badge-sub {
@@ -326,6 +335,10 @@ footer p { line-height: 2.0; }
             </svg>
         </div>
 
+        <!-- [ADD 2026.07.09] パターン題名表示。現状はダミー題名。
+             橋本真希が正式な題名を決め次第、下部JSのBADGE_TITLE_BY_PATTERNを差し替える -->
+        <p class="badge-art-title" id="badgeArtTitle"></p>
+
         <p class="badge-no" id="badgeNo">No.—</p>
         <p class="badge-sub">HOSHIZORA REGISTRATION</p>
     </div>
@@ -375,6 +388,14 @@ footer p { line-height: 2.0; }
         C: '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 10 L58 42 L90 50 L58 58 L50 90 L42 58 L10 50 L42 42 Z" fill="none" stroke="#c9a84c" stroke-width="2.2" stroke-linejoin="round"/></svg>'
     };
 
+    // [ADD 2026.07.09] パターンごとの題名。現状は全てダミーテキスト。
+    // ★★★ 橋本真希が正式な題名を決め次第、ここの文字列だけを差し替えてください ★★★
+    const BADGE_TITLE_BY_PATTERN = {
+        A: '（ダミー題名A）',
+        B: '（ダミー題名B）',
+        C: '（ダミー題名C）'
+    };
+
     (function () {
         const params = new URLSearchParams(window.location.search);
         const token = params.get('token');
@@ -383,6 +404,7 @@ footer p { line-height: 2.0; }
         const badgeError = document.getElementById('badgeError');
         const badgeNo = document.getElementById('badgeNo');
         const badgeArt = document.getElementById('badgeArt'); // [ADD 2026.07.09]
+        const badgeArtTitle = document.getElementById('badgeArtTitle'); // [ADD 2026.07.09]
         const badgeErrorText = document.getElementById('badgeErrorText');
 
         function showError(message) {
@@ -410,11 +432,15 @@ footer p { line-height: 2.0; }
                 if (data.ok && data.no) {
                     badgeNo.textContent = 'No.' + data.no;
 
-                    // [ADD 2026.07.09] パターンに応じた絵柄への差し替え
-                    // 未知のパターン値が来た場合はプレースホルダー（Aと同じ絵柄）のまま表示する
+                    // [ADD 2026.07.09] パターンに応じた絵柄・題名への差し替え
+                    // 未知のパターン値が来た場合はプレースホルダー（Aと同じ絵柄・題名なし）のまま表示する
                     const art = BADGE_ART_BY_PATTERN[data.pattern];
                     if (art && badgeArt) {
                         badgeArt.innerHTML = art;
+                    }
+                    const title = BADGE_TITLE_BY_PATTERN[data.pattern];
+                    if (title && badgeArtTitle) {
+                        badgeArtTitle.textContent = title;
                     }
                 } else {
                     showError('バッジ情報を読み込めませんでした。URLをご確認いただくか、星空登録ページからお試しください。');
