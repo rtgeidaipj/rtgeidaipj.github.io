@@ -389,11 +389,12 @@ footer p { line-height: 2.0; }
     };
 
     // [ADD 2026.07.09] パターンごとの題名。現状は全てダミーテキスト。
+    // 表示時に『』が自動で付くので、ここには題名の文字だけを入れればよい（例：'雫'）。
     // ★★★ 橋本真希が正式な題名を決め次第、ここの文字列だけを差し替えてください ★★★
     const BADGE_TITLE_BY_PATTERN = {
-        A: '（ダミー題名A）',
-        B: '（ダミー題名B）',
-        C: '（ダミー題名C）'
+        A: 'ダミー題名A',
+        B: 'ダミー題名B',
+        C: 'ダミー題名C'
     };
 
     (function () {
@@ -440,7 +441,8 @@ footer p { line-height: 2.0; }
                     }
                     const title = BADGE_TITLE_BY_PATTERN[data.pattern];
                     if (title && badgeArtTitle) {
-                        badgeArtTitle.textContent = title;
+                        // [EDIT 2026.07.09] 題名だと分かるよう『』で囲んで表示
+                        badgeArtTitle.textContent = '『' + title + '』';
                     }
                 } else {
                     showError('バッジ情報を読み込めませんでした。URLをご確認いただくか、星空登録ページからお試しください。');
