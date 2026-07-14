@@ -192,6 +192,115 @@ a:hover { opacity: 0.6; }
    svg・画像どちらでも良い。サイズは幅200px前後を目安に調整。
    ============================================================ */
 /* [EDIT 2026.07.01] バッジらしい丸形の二重リングで囲む */
+/* [ADD 2026.07.09] バッジらしい特別感を出すため、金属質のリングと後光を追加 */
+.badge-medal-wrap {
+    position: relative;
+    width: 196px;
+    margin: 0 auto;
+}
+
+/* 上部の留め具（リボンをかける輪のイメージ） */
+.badge-medal-wrap::before {
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    /* [EDIT 2026.07.09] 中が白く浮いて見えたため、navy塗りつぶしに変更 */
+    background: var(--navy);
+    border: 2px solid #fbf6ee;
+    box-shadow: 0 2px 4px rgba(30, 58, 95, 0.25);
+    z-index: 3;
+}
+
+.badge-medal {
+    position: relative;
+    width: 196px;
+    height: 196px;
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 7px;
+    /* [ADD 2026.07.09] JS実行前の初期表示用フォールバック（ring-a/b/cクラスが付くと上書きされる） */
+    background: #1e3a5f;
+    /* 淡い後光（グロー） */
+    box-shadow:
+        0 8px 22px rgba(30, 58, 95, 0.3),
+        0 0 34px rgba(30, 58, 95, 0.35);
+    overflow: hidden;
+}
+/* [EDIT 2026.07.09] リングの色をパターンごとに変更（テーマ・絵柄の色味に合わせる）
+   星彩＝紫〜青の宝石調／星屑＝銀（宇宙の塵）／Meteor＝金（炎の軌跡） */
+.badge-medal.ring-a {
+    background: conic-gradient(from 200deg,
+        #e8c4d8, #a98fc4, #6b6ba3, #a98fc4,
+        #e8c4d8, #c9a8d6, #6b6ba3, #a98fc4, #e8c4d8);
+}
+/* [EDIT 2026.07.09] グレーが絵の淡いブルー系パステルと合わなかったため、絵の色に寄せたパール調ブルーに変更 */
+/* [EDIT 2026.07.09] 淡すぎて白背景に馴染みすぎたため、中間色をもう少し暗い青紫系に変更 */
+.badge-medal.ring-b {
+    background: conic-gradient(from 200deg,
+        #d7e2f5, #9db3d9, #4f5f8c, #9db3d9,
+        #d7e2f5, #b8c8e8, #4f5f8c, #9db3d9, #d7e2f5);
+}
+/* [EDIT 2026.07.09] 金は「メダル」の印象が強く流星らしくないため、流星の軌跡（熱い先端の珊瑚色→冷える尾の青）に変更。絵のピンク・水色とも呼応させた */
+/* [EDIT 2026.07.09] 中間色が濁って見えたため、滑らかなグラデーションではなく、絵の実際の色に近いピンク・水色をはっきりした帯で交互配置に変更 */
+/* [EDIT 2026.07.09] 縞模様だと装飾的で流星の"動き"が感じられないため、一方向に流れる軌跡（明るい先端→珊瑚色→青→夜の暗さ→明るい先端）に変更 */
+.badge-medal.ring-c {
+    background: conic-gradient(from 200deg,
+        #fdf0e4 0deg,
+        #f2b9ab 40deg,
+        #e0895f 90deg,
+        #a9cfe6 160deg,
+        #5b7aa6 220deg,
+        #2d3f5c 280deg,
+        #fdf0e4 360deg);
+}
+
+/* リング表面をゆっくり一周する光（シマー）※夜空に映える、月光のような青みがかった白に変更
+   [EDIT 2026.07.09] mix-blend-modeがマスクと組み合わさるとSafariで描画されない問題があるため、単純な半透明白に変更 */
+.badge-medal::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg,
+        transparent 0deg,
+        rgba(255, 255, 255, 0) 10deg,
+        rgba(255, 255, 255, 0.85) 28deg,
+        rgba(255, 255, 255, 0) 46deg,
+        transparent 62deg,
+        transparent 360deg);
+    -webkit-mask-image: radial-gradient(circle, transparent 0%, transparent 91%, black 93%, black 100%);
+    mask-image: radial-gradient(circle, transparent 0%, transparent 91%, black 93%, black 100%);
+    animation: badgeShimmer 3.5s linear infinite;
+    pointer-events: none;
+}
+@keyframes badgeShimmer {
+    to { transform: rotate(360deg); }
+}
+
+/* 周囲で瞬く小さな星（雨の日の星空、というテーマに合わせて） */
+.badge-spark {
+    position: absolute;
+    /* [EDIT 2026.07.09] navyに変更していたが、金に戻す */
+    color: var(--gold);
+    font-size: 14px;
+    line-height: 1;
+    pointer-events: none;
+    animation: badgeTwinkle 2.6s ease-in-out infinite;
+}
+.badge-spark:nth-child(1) { top: 6%;  left: -4%;  font-size: 12px; animation-delay: 0s; }
+.badge-spark:nth-child(2) { top: 62%; left: -8%;  font-size: 9px;  animation-delay: 0.9s; }
+.badge-spark:nth-child(3) { top: -6%; right: 10%; font-size: 10px; animation-delay: 1.5s; }
+.badge-spark:nth-child(4) { top: 70%; right: -6%; font-size: 13px; animation-delay: 0.4s; }
+@keyframes badgeTwinkle {
+    0%, 100% { opacity: 0.25; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.15); }
+}
+
 #badgeArt {
     width: 180px;
     height: 180px;
@@ -200,21 +309,28 @@ a:hover { opacity: 0.6; }
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: var(--navy);
-    border: 3px solid var(--gold);
-    outline: 1px solid var(--navy);
-    outline-offset: 5px;
-    box-shadow: 0 4px 16px rgba(30, 58, 95, 0.25);
+    background: #fbfcfa;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+    overflow: hidden;
 }
 #badgeArt svg { width: 55%; height: 55%; }
+#badgeArt img {
+    /* [EDIT 2026.07.09] 背景色を合わせる方式がうまくいかないため、円いっぱいに敷き詰める方式に戻す */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
 
-/* [ADD 2026.07.09] パターン題名表示（現状ダミー、橋本真希が決めた正式題名に差し替え予定） */
+/* [ADD 2026.07.09] パターン題名表示 */
 .badge-art-title {
-    font-family: var(--font-eng);
-    font-size: 12px;
-    letter-spacing: 0.25em;
+    /* [EDIT 2026.07.09] 小さすぎたため、タイトルらしいサイズ・書体に変更 */
+    font-family: var(--font-main);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
     color: var(--gold);
-    margin-top: 20px;
+    margin-top: 22px;
 }
 
 .badge-no {
@@ -277,6 +393,8 @@ footer p { line-height: 2.0; }
     .hamburger { display: flex; }
     .site-nav { height: 52px; }
     .badge-hero { padding: 40px 0 60px; }
+    .badge-medal-wrap { width: 152px; }
+    .badge-medal { width: 152px; height: 152px; }
     #badgeArt { width: 140px; height: 140px; }
     .badge-no { font-size: 26px; }
 }
@@ -325,6 +443,12 @@ footer p { line-height: 2.0; }
         <p class="badge-label">HOSHIZORA BADGE</p>
         <h1 class="badge-title">星空バッジ</h1>
 
+        <div class="badge-medal-wrap">
+        <span class="badge-spark">✦</span>
+        <span class="badge-spark">✦</span>
+        <span class="badge-spark">✦</span>
+        <span class="badge-spark">✦</span>
+        <div class="badge-medal">
         <div id="badgeArt">
             <!-- [PLACEHOLDER 2026.07.09] 絵柄未定のため仮の星SVGを表示中。
                  パターンA/B/Cの絵柄はJS側（下部）のBADGE_ART_BY_PATTERNで出し分ける。
@@ -333,6 +457,8 @@ footer p { line-height: 2.0; }
                 <polygon points="50,4 61,37 96,37 68,58 79,91 50,70 21,91 32,58 4,37 39,37"
                     fill="none" stroke="#c9a84c" stroke-width="2.2" stroke-linejoin="round"/>
             </svg>
+        </div>
+        </div>
         </div>
 
         <!-- [ADD 2026.07.09] パターン題名表示。現状はダミー題名。
@@ -383,18 +509,20 @@ footer p { line-height: 2.0; }
     // GASのdoGetが返す data.pattern（"A"/"B"/"C"）に応じて、ここで絵柄を出し分ける。
     // ★★★ 絵柄が届いたら、各パターンのSVGタグ（またはimgタグ）だけを差し替えてください ★★★
     const BADGE_ART_BY_PATTERN = {
-        A: '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,4 61,37 96,37 68,58 79,91 50,70 21,91 32,58 4,37 39,37" fill="none" stroke="#c9a84c" stroke-width="2.2" stroke-linejoin="round"/></svg>',
-        B: '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="30" fill="none" stroke="#c9a84c" stroke-width="2.2"/><circle cx="50" cy="50" r="4" fill="#c9a84c"/></svg>',
-        C: '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 10 L58 42 L90 50 L58 58 L50 90 L42 58 L10 50 L42 42 Z" fill="none" stroke="#c9a84c" stroke-width="2.2" stroke-linejoin="round"/></svg>'
+        // [EDIT 2026.07.09] パターンA＝「星彩」、パターンC＝「Meteor」の実際の絵柄に差し替え
+        A: '<img src="hoshizora-seisai.jpg" alt="星彩">',
+        // [EDIT 2026.07.09] パターンB＝「星屑」の実際の絵柄に差し替え（テスト用）
+        B: '<img src="hoshizora-hoshikuzu.jpg" alt="星屑">',
+        C: '<img src="hoshizora-meteor.jpg" alt="Meteor">'
     };
 
     // [ADD 2026.07.09] パターンごとの題名。現状は全てダミーテキスト。
     // 表示時に『』が自動で付くので、ここには題名の文字だけを入れればよい（例：'雫'）。
     // ★★★ 橋本真希が正式な題名を決め次第、ここの文字列だけを差し替えてください ★★★
     const BADGE_TITLE_BY_PATTERN = {
-        A: 'ダミー題名A',
-        B: 'ダミー題名B',
-        C: 'ダミー題名C'
+        A: '星彩',
+        B: '星屑',
+        C: 'Meteor'
     };
 
     (function () {
@@ -405,6 +533,7 @@ footer p { line-height: 2.0; }
         const badgeError = document.getElementById('badgeError');
         const badgeNo = document.getElementById('badgeNo');
         const badgeArt = document.getElementById('badgeArt'); // [ADD 2026.07.09]
+        const badgeMedal = document.querySelector('.badge-medal'); // [ADD 2026.07.09]
         const badgeArtTitle = document.getElementById('badgeArtTitle'); // [ADD 2026.07.09]
         const badgeErrorText = document.getElementById('badgeErrorText');
 
@@ -438,6 +567,10 @@ footer p { line-height: 2.0; }
                     const art = BADGE_ART_BY_PATTERN[data.pattern];
                     if (art && badgeArt) {
                         badgeArt.innerHTML = art;
+                    }
+                    // [ADD 2026.07.09] パターンごとにリングの色を切り替える
+                    if (badgeMedal && data.pattern) {
+                        badgeMedal.classList.add('ring-' + data.pattern.toLowerCase());
                     }
                     const title = BADGE_TITLE_BY_PATTERN[data.pattern];
                     if (title && badgeArtTitle) {
