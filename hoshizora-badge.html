@@ -333,6 +333,15 @@ a:hover { opacity: 0.6; }
     margin-top: 22px;
 }
 
+/* [ADD 2026.07.10] 絵柄の作者名表示 */
+.badge-art-credit {
+    font-family: var(--font-eng);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--text-mute);
+    margin-top: 8px;
+}
+
 .badge-no {
     font-family: var(--font-eng);
     font-size: 32px;
@@ -464,6 +473,7 @@ footer p { line-height: 2.0; }
         <!-- [ADD 2026.07.09] パターン題名表示。現状はダミー題名。
              橋本真希が正式な題名を決め次第、下部JSのBADGE_TITLE_BY_PATTERNを差し替える -->
         <p class="badge-art-title" id="badgeArtTitle"></p>
+        <p class="badge-art-credit">Artwork by 橋本真希</p>
 
         <p class="badge-no" id="badgeNo">No.—</p>
         <p class="badge-sub">HOSHIZORA REGISTRATION</p>
