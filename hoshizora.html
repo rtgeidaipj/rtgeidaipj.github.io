@@ -309,28 +309,29 @@
     .hz-tl-cards {
         display: grid;
         grid-template-columns: 52fr 48fr;
-        gap: 16px;
+        gap: 32px;
     }
+    /* [EDIT 2026.07.10] 灰色の箱型カードから、罫線ベースの静かなデザインに変更 */
     .hz-tl-card {
-        border: 1px solid #ddd;
-        padding: 20px;
-        background: var(--bg-color);
+        border-top: 1px solid #e0d6c4;
+        padding: 20px 0 0;
+        background: none;
     }
     .hz-tl-card.active {
-        background: #fff;
-        border-color: var(--navy);
+        border-top: 1px solid var(--navy);
     }
     .hz-tl-now {
         font-family: var(--font-eng);
-        font-size: 9px;
-        background: var(--navy);
-        color: #fff;
-        padding: 2px 8px;
-        border-radius: 2px;
+        font-size: 10px;
+        color: var(--gold);
+        letter-spacing: 0.25em;
         display: inline-block;
-        margin-bottom: 6px;
-        letter-spacing: 0.15em;
+        margin-bottom: 10px;
+        background: none;
+        padding: 0;
+        border-radius: 0;
     }
+    .hz-tl-now::before { content: '✦ '; }
     .hz-tl-card-period {
         font-family: var(--font-eng);
         font-size: 10px;
@@ -370,17 +371,18 @@
         align-items: start;
     }
     .hz-step:last-child { border-bottom: 1px solid #eee; }
-    /* [ADD 2026.06.30] 「今すぐ」バッジ */
+    /* [EDIT 2026.07.10] navyの箱型ピルから、goldの控えめな小さな文字表現に変更 */
     .hz-step-now {
         display: inline-block;
         font-family: var(--font-eng);
-        font-size: 9px;
-        letter-spacing: 0.12em;
-        background: var(--navy);
-        color: #fff;
-        padding: 2px 8px;
-        margin-bottom: 8px;
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        color: var(--gold);
+        background: none;
+        padding: 0;
+        margin-bottom: 10px;
     }
+    .hz-step-now::before { content: '✦ '; }
     .hz-step-num {
         font-family: var(--font-eng);
         font-size: 11px;
@@ -398,18 +400,18 @@
         display: block;
         margin-bottom: 12px;
     }
-    /* [ADD 2026.06.30] 会期中ステップの期間表示：目立つように */
+    /* [EDIT 2026.07.10] 水色の箱型ピルから、太字テキストのみの表現に変更 */
     .hz-step-period-future {
         font-family: var(--font-eng);
         font-size: 12px;
         font-weight: 700;
         color: var(--navy);
-        letter-spacing: 0.1em;
+        letter-spacing: 0.15em;
         display: block;
         margin-bottom: 12px;
-        background: #e8eef5;
-        padding: 3px 6px;
-        text-align: center;
+        background: none;
+        padding: 0;
+        text-align: left;
     }
     .hz-step-star {
         font-family: var(--font-eng);
@@ -475,14 +477,15 @@
         color: var(--gold);
     }
 
-    /* [ADD 2026.06.30] ① 特典サマリーカード */
+    /* [EDIT 2026.07.10] 白い箱＋navy角バッジから、上下罫線＋明朝体の数字に変更 */
     .hz-tokuten-summary {
-        background: #fff;
-        border: 0.5px solid #c5d4e5;
-        border-left: 3px solid var(--navy);
-        border-radius: 2px;
-        padding: 16px 20px;
-        margin: 20px auto 0;
+        background: none;
+        border: none;
+        border-top: 1px solid #e0d6c4;
+        border-bottom: 1px solid #e0d6c4;
+        border-radius: 0;
+        padding: 22px 4px;
+        margin: 28px auto 0;
         max-width: 480px;
         text-align: left;
     }
@@ -491,28 +494,29 @@
         font-size: 10px;
         letter-spacing: 0.2em;
         color: var(--navy);
-        margin: 0 0 10px;
+        margin: 0 0 14px;
         text-transform: uppercase;
     }
     .hz-tokuten-summary-row {
         display: flex;
         align-items: flex-start;
-        gap: 10px;
+        gap: 14px;
         font-size: 13px;
         line-height: 1.7;
         color: #3a3a3a;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
     }
     .hz-tokuten-summary-row:last-child { margin-bottom: 0; }
     .hz-tokuten-summary-num {
-        font-family: var(--font-eng);
-        font-size: 10px;
-        background: var(--navy);
-        color: #fff;
-        padding: 2px 6px;
-        border-radius: 2px;
+        font-family: var(--font-main);
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--gold);
+        background: none;
+        padding: 0;
+        border-radius: 0;
         flex-shrink: 0;
-        margin-top: 3px;
+        line-height: 1.3;
     }
     /* [EDIT 2026.06.30] 特典ページリンク：ボタン→テキストリンクに変更 */
     .hz-tokuten-link-txt {
@@ -867,9 +871,17 @@
         <h1 class="hz-hero-title">星空登録</h1>
         <p class="hz-hero-body">登録するだけで、特典抽選に参加できます。<br><span style="font-size:13px; color:#666;">所要時間1分。ニックネームを決めて登録するだけです。</span></p>
 
-        <!-- [ADD 2026.06.30] ① 特典サマリーカード -->
+        <!-- [EDIT 2026.07.10] 独立した大きな告知ボックスは廃止。バッジも①②と同じ一覧に統合し、情報の重みを揃える -->
         <div class="hz-tokuten-summary">
-            <p class="hz-tokuten-summary-label">集めた ★ でもらえる特典</p>
+            <p class="hz-tokuten-summary-label">星空登録でもらえる特典</p>
+            <div class="hz-tokuten-summary-row" style="flex-direction:column; align-items:flex-start; gap:8px;">
+                <span style="display:flex; align-items:center; gap:8px;">
+                    <span style="background:#c95a3a; color:#fff; font-family:var(--font-eng); font-size:9px; letter-spacing:0.12em; padding:2px 7px;">NEW</span>
+                    <span style="font-weight:500; color:#1a1a1a; letter-spacing:0.05em;">星空バッジ</span>
+                </span>
+                <span>8月17日までに星空登録をしていただいた方へ、橋本真希からの感謝の気持ちを込めて登録順のシリアルナンバー入り「星空バッジ」をプレゼント。真希本人が手描きした絵をもとにした、専用ページで見られるバッジです。『星彩』『星屑』『Meteor』── 3種類の中からどれか1つが届きます。届いたら、ぜひ #星空バッジ をつけてSNSで教えてください。<br><span style="font-size:11px; color:#666;">※ 同じメールアドレスで複数回ご登録された場合、最初のご登録のみが対象です。</span></span>
+            </div>
+            <p class="hz-tokuten-summary-label" style="margin-top:22px; padding-top:18px; border-top:1px solid #e0d6c4;">★ を集めてもらえる特典</p>
             <div class="hz-tokuten-summary-row">
                 <span class="hz-tokuten-summary-num">①</span>
                 <span>クロージングパーティー（8/31）への招待抽選 ─ ★1口ごとに抽選1口</span>
@@ -878,9 +890,8 @@
                 <span class="hz-tokuten-summary-num">②</span>
                 <span>来場証明NFTの発行 ─ ★の数でレア度が変わります</span>
             </div>
+            <a href="tokuten.html" class="hz-tokuten-link-txt">特典の詳細を見る →</a>
         </div>
-        <!-- [EDIT 2026.06.30] ↓→→ に変更（登録ボタンを指しているように見えるため） -->
-        <a href="tokuten.html" class="hz-tokuten-link-txt">特典の詳細を見る →</a>
 
         <div style="margin-top:24px; text-align:center;">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBB0a86_Ip6mbJZLgHIVFhyf-Q2yfwfxwh5kVIJSv4pVkqWA/viewform?usp=header"
@@ -888,7 +899,7 @@
                class="hz-submit" style="max-width:360px; margin:0 auto; display:block;">星 空 登 録 を す る →</a>
             <p style="font-family:var(--font-main);font-size:13px;color:#555;letter-spacing:0.05em;margin-top:10px;">事前エントリーは 2026年8月17日（月）23:59 まで</p>
         </div>
-        <div class="hz-notice">※ 来場予約ではありません。登録後も、会期中は自由にご来場いただけます。</div>
+        <div class="hz-notice">※ 来場予約ではありません。登録後も、会期中は自由にご来場いただけます。<br>※ 同じメールアドレスで複数回ご登録された場合、最初のご登録のみが有効となります。</div>
     </div>
 
 </div><!-- /.container -->
@@ -1004,15 +1015,10 @@
             </div>
         </div>
 
-        <!-- 合計 -->
-        <div class="hz-total">
-            <span class="hz-total-label">合 計</span>
-            <span class="hz-total-num">★ 最大 16</span>
-        </div>
-
         <!-- [EDIT 2026.06.30] 特典CTAカード削除→登録CTAに変更 -->
+        <!-- [EDIT 2026.07.10] 単独の「合計」カードを削除し、数字をこの一文に統合 -->
         <div class="hz-step-cta">
-            <p class="hz-step-cta-text">★を集めるには、まず星空登録から。</p>
+            <p class="hz-step-cta-text">★を集めるには、まず星空登録から。（最大16まで集められます）</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBB0a86_Ip6mbJZLgHIVFhyf-Q2yfwfxwh5kVIJSv4pVkqWA/viewform?usp=header"
                target="_blank"
                class="hz-step-cta-btn">星 空 登 録 を す る →</a>
@@ -1035,7 +1041,7 @@
     <div class="hz-form">
         <div class="hz-form-box">
             <p class="hz-input-note">来場予約ではありません。登録後も、会期中は自由にご来場いただけます。<br>※ 登録したニックネームは、来場時のチェックインに必要です。メモまたはスクリーンショットで必ず保存してください。</p>
-            <div class="hz-mgmt-note">※ 集めた★の集計は主催者側で管理しています。会期終了後にNFT発行のご案内とともにお知らせします。<br>※ お問い合わせ：rtgeidaipj2026@gmail.com（会場への直接のお問い合わせはご遠慮ください）</div>
+            <div class="hz-mgmt-note">※ 集めた★の集計は主催者側で管理しています。<br>※ お問い合わせ：rtgeidaipj2026@gmail.com（会場への直接のお問い合わせはご遠慮ください）</div>
         </div>
     </div>
 

@@ -935,6 +935,13 @@ a { color: inherit; text-decoration: none; }
     </p>
 </section>
 
+<!-- [EDIT 2026.07.10] NEWのスタイルを既存の.news-tagと統一 -->
+<div class="top-news-banner" style="text-align:center; padding:16px 16px; border-top:1px solid var(--border-paper); border-bottom:1px solid var(--border-paper);">
+    <a href="index.html#news" style="color:#4a4a4a; font-family:var(--font-main); font-size:13px; letter-spacing:0.05em; text-decoration:none;">
+        <span class="news-tag" style="margin-left:0; margin-right:10px;">NEW</span>星空登録者に橋本真希デザインの星空バッジをプレゼント →
+    </a>
+</div>
+
 <!-- [ADD 2026.06.30] スマホ限定 星空登録バナー（PCでは非表示） -->
 <div class="sp-hoshizora-banner">
     <span class="sp-hoshizora-banner-text">★ 星空登録 受付中（〜8/17）</span>
@@ -1148,6 +1155,16 @@ a { color: inherit; text-decoration: none; }
         <p class="sec-head" style="text-align:center;">お知らせ</p>
         <h2 class="sec-title" style="text-align:center; margin-bottom:50px;">NEWS</h2>
 
+        <!-- [ADD 2026.07.16] 星空バッジ プレゼントのお知らせ -->
+        <article class="news-item">
+            <span class="news-date">2026.07.16<span class="news-tag">NEW</span></span>
+            <span class="news-headline">星空登録者に橋本真希デザインの星空バッジをプレゼント</span>
+            <div class="news-content" id="news-content-15">
+                <p>事前に星空登録をしてくださった方へ、橋本真希からの感謝の気持ちを込めて登録順のシリアルナンバー入り「星空バッジ」をお届けします。真希本人が手描きした絵をもとにした、専用ページで見られるバッジです。バッジは『星彩』『星屑』『Meteor』の3種類。どれが届くかはお楽しみに。届いたら、ぜひ #星空バッジ をつけてどの絵柄だったかSNSで教えてください。これまでにご登録いただいた方には順次メールをお送りします。これから登録される方には、登録後すぐに自動でお届けします。星空登録は<a href="hoshizora.html" style="color:var(--accent-warm); text-decoration:underline;">こちら</a>から。<br><span style="font-size:12px; color:#666;">※ 同じメールアドレスで複数回ご登録された場合、最初のご登録のみが対象です。</span></p>
+            </div>
+            <span class="news-toggle" onclick="toggleNews(15)">Read More / Close</span>
+        </article>
+
         <!-- [ADD 2026.06.29] サイトリニューアルのお知らせ -->
         <article class="news-item">
             <span class="news-date">2026.06.29<span class="news-tag">NEW</span></span>
@@ -1171,26 +1188,27 @@ a { color: inherit; text-decoration: none; }
             <span class="news-toggle" onclick="toggleNews(13)">Read More / Close</span>
         </article>
 
-        <article class="news-item">
-            <span class="news-date">2026.05.10</span>
-            <span class="news-headline">星空登録・特典・クロージングパーティー詳細を公開しました</span>
-            <div class="news-content" id="news-content-12">
-                <p>来場をより楽しんでいただくための「星空登録(事前エントリー)」と、抽選で10名様をご招待する「クロージングパーティー」、来場でもらえる特典の詳細を公開しました。</p>
-                <p>詳しくは <a href="hoshizora.html">星空登録ページ</a>・<a href="tokuten.html">特典ページ</a> をご覧ください。</p>
-            </div>
-            <span class="news-toggle" onclick="toggleNews(12)">Read More / Close</span>
-        </article>
-
-        <article class="news-item">
-            <span class="news-date">2026.05.06</span>
-            <span class="news-headline">アーティストプロフィールページ公開(みーや)</span>
-            <div class="news-content" id="news-content-10">
-                <p>藝大生プロフィールページの第8弾として、<a href="miiya.html">みーや</a>のページを公開しました。</p>
-            </div>
-            <span class="news-toggle" onclick="toggleNews(10)">Read More / Close</span>
-        </article>
-
         <div class="news-older" id="newsOlder">
+            <!-- [EDIT 2026.07.10] 常時表示を最新3件のみにするため、05.10と05.06の記事をここへ移動 -->
+            <article class="news-item">
+                <span class="news-date">2026.05.10</span>
+                <span class="news-headline">星空登録・特典・クロージングパーティー詳細を公開しました</span>
+                <div class="news-content" id="news-content-12">
+                    <p>来場をより楽しんでいただくための「星空登録(事前エントリー)」と、抽選で10名様をご招待する「クロージングパーティー」、来場でもらえる特典の詳細を公開しました。</p>
+                    <p>詳しくは <a href="hoshizora.html">星空登録ページ</a>・<a href="tokuten.html">特典ページ</a> をご覧ください。</p>
+                </div>
+                <span class="news-toggle" onclick="toggleNews(12)">Read More / Close</span>
+            </article>
+
+            <article class="news-item">
+                <span class="news-date">2026.05.06</span>
+                <span class="news-headline">アーティストプロフィールページ公開(みーや)</span>
+                <div class="news-content" id="news-content-10">
+                    <p>藝大生プロフィールページの第8弾として、<a href="miiya.html">みーや</a>のページを公開しました。</p>
+                </div>
+                <span class="news-toggle" onclick="toggleNews(10)">Read More / Close</span>
+            </article>
+
             <article class="news-item">
                 <span class="news-date">2026.05.05</span>
                 <span class="news-headline">アーティストプロフィールページ公開(田辺朔葉)</span>
