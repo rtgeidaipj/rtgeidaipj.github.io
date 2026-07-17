@@ -935,10 +935,10 @@ a { color: inherit; text-decoration: none; }
     </p>
 </section>
 
-<!-- [EDIT 2026.07.10] NEWのスタイルを既存の.news-tagと統一 -->
+<!-- [EDIT 2026.07.18] NEW告知バナーを星空バッジ→ドローイングプレゼントに差し替え -->
 <div class="top-news-banner" style="text-align:center; padding:16px 16px; border-top:1px solid var(--border-paper); border-bottom:1px solid var(--border-paper);">
-    <a href="index.html#news" style="color:#4a4a4a; font-family:var(--font-main); font-size:13px; letter-spacing:0.05em; text-decoration:none;">
-        <span class="news-tag" style="margin-left:0; margin-right:10px;">NEW</span>星空登録者に橋本真希デザインの星空バッジをプレゼント →
+    <a href="hoshizora-drawing.html" style="color:#4a4a4a; font-family:var(--font-main); font-size:13px; letter-spacing:0.05em; text-decoration:none;">
+        <span class="news-tag" style="margin-left:0; margin-right:10px;">NEW</span>橋本真希ドローイング全66点、来場者に毎日抽選プレゼント →
     </a>
 </div>
 
@@ -1155,6 +1155,16 @@ a { color: inherit; text-decoration: none; }
         <p class="sec-head" style="text-align:center;">お知らせ</p>
         <h2 class="sec-title" style="text-align:center; margin-bottom:50px;">NEWS</h2>
 
+        <!-- [ADD 2026.07.18] ドローイングプレゼントのお知らせ -->
+        <article class="news-item">
+            <span class="news-date">2026.07.18<span class="news-tag">NEW</span></span>
+            <span class="news-headline">橋本真希ドローイング全66点、来場者へ毎日抽選プレゼント</span>
+            <div class="news-content" id="news-content-16">
+                <p>会期中、橋本真希が一枚一枚手描きしたドローイング（ラフスケッチ）を、ご来場のみなさまへ毎日抽選でプレゼントします。全66点、すべて一点ものです。ご来場時に抽選にご参加いただけ、当選された方にはその場で実物をお渡しします。詳しくは<a href="hoshizora-drawing.html" style="color:var(--accent-warm); text-decoration:underline;">こちら</a>をご覧ください。</p>
+            </div>
+            <span class="news-toggle" onclick="toggleNews(16)">Read More / Close</span>
+        </article>
+
         <!-- [ADD 2026.07.16] 星空バッジ プレゼントのお知らせ -->
         <article class="news-item">
             <span class="news-date">2026.07.16<span class="news-tag">NEW</span></span>
@@ -1175,20 +1185,20 @@ a { color: inherit; text-decoration: none; }
             <span class="news-toggle" onclick="toggleNews(14)">Read More / Close</span>
         </article>
 
-        <!-- [ADD 2026.06.16] 橋本真希の制作過程とあめのコメントを掲載 -->
-        <article class="news-item" id="news-maki-ame">
-            <span class="news-date">2026.06.16<span class="news-tag">NEW</span></span>
-            <span class="news-headline">橋本真希の制作過程とあめのコメントを掲載しました</span>
-            <div class="news-content" id="news-content-13">
-                <p class="speaker">あめ(東京藝術大学)</p>
-                <blockquote>シックな花で構成された衣装と、宙に浮いたトルソーのモチーフからアイドルとしての、橋本さんの舞台での一つの心象を読み解けるように思います。選ばれた花の配色、葉の品あるふるまいから、開演前にご自身と一つになりこれから舞台で立つ衣装と向き合うことの緊張感。袖を通すことで衣装に込められた想いと心を共鳴させる瞬間のまなざしが表れているのではないかと読み取りました。宙に浮いているトルソーの図像も、まさに今から衣装の心と対話し、理解していく瞬間そのものを表しているのではないかと考えました。ぜひ、意図をお伺いしたいです。</blockquote>
-                <p class="speaker">橋本真希より</p>
-                <blockquote>制作時は明確な答えを用意するというより、「服と人との間にある目に見えない対話」を描きたいと思っていました。そのため、いただいた「衣装の心と対話する瞬間」という解釈はとても興味深く、むしろ私自身が作品から教えていただいたような感覚です。作品は完成した時点で鑑賞者のものでもあると思っているので、そのように受け取っていただけたことを嬉しく思います。</blockquote>
-            </div>
-            <span class="news-toggle" onclick="toggleNews(13)">Read More / Close</span>
-        </article>
-
         <div class="news-older" id="newsOlder">
+            <!-- [EDIT 2026.07.18] 常時表示を最新3件のみに保つため、06.16の記事をここへ移動 -->
+            <article class="news-item" id="news-maki-ame">
+                <span class="news-date">2026.06.16</span>
+                <span class="news-headline">橋本真希の制作過程とあめのコメントを掲載しました</span>
+                <div class="news-content" id="news-content-13">
+                    <p class="speaker">あめ(東京藝術大学)</p>
+                    <blockquote>シックな花で構成された衣装と、宙に浮いたトルソーのモチーフからアイドルとしての、橋本さんの舞台での一つの心象を読み解けるように思います。選ばれた花の配色、葉の品あるふるまいから、開演前にご自身と一つになりこれから舞台で立つ衣装と向き合うことの緊張感。袖を通すことで衣装に込められた想いと心を共鳴させる瞬間のまなざしが表れているのではないかと読み取りました。宙に浮いているトルソーの図像も、まさに今から衣装の心と対話し、理解していく瞬間そのものを表しているのではないかと考えました。ぜひ、意図をお伺いしたいです。</blockquote>
+                    <p class="speaker">橋本真希より</p>
+                    <blockquote>制作時は明確な答えを用意するというより、「服と人との間にある目に見えない対話」を描きたいと思っていました。そのため、いただいた「衣装の心と対話する瞬間」という解釈はとても興味深く、むしろ私自身が作品から教えていただいたような感覚です。作品は完成した時点で鑑賞者のものでもあると思っているので、そのように受け取っていただけたことを嬉しく思います。</blockquote>
+                </div>
+                <span class="news-toggle" onclick="toggleNews(13)">Read More / Close</span>
+            </article>
+
             <!-- [EDIT 2026.07.10] 常時表示を最新3件のみにするため、05.10と05.06の記事をここへ移動 -->
             <article class="news-item">
                 <span class="news-date">2026.05.10</span>
