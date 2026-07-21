@@ -3,34 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SPECIAL PRESENT DRAW</title>
+    <title>橋本真希ドローイング抽選</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --bg-color: #f8f9fa; --card-bg: #ffffff; --text-main: #212529; --text-sub: #6c757d; --accent-color: #111111; --win-color: #d4af37; --lose-color: #555555; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow-x: hidden; touch-action: manipulation; user-select: none; -webkit-user-select: none; }
-        .container { width: 100%; max-width: 420px; padding: 20px; box-sizing: border-box; z-index: 2; }
-        .card { background-color: var(--card-bg); border-radius: 16px; padding: 32px 24px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); text-align: center; }
-        h1 { font-size: 20px; letter-spacing: 0.05em; margin-bottom: 8px; font-weight: 600; }
-        .subtitle { font-size: 13px; color: var(--text-sub); margin-bottom: 20px; line-height: 1.5; }
+        /* [EDIT 2026.07.18] 「雨の日の星空」の世界観（navy×gold・Shippori Mincho）に全面刷新。
+           会場スタッフ・来場者が離れた距離からでも読めるよう、文字サイズも大幅に拡大した。 */
+        :root {
+            --bg-color: #fbf6ee;
+            --card-bg: #fbf6ee;
+            --navy: #1e3a5f;
+            --gold: #c9a84c;
+            --accent-warm: #c95a3a;
+            --text-main: #2b2b2b;
+            --text-sub: #666;
+            --border-soft: #e0d6c4;
+            --win-color: #c9a84c;
+            --lose-color: #666;
+            --font-main: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
+            --font-eng: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0; padding: 0;
+            display: flex; justify-content: center; align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            touch-action: manipulation;
+            user-select: none; -webkit-user-select: none;
+        }
+        .container { width: 100%; max-width: 460px; padding: 24px; box-sizing: border-box; z-index: 2; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-soft); padding: 44px 28px; text-align: center; }
 
-        .slots-remaining { font-size: 11px; letter-spacing: 0.1em; color: var(--text-sub); margin-bottom: 24px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .eng-label { font-family: var(--font-eng); font-size: 13px; letter-spacing: 0.35em; color: var(--gold); }
+        h1 { font-size: 30px; letter-spacing: 0.08em; margin: 16px 0 0; font-weight: 600; color: var(--navy); line-height: 1.5; }
+        .subtitle { font-size: 16px; color: var(--text-sub); margin: 18px 0 28px; line-height: 1.9; }
 
-        .draw-button { background-color: var(--accent-color); color: #ffffff; border: none; border-radius: 30px; padding: 16px 48px; font-size: 16px; font-weight: 600; letter-spacing: 0.1em; cursor: pointer; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); transition: all 0.2s ease; width: 100%; max-width: 240px; outline: none; -webkit-tap-highlight-color: transparent; }
-        .draw-button:active:not(:disabled) { transform: scale(0.96); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); }
-        .draw-button:disabled { background-color: #cccccc; color: #888888; cursor: not-allowed; box-shadow: none; }
-        .result-container { margin-top: 24px; min-height: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .loading-spinner { border: 4px solid rgba(0, 0, 0, 0.1); width: 36px; height: 36px; border-radius: 50%; border-left-color: var(--accent-color); animation: spin 1s linear infinite; display: none; }
+        .slots-remaining {
+            display: inline-block;
+            font-size: 18px;
+            letter-spacing: 0.05em;
+            color: var(--navy);
+            background: #fff;
+            border: 1px solid var(--border-soft);
+            padding: 12px 28px;
+            margin-bottom: 32px;
+        }
+        .slots-remaining .num { font-size: 24px; font-weight: 600; color: var(--accent-warm); }
+
+        .draw-button {
+            background-color: var(--navy);
+            color: var(--bg-color);
+            border: none;
+            border-radius: 8px;
+            padding: 28px 0;
+            font-family: var(--font-main);
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .draw-button:active:not(:disabled) { transform: scale(0.97); }
+        .draw-button:disabled { background-color: #cfc6b3; color: #8a8072; cursor: not-allowed; }
+        .result-container { margin-top: 28px; min-height: 160px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .loading-spinner { border: 4px solid rgba(30, 58, 95, 0.12); width: 40px; height: 40px; border-radius: 50%; border-left-color: var(--navy); animation: spin 1s linear infinite; display: none; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .result-message { font-size: 24px; font-weight: 700; margin: 12px 0; opacity: 0; transform: translateY(10px); transition: all 0.5s ease; }
+        .result-message { font-family: var(--font-main); font-size: 28px; font-weight: 600; margin: 12px 0; opacity: 0; transform: translateY(10px); transition: all 0.5s ease; }
         .result-message.show { opacity: 1; transform: translateY(0); }
-        .result-message.win { color: var(--win-color); font-size: 32px; text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3); letter-spacing: 0.1em; animation: pulse 2s infinite; }
+        .result-message.win { color: var(--win-color); font-size: 40px; letter-spacing: 0.15em; animation: pulse 2s infinite; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-        .result-message.lose { color: var(--lose-color); }
-        .description { font-size: 13px; color: var(--text-sub); margin-top: 16px; line-height: 1.6; }
-        .reset-button { display: none; background-color: transparent; color: var(--text-sub); border: 1px solid #dddddd; border-radius: 20px; padding: 8px 24px; font-size: 11px; letter-spacing: 0.05em; margin-top: 24px; cursor: pointer; animation: fadeIn 0.5s ease forwards; }
-        .reset-button:active { background-color: #eeeeee; }
+        .result-message.lose { color: var(--lose-color); font-size: 30px; }
+        .description { font-size: 16px; color: var(--text-sub); margin-top: 18px; line-height: 1.9; }
+        .reset-button {
+            display: none;
+            background-color: transparent;
+            color: var(--text-sub);
+            font-family: var(--font-eng);
+            border: 1px solid #ccc;
+            border-radius: 24px;
+            padding: 14px 34px;
+            font-size: 14px;
+            letter-spacing: 0.15em;
+            margin-top: 28px;
+            cursor: pointer;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        .reset-button:active { background-color: #f0ece0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
         .confetti-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1; display: none; }
-        .confetti { position: absolute; width: 10px; height: 10px; background-color: var(--win-color); opacity: 0.8; top: -20px; border-radius: 2px; animation: fall linear forwards; }
+        .confetti { position: absolute; width: 10px; height: 10px; background-color: var(--win-color); opacity: 0.85; top: -20px; border-radius: 2px; animation: fall linear forwards; }
         @keyframes fall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(105vh) rotate(720deg); opacity: 0; } }
     </style>
 </head>
@@ -38,12 +107,13 @@
     <div id="confettiContainer" class="confetti-container"></div>
     <div class="container">
         <div class="card">
-            <h1>SPECIAL PRESENT</h1>
-            <div class="subtitle">橋本真希 会場限定抽選会<br>あなたの目の前で、その場で抽選します</div>
+            <span class="eng-label">DRAWING GIFT</span>
+            <h1>橋本真希<br>ドローイング抽選</h1>
+            <div class="subtitle">あなたの目の前で、その場で抽選します</div>
 
             <div class="slots-remaining" id="slotsRemaining">本日の当選数を確認中…</div>
 
-            <button id="drawBtn" class="draw-button" onclick="executeDraw()">DRAW</button>
+            <button id="drawBtn" class="draw-button" onclick="executeDraw()">抽選する</button>
             <div class="result-container">
                 <div id="spinner" class="loading-spinner"></div>
                 <div id="resultMsg" class="result-message"></div>
@@ -52,6 +122,7 @@
             </div>
         </div>
     </div>
+
 
     <script>
         /* [EDIT 2026.07.07] JSONP方式→通常のfetch方式に戻す
@@ -74,7 +145,7 @@
                 .then(data => {
                     if (data && data.ok) {
                         const won = data.won || 0;
-                        slotsRemaining.textContent = `本日の当選数 ${won}件`;
+                        slotsRemaining.innerHTML = `本日の当選数 <span class="num">${won}</span> 件`;
                     } else {
                         slotsRemaining.textContent = '';
                     }
@@ -152,7 +223,7 @@
 
         function startConfetti() {
             confettiContainer.style.display = "block";
-            const colors = ['#d4af37', '#f3e5ab', '#aa7c11', '#e6ca65'];
+            const colors = ['#c9a84c', '#e8d4a0', '#1e3a5f', '#c95a3a'];
             for (let i = 0; i < 60; i++) {
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
