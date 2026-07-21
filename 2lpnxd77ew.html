@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SPECIAL PRESENT DRAW</title>
+    <style>
+        :root { --bg-color: #f8f9fa; --card-bg: #ffffff; --text-main: #212529; --text-sub: #6c757d; --accent-color: #111111; --win-color: #d4af37; --lose-color: #555555; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow-x: hidden; touch-action: manipulation; user-select: none; -webkit-user-select: none; }
+        .container { width: 100%; max-width: 420px; padding: 20px; box-sizing: border-box; z-index: 2; }
+        .card { background-color: var(--card-bg); border-radius: 16px; padding: 32px 24px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); text-align: center; }
+        h1 { font-size: 20px; letter-spacing: 0.05em; margin-bottom: 8px; font-weight: 600; }
+        .subtitle { font-size: 13px; color: var(--text-sub); margin-bottom: 20px; line-height: 1.5; }
+
+        .slots-remaining { font-size: 11px; letter-spacing: 0.1em; color: var(--text-sub); margin-bottom: 24px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+
+        .draw-button { background-color: var(--accent-color); color: #ffffff; border: none; border-radius: 30px; padding: 16px 48px; font-size: 16px; font-weight: 600; letter-spacing: 0.1em; cursor: pointer; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); transition: all 0.2s ease; width: 100%; max-width: 240px; outline: none; -webkit-tap-highlight-color: transparent; }
+        .draw-button:active:not(:disabled) { transform: scale(0.96); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); }
+        .draw-button:disabled { background-color: #cccccc; color: #888888; cursor: not-allowed; box-shadow: none; }
+        .result-container { margin-top: 24px; min-height: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .loading-spinner { border: 4px solid rgba(0, 0, 0, 0.1); width: 36px; height: 36px; border-radius: 50%; border-left-color: var(--accent-color); animation: spin 1s linear infinite; display: none; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .result-message { font-size: 24px; font-weight: 700; margin: 12px 0; opacity: 0; transform: translateY(10px); transition: all 0.5s ease; }
+        .result-message.show { opacity: 1; transform: translateY(0); }
+        .result-message.win { color: var(--win-color); font-size: 32px; text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3); letter-spacing: 0.1em; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        .result-message.lose { color: var(--lose-color); }
+        .description { font-size: 13px; color: var(--text-sub); margin-top: 16px; line-height: 1.6; }
+        .reset-button { display: none; background-color: transparent; color: var(--text-sub); border: 1px solid #dddddd; border-radius: 20px; padding: 8px 24px; font-size: 11px; letter-spacing: 0.05em; margin-top: 24px; cursor: pointer; animation: fadeIn 0.5s ease forwards; }
+        .reset-button:active { background-color: #eeeeee; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .confetti-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1; display: none; }
+        .confetti { position: absolute; width: 10px; height: 10px; background-color: var(--win-color); opacity: 0.8; top: -20px; border-radius: 2px; animation: fall linear forwards; }
+        @keyframes fall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(105vh) rotate(720deg); opacity: 0; } }
+    </style>
+</head>
+<body>
+    <div id="confettiContainer" class="confetti-container"></div>
+    <div class="container">
+        <div class="card">
+            <h1>SPECIAL PRESENT</h1>
+            <div class="subtitle">橋本真希 会場限定抽選会<br>あなたの目の前で、その場で抽選します</div>
+
+            <div class="slots-remaining" id="slotsRemaining">本日の当選数を確認中…</div>
+
+            <button id="drawBtn" class="draw-button" onclick="executeDraw()">DRAW</button>
+            <div class="result-container">
+                <div id="spinner" class="loading-spinner"></div>
+                <div id="resultMsg" class="result-message"></div>
+                <div id="descMsg" class="description"></div>
+                <button id="resetBtn" class="reset-button" onclick="resetScreen()">画面をリセットする</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* [EDIT 2026.07.07] JSONP方式→通常のfetch方式に戻す
+           （星空バッジで実証済みの、GAS Webアプリ+fetchの構成に統一） */
+        const GAS_API_URL = "https://script.google.com/macros/s/AKfycbwzHec6B2Fjz1YRCwMFjf5Gg60mc8virPYY3mz58I0kl0c_NHIFwgfkYlHXNnuWMLSx/exec";
+
+        const drawBtn = document.getElementById("drawBtn");
+        const spinner = document.getElementById("spinner");
+        const resultMsg = document.getElementById("resultMsg");
+        const descMsg = document.getElementById("descMsg");
+        const confettiContainer = document.getElementById("confettiContainer");
+        const resetBtn = document.getElementById("resetBtn");
+        const slotsRemaining = document.getElementById("slotsRemaining");
+
+        function refreshSlots() {
+            /* [EDIT 2026.07.18] 日別の目標枚数が変動するようになったため、
+               「残り枠/目標枚数」の表示をやめ、本日の当選数のみを表示する形に変更 */
+            fetch(`${GAS_API_URL}?action=status&_=${Date.now()}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data && data.ok) {
+                        const won = data.won || 0;
+                        slotsRemaining.textContent = `本日の当選数 ${won}件`;
+                    } else {
+                        slotsRemaining.textContent = '';
+                    }
+                })
+                .catch(() => { slotsRemaining.textContent = ''; });
+        }
+
+        function executeDraw() {
+            drawBtn.disabled = true;
+            resultMsg.className = "result-message";
+            resultMsg.innerText = "";
+            descMsg.innerText = "";
+            resetBtn.style.display = "none";
+            confettiContainer.style.display = "none";
+            confettiContainer.innerHTML = "";
+            spinner.style.display = "block";
+
+            const startTime = Date.now();
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 15000);
+
+            fetch(`${GAS_API_URL}?action=draw&_=${Date.now()}`, { method: 'GET', mode: 'cors', signal: controller.signal })
+                .then(response => {
+                    clearTimeout(timeoutId);
+                    if (!response.ok) throw new Error('Network response error');
+                    return response.json();
+                })
+                .then(data => {
+                    const elapsedTime = Date.now() - startTime;
+                    const remainingTime = Math.max(0, 1200 - elapsedTime);
+
+                    setTimeout(() => {
+                        spinner.style.display = "none";
+                        refreshSlots();
+
+                        if (data && data.ok) {
+                            if (data.result === "win") {
+                                resultMsg.innerText = "✦ 当選 ✦";
+                                resultMsg.classList.add("win", "show");
+                                descMsg.innerText = "おめでとうございます！スタッフにこの画面をご提示いただき、橋本真希のドローイング（ラフスケッチ）をお受け取りください。";
+                                startConfetti();
+                                resetBtn.style.display = "block";
+                            } else {
+                                resultMsg.innerText = "落選";
+                                resultMsg.classList.add("lose", "show");
+                                if (data.reason === 'sold_out') {
+                                    descMsg.innerText = "本日の当選枠はすべて出ました。ご来場いただき誠にありがとうございました。";
+                                } else if (data.reason === 'closed') {
+                                    descMsg.innerText = "現在は受付時間外です。ご来場いただき誠にありがとうございました。";
+                                } else {
+                                    descMsg.innerText = "誠に残念ながら、今回は「はずれ」となります。ご来場いただき誠にありがとうございました。展覧会を引き続きお楽しみください。";
+                                }
+                                // [EDIT 2026.07.07] 3秒後の自動リセットをやめ、当選時と同じく手動リセットボタンを表示
+                                resetBtn.style.display = "block";
+                            }
+                        } else {
+                            showError("大変混み合っています。もう一度お試しください。");
+                        }
+                    }, remainingTime);
+                })
+                .catch(error => {
+                    clearTimeout(timeoutId);
+                    const elapsedTime = Date.now() - startTime;
+                    const remainingTime = Math.max(0, 1200 - elapsedTime);
+                    setTimeout(() => {
+                        spinner.style.display = "none";
+                        if (error.name === 'AbortError') {
+                            showError("通信時間を超過しました。電波の良い場所でもう一度お試しください。");
+                        } else {
+                            showError("通信エラーが発生しました。もう一度お試しください。");
+                        }
+                    }, remainingTime);
+                });
+        }
+
+        function startConfetti() {
+            confettiContainer.style.display = "block";
+            const colors = ['#d4af37', '#f3e5ab', '#aa7c11', '#e6ca65'];
+            for (let i = 0; i < 60; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = Math.random() * 8 + 6 + 'px';
+                confetti.style.height = Math.random() * 14 + 6 + 'px';
+                confetti.style.animationDuration = (Math.random() * 2 + 2.5) + 's';
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                confettiContainer.appendChild(confetti);
+            }
+        }
+
+        function showError(message) {
+            resultMsg.innerText = "ERROR";
+            resultMsg.className = "result-message lose show";
+            descMsg.innerText = message;
+            resetBtn.style.display = "block";
+        }
+
+        function resetScreen() {
+            drawBtn.disabled = false;
+            resultMsg.className = "result-message";
+            resultMsg.innerText = "";
+            descMsg.innerText = "";
+            resetBtn.style.display = "none";
+            confettiContainer.style.display = "none";
+            confettiContainer.innerHTML = "";
+        }
+
+        refreshSlots();
+    </script>
+</body>
+</html>
