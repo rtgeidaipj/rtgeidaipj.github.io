@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>朗読音声ガイド — こばら ｜ 雨の日の星空</title>
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --bg-color: #fbf6ee;
+        --navy: #1e3a5f;
+        --gold: #c9a84c;
+        --border-soft: #e0d6c4;
+        --text-mute: #999;
+        --font-main: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
+        --font-eng: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: var(--font-main);
+        background-color: var(--bg-color);
+        color: #2b2b2b;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        -webkit-font-smoothing: antialiased;
+    }
+    .vg-card {
+        width: 100%;
+        max-width: 380px;
+        text-align: center;
+        padding: 56px 28px 48px;
+        border: 0.5px solid #ddd;
+        background: var(--bg-color);
+    }
+    .vg-label {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.35em;
+        color: var(--gold);
+    }
+    .vg-name {
+        font-size: 26px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--navy);
+        margin: 18px 0 0;
+    }
+    .vg-title {
+        font-size: 15px;
+        color: #666;
+        margin: 14px 0 0;
+        letter-spacing: 0.05em;
+    }
+    .vg-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 40px;
+    }
+    .vg-divider-line { flex: 1; max-width: 60px; height: 1px; background: var(--border-soft); }
+    .vg-divider-star { color: var(--gold); font-size: 11px; }
+
+    .vg-playbtn {
+        width: 72px; height: 72px;
+        border-radius: 50%;
+        background: var(--navy);
+        border: none;
+        display: flex; align-items: center; justify-content: center;
+        margin: 40px auto 0;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 0.15s ease;
+    }
+    .vg-playbtn:active { transform: scale(0.94); }
+    .vg-playbtn .icon-play {
+        width: 0; height: 0;
+        border-top: 13px solid transparent;
+        border-bottom: 13px solid transparent;
+        border-left: 20px solid var(--bg-color);
+        margin-left: 5px;
+    }
+    .vg-playbtn .icon-pause {
+        display: none;
+        gap: 5px;
+    }
+    .vg-playbtn .icon-pause span {
+        display: block;
+        width: 6px; height: 24px;
+        background: var(--bg-color);
+    }
+    .vg-playbtn.playing .icon-play { display: none; }
+    .vg-playbtn.playing .icon-pause { display: flex; }
+
+    .vg-seek-wrap { margin-top: 28px; padding: 0 4px; }
+    input[type="range"].vg-seek {
+        width: 100%;
+        accent-color: var(--gold);
+        height: 3px;
+        cursor: pointer;
+    }
+    .vg-times {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+        font-family: var(--font-eng);
+        font-size: 11px;
+        color: var(--text-mute);
+    }
+
+    .vg-note {
+        margin-top: 36px;
+        font-family: var(--font-eng);
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        color: var(--text-mute);
+    }
+</style>
+</head>
+<body>
+
+<div class="vg-card">
+    <span class="vg-label">VOICE GUIDE</span>
+    <h1 class="vg-name">こばら</h1>
+    <p class="vg-title">「Bonzie」</p>
+
+    <div class="vg-divider">
+        <div class="vg-divider-line"></div>
+        <span class="vg-divider-star">✦</span>
+        <div class="vg-divider-line"></div>
+    </div>
+
+    <button class="vg-playbtn" id="playBtn" aria-label="再生">
+        <span class="icon-play"></span>
+        <span class="icon-pause"><span></span><span></span></span>
+    </button>
+
+    <div class="vg-seek-wrap">
+        <input type="range" class="vg-seek" id="seek" value="0" min="0" max="100" step="0.1">
+        <div class="vg-times">
+            <span id="timeCurrent">0:00</span>
+            <span id="timeDuration">0:00</span>
+        </div>
+    </div>
+
+    <p class="vg-note">『雨の日の星空』朗読：橋本真希</p>
+</div>
+
+<audio id="player" src="audio/voice-kobara.mp3" preload="metadata"></audio>
+
+<script>
+    const player = document.getElementById('player');
+    const playBtn = document.getElementById('playBtn');
+    const seek = document.getElementById('seek');
+    const timeCurrent = document.getElementById('timeCurrent');
+    const timeDuration = document.getElementById('timeDuration');
+
+    function formatTime(sec) {
+        if (!isFinite(sec) || isNaN(sec)) return '0:00';
+        const m = Math.floor(sec / 60);
+        const s = Math.floor(sec % 60);
+        return m + ':' + String(s).padStart(2, '0');
+    }
+
+    playBtn.addEventListener('click', () => {
+        if (player.paused) {
+            player.play();
+        } else {
+            player.pause();
+        }
+    });
+
+    player.addEventListener('play', () => playBtn.classList.add('playing'));
+    player.addEventListener('pause', () => playBtn.classList.remove('playing'));
+    player.addEventListener('ended', () => playBtn.classList.remove('playing'));
+
+    player.addEventListener('loadedmetadata', () => {
+        seek.max = player.duration;
+        timeDuration.textContent = formatTime(player.duration);
+    });
+
+    player.addEventListener('timeupdate', () => {
+        seek.value = player.currentTime;
+        timeCurrent.textContent = formatTime(player.currentTime);
+    });
+
+    seek.addEventListener('input', () => {
+        player.currentTime = seek.value;
+    });
+</script>
+
+</body>
+</html>
