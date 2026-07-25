@@ -619,6 +619,27 @@ a { color: inherit; text-decoration: none; }
     max-width: 600px;
     margin: 0 auto 24px;
 }
+/* [ADD 2026.07.23] 対話全文をfeatured-news内に常時表示するための専用スタイル（.news-contentはdisplay:none前提のため流用しない） */
+.featured-dialog {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+.featured-dialog-speaker {
+    font-size: 11px;
+    color: var(--text-mute);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+.featured-dialog blockquote {
+    border-left: 1px solid var(--border-paper);
+    margin: 0 0 24px;
+    padding: 4px 0 4px 16px;
+    font-size: 13px;
+    line-height: 2.2;
+    color: var(--text-sub);
+}
+.featured-dialog blockquote:last-child { margin-bottom: 0; }
 
 @media (max-width: 600px) {
     .featured-news-imgs { grid-template-columns: 1fr 1fr; }
@@ -1130,7 +1151,7 @@ a { color: inherit; text-decoration: none; }
 </section>
 
 <!-- ====== 制作過程 NEWS（橋本真希×あめ対話） ====== -->
-<section class="featured-news">
+<section class="featured-news" id="maki-ame-dialog">
     <div class="featured-news-inner">
         <p class="sec-head">最新の対話</p>
         <h2 class="sec-title">橋本真希の制作過程と、あめのコメント</h2>
@@ -1144,9 +1165,13 @@ a { color: inherit; text-decoration: none; }
             橋本真希：「お花と、私の好きなファッションを融合してみました」<br>
             この絵をめぐって、藝大生・あめと作家同士の対話が生まれました。
         </p>
-        <!-- [EDIT 2026.07.23] maki.html側のDIALOGセクションを削除したため、同ページ内のNEWS記事（対話全文）へのリンクに変更。
-             news-maki-ameは「もっと見る」の中にあるため、クリック時に自動展開してからジャンプする -->
-        <a href="#news-maki-ame" class="statement-link" onclick="document.getElementById('newsOlder').classList.add('open');">対話の全文を読む →</a>
+        <!-- [ADD 2026.07.23] 対話全文を常時表示（NEWS欄側からはこちらへリンクする形に変更） -->
+        <div class="featured-dialog">
+            <p class="featured-dialog-speaker">あめ(東京藝術大学)</p>
+            <blockquote>シックな花で構成された衣装と、宙に浮いたトルソーのモチーフからアイドルとしての、橋本さんの舞台での一つの心象を読み解けるように思います。選ばれた花の配色、葉の品あるふるまいから、開演前にご自身と一つになりこれから舞台で立つ衣装と向き合うことの緊張感。袖を通すことで衣装に込められた想いと心を共鳴させる瞬間のまなざしが表れているのではないかと読み取りました。宙に浮いているトルソーの図像も、まさに今から衣装の心と対話し、理解していく瞬間そのものを表しているのではないかと考えました。ぜひ、意図をお伺いしたいです。</blockquote>
+            <p class="featured-dialog-speaker">橋本真希より</p>
+            <blockquote>制作時は明確な答えを用意するというより、「服と人との間にある目に見えない対話」を描きたいと思っていました。そのため、いただいた「衣装の心と対話する瞬間」という解釈はとても興味深く、むしろ私自身が作品から教えていただいたような感覚です。作品は完成した時点で鑑賞者のものでもあると思っているので、そのように受け取っていただけたことを嬉しく思います。</blockquote>
+        </div>
     </div>
 </section>
 
@@ -1192,10 +1217,8 @@ a { color: inherit; text-decoration: none; }
                 <span class="news-date">2026.06.16</span>
                 <span class="news-headline">橋本真希の制作過程とあめのコメントを掲載しました</span>
                 <div class="news-content" id="news-content-13">
-                    <p class="speaker">あめ(東京藝術大学)</p>
-                    <blockquote>シックな花で構成された衣装と、宙に浮いたトルソーのモチーフからアイドルとしての、橋本さんの舞台での一つの心象を読み解けるように思います。選ばれた花の配色、葉の品あるふるまいから、開演前にご自身と一つになりこれから舞台で立つ衣装と向き合うことの緊張感。袖を通すことで衣装に込められた想いと心を共鳴させる瞬間のまなざしが表れているのではないかと読み取りました。宙に浮いているトルソーの図像も、まさに今から衣装の心と対話し、理解していく瞬間そのものを表しているのではないかと考えました。ぜひ、意図をお伺いしたいです。</blockquote>
-                    <p class="speaker">橋本真希より</p>
-                    <blockquote>制作時は明確な答えを用意するというより、「服と人との間にある目に見えない対話」を描きたいと思っていました。そのため、いただいた「衣装の心と対話する瞬間」という解釈はとても興味深く、むしろ私自身が作品から教えていただいたような感覚です。作品は完成した時点で鑑賞者のものでもあると思っているので、そのように受け取っていただけたことを嬉しく思います。</blockquote>
+                    <p>橋本真希が制作中の作品をめぐって、藝大生・あめとの対話が生まれました。</p>
+                    <p><a href="#maki-ame-dialog">対話の全文はこちら →</a></p>
                 </div>
                 <span class="news-toggle" onclick="toggleNews(13)">Read More / Close</span>
             </article>
