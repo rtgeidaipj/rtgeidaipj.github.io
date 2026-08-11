@@ -89,6 +89,8 @@
     .nav-links a:hover { color: #1a1a1a; opacity: 1; }
     .nav-sep { font-size: 13px; color: var(--border-soft); pointer-events: none; }
     .nav-hl { color: #c95a3a !important; font-weight: 500; }
+    /* [ADD 2026.08.05] 現在地表示（他ページと同一定義） */
+    .nav-active { color: var(--text-color) !important; font-weight: 500; }
 
     .hamburger {
         display: none;
@@ -478,7 +480,7 @@
 </head>
 <body>
 
-<!-- ナビ（他ページと同一構成。このページはナビ項目には含めない方針のため、nav-active なし） -->
+<!-- ナビ（他ページと同一構成。[EDIT 2026.08.05] ドローイング・オークションを追加済み） -->
 <nav class="site-nav">
     <div class="nav-links">
         <a href="index.html">← TOP</a>
@@ -490,6 +492,10 @@
         <a href="hoshizora.html" class="nav-hl">星空登録受付中</a>
         <span class="nav-sep">|</span>
         <a href="tokuten.html">特典</a>
+        <!-- [ADD 2026.08.05] ドローイングプレゼント・絵画オークションをナビに追加（会期中有効な企画として対等に扱う） -->
+        <span class="nav-sep">|</span>
+        <a href="hoshizora-drawing.html">ドローイング</a>
+        <a href="auction.html" class="nav-active">オークション</a>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -504,6 +510,8 @@
     <a href="faq.html" onclick="toggleMenu()">FAQ</a>
     <a href="hoshizora.html" onclick="toggleMenu()">星空登録受付中</a>
     <a href="tokuten.html" onclick="toggleMenu()">特典</a>
+    <a href="hoshizora-drawing.html" onclick="toggleMenu()">ドローイング</a>
+    <a href="auction.html" onclick="toggleMenu()">オークション</a>
     <div class="overlay-info">2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</div>
 </div>
 
