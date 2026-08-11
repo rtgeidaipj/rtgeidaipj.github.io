@@ -143,6 +143,7 @@ a { color: inherit; }
     display: flex;
     flex-direction: column;
     padding-top: 80px;
+    overflow-y: auto; /* [ADD 2026.08.05] メニュー項目増加によるコンテンツ超過で、閉時に画面へ漏れる不具合を修正 */
 }
 
 .overlay-menu.open { transform: translateY(0); }
