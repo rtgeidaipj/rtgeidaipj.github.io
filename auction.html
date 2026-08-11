@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@rtgeidaipj2026">
+<meta name="twitter:image" content="https://rtgeidaipj.github.io/auction_ogp.jpg">
+<meta property="og:url" content="https://rtgeidaipj.github.io/auction.html">
+<meta property="og:title" content="橋本真希 絵画オークション ｜ 雨の日の星空">
+<meta property="og:description" content="橋本真希が本展のために描き下ろした絵画作品を、オークションに出品します。落札額から手数料および諸経費を差し引いた額を、東京藝術大学へ寄附します。">
+<meta property="og:image" content="https://rtgeidaipj.github.io/auction_ogp.jpg">
+<meta property="og:type" content="website">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2GFRT45G53"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2GFRT45G53');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>橋本真希 絵画オークション ｜ 雨の日の星空</title>
+<meta name="description" content="橋本真希が本展のために描き下ろした絵画作品を、オークションに出品します。入札期間は2026年8月18日12:00から8月27日19:00まで。落札額から手数料および諸経費を差し引いた額を東京藝術大学へ寄附します。">
+<link rel="canonical" href="https://rtgeidaipj.github.io/auction.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --bg-color: #fbf6ee;
+        --text-color: #2b2b2b;
+        --text-sub: #444;
+        --text-mute: #666;
+        --font-main: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
+        --font-eng: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        --navy: #1e3a5f;
+        --gold: #c9a84c;
+        --border-soft: #e0d6c4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: var(--font-main);
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 2.0;
+        letter-spacing: 0.06em;
+        -webkit-font-smoothing: antialiased;
+        padding-top: 48px;
+    }
+
+    a { color: var(--text-color); text-decoration: none; transition: opacity 0.3s; }
+    a:hover { opacity: 0.6; }
+
+    .container { max-width: 640px; margin: 0 auto; padding: 0; }
+
+    /* ====== ナビ（tokuten.html / hoshizora-drawing.html と同一構成） ====== */
+    .site-nav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 100;
+        background: rgba(251, 246, 238, 0.92);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border-soft);
+    }
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 22px;
+        padding: 14px 0;
+        flex-wrap: wrap;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+    }
+    .nav-links a {
+        font-family: var(--font-main);
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        color: #5a5048;
+        transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #1a1a1a; opacity: 1; }
+    .nav-sep { font-size: 13px; color: var(--border-soft); pointer-events: none; }
+    .nav-hl { color: #c95a3a !important; font-weight: 500; }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px; height: 44px;
+        padding: 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 8px; right: 16px;
+        background: none; border: none;
+    }
+    .hamburger span { display: block; width: 22px; height: 1px; background: var(--text-color); transition: all 0.35s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .overlay-menu {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(251, 246, 238, 0.98);
+        z-index: 99;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+    .overlay-menu.open { display: flex; opacity: 1; }
+    .overlay-menu a {
+        font-family: var(--font-main);
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        color: #1a1a1a;
+        padding: 20px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #ebe2d3;
+    }
+    .overlay-menu a:first-of-type { border-top: 1px solid #ebe2d3; }
+    .overlay-menu .overlay-info {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        color: #8a8076;
+        letter-spacing: 0.2em;
+        margin-top: 32px;
+    }
+
+    @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .hamburger { display: flex; }
+        .site-nav { height: 52px; }
+    }
+
+    /* パンくず */
+    .breadcrumb { padding: 28px 32px 0; }
+    .breadcrumb a, .breadcrumb span {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        color: var(--text-mute);
+    }
+    .breadcrumb span { margin: 0 8px; }
+
+    /* ====== ヒーロー：navy地に星空＋金の額装枠 [EDIT 2026.08.05] ====== */
+    .au-hero {
+        position: relative;
+        overflow: hidden;
+        background: var(--navy);
+        padding: 0;
+        margin-top: 24px;
+    }
+    .au-hero svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.6; }
+    .au-hero-frame {
+        position: relative;
+        border: 1px solid rgba(201, 168, 76, 0.55);
+        margin: 12px;
+        padding: 30px 28px 28px;
+        text-align: center;
+    }
+    .au-hero-label {
+        font-family: var(--font-eng);
+        font-size: 9px;
+        letter-spacing: 0.45em;
+        color: var(--gold);
+        display: block;
+        margin-bottom: 16px;
+    }
+    .au-hero-sub {
+        font-size: 12px;
+        color: #b8c6d6;
+        letter-spacing: 0.2em;
+        margin: 0 0 10px;
+    }
+    .au-hero-title {
+        font-size: 26px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        color: var(--bg-color);
+        margin: 0;
+        line-height: 1.6;
+    }
+    .au-hero-divider { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 16px 0 14px; }
+    .au-hero-divider-line { width: 40px; height: 1px; background: rgba(201, 168, 76, 0.6); }
+    .au-hero-divider-star { color: var(--gold); font-size: 10px; }
+    /* [DELETE 2026.08.05] .au-hero-spec は専用SIZEブロックへの情報集約に伴い撤去 */
+    /* [DELETE 2026.08.05] .au-hero-spec-en は "Oil on canvas" 削除に伴い撤去 */
+
+    /* ====== 入札開始の金帯 [ADD 2026.08.05] ====== */
+    .au-startband {
+        background: var(--gold);
+        text-align: center;
+        padding: 16px 20px;
+    }
+    .au-startband p {
+        font-size: 14.5px;
+        font-weight: 600;
+        color: var(--navy);
+        letter-spacing: 0.1em;
+        margin: 0;
+    }
+
+    /* [EDIT 2026.08.05] メダル用スタイル（au-medal-*）は要素削除に伴い撤去 */
+
+    /* ====== リード文 ====== */
+    .au-lead { text-align: center; padding: 26px 40px 40px; }
+    .au-lead p { font-size: 14px; color: var(--text-sub); line-height: 2.3; }
+
+    /* ====== 装飾区切り線 ====== */
+    .au-divider { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0 40px; }
+    .au-divider-line { flex: 1; height: 1px; background: var(--border-soft); }
+    .au-divider-star { color: var(--gold); font-size: 11px; }
+
+    /* ====== 作品写真（1点もののため単独・大きく） ====== */
+    /* ====== 寄附予告バッジ [ADD 2026.08.05] ヒーロー直下で早期に認知させる短い一文 ====== */
+    .au-donation-teaser {
+        text-align: center;
+        padding: 14px 24px;
+        background: #f2e9d4;
+        border-top: 1px solid var(--border-soft);
+        border-bottom: 1px solid var(--border-soft);
+    }
+    .au-donation-teaser p {
+        font-size: 12.5px;
+        color: #6b5a2e;
+        letter-spacing: 0.06em;
+        margin: 0;
+    }
+    .au-donation-teaser strong {
+        color: var(--navy);
+        font-weight: 600;
+    }
+
+    .au-photo-wrap { padding: 36px 40px 8px; }
+    .au-photo {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        background: #eee2cf;
+        border: 0.5px solid #ddd0ab;
+        overflow: hidden;
+    }
+    .au-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .au-photo-caption {
+        text-align: center;
+        font-family: var(--font-eng);
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        color: var(--text-mute);
+        margin: 10px 40px 40px;
+    }
+
+    /* ====== 入札期間 ====== */
+    .au-period { text-align: center; padding: 8px 40px 40px; }
+    .au-period-label {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        letter-spacing: 0.3em;
+        color: var(--gold);
+        margin-bottom: 18px;
+    }
+    .au-period-date {
+        font-size: 19px;
+        font-weight: 600;
+        color: var(--navy);
+        line-height: 2.0;
+        letter-spacing: 0.08em;
+    }
+    .au-period-sep { color: var(--border-soft); margin: 0 6px; }
+
+    /* ====== 入札ボタン ====== */
+    .au-cta { text-align: center; padding: 0 40px 44px; }
+    .au-cta-btn {
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        color: var(--bg-color);
+        background: var(--navy);
+        border: 1px solid var(--navy);
+        padding: 17px 52px;
+        transition: opacity 0.3s;
+    }
+    .au-cta-btn:hover { opacity: 0.82; }
+    /* [ADD 2026.08.05] 入札ページ公開前（〜8/17）の準備中ボタン。8/18 12:00に .au-cta-btn へ戻す */
+    .au-cta-btn-soon {
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        color: #8a8076;
+        background: transparent;
+        border: 1px solid #c4bbaa;
+        padding: 17px 52px;
+        cursor: default;
+    }
+    .au-cta-note {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        color: var(--text-mute);
+        margin-top: 14px;
+    }
+
+    /* ====== 寄附について [EDIT 2026.08.05] navy地の帯にして最も強いブロックに ====== */
+    .au-donation {
+        position: relative;
+        overflow: hidden;
+        background: var(--navy);
+        text-align: center;
+        padding: 44px 40px 46px;
+        margin: 8px 0 0;
+    }
+    .au-donation svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.5; }
+    .au-donation-inner { position: relative; }
+    .au-donation-label {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        letter-spacing: 0.35em;
+        color: var(--gold);
+        margin-bottom: 20px;
+    }
+    .au-donation p.au-donation-text {
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--bg-color);
+        line-height: 2.2;
+        letter-spacing: 0.08em;
+    }
+    .au-donation p.au-donation-sub {
+        font-size: 12px;
+        color: #b8c6d6;
+        line-height: 2.0;
+        margin-top: 16px;
+        letter-spacing: 0.05em;
+    }
+
+    /* ====== HEXA・入札の仕組み [ADD 2026.08.05] NOTEから独立させ中位の強さに ====== */
+    /* ====== 作品サイズ [ADD 2026.08.05] 号数を主役にした専用ブロック ====== */
+    .au-size { margin: 28px 40px 0; background: #fff; border: 1px solid var(--gold); padding: 26px 28px 24px; text-align: center; }
+    .au-size-label {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        letter-spacing: 0.3em;
+        color: var(--gold);
+        margin: 0 0 14px;
+    }
+    .au-size-main {
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--navy);
+        letter-spacing: 0.06em;
+        margin: 0;
+        line-height: 1.3;
+    }
+    .au-size-sub {
+        font-size: 13px;
+        color: var(--text-mute);
+        letter-spacing: 0.08em;
+        margin: 8px 0 0;
+    }
+
+    .au-howto { margin: 44px 40px 40px; background: #fff; border: 1px solid var(--gold); padding: 26px 28px 24px; }
+    .au-howto-label {
+        font-family: var(--font-eng);
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        color: var(--gold);
+        text-align: center;
+        margin: 0 0 18px;
+    }
+    .au-howto-row { display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start; }
+    .au-howto-row:last-child { margin-bottom: 0; }
+    .au-howto-num {
+        flex-shrink: 0;
+        width: 24px; height: 24px;
+        border: 1px solid var(--navy);
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-family: var(--font-eng);
+        font-size: 11px;
+        color: var(--navy);
+        margin-top: 5px;
+    }
+    .au-howto-text { font-size: 13.5px; color: var(--text-sub); line-height: 2.0; }
+    .au-howto-text strong { color: var(--navy); font-weight: 600; }
+
+    /* ====== 注意事項 [EDIT 2026.08.05] 白背景をやめ罫線のみの控えめな表示に ====== */
+    /* ====== 来場のお願いバッジ [EDIT 2026.08.05] 実物を見た上での入札を主とする強調表示 ====== */
+    .au-remote-badge {
+        margin: 0 40px 28px;
+        text-align: center;
+        padding: 18px 24px;
+        background: #f2e9d4;
+        border: 1px solid var(--gold);
+    }
+    .au-remote-badge p {
+        font-size: 13.5px;
+        color: #5a4a1e;
+        line-height: 1.9;
+        letter-spacing: 0.03em;
+        margin: 0;
+    }
+    .au-remote-badge strong {
+        color: var(--navy);
+        font-weight: 600;
+    }
+
+    .au-note { margin: 0 40px 44px; padding: 0; border: none; }
+    .au-note-label { font-family: var(--font-eng); font-size: 10px; letter-spacing: 0.2em; color: #999; margin: 0 0 12px; }
+    .au-note p { font-size: 12.5px; color: #777; line-height: 2.2; margin: 0 0 4px; }
+    .au-note p:last-child { margin-bottom: 0; }
+
+    /* ====== 戻るボタン ====== */
+    .au-back { text-align: center; padding: 0 32px 64px; }
+    .au-back-btn {
+        display: inline-block;
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.3em;
+        color: var(--text-color);
+        border: 0.5px solid var(--text-color);
+        padding: 13px 34px;
+        transition: background 0.2s, color 0.2s;
+    }
+    .au-back-btn:hover { background: var(--text-color); color: var(--bg-color); opacity: 1; }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 40px 24px;
+        border-top: 1px solid #eee;
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--text-mute);
+    }
+    footer a { color: #5a5048; }
+    footer p { line-height: 2.0; }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+        /* [EDIT 2026.08.05] 圧縮した額装風ヒーローのモバイル調整 */
+        .au-hero-frame { margin: 10px; padding: 26px 20px 24px; }
+        .au-hero-title { font-size: 22px; }
+        .au-size { margin-left: 24px; margin-right: 24px; padding: 22px 20px 20px; }
+        .au-size-main { font-size: 25px; }
+        .au-startband p { font-size: 13px; }
+        .au-lead, .au-period, .au-donation { padding-left: 24px; padding-right: 24px; }
+        /* [ADD 2026.08.05] 新設ブロックのモバイル余白 */
+        .au-howto { margin-left: 24px; margin-right: 24px; padding: 22px 20px 20px; }
+        .au-donation p.au-donation-text { font-size: 15px; }
+        .au-photo-wrap { padding-left: 24px; padding-right: 24px; }
+        .au-donation-teaser { padding: 12px 20px; }
+        .au-donation-teaser p { font-size: 11.5px; }
+        .au-photo-caption { margin-left: 24px; margin-right: 24px; }
+        .au-note { margin-left: 24px; margin-right: 24px; }
+        .au-remote-badge { margin-left: 24px; margin-right: 24px; padding: 16px 18px; }
+        .au-remote-badge p { font-size: 12.5px; }
+        .au-cta { padding-left: 24px; padding-right: 24px; }
+        .au-cta-btn { padding: 16px 36px; font-size: 14px; }
+        .au-cta-btn-soon { padding: 16px 36px; font-size: 14px; }
+        .au-period-date { font-size: 16px; }
+    }
+</style>
+</head>
+<body>
+
+<!-- ナビ（他ページと同一構成。このページはナビ項目には含めない方針のため、nav-active なし） -->
+<nav class="site-nav">
+    <div class="nav-links">
+        <a href="index.html">← TOP</a>
+        <a href="index.html#news">お知らせ</a>
+        <a href="index.html#artists">作家</a>
+        <a href="access.html">アクセス</a>
+        <a href="faq.html">FAQ</a>
+        <span class="nav-sep">|</span>
+        <a href="hoshizora.html" class="nav-hl">星空登録受付中</a>
+        <span class="nav-sep">|</span>
+        <a href="tokuten.html">特典</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<div class="overlay-menu" id="overlayMenu">
+    <a href="index.html" onclick="toggleMenu()">トップ</a>
+    <a href="index.html#news" onclick="toggleMenu()">お知らせ</a>
+    <a href="index.html#artists" onclick="toggleMenu()">作家</a>
+    <a href="access.html" onclick="toggleMenu()">アクセス</a>
+    <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+    <a href="hoshizora.html" onclick="toggleMenu()">星空登録受付中</a>
+    <a href="tokuten.html" onclick="toggleMenu()">特典</a>
+    <div class="overlay-info">2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</div>
+</div>
+
+<div class="container">
+
+    <nav class="breadcrumb">
+        <a href="index.html">雨の日の星空</a>
+        <span>/</span>
+        橋本真希 絵画オークション
+    </nav>
+
+    <!-- ====== ヒーロー [EDIT 2026.08.05] 額装風の金枠・作品スペック・入札開始帯を追加 ====== -->
+    <div class="au-hero">
+        <svg preserveAspectRatio="none">
+            <circle cx="8%" cy="14%" r="1.2" fill="#c9a84c"/>
+            <circle cx="19%" cy="46%" r="1" fill="#fbf6ee"/>
+            <circle cx="27%" cy="82%" r="1.4" fill="#c9a84c"/>
+            <circle cx="38%" cy="22%" r="1" fill="#fbf6ee"/>
+            <circle cx="47%" cy="66%" r="1.3" fill="#c9a84c"/>
+            <circle cx="58%" cy="12%" r="1.1" fill="#fbf6ee"/>
+            <circle cx="66%" cy="88%" r="1" fill="#c9a84c"/>
+            <circle cx="75%" cy="38%" r="1.5" fill="#c9a84c"/>
+            <circle cx="86%" cy="72%" r="1" fill="#fbf6ee"/>
+            <circle cx="93%" cy="20%" r="1.2" fill="#c9a84c"/>
+            <circle cx="14%" cy="66%" r="0.9" fill="#fbf6ee"/>
+            <circle cx="52%" cy="92%" r="1" fill="#c9a84c"/>
+        </svg>
+        <div class="au-hero-frame">
+            <span class="au-hero-label">ART AUCTION</span>
+            <p class="au-hero-sub">この世に一つだけの絵画</p>
+            <h1 class="au-hero-title">橋本真希<br>絵画オークション</h1>
+        </div>
+    </div>
+
+    <!-- ====== 寄附予告バッジ [ADD 2026.08.05] ====== -->
+    <div class="au-donation-teaser">
+        <p>落札額は、<strong>東京藝術大学</strong>への寄附にあてられます</p>
+    </div>
+
+    <!-- [EDIT 2026.08.05] 作品写真をヒーロー直下（金帯より前）に移動し、最優先で見せる -->
+
+    <!-- ====== 作品写真 ====== -->
+    <div class="au-photo-wrap" style="padding-top:22px;">
+        <div class="au-photo">
+            <img src="maki_auction.jpg" alt="橋本真希が本展のために描き下ろした絵画作品（制作中）">
+        </div>
+    </div>
+    <p class="au-photo-caption">※制作中の作品です。完成した作品は会場でご覧いただけます</p>
+
+    <!-- ====== 作品サイズ [ADD 2026.08.05] 号数を主役にした専用ブロック。ヒーローの1行表記から格上げ ====== -->
+    <!-- [NOTE] F30号の寸法は 2026.08.06 に実物で要確認 -->
+    <div class="au-size">
+        <p class="au-size-label">SIZE</p>
+        <p class="au-size-main">F30号</p>
+        <p class="au-size-sub">（910 × 727 mm）油彩</p>
+    </div>
+
+    <!-- ====== 入札開始の金帯 [ADD 2026.08.05] ====== -->
+    <div class="au-startband">
+        <p>8月18日（火）12:00　入札開始</p>
+    </div>
+
+    <!-- ====== リード文 ====== -->
+    <div class="au-lead" style="padding-top:32px;">
+        <p>
+            橋本真希が本展のために描き下ろした、<br>
+            ただ一枚の絵画作品です。<br>
+            落札された方には、現物をお渡しします。
+        </p>
+    </div>
+
+    <div class="au-divider">
+        <div class="au-divider-line"></div>
+        <span class="au-divider-star">✦</span>
+        <div class="au-divider-line"></div>
+    </div>
+
+    <!-- ====== 入札期間 ====== -->
+    <div class="au-period" style="padding-top:36px;">
+        <p class="au-period-label">BIDDING PERIOD</p>
+        <p class="au-period-date">
+            2026年8月18日（火）12:00
+            <span class="au-period-sep">—</span><br>
+            8月27日（木）19:00
+        </p>
+    </div>
+
+    <!-- ====== 来場のお願い [EDIT 2026.08.05] 実物を見た上での入札を主、遠方対応を従に反転 ====== -->
+    <div class="au-remote-badge">
+        <p><strong>ぜひ会場で実物をご覧いただいたうえで、</strong><br>ご入札いただければ幸いです。</p>
+    </div>
+
+    <!-- ====== 入札ボタン ======
+         [EDIT 2026.08.05] HEXAの入札ページ公開は 8/18(火)12:00 のため、それまでは準備中表示。
+
+         ▼ 8/18 12:00 に、下の <div> を削除して次の1行に差し替える：
+         <a href="【HEXAのURL】" class="au-cta-btn" target="_blank" rel="noopener">入札ページへ</a>
+         （注記の <p> も「HEXA（NFTマーケットプレイス）へ移動します」に戻す）
+    -->
+    <div class="au-cta">
+        <div class="au-cta-btn-soon">入札ページ準備中</div>
+        <p class="au-cta-note">8月18日（火）12:00 公開予定</p>
+    </div>
+
+    <!-- [EDIT 2026.08.05] navy帯自体が区切りとして機能するため、直前のdividerを削除 -->
+
+    <!-- ====== 寄附について [EDIT 2026.08.05] navy地の帯にして最も強いブロックに ====== -->
+    <div class="au-donation">
+        <svg preserveAspectRatio="none">
+            <circle cx="10%" cy="24%" r="1.2" fill="#c9a84c"/>
+            <circle cx="22%" cy="66%" r="1" fill="#fbf6ee"/>
+            <circle cx="35%" cy="18%" r="1.4" fill="#c9a84c"/>
+            <circle cx="48%" cy="78%" r="1" fill="#c9a84c"/>
+            <circle cx="62%" cy="30%" r="1.2" fill="#fbf6ee"/>
+            <circle cx="74%" cy="70%" r="1.5" fill="#c9a84c"/>
+            <circle cx="88%" cy="22%" r="1" fill="#fbf6ee"/>
+            <circle cx="94%" cy="60%" r="1.2" fill="#c9a84c"/>
+        </svg>
+        <div class="au-donation-inner">
+            <p class="au-donation-label">DONATION</p>
+            <p class="au-donation-text">
+                落札額から手数料および諸経費を<br>
+                差し引いた額を、東京藝術大学へ寄附します。
+            </p>
+            <p class="au-donation-sub">
+                本オークションは、次代の表現者たちの学びを支えることを目的としています。
+            </p>
+        </div>
+    </div>
+
+    <!-- ====== 入札の仕組み [ADD 2026.08.05] NOTEから独立させ、白地＋金枠で中位の強さに ====== -->
+    <div class="au-howto">
+        <p class="au-howto-label">HOW TO BID</p>
+        <div class="au-howto-row">
+            <span class="au-howto-num">1</span>
+            <p class="au-howto-text">入札はNFTマーケットプレイス「<strong>HEXA</strong>」を通じて行います。入札ページは<strong>8月18日（火）12:00</strong>に公開します。ご入札にはHEXAのアカウントが必要です。</p>
+        </div>
+        <div class="au-howto-row">
+            <span class="au-howto-num">2</span>
+            <p class="au-howto-text">NFTは<strong>落札の証明</strong>としてお受け取りいただくものです。作品は<strong>現物の絵画</strong>をお渡しします。</p>
+        </div>
+        <div class="au-howto-row">
+            <span class="au-howto-num">3</span>
+            <p class="au-howto-text">落札された作品は、<strong>8月31日（月）のクロージングパーティー</strong>にてお渡しします。</p>
+        </div>
+    </div>
+
+    <!-- ====== 注意事項 [EDIT 2026.08.05] 主催・運営の表記を追記 ====== -->
+    <div class="au-note">
+        <p class="au-note-label">NOTE</p>
+        <p>・遠方の方などのご入札も受け付けます</p>
+        <p>・クロージングパーティー当日のご来場が難しい場合は、別途ご相談のうえ対応いたします</p>
+        <p>・主催：雨の日の星空委員会　／　運営・販売：有限会社シム</p>
+    </div>
+
+    <!-- ====== 戻る ====== -->
+    <div class="au-back">
+        <a href="index.html" class="au-back-btn">← TOP に戻る</a>
+    </div>
+
+</div><!-- /.container -->
+
+<footer>
+    <p style="margin:0 0 12px;">『雨の日の星空』 2026.8.18 – 8.28 &nbsp;|&nbsp; Gallery Blue 3143</p>
+    <p style="margin:0;">
+        <a href="index.html">トップ</a> &nbsp;
+        <a href="access.html">アクセス</a>
+        <a href="faq.html">FAQ</a> &nbsp;
+        <a href="https://twitter.com/rtgeidaipj2026" target="_blank">X</a>
+    </p>
+    <p style="margin-top:14px; font-size:11px;">© 2026『雨の日の星空』展実行委員会</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const btn = document.getElementById('hamburger');
+        const menu = document.getElementById('overlayMenu');
+        btn.classList.toggle('open');
+        menu.classList.toggle('open');
+        document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+</script>
+</body>
+</html>
