@@ -123,6 +123,33 @@
         letter-spacing: 0.15em;
         color: var(--text-mute);
     }
+
+    /* [ADD 2026.08.12] 作家Instagram QRセクション */
+    .vg-ig {
+        margin-top: 32px;
+        padding-top: 28px;
+        border-top: 0.5px solid var(--border-soft);
+    }
+    .vg-ig-label {
+        font-family: var(--font-eng);
+        font-size: 9px;
+        letter-spacing: 0.3em;
+        color: var(--gold);
+        margin-bottom: 14px;
+    }
+    .vg-ig img {
+        width: 92px;
+        height: 92px;
+        display: block;
+        margin: 0 auto;
+    }
+    .vg-ig-handle {
+        margin-top: 10px;
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        color: #777;
+    }
 </style>
 </head>
 <body>
@@ -152,6 +179,12 @@
     </div>
 
     <p class="vg-note">『雨の日の星空』朗読：橋本真希</p>
+
+    <div class="vg-ig">
+        <p class="vg-ig-label">ARTIST'S INSTAGRAM</p>
+        <img src="qr-instagram/qr-ig-ame.png" alt="あめ Instagram QRコード">
+        <p class="vg-ig-handle">@prism_tensichan</p>
+    </div>
 </div>
 
 <audio id="player" src="audio/voice-ame.mp3" preload="metadata"></audio>
