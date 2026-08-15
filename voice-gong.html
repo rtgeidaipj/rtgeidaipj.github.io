@@ -124,11 +124,12 @@
         color: var(--text-mute);
     }
 
-    /* [ADD 2026.08.12] 作家Instagram QRセクション */
+    /* [EDIT 2026.08.18] スマホ内で完結するページのため、QRコードからタップ可能なリンクボタンに変更 */
     .vg-ig {
         margin-top: 32px;
         padding-top: 28px;
         border-top: 0.5px solid var(--border-soft);
+        text-align: center;
     }
     .vg-ig-label {
         font-family: var(--font-eng);
@@ -137,12 +138,20 @@
         color: var(--gold);
         margin-bottom: 14px;
     }
-    .vg-ig img {
-        width: 92px;
-        height: 92px;
-        display: block;
-        margin: 0 auto;
+    .vg-ig-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-eng);
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        color: var(--navy);
+        border: 0.5px solid var(--navy);
+        padding: 12px 26px;
+        text-decoration: none;
+        transition: opacity 0.3s;
     }
+    .vg-ig-btn:active { opacity: 0.6; }
     .vg-ig-handle {
         margin-top: 10px;
         font-family: var(--font-eng);
@@ -181,7 +190,7 @@
     <p class="vg-note">『雨の日の星空』朗読：橋本真希</p>
     <div class="vg-ig">
         <p class="vg-ig-label">ARTIST'S INSTAGRAM</p>
-        <img src="qr-instagram/qr-ig-gong.png" alt="Instagram QRコード">
+        <a href="https://www.instagram.com/admt_q/" target="_blank" rel="noopener" class="vg-ig-btn">Instagramを見る →</a>
         <p class="vg-ig-handle">@admt_q</p>
     </div>
 </div>
