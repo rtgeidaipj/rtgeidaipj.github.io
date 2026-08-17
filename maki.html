@@ -202,13 +202,19 @@
         line-height: 1.2;
         margin: 0 0 12px;
     }
-    .hero-univ {
+    /* [EDIT 2026.08.18] ラベル+補足の2分割構造をやめ、1文として読める形に変更 */
+    .hero-univ-sentence {
+        font-size: 14px;
+        color: #666;
+        letter-spacing: 0.03em;
+        line-height: 1.8;
+        margin: 0 0 32px;
+    }
+    .hero-univ-highlight {
         font-family: var(--font-eng);
-        font-size: 11px;
+        font-weight: 600;
         color: var(--accent-color);
-        letter-spacing: 0.2em;
-        display: block;
-        margin-bottom: 40px;
+        letter-spacing: 0.05em;
     }
     .hero-sns a {
         font-family: var(--font-eng);
@@ -285,6 +291,27 @@
     .profile-value {
         font-size: 14px;
         flex: 1;
+    }
+
+    /* [ADD 2026.08.18] PROFILE直下のRain Tree公式サイトリンク */
+    .profile-link-wrap {
+        text-align: center;
+        margin-top: 32px;
+    }
+    .profile-link-wrap a {
+        font-family: var(--font-eng);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+        border: 1px solid #ccc;
+        padding: 8px 22px;
+        border-radius: 2px;
+        display: inline-block;
+        transition: all 0.3s;
+    }
+    .profile-link-wrap a:hover {
+        color: var(--text-color);
+        border-color: var(--text-color);
     }
 
     .group-block { margin-bottom: 20px; }
@@ -387,11 +414,7 @@
         <a href="access.html">アクセス</a>
         <a href="faq.html">FAQ</a>
         <span class="nav-sep">|</span>
-        <a href="hoshizora.html" class="nav-hl">星空登録受付中</a>
-        <span class="nav-sep">|</span>
         <a href="tokuten.html">特典</a>
-        <!-- [ADD 2026.08.05] ドローイングプレゼント・絵画オークションをナビに追加（会期中有効な企画として対等に扱う） -->
-        <span class="nav-sep">|</span>
         <a href="hoshizora-drawing.html">ドローイング</a>
         <a href="auction.html">オークション</a>
     </div>
@@ -406,7 +429,6 @@
     <a href="index.html#artists" onclick="toggleMenu()">作家</a>
     <a href="access.html" onclick="toggleMenu()">アクセス</a>
     <a href="faq.html" onclick="toggleMenu()">FAQ</a>
-    <a href="hoshizora.html" onclick="toggleMenu()">星空登録受付中</a>
     <a href="tokuten.html" onclick="toggleMenu()">特典</a>
     <a href="hoshizora-drawing.html" onclick="toggleMenu()">ドローイング</a>
     <a href="auction.html" onclick="toggleMenu()">オークション</a>
@@ -433,7 +455,7 @@
         <div class="hero-text">
             <span class="hero-label">ARTIST PROFILE</span>
             <h1 class="hero-name">橋本真希</h1>
-            <span class="hero-univ">RAIN TREE</span>
+            <p class="hero-univ-sentence">秋元康氏総合プロデュース・16名によるガールズグループ「<span class="hero-univ-highlight">Rain Tree</span>」のメンバー</p>
 
             <div class="hero-sns">
                 <a href="https://www.instagram.com/hashimoto_maki_" target="_blank">Instagram</a>
@@ -463,12 +485,53 @@
         <div class="profile-grid">
             <div class="profile-row">
                 <div class="profile-label">NAME</div>
-                <div class="profile-value">橋本真希</div>
+                <div class="profile-value">橋本真希（はしもと・まき）</div>
+            </div>
+            <!-- [ADD 2026.08.18] 生年月日・出身・身長・血液型を追加 -->
+            <div class="profile-row">
+                <div class="profile-label">BIRTH</div>
+                <div class="profile-value">1998年4月30日</div>
             </div>
             <div class="profile-row">
-                <div class="profile-label">AFFILIATION</div>
-                <div class="profile-value">Rain Tree（秋元康氏総合プロデュース・16名によるガールズグループ）</div>
+                <div class="profile-label">HOMETOWN</div>
+                <div class="profile-value">埼玉県</div>
             </div>
+            <div class="profile-row">
+                <div class="profile-label">HEIGHT / BLOOD TYPE</div>
+                <div class="profile-value">159cm ／ A型</div>
+            </div>
+            <!-- [ADD 2026.08.18] 資格・特技・趣味を追加 -->
+            <div class="profile-row">
+                <div class="profile-label">QUALIFICATIONS</div>
+                <div class="profile-value">日本化粧品検定1級、美容師国家資格</div>
+            </div>
+            <!-- [EDIT 2026.08.18] PROFILE欄は事実の列挙に統一するため説明文を削除 -->
+            <div class="profile-row">
+                <div class="profile-label">ART</div>
+                <div class="profile-value">美術検定4級</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-label">SPECIAL SKILL</div>
+                <div class="profile-value">バレエ（モダン・クラシック）</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-label">HOBBIES</div>
+                <div class="profile-value">絵画、映画鑑賞、美容情報収集</div>
+            </div>
+            <div class="profile-row">
+                <!-- [EDIT 2026.08.18] Rain Treeの結成経緯・最新情報を追加 -->
+                <div class="profile-label">AFFILIATION</div>
+                <div class="profile-value">
+                    Rain Tree（秋元康氏総合プロデュース・16名によるガールズグループ）<br>
+                    <span style="font-size:13px; color:#555; line-height:1.8;">
+                        “IDOL3.0 PROJECT オーディション”最終審査で惜しくもデビューを逃しながらも、強い意志と努力で再び立ち上がった16人によるグループ。2025年1月29日、『I L U』でメジャーデビュー。2026年8月には5thデジタルシングル「好きなんて嘘に決まってる」をリリース。
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- [ADD 2026.08.18] PROFILE直下にRain Tree公式サイトへの動線を追加 -->
+        <div class="profile-link-wrap">
+            <a href="https://rt-official.jp/" target="_blank">Rain Tree 公式サイト →</a>
         </div>
     </section>
 

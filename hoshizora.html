@@ -6,7 +6,7 @@
 <meta name="twitter:image" content="https://rtgeidaipj.github.io/main_vs.jpg">
 <meta property="og:url" content="https://rtgeidaipj.github.io/hoshizora.html">
 <meta property="og:title" content="星空登録 ｜ 雨の日の星空">
-<meta property="og:description" content="2026年8月18日〜28日、南青山Gallery Blue 3143で開催。展覧会をより深く楽しむための星空登録（事前エントリー）ページ。来場・友達紹介で★を集めてクロージングパーティーをめざそう。">
+<meta property="og:description" content="2026年8月18日〜28日、南青山Gallery Blue 3143で開催。星空登録の事前登録は終了しました。会期中は、来場チェックインと友達紹介で★を集めることができます。">
 <meta property="og:image" content="https://rtgeidaipj.github.io/main_vs.jpg">
 <meta property="og:type" content="website">
 
@@ -22,7 +22,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>星空登録 ｜ 雨の日の星空</title>
-<meta name="description" content="展覧会『雨の日の星空』の星空登録（事前エントリー）ページ。ニックネームを登録して来場チェックインや友達紹介で★を集め、展覧会体験をより豊かに。クロージングパーティーへの抽選口数も増えます。">
+<meta name="description" content="展覧会『雨の日の星空』の★の集め方について。事前登録の受付は終了しました。会期中は、来場チェックインや友達紹介で★を集め、クロージングパーティーの抽選や来場証明NFTにつなげることができます。">
 <link rel="canonical" href="https://rtgeidaipj.github.io/hoshizora.html">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -267,16 +267,17 @@
         border-radius: 2px;
         margin: 0 0 0;
     }
+    /* [EDIT 2026.08.18] 事前登録期間は終了したため、色付き区間をチェックイン期間（8/18〜8/27）側に反転 */
     .hz-tl-seg1 {
         position: absolute;
         left: 0; width: 52%; height: 2px;
-        background: var(--navy);
+        background: #ccc;
         border-radius: 2px 0 0 2px;
     }
     .hz-tl-seg2 {
         position: absolute;
         left: 52%; width: 48%; height: 2px;
-        background: #ccc;
+        background: var(--navy);
         border-radius: 0 2px 2px 0;
     }
     /* ティックマーク付きラベル */
@@ -837,11 +838,7 @@
         <a href="access.html">アクセス</a>
         <a href="faq.html">FAQ</a>
         <span class="nav-sep">|</span>
-        <a href="hoshizora.html" class="nav-hl">星空登録受付中</a>
-        <span class="nav-sep">|</span>
         <a href="tokuten.html">特典</a>
-        <!-- [ADD 2026.08.05] ドローイングプレゼント・絵画オークションをナビに追加（会期中有効な企画として対等に扱う） -->
-        <span class="nav-sep">|</span>
         <a href="hoshizora-drawing.html">ドローイング</a>
         <a href="auction.html">オークション</a>
     </div>
@@ -856,7 +853,6 @@
     <a href="index.html#artists" onclick="toggleMenu()">作家</a>
     <a href="access.html" onclick="toggleMenu()">アクセス</a>
     <a href="faq.html" onclick="toggleMenu()">FAQ</a>
-    <a href="hoshizora.html" onclick="toggleMenu()">星空登録受付中</a>
     <a href="tokuten.html" onclick="toggleMenu()">特典</a>
     <a href="hoshizora-drawing.html" onclick="toggleMenu()">ドローイング</a>
     <a href="auction.html" onclick="toggleMenu()">オークション</a>
@@ -871,21 +867,20 @@
         星空登録
     </nav>
 
-    <!-- [EDIT 2026.06.30] ヒーロー改訂：8/17以前ユーザー向けに「今すぐできること」だけ提示 -->
+    <!-- [EDIT 2026.08.18] 8/18以降の閲覧者には「終了しました」は自明のため、ヒーローは今できることに直行させる -->
     <div class="hz-hero">
         <span class="hz-hero-label">HOSHIZORA REGISTRATION</span>
         <h1 class="hz-hero-title">星空登録</h1>
-        <p class="hz-hero-body">登録するだけで、特典抽選に参加できます。<br><span style="font-size:13px; color:#666;">所要時間1分。ニックネームを決めて登録するだけです。</span></p>
+        <p class="hz-hero-body">来場チェックインと友達紹介で、★を集めることができます。<br><span style="font-size:13px; color:#666;">集めた★は、クロージングパーティーの抽選と来場証明NFTにつながります。</span></p>
 
-        <!-- [EDIT 2026.07.10] 独立した大きな告知ボックスは廃止。バッジも①②と同じ一覧に統合し、情報の重みを揃える -->
+        <!-- [EDIT 2026.08.18] 事前登録終了に伴い、バッジ告知を実績記録として簡潔化 -->
         <div class="hz-tokuten-summary">
-            <p class="hz-tokuten-summary-label">星空登録でもらえる特典</p>
+            <p class="hz-tokuten-summary-label">星空登録でお届けした特典</p>
             <div class="hz-tokuten-summary-row" style="flex-direction:column; align-items:flex-start; gap:8px;">
                 <span style="display:flex; align-items:center; gap:8px;">
-                    <span style="background:#c95a3a; color:#fff; font-family:var(--font-eng); font-size:9px; letter-spacing:0.12em; padding:2px 7px;">NEW</span>
                     <span style="font-weight:500; color:#1a1a1a; letter-spacing:0.05em;">星空バッジ</span>
                 </span>
-                <span>8月17日までに星空登録をしていただいた方へ、橋本真希からの感謝の気持ちを込めて登録順のシリアルナンバー入り「星空バッジ」をプレゼント。真希本人が手描きした絵をもとにした、専用ページで見られるバッジです。『星彩』『星屑』『Meteor』── 3種類の中からどれか1つが届きます。届いたら、ぜひ #星空バッジ をつけてSNSで教えてください。<br><span style="font-size:11px; color:#666;">※ 同じメールアドレスで複数回ご登録された場合、最初のご登録のみが対象です。</span></span>
+                <span>事前登録（〜8/17）をしてくださった方へ、橋本真希からの感謝の気持ちを込めて、登録順のシリアルナンバー入り「星空バッジ」をお届けしました。『星彩』『星屑』『Meteor』── 3種類のうち、どれか1つが届いています。</span>
             </div>
             <p class="hz-tokuten-summary-label" style="margin-top:22px; padding-top:18px; border-top:1px solid #e0d6c4;">★ を集めてもらえる特典</p>
             <div class="hz-tokuten-summary-row">
@@ -900,12 +895,9 @@
         </div>
 
         <div style="margin-top:24px; text-align:center;">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBB0a86_Ip6mbJZLgHIVFhyf-Q2yfwfxwh5kVIJSv4pVkqWA/viewform?usp=header"
-               target="_blank"
-               class="hz-submit" style="max-width:360px; margin:0 auto; display:block;">星 空 登 録 を す る →</a>
-            <p style="font-family:var(--font-main);font-size:13px;color:#555;letter-spacing:0.05em;margin-top:10px;">事前エントリーは 2026年8月17日（月）23:59 まで</p>
+            <p style="font-family:var(--font-main);font-size:13px;color:#888;letter-spacing:0.05em;">※ 事前登録（〜8/17）は受付を終了しています</p>
         </div>
-        <div class="hz-notice">※ 来場予約ではありません。登録後も、会期中は自由にご来場いただけます。<br>※ 同じメールアドレスで複数回ご登録された場合、最初のご登録のみが有効となります。</div>
+        <div class="hz-notice">会場での来場チェックインと友達紹介で★を集めることができます。詳しくは下記をご覧ください。</div>
     </div>
 
 </div><!-- /.container -->
@@ -921,28 +913,31 @@
                     <div class="hz-tl-seg2"></div>
                 </div>
                 <div class="hz-tl-ticks">
-                    <div class="hz-tl-tick dark" style="left:0%;">
+                    <!-- [EDIT 2026.08.18] 強調位置をバーの色分けと整合させ、8/18〜8/27側に移動 -->
+                    <div class="hz-tl-tick" style="left:0%;">
                         <div class="hz-tl-tick-line"></div>
                         <span class="hz-tl-tick-label">5/10</span>
                     </div>
-                    <div class="hz-tl-tick" style="left:52%;">
+                    <div class="hz-tl-tick dark" style="left:52%;">
                         <div class="hz-tl-tick-line"></div>
                         <span class="hz-tl-tick-label">8/18</span>
                     </div>
-                    <div class="hz-tl-tick" style="left:100%;">
+                    <div class="hz-tl-tick dark" style="left:100%;">
                         <div class="hz-tl-tick-line"></div>
                         <span class="hz-tl-tick-label">8/27</span>
                     </div>
                 </div>
             </div>
             <div class="hz-tl-cards">
-                <div class="hz-tl-card active">
-                    <span class="hz-tl-now">NOW</span>
+                <!-- [EDIT 2026.08.18] 事前登録期間は終了したため、過去の記録として非アクティブ表示に変更 -->
+                <div class="hz-tl-card">
                     <span class="hz-tl-card-period">5/10 〜 8/17</span>
                     <span class="hz-tl-card-name">星空登録（事前エントリー）</span>
                     <span class="hz-tl-card-star">★ ＋1</span>
                 </div>
-                <div class="hz-tl-card">
+                <!-- [EDIT 2026.08.18] NOWバッジをこちら（来場チェックイン期間）へ移動 -->
+                <div class="hz-tl-card active">
+                    <span class="hz-tl-now">NOW</span>
                     <span class="hz-tl-card-period">8/18 〜 8/27</span>
                     <span class="hz-tl-card-name">来場チェックイン<br>友達紹介</span>
                     <span class="hz-tl-card-star">★ 最大＋15</span>
@@ -958,33 +953,35 @@
     <!-- STEPセクション -->
     <div class="hz-steps">
         <p class="hz-sec-title" style="margin-top:0; padding-top:56px;">★ の 集 め 方 （ 最 大  1 6 ）</p>
+        <!-- [ADD 2026.08.18] 最大数の内訳を明示（事前登録者と非登録者で到達可能な最大値が異なるため） -->
+        <p style="text-align:center; font-size:12px; color:#888; margin-top:-32px; margin-bottom:40px; letter-spacing:0.05em;">※ 事前登録期間（〜8/17）にご登録いただいた方は、★1が加算されています。<br>会期中は、来場チェックイン・友達紹介で最大★15を集めることができます。</p>
 
-        <!-- [EDIT 2026.06.30] STEP 01：「今すぐ」バッジ追加 -->
+        <!-- [EDIT 2026.08.18] 事前登録終了に伴い、STEP01を過去形の記録に変更。NOWバッジはSTEP02へ移動 -->
         <div class="hz-step">
             <div>
-                <span class="hz-step-now">今 す ぐ</span>
                 <span class="hz-step-num">STEP 01</span>
                 <span class="hz-step-period">5/10 〜 8/17</span>
                 <span class="hz-step-star">★ 1</span>
             </div>
             <div>
-                <p class="hz-step-title">星空登録（受付中）</p>
-                <p class="hz-step-body">フォームからニックネームを登録するだけ。★1つが付与されます。登録時に設定する「ニックネーム」が、来場チェックインや友達紹介で★を集めるための合言葉になります。</p>
+                <p class="hz-step-title">星空登録（受付終了）</p>
+                <p class="hz-step-body">フォームからニックネームを登録いただくことで、★1つが付与される仕組みでした。登録時に設定した「ニックネーム」は、来場チェックインや友達紹介で★を集めるための合言葉になります。会場でのチェックインの際に必要になりますので、登録済みの方は合言葉をお忘れのないようにお願いいたします。</p>
             </div>
         </div>
 
         <!-- STEP 02 -->
         <div class="hz-step">
             <div>
+                <span class="hz-step-now">今 す ぐ</span>
                 <span class="hz-step-num">STEP 02</span>
-                <span class="hz-step-period-future">8/18 〜 8/27</span>
+                <span class="hz-step-period">8/18 〜 8/27</span>
                 <span class="hz-step-star">★ 最大 10</span>
             </div>
             <div>
                 <p class="hz-step-title">来場チェックイン</p>
                 <p class="hz-step-body">会場へお越しいただくたびに、来場チェックインで★が1つ加算されます。最大10日間（8/18〜8/27）。最終日8/28は来場チェックインの対象外です。</p>
                 <p class="hz-step-poem">一度の来場では気づかなかった細かな筆致や、光の加減で表情を変える作品の奥行き。<br>ぜひ何度でも、じっくりと味わいにお越しください。</p>
-                <p class="hz-step-note">※ 事前エントリーをしていない方も、当日会場でチェックイン登録できます。</p>
+                <p class="hz-step-note">※ 事前登録をしていない方も、当日会場でチェックイン登録できます。</p>
             </div>
         </div>
 
@@ -992,7 +989,7 @@
         <div class="hz-step">
             <div>
                 <span class="hz-step-num">STEP 03</span>
-                <span class="hz-step-period-future">8/18 〜 8/27</span>
+                <span class="hz-step-period">8/18 〜 8/27</span>
                 <span class="hz-step-star">★ 最大 5</span>
             </div>
             <div>
@@ -1021,13 +1018,9 @@
             </div>
         </div>
 
-        <!-- [EDIT 2026.06.30] 特典CTAカード削除→登録CTAに変更 -->
-        <!-- [EDIT 2026.07.10] 単独の「合計」カードを削除し、数字をこの一文に統合 -->
+        <!-- [EDIT 2026.08.18] 事前登録終了に伴い、登録ボタンを撤去し来場案内に変更 -->
         <div class="hz-step-cta">
-            <p class="hz-step-cta-text">★を集めるには、まず星空登録から。（最大16まで集められます）</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBB0a86_Ip6mbJZLgHIVFhyf-Q2yfwfxwh5kVIJSv4pVkqWA/viewform?usp=header"
-               target="_blank"
-               class="hz-step-cta-btn">星 空 登 録 を す る →</a>
+            <p class="hz-step-cta-text">会期中は、来場チェックインと友達紹介で★を集めることができます。</p>
         </div>
 
         <!-- ②対象外（最下部に移動） -->
@@ -1043,10 +1036,10 @@
         </div>
     </div>
 
-    <!-- [EDIT 2026.06.30] 登録ボタンは★CTAに統合。注意書きのみ残す -->
+    <!-- [EDIT 2026.08.18] 事前登録終了に伴い、既登録者向けの案内として調整 -->
     <div class="hz-form">
         <div class="hz-form-box">
-            <p class="hz-input-note">来場予約ではありません。登録後も、会期中は自由にご来場いただけます。<br>※ 登録したニックネームは、来場時のチェックインに必要です。メモまたはスクリーンショットで必ず保存してください。</p>
+            <p class="hz-input-note">事前登録済みの方は、登録したニックネームが来場時のチェックインに必要です。メモまたはスクリーンショットでご確認ください。</p>
             <div class="hz-mgmt-note">※ 集めた★の集計は主催者側で管理しています。<br>※ お問い合わせ：rtgeidaipj2026@gmail.com（会場への直接のお問い合わせはご遠慮ください）</div>
         </div>
     </div>

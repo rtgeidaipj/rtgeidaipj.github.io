@@ -600,12 +600,9 @@
         <a href="access.html">アクセス</a>
         <a href="faq.html">FAQ</a>
         <span class="nav-sep">|</span>
-        <a href="hoshizora.html" class="nav-hl">星空登録受付中</a>
-        <span class="nav-sep">|</span>
         <!-- [EDIT 2026.06.29] closing.htmlを統合 -->
         <a href="tokuten.html" class="nav-active">特典</a>
-        <!-- [ADD 2026.08.05] ドローイングプレゼント・絵画オークションをナビに追加（会期中有効な企画として対等に扱う） -->
-        <span class="nav-sep">|</span>
+        <!-- [EDIT 2026.08.18] 区切り線を1本に統合（展覧会の基本情報｜付帯企画、という区切りに意味を統一） -->
         <a href="hoshizora-drawing.html">ドローイング</a>
         <a href="auction.html">オークション</a>
     </div>
@@ -620,7 +617,6 @@
     <a href="index.html#artists" onclick="toggleMenu()">作家</a>
     <a href="access.html" onclick="toggleMenu()">アクセス</a>
     <a href="faq.html" onclick="toggleMenu()">FAQ</a>
-    <a href="hoshizora.html" onclick="toggleMenu()">星空登録受付中</a>
     <a href="tokuten.html" onclick="toggleMenu()">特典</a>
     <a href="hoshizora-drawing.html" onclick="toggleMenu()">ドローイング</a>
     <a href="auction.html" onclick="toggleMenu()">オークション</a>
@@ -637,15 +633,13 @@
         星空登録の特典
     </nav>
 
-    <!-- [EDIT 2026.06.30] ヒーロー全面改修：初見ユーザーへの文脈→強調→表題の順に再構成 -->
+    <!-- [EDIT 2026.08.18] 事前登録終了に伴い、来場・紹介を中心とした文言に変更 -->
     <div class="tk-hero">
         <span class="tk-hero-label">HOSHIZORA REGISTRATION</span>
         <h1 class="tk-hero-page-title">星空登録の特典</h1>
         <hr class="tk-hero-divider">
-        <p class="tk-hero-intro-primary">星空登録をすると、★が集まります。</p>
-        <!-- [EDIT 2026.06.30] 「16」を数字強調 -->
+        <p class="tk-hero-intro-primary">来場・友達紹介で、★が集まります。</p>
         <p class="tk-hero-intro-secondary">★1つ＝抽選1口。最大<span class="num-em">16</span>口まで増やせます。</p>
-        <!-- [EDIT 2026.06.30] ヒーロー強調文を改訂 -->
         <p class="tk-hero-star-emphasis">集めた★が、2つの特典への鍵になります。</p>
         <p class="tk-hero-title">特 典 に つ い て</p>
         <div class="tk-hero-cards">
@@ -661,7 +655,7 @@
             </div>
         </div>
         <div class="tk-hero-cta">
-            <a href="hoshizora.html" style="font-family:var(--font-eng); font-size:11px; letter-spacing:0.22em; color:#c9a84c; border:0.5px solid #c9a84c; padding:10px 24px; display:inline-block;">まだ登録していない方はこちら →</a>
+            <a href="hoshizora.html" style="font-family:var(--font-eng); font-size:11px; letter-spacing:0.22em; color:#c9a84c; border:0.5px solid #c9a84c; padding:10px 24px; display:inline-block;">★ の 集 め 方 を 見 る →</a>
         </div>
     </div>
 
@@ -712,9 +706,10 @@
         <div class="tk-lottery">
             <span class="tk-lottery-title">抽選の仕組み — ★ の 集 め 方</span>
             <div class="tk-lottery-grid">
+                <!-- [EDIT 2026.08.18] 事前登録は終了しているため、受付終了の注記を追加 -->
                 <div class="tk-lottery-item">
                     <span class="tk-lottery-l">登 録</span>
-                    <span class="tk-lottery-name">星空登録</span>
+                    <span class="tk-lottery-name">星空登録<br><span style="font-size:10px; color:#999; letter-spacing:0.05em;">（受付終了）</span></span>
                     <span class="tk-lottery-star">★ 1</span>
                 </div>
                 <div class="tk-lottery-item">
@@ -728,7 +723,7 @@
                     <span class="tk-lottery-star">★ 最大5</span>
                 </div>
             </div>
-            <p class="tk-lottery-note">合計最大16口 · ★1口でも当選の可能性あり</p>
+            <p class="tk-lottery-note">合計最大16口 · ★1口でも当選の可能性あり<br><span style="font-size:11px; color:#999;">※ 事前登録（〜8/17）をされていない方は、来場・紹介で最大15口まで集められます</span></p>
         </div>
     </div>
 
@@ -747,27 +742,12 @@
         <div class="tk-nft-note">NFTの受け取りに、特別な知識や事前の準備（ウォレット等）は不要です。メールでお届けするリンクから、どなたでも簡単にコレクションいただけます。</div>
     </div>
 
-    <!-- [EDIT 2026.07.16] 旧「ラフ画プレゼント」下書き（特典③）は削除。
-         ドローイングプレゼントは星空登録と無関係の独立企画のため、
-         hoshizora-drawing.html として別途独立ページで運用する（tokuten.htmlには含めない）。 -->
+    <!-- [DELETE 2026.08.18] オークションの下書きコメントを削除。auction.htmlとして既に独立ページで公開済みのため不要 -->
 
-    <!-- ====== 特典04：絵画オークション（8/11解禁） ====== -->
-    <!--
-    [ADD 2026.08.11] 以下のコメントアウトを解除して公開する
-    <div class="tk-benefit">
-        <span class="tk-benefit-num">特典④</span>
-        <h2 class="tk-benefit-title">絵画オークション</h2>
-        <span class="tk-benefit-sub">詳細は後日発表</span>
-        <p class="tk-benefit-body">（内容をここに記載）</p>
-    </div>
-    -->
-
-    <!-- CTA -->
+    <!-- [EDIT 2026.08.18] 事前登録終了に伴い、登録CTAから来場促進に変更 -->
     <div class="tk-cta">
-        <p class="tk-cta-body">★1つから始められます。<br>登録するだけで、クロージングパーティーの抽選に1口参加できます。</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBB0a86_Ip6mbJZLgHIVFhyf-Q2yfwfxwh5kVIJSv4pVkqWA/viewform?usp=header"
-           target="_blank"
-           class="tk-cta-btn">星 空 登 録 を す る →</a>
+        <p class="tk-cta-body">★1つでも、当選の可能性があります。<br>会場でのチェックインと、友達紹介で★を集めましょう。</p>
+        <a href="hoshizora.html" class="tk-cta-btn">★ の 集 め 方 を 見 る →</a>
     </div>
 
 </div><!-- /.container -->

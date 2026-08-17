@@ -132,6 +132,7 @@ a { color: inherit; text-decoration: none; }
     display: flex;
     flex-direction: column;
     padding-top: 80px;
+    overflow-y: auto; /* [ADD 2026.08.05] メニュー項目増加によるコンテンツ超過で、閉時に画面へ漏れる不具合を修正 */
 }
 .overlay-menu.open { transform: translateY(0); }
 .overlay-menu a {
@@ -189,6 +190,8 @@ a { color: inherit; text-decoration: none; }
     .hero-caption { font-size: 12px; }
     .hero-caption-date { font-size: 14px; }
 }
+
+/* [DELETE 2026.08.18] 巨大なオークションセクションは廃止し1行バナーに統合したため、専用CSSを撤去 */
 
 /* [ADD 2026.06.30] スマホ限定 星空登録バナー */
 .sp-hoshizora-banner {
@@ -860,58 +863,7 @@ a { color: inherit; text-decoration: none; }
     letter-spacing: 0.05em;
 }
 
-/* [ADD 2026.06.30] 動画XリンクCSS */
-.maki-video-xlink {
-    display: inline-block;
-    font-family: var(--font-eng);
-    font-size: 13px;
-    letter-spacing: 0.2em;
-    color: var(--text-color);
-    border: 0.5px solid var(--text-color);
-    padding: 14px 32px;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-}
-.maki-video-xlink:hover {
-    background: var(--text-color);
-    color: var(--bg-cream);
-}
-
-/* [ADD 2026.06.29] 橋本真希 動画セクション（7月上旬削除予定） */
-.maki-video-section {
-    background: #fff;
-    padding: 60px 24px;
-    margin-bottom: 0;
-}
-.maki-video-inner {
-    max-width: 680px;
-    margin: 0 auto;
-    text-align: center;
-}
-.maki-video-label {
-    font-family: var(--font-eng);
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    color: var(--text-mute);
-    margin: 0 0 20px;
-    text-transform: uppercase;
-}
-.maki-video-wrap {
-    position: relative;
-    width: 100%;
-    max-width: 240px;
-    margin: 0 auto;
-}
-.maki-video {
-    width: 100%;
-    height: auto;
-    display: block;
-    border: none;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-}
-@media (max-width: 768px) {
-    .maki-video-section { padding: 40px 0; }
-}
+/* [DELETE 2026.08.05] 動画XリンクCSS・橋本真希 動画セクションCSS を、セクション削除に伴い撤去 */
 
 </style>
 </head>
@@ -926,9 +878,9 @@ a { color: inherit; text-decoration: none; }
         <a href="access.html">アクセス</a>
         <a href="faq.html">FAQ</a>
         <span class="nav-sep">|</span>
-        <a href="hoshizora.html" class="nav-hl">星空登録受付中</a>
-        <span class="nav-sep">|</span>
         <a href="tokuten.html">特典</a>
+        <a href="hoshizora-drawing.html">ドローイング</a>
+        <a href="auction.html">オークション</a>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -941,8 +893,10 @@ a { color: inherit; text-decoration: none; }
     <a href="index.html#artists" onclick="toggleMenu()">作家</a>
     <a href="access.html" onclick="toggleMenu()">アクセス</a>
     <a href="faq.html" onclick="toggleMenu()">FAQ</a>
-    <a href="hoshizora.html" onclick="toggleMenu()">星空登録受付中</a>
     <a href="tokuten.html" onclick="toggleMenu()">特典</a>
+    <!-- [ADD 2026.08.05] ドローイングプレゼント・絵画オークションをナビに追加 -->
+    <a href="hoshizora-drawing.html" onclick="toggleMenu()">ドローイング</a>
+    <a href="auction.html" onclick="toggleMenu()">オークション</a>
     <div class="overlay-info">2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</div>
 </div>
 
@@ -956,17 +910,18 @@ a { color: inherit; text-decoration: none; }
     </p>
 </section>
 
-<!-- [EDIT 2026.07.18] NEW告知バナーを星空バッジ→ドローイングプレゼントに差し替え -->
+<!-- [EDIT 2026.08.18] 開幕後は「来場」を優先するため、巨大なオークションセクションを廃止し、
+     1行の控えめなバナーに統合。詳細情報はauction.htmlに任せる -->
 <div class="top-news-banner" style="text-align:center; padding:16px 16px; border-top:1px solid var(--border-paper); border-bottom:1px solid var(--border-paper);">
-    <a href="hoshizora-drawing.html" style="color:#4a4a4a; font-family:var(--font-main); font-size:13px; letter-spacing:0.05em; text-decoration:none;">
-        <span class="news-tag" style="margin-left:0; margin-right:10px;">NEW</span>橋本真希ドローイング全66点、来場者に毎日抽選プレゼント →
+    <a href="auction.html" style="color:#4a4a4a; font-family:var(--font-main); font-size:13px; letter-spacing:0.05em; text-decoration:none;">
+        <span class="news-tag" style="margin-left:0; margin-right:10px;">NEW</span>橋本真希 絵画オークション、8月27日（木）19:00まで開催中 →
     </a>
 </div>
 
-<!-- [ADD 2026.06.30] スマホ限定 星空登録バナー（PCでは非表示） -->
+<!-- [EDIT 2026.08.18] 事前登録終了に伴い、来場チェックイン訴求のバナーに変更 -->
 <div class="sp-hoshizora-banner">
-    <span class="sp-hoshizora-banner-text">★ 星空登録 受付中（〜8/17）</span>
-    <a href="hoshizora.html" class="sp-hoshizora-banner-btn">星空登録とは →</a>
+    <span class="sp-hoshizora-banner-text">★ 来場・友達紹介で★を集めよう</span>
+    <a href="hoshizora.html" class="sp-hoshizora-banner-btn">★の集め方 →</a>
 </div>
 
 <!-- ====== [ADD 2026.06.25] コンセプト・キャッチコピー ====== -->
@@ -992,21 +947,7 @@ a { color: inherit; text-decoration: none; }
     <button class="statement-toggle" id="statement-btn" onclick="toggleStatement()">続きを読む →</button>
 </section>
 
-<!-- ====== 橋本真希 動画 ====== -->
-<!-- ====== 橋本真希 動画 ====== -->
-<!-- [EDIT 2026.06.30] Xの投稿を埋め込み表示に変更 -->
-<section class="maki-video-section">
-    <div class="maki-video-inner">
-        <p class="maki-video-label">6/29 橋本真希より</p>
-        <div class="maki-video-wrap">
-            <blockquote class="twitter-tweet" data-media-max-width="560">
-                <a href="https://x.com/rtgeidaipj2026/status/2071473743684366645"></a>
-            </blockquote>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-    </div>
-</section>
-<!-- ====== /橋本真希 動画 ====== -->
+<!-- [DELETE 2026.08.05] 6/29 橋本真希 動画セクション（X埋め込み）を削除 -->
 
 <!-- ====== 気軽さバナー ====== -->
 <section class="casual-band">
@@ -1181,9 +1122,29 @@ a { color: inherit; text-decoration: none; }
         <p class="sec-head" style="text-align:center;">お知らせ</p>
         <h2 class="sec-title" style="text-align:center; margin-bottom:50px;">NEWS</h2>
 
+        <!-- [ADD 2026.08.17] 会場限定グッズ販売のお知らせ -->
+        <article class="news-item">
+            <span class="news-date">2026.08.17<span class="news-tag">NEW</span></span>
+            <span class="news-headline">会場限定グッズを販売します</span>
+            <div class="news-content" id="news-content-18">
+                <p>会期中、会場にて『雨の日の星空』Tシャツ（5,000円・限定20枚・橋本真希のランダムサイン入り）と、公式画集（2,000円・限定100冊）を販売いたします。画集は印刷の都合により、会期途中からの販売となります。いずれも数量限定・会場限定でのお取り扱いです。お支払いは現金のみとなりますので、あらかじめご了承ください。</p>
+            </div>
+            <span class="news-toggle" onclick="toggleNews(18)">Read More / Close</span>
+        </article>
+
+        <!-- [ADD 2026.08.11] 絵画オークションのお知らせ -->
+        <article class="news-item">
+            <span class="news-date">2026.08.11</span>
+            <span class="news-headline">橋本真希の描き下ろし絵画、8/18よりオークション開始</span>
+            <div class="news-content" id="news-content-17">
+                <p>橋本真希が本展のために描き下ろしたF30号（910 × 727 mm）の油彩作品を、オークションに出品します。入札期間は2026年8月18日（火）12:00から8月27日（木）19:00まで。入札はNFTマーケットプレイス「HEXA」を通じて行い、落札された方には現物の絵画をお渡しします。落札額から手数料および諸経費を差し引いた額は、東京藝術大学へ寄附します。詳しくは<a href="auction.html" style="color:var(--accent-warm); text-decoration:underline;">こちら</a>をご覧ください。</p>
+            </div>
+            <span class="news-toggle" onclick="toggleNews(17)">Read More / Close</span>
+        </article>
+
         <!-- [ADD 2026.07.18] ドローイングプレゼントのお知らせ -->
         <article class="news-item">
-            <span class="news-date">2026.07.18<span class="news-tag">NEW</span></span>
+            <span class="news-date">2026.07.18</span>
             <span class="news-headline">橋本真希ドローイング全66点、来場者へ毎日抽選プレゼント</span>
             <div class="news-content" id="news-content-16">
                 <p>会期中、橋本真希が一枚一枚手描きしたドローイング（ラフスケッチ）を、ご来場のみなさまへ毎日抽選でプレゼントします。全66点、すべて一点ものです。ご来場時に抽選にご参加いただけ、当選された方にはその場で実物をお渡しします。詳しくは<a href="hoshizora-drawing.html" style="color:var(--accent-warm); text-decoration:underline;">こちら</a>をご覧ください。</p>
@@ -1191,27 +1152,27 @@ a { color: inherit; text-decoration: none; }
             <span class="news-toggle" onclick="toggleNews(16)">Read More / Close</span>
         </article>
 
-        <!-- [ADD 2026.07.16] 星空バッジ プレゼントのお知らせ -->
-        <article class="news-item">
-            <span class="news-date">2026.07.16<span class="news-tag">NEW</span></span>
-            <span class="news-headline">星空登録者に橋本真希デザインの星空バッジをプレゼント</span>
-            <div class="news-content" id="news-content-15">
-                <p>事前に星空登録をしてくださった方へ、橋本真希からの感謝の気持ちを込めて登録順のシリアルナンバー入り「星空バッジ」をお届けします。真希本人が手描きした絵をもとにした、専用ページで見られるバッジです。バッジは『星彩』『星屑』『Meteor』の3種類。どれが届くかはお楽しみに。届いたら、ぜひ #星空バッジ をつけてどの絵柄だったかSNSで教えてください。これまでにご登録いただいた方には順次メールをお送りします。これから登録される方には、登録後すぐに自動でお届けします。星空登録は<a href="hoshizora.html" style="color:var(--accent-warm); text-decoration:underline;">こちら</a>から。<br><span style="font-size:12px; color:#666;">※ 同じメールアドレスで複数回ご登録された場合、最初のご登録のみが対象です。</span></p>
-            </div>
-            <span class="news-toggle" onclick="toggleNews(15)">Read More / Close</span>
-        </article>
-
-        <!-- [ADD 2026.06.29] サイトリニューアルのお知らせ -->
-        <article class="news-item">
-            <span class="news-date">2026.06.29<span class="news-tag">NEW</span></span>
-            <span class="news-headline">公式サイトをリニューアルしました</span>
-            <div class="news-content" id="news-content-14">
-                <p>公式サイトのデザインをリニューアルしました。会場の雰囲気や作家の情報をよりわかりやすくお伝えできるよう、構成を見直しています。ぜひご覧ください。</p>
-            </div>
-            <span class="news-toggle" onclick="toggleNews(14)">Read More / Close</span>
-        </article>
-
         <div class="news-older" id="newsOlder">
+            <!-- [EDIT 2026.08.17] 常時表示を最新3件に保つため、07.16の記事をここへ移動 -->
+            <article class="news-item">
+                <span class="news-date">2026.07.16</span>
+                <span class="news-headline">星空登録者に橋本真希デザインの星空バッジをプレゼント</span>
+                <div class="news-content" id="news-content-15">
+                    <p>事前に星空登録をしてくださった方へ、橋本真希からの感謝の気持ちを込めて登録順のシリアルナンバー入り「星空バッジ」をお届けします。真希本人が手描きした絵をもとにした、専用ページで見られるバッジです。バッジは『星彩』『星屑』『Meteor』の3種類。どれが届くかはお楽しみに。届いたら、ぜひ #星空バッジ をつけてどの絵柄だったかSNSで教えてください。これまでにご登録いただいた方には順次メールをお送りします。これから登録される方には、登録後すぐに自動でお届けします。<br><span style="font-size:12px; color:#666;">※ 同じメールアドレスで複数回ご登録された場合、最初のご登録のみが対象です。</span></p>
+                </div>
+                <span class="news-toggle" onclick="toggleNews(15)">Read More / Close</span>
+            </article>
+
+            <!-- [EDIT 2026.08.05] 常時表示を最新3件に保つため、06.29の記事をここへ移動 -->
+            <article class="news-item">
+                <span class="news-date">2026.06.29</span>
+                <span class="news-headline">公式サイトをリニューアルしました</span>
+                <div class="news-content" id="news-content-14">
+                    <p>公式サイトのデザインをリニューアルしました。会場の雰囲気や作家の情報をよりわかりやすくお伝えできるよう、構成を見直しています。ぜひご覧ください。</p>
+                </div>
+                <span class="news-toggle" onclick="toggleNews(14)">Read More / Close</span>
+            </article>
+
             <!-- [EDIT 2026.07.18] 常時表示を最新3件のみに保つため、06.16の記事をここへ移動 -->
             <article class="news-item" id="news-maki-ame">
                 <span class="news-date">2026.06.16</span>
@@ -1293,15 +1254,15 @@ a { color: inherit; text-decoration: none; }
     </div>
 </section>
 
-<!-- ====== 星空登録 ====== -->
+<!-- [EDIT 2026.08.18] 事前登録終了に伴い、来場・紹介による★の集め方を訴求する内容に変更 -->
 <section class="hoshizora-section">
-    <h2 class="hoshizora-title">星空登録、受付中</h2>
+    <h2 class="hoshizora-title">★を集めよう</h2>
     <p class="hoshizora-text">
-        展覧会をより深く楽しむための事前エントリー。<br>
         来場や友達紹介の記録が、星(★)となって残ります。<br>
-        ★を集めるとクロージングパーティー(8/31昼)の抽選口数が増えます。
+        ★を集めるとクロージングパーティー(8/31昼)の抽選口数が増え、<br>
+        来場証明NFTのレアリティも上がります。
     </p>
-    <a href="hoshizora.html" class="hoshizora-btn">星空登録について →</a>
+    <a href="hoshizora.html" class="hoshizora-btn">★の集め方について →</a>
     <p class="hoshizora-tokuten">
         <a href="tokuten.html">特典・クロージングパーティー</a>
     </p>
