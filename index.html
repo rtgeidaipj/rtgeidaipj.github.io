@@ -132,7 +132,6 @@ a { color: inherit; text-decoration: none; }
     display: flex;
     flex-direction: column;
     padding-top: 80px;
-    overflow-y: auto; /* [ADD 2026.08.05] メニュー項目増加によるコンテンツ超過で、閉時に画面へ漏れる不具合を修正 */
 }
 .overlay-menu.open { transform: translateY(0); }
 .overlay-menu a {
@@ -189,97 +188,6 @@ a { color: inherit; text-decoration: none; }
     .hero { padding: 24px 16px 20px; }
     .hero-caption { font-size: 12px; }
     .hero-caption-date { font-size: 14px; }
-}
-
-/* ====== [ADD 2026.08.05] 絵画オークション告知セクション ====== */
-.top-auction {
-    position: relative;
-    overflow: hidden;
-    background: #1e3a5f;
-}
-.top-auction-stars {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
-}
-.top-auction-inner {
-    position: relative;
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 48px 32px 44px;
-    text-align: center;
-}
-.top-auction-label {
-    display: block;
-    font-family: var(--font-eng);
-    font-size: 9px;
-    letter-spacing: 0.45em;
-    color: #c9a84c;
-    margin-bottom: 22px;
-}
-.top-auction-sub {
-    font-size: 12.5px;
-    color: #b8c6d6;
-    letter-spacing: 0.2em;
-    margin: 0 0 14px;
-}
-.top-auction-title {
-    font-family: var(--font-main);
-    font-size: 25px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    color: #fbf6ee;
-    margin: 0 0 18px;
-    line-height: 1.8;
-}
-.top-auction-spec {
-    font-size: 13px;
-    color: #e8dcc4;
-    letter-spacing: 0.1em;
-    margin: 0 0 22px;
-}
-.top-auction-desc {
-    font-size: 13.5px;
-    color: #b8c6d6;
-    line-height: 2.1;
-    margin: 0 0 28px;
-}
-.top-auction-btn {
-    display: inline-block;
-    font-family: var(--font-main);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    color: #1e3a5f;
-    background: #fbf6ee;
-    padding: 15px 44px;
-    text-decoration: none;
-    transition: opacity 0.3s;
-}
-.top-auction-btn:hover { opacity: 0.82; }
-.top-auction-band {
-    position: relative;
-    background: #c9a84c;
-    text-align: center;
-    padding: 14px 20px;
-}
-.top-auction-band p {
-    font-family: var(--font-main);
-    font-size: 14px;
-    font-weight: 600;
-    color: #1e3a5f;
-    letter-spacing: 0.1em;
-    margin: 0;
-}
-@media (max-width: 600px) {
-    .top-auction-inner { padding: 40px 24px 38px; }
-    .top-auction-title { font-size: 21px; }
-    .top-auction-spec { font-size: 12px; }
-    .top-auction-desc { font-size: 12.5px; }
-    .top-auction-btn { font-size: 13px; padding: 14px 34px; }
-    .top-auction-band p { font-size: 12.5px; }
 }
 
 /* [ADD 2026.06.30] スマホ限定 星空登録バナー */
@@ -952,7 +860,58 @@ a { color: inherit; text-decoration: none; }
     letter-spacing: 0.05em;
 }
 
-/* [DELETE 2026.08.05] 動画XリンクCSS・橋本真希 動画セクションCSS を、セクション削除に伴い撤去 */
+/* [ADD 2026.06.30] 動画XリンクCSS */
+.maki-video-xlink {
+    display: inline-block;
+    font-family: var(--font-eng);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: var(--text-color);
+    border: 0.5px solid var(--text-color);
+    padding: 14px 32px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+.maki-video-xlink:hover {
+    background: var(--text-color);
+    color: var(--bg-cream);
+}
+
+/* [ADD 2026.06.29] 橋本真希 動画セクション（7月上旬削除予定） */
+.maki-video-section {
+    background: #fff;
+    padding: 60px 24px;
+    margin-bottom: 0;
+}
+.maki-video-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
+.maki-video-label {
+    font-family: var(--font-eng);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--text-mute);
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+.maki-video-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto;
+}
+.maki-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: none;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+@media (max-width: 768px) {
+    .maki-video-section { padding: 40px 0; }
+}
 
 </style>
 </head>
@@ -970,10 +929,6 @@ a { color: inherit; text-decoration: none; }
         <a href="hoshizora.html" class="nav-hl">星空登録受付中</a>
         <span class="nav-sep">|</span>
         <a href="tokuten.html">特典</a>
-        <!-- [ADD 2026.08.05] ドローイングプレゼント・絵画オークションをナビに追加（会期中有効な企画として対等に扱う） -->
-        <span class="nav-sep">|</span>
-        <a href="hoshizora-drawing.html">ドローイング</a>
-        <a href="auction.html">オークション</a>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -988,9 +943,6 @@ a { color: inherit; text-decoration: none; }
     <a href="faq.html" onclick="toggleMenu()">FAQ</a>
     <a href="hoshizora.html" onclick="toggleMenu()">星空登録受付中</a>
     <a href="tokuten.html" onclick="toggleMenu()">特典</a>
-    <!-- [ADD 2026.08.05] ドローイングプレゼント・絵画オークションをナビに追加 -->
-    <a href="hoshizora-drawing.html" onclick="toggleMenu()">ドローイング</a>
-    <a href="auction.html" onclick="toggleMenu()">オークション</a>
     <div class="overlay-info">2026.8.18 – 8.28 &nbsp;Gallery Blue 3143</div>
 </div>
 
@@ -1004,41 +956,12 @@ a { color: inherit; text-decoration: none; }
     </p>
 </section>
 
-<!-- [EDIT 2026.08.05] NEW告知バナーをドローイングプレゼント→絵画オークションに差し替え -->
+<!-- [EDIT 2026.07.18] NEW告知バナーを星空バッジ→ドローイングプレゼントに差し替え -->
 <div class="top-news-banner" style="text-align:center; padding:16px 16px; border-top:1px solid var(--border-paper); border-bottom:1px solid var(--border-paper);">
-    <a href="auction.html" style="color:#4a4a4a; font-family:var(--font-main); font-size:13px; letter-spacing:0.05em; text-decoration:none;">
-        <span class="news-tag" style="margin-left:0; margin-right:10px;">NEW</span>橋本真希の描き下ろし絵画、8/18よりオークション開始 →
+    <a href="hoshizora-drawing.html" style="color:#4a4a4a; font-family:var(--font-main); font-size:13px; letter-spacing:0.05em; text-decoration:none;">
+        <span class="news-tag" style="margin-left:0; margin-right:10px;">NEW</span>橋本真希ドローイング全66点、来場者に毎日抽選プレゼント →
     </a>
 </div>
-
-<!-- ====== [ADD 2026.08.05] 絵画オークション告知セクション（目玉企画のため上部に配置） ====== -->
-<section class="top-auction">
-    <svg preserveAspectRatio="none" class="top-auction-stars">
-        <circle cx="7%" cy="18%" r="1.2" fill="#c9a84c"/>
-        <circle cx="17%" cy="62%" r="1" fill="#fbf6ee"/>
-        <circle cx="26%" cy="30%" r="1.4" fill="#c9a84c"/>
-        <circle cx="36%" cy="80%" r="1" fill="#fbf6ee"/>
-        <circle cx="45%" cy="16%" r="1.2" fill="#c9a84c"/>
-        <circle cx="55%" cy="70%" r="1.3" fill="#c9a84c"/>
-        <circle cx="64%" cy="26%" r="1" fill="#fbf6ee"/>
-        <circle cx="74%" cy="84%" r="1.2" fill="#c9a84c"/>
-        <circle cx="83%" cy="40%" r="1.5" fill="#c9a84c"/>
-        <circle cx="92%" cy="70%" r="1" fill="#fbf6ee"/>
-    </svg>
-    <div class="top-auction-inner">
-        <span class="top-auction-label">ART AUCTION</span>
-        <p class="top-auction-sub">この世に一つだけの絵画</p>
-        <h2 class="top-auction-title">橋本真希 絵画オークション</h2>
-        <p class="top-auction-spec">F30号（910 × 727 mm）油彩</p>
-        <p class="top-auction-desc">
-            落札額から手数料および諸経費を差し引いた額を、東京藝術大学へ寄附します。
-        </p>
-        <a href="auction.html" class="top-auction-btn">詳しく見る →</a>
-    </div>
-    <div class="top-auction-band">
-        <p>8月18日（火）12:00　入札開始</p>
-    </div>
-</section>
 
 <!-- [ADD 2026.06.30] スマホ限定 星空登録バナー（PCでは非表示） -->
 <div class="sp-hoshizora-banner">
@@ -1069,7 +992,21 @@ a { color: inherit; text-decoration: none; }
     <button class="statement-toggle" id="statement-btn" onclick="toggleStatement()">続きを読む →</button>
 </section>
 
-<!-- [DELETE 2026.08.05] 6/29 橋本真希 動画セクション（X埋め込み）を削除 -->
+<!-- ====== 橋本真希 動画 ====== -->
+<!-- ====== 橋本真希 動画 ====== -->
+<!-- [EDIT 2026.06.30] Xの投稿を埋め込み表示に変更 -->
+<section class="maki-video-section">
+    <div class="maki-video-inner">
+        <p class="maki-video-label">6/29 橋本真希より</p>
+        <div class="maki-video-wrap">
+            <blockquote class="twitter-tweet" data-media-max-width="560">
+                <a href="https://x.com/rtgeidaipj2026/status/2071473743684366645"></a>
+            </blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
+</section>
+<!-- ====== /橋本真希 動画 ====== -->
 
 <!-- ====== 気軽さバナー ====== -->
 <section class="casual-band">
@@ -1244,16 +1181,6 @@ a { color: inherit; text-decoration: none; }
         <p class="sec-head" style="text-align:center;">お知らせ</p>
         <h2 class="sec-title" style="text-align:center; margin-bottom:50px;">NEWS</h2>
 
-        <!-- [ADD 2026.08.11] 絵画オークションのお知らせ -->
-        <article class="news-item">
-            <span class="news-date">2026.08.11<span class="news-tag">NEW</span></span>
-            <span class="news-headline">橋本真希の描き下ろし絵画、8/18よりオークション開始</span>
-            <div class="news-content" id="news-content-17">
-                <p>橋本真希が本展のために描き下ろしたF30号（910 × 727 mm）の油彩作品を、オークションに出品します。入札期間は2026年8月18日（火）12:00から8月27日（木）19:00まで。入札はNFTマーケットプレイス「HEXA」を通じて行い、落札された方には現物の絵画をお渡しします。落札額から手数料および諸経費を差し引いた額は、東京藝術大学へ寄附します。詳しくは<a href="auction.html" style="color:var(--accent-warm); text-decoration:underline;">こちら</a>をご覧ください。</p>
-            </div>
-            <span class="news-toggle" onclick="toggleNews(17)">Read More / Close</span>
-        </article>
-
         <!-- [ADD 2026.07.18] ドローイングプレゼントのお知らせ -->
         <article class="news-item">
             <span class="news-date">2026.07.18<span class="news-tag">NEW</span></span>
@@ -1274,17 +1201,17 @@ a { color: inherit; text-decoration: none; }
             <span class="news-toggle" onclick="toggleNews(15)">Read More / Close</span>
         </article>
 
-        <div class="news-older" id="newsOlder">
-            <!-- [EDIT 2026.08.05] 常時表示を最新3件に保つため、06.29の記事をここへ移動 -->
-            <article class="news-item">
-                <span class="news-date">2026.06.29</span>
-                <span class="news-headline">公式サイトをリニューアルしました</span>
-                <div class="news-content" id="news-content-14">
-                    <p>公式サイトのデザインをリニューアルしました。会場の雰囲気や作家の情報をよりわかりやすくお伝えできるよう、構成を見直しています。ぜひご覧ください。</p>
-                </div>
-                <span class="news-toggle" onclick="toggleNews(14)">Read More / Close</span>
-            </article>
+        <!-- [ADD 2026.06.29] サイトリニューアルのお知らせ -->
+        <article class="news-item">
+            <span class="news-date">2026.06.29<span class="news-tag">NEW</span></span>
+            <span class="news-headline">公式サイトをリニューアルしました</span>
+            <div class="news-content" id="news-content-14">
+                <p>公式サイトのデザインをリニューアルしました。会場の雰囲気や作家の情報をよりわかりやすくお伝えできるよう、構成を見直しています。ぜひご覧ください。</p>
+            </div>
+            <span class="news-toggle" onclick="toggleNews(14)">Read More / Close</span>
+        </article>
 
+        <div class="news-older" id="newsOlder">
             <!-- [EDIT 2026.07.18] 常時表示を最新3件のみに保つため、06.16の記事をここへ移動 -->
             <article class="news-item" id="news-maki-ame">
                 <span class="news-date">2026.06.16</span>
@@ -1344,7 +1271,7 @@ a { color: inherit; text-decoration: none; }
             </div>
             <div class="info-row">
                 <div class="info-label">会期</div>
-                <div class="info-value">2026年8月18日(火) – 8月28日(金)<br>11:00 – 19:00(最終日のみ17:00まで)</div>
+                <div class="info-value">2026年8月18日(火) – 8月28日(金)<br>12:00 – 19:00(最終日のみ18:00まで)</div>
             </div>
             <div class="info-row">
                 <div class="info-label">会場</div>
